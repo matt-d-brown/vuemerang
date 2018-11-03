@@ -1,0 +1,79 @@
+
+.con-vm-radio
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover
+    .vm-radio--borde
+      border: 2px solid rgb(160, 160, 160);
+
+.vm-radio--label
+  margin-left: 5px;
+  cursor pointer
+
+.vm-radio
+  width: 18px;
+  height: 18px;
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  cursor: pointer;
+
+.vm-radio--borde
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  transition: all .25s ease;
+  background: transparent;
+  top: 0px;
+
+.vm-radio--circle
+  transition: all .25s ease;
+  transform: scale(.1);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+.vm-radio--input
+  position: absolute;
+  left: 0px;
+  opacity: 0;
+  width: 20px;
+  width: 20px;
+  &:checked
+    + .vm-radio
+      cursor: default;
+      .vm-radio--circle
+        transform: scale(1);
+        opacity: 1;
+      .vm-radio--borde
+        opacity: 0;
+        transform: scale(.3);
+  &:active
+    + .vm-radio
+      .vm-radio--circle
+        // transform: scale(1.1);
+      .vm-radio--borde
+        transform: scale(1.1);
+  &:disabled
+    + .vm-radio
+      opacity: .4;
+      .vm-radio--circle
+        pointer-events: none;
+      .vm-radio--borde
+        border: 2px solid rgb(180, 180, 180)
+        background: rgb(210, 210, 210)
+        pointer-events: none;
+
+for colorx, i in $vm-colors
+  .vm-radio-{colorx}
+    .vm-radio--circle
+      background: var(colorx, 1)
+      box-shadow: 0px 3px 12px 0px var(colorx, .4)

@@ -1,0 +1,44 @@
+
+.vm-breadcrumb
+  display flex
+  &.vm-align-left
+    justify-content: flex-start
+  &.vm-align-center
+    justify-content: center
+  &.vm-align-right
+    justify-content: flex-end
+
+  .disabled-link
+    opacity: .5
+    pointer-events: none;
+
+.vm-breadcrumb--ol
+  display flex
+  flex-wrap wrap
+  padding .75rem 1rem
+  li.vm-active
+    cursor: default;
+  a
+    transition: all .2s ease
+    color: rgba(0, 0, 0, 0.4);
+    &:hover
+    &:focus
+      // opacity .7
+      color: rgba(0, 0, 0, 0.7);
+      text-decoration none
+
+
+
+.vm-breadcrum--separator
+  color rgba(0, 0, 0, 0.4)
+  padding 0 .5rem 0 .5rem
+  &.material-icons
+    vertical-align: middle
+    // margin-top: -2px
+    font-size inherit
+
+
+
+for colorx, i in $vm-colors
+  .vm-breadcrumb-text-{colorx}
+    color: var(colorx, 1)

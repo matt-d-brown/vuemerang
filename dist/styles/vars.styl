@@ -1,0 +1,70 @@
+/*
+colors
+========================
+*/
+
+// Number Colors
+
+$vm-primary = 31, 116, 255
+$vm-secondary = 121, 49, 177
+$vm-danger = 255, 71, 87
+$vm-success = 70, 201, 58
+$vm-warning = 255,186,0
+$vm-dark = 30, 30, 30
+$vm-light = 245, 245, 245
+
+// Brand colors
+
+$vm-primary-color = rgb($vm-primary)
+$vm-secondary-color = rgb($vm-secondary)
+
+
+// App level
+
+$vm-danger-color = rgb($vm-danger)
+$vm-success-color = rgb($vm-success)
+$vm-warning-color = rgb($vm-warning)
+$vm-dark-color = rgb($vm-dark)
+$vm-light-color = rgb($vm-light)
+
+$vm-colors := {
+  primary: $vm-primary-color,
+  secondary: $vm-secondary-color,
+  danger: $vm-danger-color,
+  success: $vm-success-color,
+  warning: $vm-warning-color,
+  dark: $vm-dark-color,
+  light: $vm-light-color
+}
+
+:root {
+  --primary: $vm-primary
+  --danger: $vm-danger
+  --success: $vm-success
+  --dark: $vm-dark
+  --warning: $vm-warning
+}
+
+var(colorx, alpha = 1)
+  unquote("rgba(var(--"+colorx+"), "+alpha+")")
+
+varx(colorx)
+  unquote("var(--"+colorx+")")
+
+
+// , $vm-secondary, $vm-danger, $vm-success, $vm-warning, $vm-dark, $vm-light
+
+
+// global vars
+
+$vm-radio := 6px
+$vm-disabled-opacity := .5
+$vm-transition := all .25s ease
+$vm-border := 1px solid rgba(0, 0, 0, 0.1)
+$vm-label-color := rgba(0,0,0,.6)
+$vm-box-shadow := 0px 5px 20px 0px rgba(0, 0, 0, 0.05)
+$vm-background := rgb(255, 255, 255)
+
+// select vars
+
+$border-color :=  rgb(255, 255, 255)

@@ -1,0 +1,207 @@
+<template lang="html">
+  <transition name="dialog-t">
+    <div
+      v-if="active || vmActive"
+      ref="con"
+      :class="[`vm-dialog-${isPrompt?vmColor:color}`]"
+      class="vm-component con-vm-dialog">
+      <div
+        class="vm-dialog-dark"
+        @click="close($event,true)"/>
+      <div
+        ref="dialogx"
+        class="vm-dialog">
+
+        <!-- //header -->
+        <header :style="styleHeader">
+          <div class="con-title-after">
+            <span
+              :style="styleAfter"
+              class="after"/>
+            <h3>{{ title || vmTitle }}</h3>
+          </div>
+          <vm-icon
+            v-if="type=='alert'"
+            :icon="vmCloseIcon"
+            :click="close"
+            :icon-pack="vmIconPack"
+            class="vm-dialog-cancel vm-dialog-cancel--icon notranslate"
+          />
+        </header>
+
+        <!-- // slots  -->
+        <div class="vm-dialog-text">
+          <slot/>
+          {{ text }}
+        </div>
+        <!-- footer buttons -->
+        <footer v-if="vmButtonsHidden?false:isPrompt||type=='confirm'">
+          <vm-button
+            :disabled="vmIsValid=='none'?false:!vmIsValid"
+            :color="isPrompt?vmColor:color"
+            :type="isPrompt?vmButtonAccept:buttonAccept"
+            @click="acceptDialog">{{ isPrompt?vmAcceptText:acceptText }}</vm-button>
+          <vm-button
+            :color="'rgb(0,0,0,.5)'"
+            :type="isPrompt?vmButtonCancel:buttonCancel"
+            @click="cancelClose">{{ isPrompt?vmCancelText:cancelText }}</vm-button>
+        </footer>
+
+        <footer v-if="type=='alert'&&!isPrompt" >
+          <vm-button
+            :color="isPrompt?vmColor:color"
+            :type="buttonAccept"
+            @click="acceptDialog">{{ isPrompt?vmAcceptText:acceptText }}</vm-button>
+        </footer>
+      </div>
+    </div>
+  </transition>
+</template>
+
+<script>
+import _color from '../../utils/color.js'
+export default {
+  name:'VmPrompt',
+  props:{
+    vmColor:{
+      default:'primary',
+      type:String
+    },
+    vmActive:{
+      default:false,
+      type: Boolean
+    },
+    vmTitle:{
+      default:'Dialog',
+      type:String
+    },
+    vmButtonAccept:{
+      default:'filled',
+      type:String,
+    },
+    vmButtonCancel:{
+      default:'flat',
+      type:String,
+    },
+    vmIsValid:{
+      default:'none',
+      type:[Boolean,String]
+    },
+    vmButtonsHidden:{
+      default:false,
+      type:Boolean
+    },
+    vmAcceptText:{
+      default:'Accept',
+      type:String
+    },
+    vmCancelText:{
+      default:'Cancel',
+      type:String
+    },
+    vmIconPack:{
+      default:'material-icons',
+      type:String
+    },
+    vmCloseIcon:{
+      default:'close',
+      type:String
+    }
+  },
+  data:()=>({
+    isPrompt:true,
+    active:false,
+    type:'alert',
+    color:'primary',
+    text:null,
+    title:null,
+    buttonAccept:'filled',
+    buttonCancel:'flat',
+    acceptText:'Accept',
+    cancelText:'Cancel',
+    closeIcon:'close',
+    iconPack:'material-icons'
+  }),
+  computed:{
+    styleHeader(){
+      return {
+        color: _color.getColor(this.color,1),
+      }
+    },
+    styleAfter(){
+      return {
+        background: _color.getColor(this.color,1)
+      }
+    }
+  },
+  watch:{
+    vmActive() {
+      this.$nextTick(() => {
+        if (this.vmActive) {
+          this.insertBody()
+        }
+      })
+    }
+  },
+  mounted () {
+    if (this.active && this.isPrompt) {
+      this.insertBody()
+    }
+  },
+  methods:{
+    giveColor(color){
+      return _color.rColor(color)
+    },
+    acceptDialog(){
+      if(!this.isPrompt){
+        this.accept?this.accept():null
+        this.active = false
+        this.$emit('update:vmActive',false)
+        this.$emit('vm-accept')
+      } else {
+        if (this.vmIsValid || this.vmIsValid == 'none') {
+          this.accept?this.accept():null
+          this.active = false
+          this.$emit('update:vmActive',false)
+          this.$emit('vm-accept')
+        } else {
+          this.rebound()
+        }
+      }
+
+    },
+    rebound(){
+      this.$refs.dialogx.classList.add('locked')
+      setTimeout( () => {
+        this.$refs.dialogx.classList.remove('locked')
+      }, 200);
+    },
+    close(event,con){
+      if(con){
+        if(event.target.className.indexOf('vm-dialog-dark')!=-1 && this.type == 'alert'){
+          this.active = false
+          this.$emit('update:vmActive',false)
+        } else if (event.target.className.indexOf('vm-dialog-dark')!=-1) {
+          this.rebound()
+        }
+      } else {
+        if(event?event.target.className.indexOf('vm-dialog-cancel')!=-1:event?event.target.className.indexOf('vm-dialog-cancel--icon')!=-1:false ){
+          this.active = false
+          this.$emit('update:vmActive',false)
+        }
+      }
+      this.$emit('vm-close')
+    },
+    cancelClose(){
+      this.active = false
+      this.$emit('update:vmActive',false)
+      this.$emit('vm-cancel')
+      this.cancel?this.cancel():null
+    },
+    insertBody(){
+      let elx = this.$refs.con
+      document.body.insertBefore(elx, document.body.firstChild)
+    },
+  }
+}
+</script>
