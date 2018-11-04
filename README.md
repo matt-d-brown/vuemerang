@@ -3,8 +3,8 @@
 > New Framework Components for Vue.js
 
   <p align="center">
-  <a href="https://travis-ci.org/controlla/vuemerang">
-    <img src="https://img.shields.io/travis/controlla/vuemerang.svg" alt="travis ci badge">
+  <a href="https://travis-ci.org/Controlla/vuemerang">
+    <img src="https://img.shields.io/travis/Controlla/vuemerang.svg" alt="travis ci badge">
   </a>
   <a href="https://www.npmjs.com/package/vuemerang">
     <img src="https://img.shields.io/npm/dm/vuemerang.svg" alt="Downloads">
