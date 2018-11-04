@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /vuesax-logo-beta.png
+heroImage: /Vuemerang-logo-beta.png
 heroText: <b>Vuemerang</b> Frontend <a target="_blank" href="https://vuejs.org/" rel="noopener noreferrer">Vue</a> Components
 heroBackgroundComponent: city
 features:

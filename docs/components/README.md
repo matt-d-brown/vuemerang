@@ -384,7 +384,7 @@ You can change the font color of buttons, need only set the prop `text-color` wi
 You can add an icon to the button with the property `icon`
 
 ::: tip
-Vuesax uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 :::tip
@@ -532,17 +532,17 @@ You can specify for `window.location.href`
 
 <vuecode md center>
 <div slot="demo">
-<vm-button color="primary" target="_blank" type="filled" href="https://lusaxweb.github.io/vuesax/">String literal</vm-button>
-<vm-button color="primary" type="filled" :href="{url: 'https://lusaxweb.github.io/vuesax/'}">Object Path</vm-button>
-<vm-button color="primary" type="filled" target href="https://lusaxweb.github.io/vuesax/">Open Current Tab</vm-button>
+<vm-button color="primary" target="_blank" type="filled" href="https://controlla.github.io/Vuemerang/">String literal</vm-button>
+<vm-button color="primary" type="filled" :href="{url: 'https://controlla.github.io/Vuemerang/'}">Object Path</vm-button>
+<vm-button color="primary" type="filled" target href="https://controlla.github.io/Vuemerang/">Open Current Tab</vm-button>
 </div>
 
 <div slot="code">
 
 ```html
-<vm-button color="primary" type="filled" href="https://lusaxweb.github.io/vuesax/">String literal</vm-button>
-<vm-button color="primary" type="filled" :href="{url: 'https://lusaxweb.github.io/vuesax/'}">Object Path</vm-button>
-<vm-button color="primary" type="filled" target :href="{url: 'https://lusaxweb.github.io/vuesax/'}">Open Current Tab</vm-button>
+<vm-button color="primary" type="filled" href="https://controlla.github.io/Vuemerang/">String literal</vm-button>
+<vm-button color="primary" type="filled" :href="{url: 'https://controlla.github.io/Vuemerang/'}">Object Path</vm-button>
+<vm-button color="primary" type="filled" target :href="{url: 'https://controlla.github.io/Vuemerang/'}">Open Current Tab</vm-button>
 
 ```
 

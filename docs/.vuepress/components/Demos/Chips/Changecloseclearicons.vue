@@ -21,7 +21,7 @@ export default {
       chips:[
         "Vuejs",
         "Node",
-        "Vuesax"
+        "Vuemerang"
       ]
     }
   },

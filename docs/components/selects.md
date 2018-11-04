@@ -100,7 +100,7 @@ Selects with a clean and smooth animation, that are very easy to implement.
 To add a select to the application we have the component `vm-select`. You can customize the arrow icon by passing an icon name to `icon`.
 
 ::: tip
-Vuesax uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
+Vuemerang uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
 
 FontAwesome and other fonts library are supported. Simply use the `icon-pack` with `fa` or `fas`. You still need to include the Font Awesome icons in your project.
 

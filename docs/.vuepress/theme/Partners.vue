@@ -19,14 +19,14 @@ export default {
       {
         name:'Madewithvuejs',
         img:'/made-with-vuejs.png',
-        link:'https://madewithvuejs.com?ref=lusaxweb.github.io'
+        link:'https://madewithvuejs.com?ref=controlla.github.io'
       },
       {
         class:'vue-book',
         text: 'Vue.js Book',
         name:'Vue.js Book',
         img:'/vue-book.png',
-        link:'https://vuejsbook.com?ref=lusaxweb.github.io'
+        link:'https://vuejsbook.com?ref=controlla.github.io'
       },
       ]
   })

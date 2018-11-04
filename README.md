@@ -3,8 +3,8 @@
 > New Framework Components for Vue.js
 
   <p align="center">
-  <a href="https://travis-ci.org/lusaxweb/vuemerang">
-    <img src="https://img.shields.io/travis/lusaxweb/vuemerang.svg" alt="travis ci badge">
+  <a href="https://travis-ci.org/controlla/vuemerang">
+    <img src="https://img.shields.io/travis/controlla/vuemerang.svg" alt="travis ci badge">
   </a>
   <a href="https://www.npmjs.com/package/vuemerang">
     <img src="https://img.shields.io/npm/dm/vuemerang.svg" alt="Downloads">
@@ -28,7 +28,7 @@ The framework is focused on facilitating the development of applications, improv
 
 If you feel awesome and want to support us in a small way, please consider starring and sharing the repo! This helps us getting known and grow the community. 🙏
 
-<img src="https://github.com/lusaxweb/vuemerang/blob/master/public/github-vuemerang-star.gif" alt="vuemerang-star" />
+<img src="https://github.com/controlla/vuemerang/blob/master/public/github-vuemerang-star.gif" alt="vuemerang-star" />
 
 ## Browser Support
 Recent versions of **Firefox**, **Chrome**, **Edge**, **Opera** and **Safari**. **IE10+**

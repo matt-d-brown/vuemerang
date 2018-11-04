@@ -11,7 +11,7 @@ export default {
     script.setAttribute("type", "text/javascript");
     script.setAttribute(
       "src",
-      `//cdn.carbonads.com/carbon.js?serve=CK7DC27J&placement=lusaxwebgithubio`
+      `//cdn.carbonads.com/carbon.js?serve=CK7DC27J&placement=controllagithubio`
     );
     script.setAttribute(
       "id",

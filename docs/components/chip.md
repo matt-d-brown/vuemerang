@@ -191,7 +191,7 @@ export default {
 Add a nice icon to the chip.
 
 ::: tip
-Vuesax uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
+Vuemerang uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
 :::
 
 <vuecode md center>
@@ -296,7 +296,7 @@ export default {
         'GitHub',
         'Behance',
         'Vuejs',
-        'Vuesax',
+        'Vuemerang',
       ],
     }
   },
@@ -307,7 +307,7 @@ export default {
         'GitHub',
         'Behance',
         'Vuejs',
-        'Vuesax',
+        'Vuemerang',
       ]
     },
     remove (item) {
@@ -366,7 +366,7 @@ export default {
       chips:[
         "Vuejs",
         "Node",
-        "Vuesax"
+        "Vuemerang"
       ]
     }
   },
@@ -397,7 +397,7 @@ export default {
 You can change the icons used for the close button and the clear button when using multiple chips with the `vm-chips` component. For the main parameter, pass the `close-icon` property, which is the close icon that appears on each chip. You can change the Clear Chips button with the `remove-icon` property.
 
 ::: tip
-Vuesax uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
+Vuemerang uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
 
 FontAwesome and other fonts library are supported. Simply use the `icon-pack` with `fa` or `fas`. You still need to include the Font Awesome icons in your project.
 
@@ -433,7 +433,7 @@ export default {
       chips:[
         "Vuejs",
         "Node",
-        "Vuesax"
+        "Vuemerang"
       ]
     }
   },

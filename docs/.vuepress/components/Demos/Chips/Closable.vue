@@ -17,7 +17,7 @@ export default {
         'GitHub',
         'Behance',
         'Vuejs',
-        'Vuesax',
+        'Vuemerang',
       ],
     }
   },
@@ -28,7 +28,7 @@ export default {
         'GitHub',
         'Behance',
         'Vuejs',
-        'Vuesax',
+        'Vuemerang',
       ]
     },
     remove (item) {

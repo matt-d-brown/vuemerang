@@ -11,7 +11,7 @@
 
       <vm-dropdown-menu class="loginx">
         <h3>Login</h3>
-        <p>Welcome to vuesax, add your data to enter</p>
+        <p>Welcome to Vuemerang, add your data to enter</p>
 
 
         <vm-input

@@ -7,17 +7,17 @@
           <!-- <i class="material-icons">
             add
           </i> -->
-          <img v-if="ramdom == 1" :src="$withBase('/patreon/Coffe-Vuesax.png')" alt="">
-          <img v-if="ramdom == 2" :src="$withBase('/patreon/02-Vuesax-Pizza-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuepr.png')" alt="">
-          <img v-if="ramdom == 3" :src="$withBase('/patreon/03-Vuesax-Bronze-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuep.png')" alt="">
-          <img v-if="ramdom == 4" :src="$withBase('/patreon/02-Vuesax-Silver-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuep.png')" alt="">
-          <img v-if="ramdom == 5" :src="$withBase('/patreon/01-Vuesax-Gold-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuepre.png')" alt="">
-          <img v-if="ramdom == 6" :src="$withBase('/patreon/06-Vuesax-Diamond-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vue.png')" alt="">
-          <img v-if="ramdom == 7" :src="$withBase('/patreon/07-Vuesax-Special-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vue.png')" alt="">
+          <img v-if="ramdom == 1" :src="$withBase('/patreon/Coffe-Vuemerang.png')" alt="">
+          <img v-if="ramdom == 2" :src="$withBase('/patreon/02-Vuemerang-Pizza-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuepr.png')" alt="">
+          <img v-if="ramdom == 3" :src="$withBase('/patreon/03-Vuemerang-Bronze-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuep.png')" alt="">
+          <img v-if="ramdom == 4" :src="$withBase('/patreon/02-Vuemerang-Silver-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuep.png')" alt="">
+          <img v-if="ramdom == 5" :src="$withBase('/patreon/01-Vuemerang-Gold-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuepre.png')" alt="">
+          <img v-if="ramdom == 6" :src="$withBase('/patreon/06-Vuemerang-Diamond-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vue.png')" alt="">
+          <img v-if="ramdom == 7" :src="$withBase('/patreon/07-Vuemerang-Special-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vue.png')" alt="">
         </a>
       </div>
       <a target="_blank" href="https://www.patreon.com/bePatron?c=1567892" class="btn-patreon" rel="noopener noreferrer">
-        <img :src="$withBase('/patreon.webp')" alt="vuesax-patreon">
+        <img :src="$withBase('/patreon.webp')" alt="Vuemerang-patreon">
         Become a patron
       </a>
     </div>

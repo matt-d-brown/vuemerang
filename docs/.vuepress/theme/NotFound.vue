@@ -2,7 +2,7 @@
   <div class="theme-container">
     <div class="content-notfound">
       <div class="con-404">
-        <a href="https://lusaxweb.github.io/vuesax/">
+        <a href="https://controlla.github.io/Vuemerang/">
           <not-found/>
         </a>
 
@@ -10,9 +10,9 @@
       <div class="con-btns-404">
         <h2>Links</h2>
         <div class="">
-          <a href="https://lusaxweb.github.io/vuesax/">Vuesax</a>
-          <a href="https://lusaxweb.github.io/vuesax/vuesax/">Documents</a>
-          <a href="https://github.com/lusaxweb/vuesax">GitHub</a>
+          <a href="https://controlla.github.io/Vuemerang/">Vuemerang</a>
+          <a href="https://controlla.github.io/Vuemerang/Vuemerang/">Documents</a>
+          <a href="https://github.com/controlla/Vuemerang">GitHub</a>
         </div>
       </div>
       <!-- <h1>404</h1>

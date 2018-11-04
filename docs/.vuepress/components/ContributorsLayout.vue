@@ -116,19 +116,19 @@ export default {
         medals:[
           {
             name:'c100',
-            description:'Have 100 points of contribution to vuesax'
+            description:'Have 100 points of contribution to Vuemerang'
           },
           {
             name:'c1k',
-            description:'Have 1k points of contribution to vuesax'
+            description:'Have 1k points of contribution to Vuemerang'
           },
           {
             name:'c10k',
-            description:'Have 10k points of contribution to vuesax'
+            description:'Have 10k points of contribution to Vuemerang'
           },
           {
             name:'c30k',
-            description:'Have 30k points of contribution to vuesax'
+            description:'Have 30k points of contribution to Vuemerang'
           },
         ]
       },
@@ -137,19 +137,19 @@ export default {
         medals:[
           {
             name:'pull1',
-            description:'Have 1 Pull Request on github for vuesax'
+            description:'Have 1 Pull Request on github for Vuemerang'
           },
           {
             name:'pull5',
-            description:'Have 5 Pull Request on github for vuesax'
+            description:'Have 5 Pull Request on github for Vuemerang'
           },
           {
             name:'pull20',
-            description:'Have 20 Pull Request on github for vuesax'
+            description:'Have 20 Pull Request on github for Vuemerang'
           },
           {
             name:'pull50',
-            description:'Have 50 Pull Request on github for vuesax'
+            description:'Have 50 Pull Request on github for Vuemerang'
           },
         ]
       }
@@ -169,7 +169,7 @@ export default {
       return aporte
     },
     consultContributors(){
-        fetch('https://api.github.com/repos/lusaxweb/vuesax/stats/contributors')
+        fetch('https://api.github.com/repos/controlla/Vuemerang/stats/contributors')
         .then(response => response.json())
         .then(json => {
           // console.log(JSON.stringify(json));
@@ -196,7 +196,7 @@ export default {
         })
     },
     consultarPulls(){
-      fetch('https://api.github.com/repos/lusaxweb/vuesax/pulls?state=all')
+      fetch('https://api.github.com/repos/controlla/Vuemerang/pulls?state=all')
       .then(response => response.json())
       .then(json => {
       let jsonx = []

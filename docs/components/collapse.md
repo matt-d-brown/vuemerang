@@ -306,7 +306,7 @@ If you want the items to open when you hover in, add the `open-hover` property i
 You can customise the arrow on the component `vm-collapse` by passing the string name of an icon to the `icon-arrow` property.
 
 ::: tip
-Vuesax uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
+Vuemerang uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
 
 FontAwesome and other fonts library are supported. Simply use the `icon-pack` with `fa` or `fas`. You still need to include the Font Awesome icons in your project.
 

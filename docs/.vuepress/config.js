@@ -2,7 +2,7 @@
 module.exports = {
   base: '/vuemerang/',
   head: [
-    ['link', { rel: 'icon', href: `/favicon-vuesax.png` }],
+    ['link', { rel: 'icon', href: `/favicon-Vuemerang.png` }],
     ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/icon?family=Material+Icons` }],
     ['script',{},`(function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -22,7 +22,7 @@ module.exports = {
   vueThemes:{
     linksHome:[],
     links:{
-      github:'https://github.com/lusaxweb/vuesax',
+      github:'https://github.com/controlla/Vuemerang',
     },
     footer:[
       {
@@ -30,7 +30,7 @@ module.exports = {
         items:[
           {
             text:'GitHub',
-            link:'https://github.com/lusaxweb/vuesax'
+            link:'https://github.com/controlla/Vuemerang'
           },
           {
             text:'Discord',
@@ -38,11 +38,11 @@ module.exports = {
           },
           {
             text:'Twitter',
-            link:'https://twitter.com/vuesax'
+            link:'https://twitter.com/Vuemerang'
           },
           {
             text:'Facebook',
-            link:'https://www.facebook.com/vuesax/'
+            link:'https://www.facebook.com/Vuemerang/'
           },
           {
             text:'Behance',
@@ -54,7 +54,7 @@ module.exports = {
           },
           {
             text:'Codepen',
-            link:'https://codepen.io/lusaxweb/'
+            link:'https://codepen.io/controlla/'
           },
         ]
       },
@@ -63,23 +63,23 @@ module.exports = {
         items:[
           {
             text:'Issues',
-            link:'https://github.com/lusaxweb/vuesax/issues'
+            link:'https://github.com/controlla/Vuemerang/issues'
           },
           {
             text:'Edit Page',
-            link:'https://github.com/lusaxweb/vuesax/tree/master/docs'
+            link:'https://github.com/controlla/Vuemerang/tree/master/docs'
           },
           {
             text:'Latest Releases',
-            link:'https://github.com/lusaxweb/vuesax/releases'
+            link:'https://github.com/controlla/Vuemerang/releases'
           },
           {
             text:'Stackoverflow',
-            link:'https://stackoverflow.com/questions/tagged/vuesax'
+            link:'https://stackoverflow.com/questions/tagged/Vuemerang'
           },
           {
             text:'FAQ',
-            link:'https://github.com/lusaxweb/vuesax/wiki'
+            link:'https://github.com/controlla/Vuemerang/wiki'
           },
         ]
       },
@@ -88,23 +88,23 @@ module.exports = {
         items:[
           {
             text:'Lusaxweb',
-            link:'http://www.lusaxweb.com.ve/'
+            link:'http://www.controlla.com.ve/'
           },
           {
             text:'Email',
-            link:'mailto:vuesax@gmail.com'
+            link:'mailto:Vuemerang@gmail.com'
           },
           {
             text:'Chat',
-            link:'https://gitter.im/vuesax/Lobby'
+            link:'https://gitter.im/Vuemerang/Lobby'
           },
           {
             text:'Pull request',
-            link:'https://github.com/lusaxweb/vuesax/pulls'
+            link:'https://github.com/controlla/Vuemerang/pulls'
           },
           {
             text:'Codepen Template',
-            link:'https://codepen.io/lusaxweb/pen/mxMKYr'
+            link:'https://codepen.io/controlla/pen/mxMKYr'
           },
         ]
       }
@@ -112,13 +112,13 @@ module.exports = {
   },
   themeConfig: {
     // Assumes GitHub. Can also be a full GitLab url.
-    repo: 'lusaxweb/vuesax',
+    repo: 'controlla/Vuemerang',
     // Customising the header label
     // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
     repoLabel: 'Contribute!',
     // Optional options for generating "Edit this page" link
     // if your docs are in a different repo from your main project:
-    docsRepo: 'lusaxweb/vuesax',
+    docsRepo: 'controlla/Vuemerang',
     // if your docs are not at the root of the repo:
     docsDir: 'docs',
     // if your docs are in a specific branch (defaults to 'master'):
@@ -126,7 +126,7 @@ module.exports = {
     // defaults to true, set to false to disable
     editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
-    logo:'/vuesax-logo-vertical.png',
+    logo:'/Vuemerang-logo-vertical.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentation', link: '/development/' },
@@ -137,33 +137,33 @@ module.exports = {
           {
             text: 'Social',
             items: [
-              { text: 'GitHub', link: 'https://github.com/lusaxweb/vuesax' },
+              { text: 'GitHub', link: 'https://github.com/controlla/Vuemerang' },
               { text: 'Discord', link: 'https://discord.gg/9dsKtvB' },
-              { text: 'Twitter', link: 'https://twitter.com/vuesax' },
-              { text: 'Facebook', link: 'https://www.facebook.com/vuesax/' },
+              { text: 'Twitter', link: 'https://twitter.com/Vuemerang' },
+              { text: 'Facebook', link: 'https://www.facebook.com/Vuemerang/' },
               { text: 'Behance', link: 'https://www.behance.net/ManuelRovira' },
               { text: 'Dribbble', link: 'https://dribbble.com/ManuelRovira' },
-              { text: 'Codepen', link: 'https://codepen.io/lusaxweb/' },
+              { text: 'Codepen', link: 'https://codepen.io/controlla/' },
               { text: 'Medium', link: 'https://medium.com/@luisdanielrovira8' }
             ]
           },
           {
             text: 'Help',
             items: [
-              { text: 'Issues', link: 'https://github.com/lusaxweb/vuesax/issues' },
-              { text: 'Edit Page', link: 'https://github.com/lusaxweb/vuesax' },
-              { text: 'Latest Releases', link: 'https://github.com/lusaxweb/vuesax/releases' },
-              { text: 'FAQ', link: 'https://github.com/lusaxweb/vuesax/wiki' }
+              { text: 'Issues', link: 'https://github.com/controlla/Vuemerang/issues' },
+              { text: 'Edit Page', link: 'https://github.com/controlla/Vuemerang' },
+              { text: 'Latest Releases', link: 'https://github.com/controlla/Vuemerang/releases' },
+              { text: 'FAQ', link: 'https://github.com/controlla/Vuemerang/wiki' }
             ]
           },
           {
             text: 'Contact',
             items: [
-              { text: 'Lusaxweb', link: 'http://www.lusaxweb.com' },
-              { text: 'Email', link: 'mailto:vuesax@gmail.com' },
-              { text: 'Chat', link: 'https://gitter.im/vuesax/Lobby' },
-              { text: 'Pull Request', link: 'https://github.com/lusaxweb/vuesax/pulls' },
-              { text: 'Codepen Template', link: 'https://codepen.io/lusaxweb/pen/mxMKYr' }
+              { text: 'Lusaxweb', link: 'http://www.controlla.com' },
+              { text: 'Email', link: 'mailto:Vuemerang@gmail.com' },
+              { text: 'Chat', link: 'https://gitter.im/Vuemerang/Lobby' },
+              { text: 'Pull Request', link: 'https://github.com/controlla/Vuemerang/pulls' },
+              { text: 'Codepen Template', link: 'https://codepen.io/controlla/pen/mxMKYr' }
             ]
           }
         ]
@@ -176,7 +176,7 @@ module.exports = {
         children: [
           '/development/',
           '/development/contributing',
-          '/development/whyVuesax',
+          '/development/whyVuemerang',
          ]
       },
       {

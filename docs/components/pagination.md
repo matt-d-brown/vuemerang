@@ -87,7 +87,7 @@ To customize the previous and next page icons change the value of the `prev-icon
 By default, their values are respectively **arrow_back** and **arrow_forward**.
 
 ::: tip
-Vuesax uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
+Vuemerang uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
 
 FontAwesome and other fonts library are supported. Simply use the `icon-pack` with `fa` or `fas`. You still need to include the Font Awesome icons in your project.
 
@@ -122,7 +122,7 @@ export default {
 
 ## Limit the amount of links shown
 
-By default Vuesax will show a maximum of **9** links. This default behaviour can be changed by setting the `max` directive to a different integer value.
+By default Vuemerang will show a maximum of **9** links. This default behaviour can be changed by setting the `max` directive to a different integer value.
 
 ::: tip
 The amount given to the `max` directive should take into account the first and last pages plus the ellipses "`...`"

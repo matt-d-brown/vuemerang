@@ -400,7 +400,7 @@ Sometimes when we need something more personalized and not necessarily a menu fo
 
       <vm-dropdown-menu class="loginx">
         <h3>Login</h3>
-        <p>Welcome to vuesax, add your data to enter</p>
+        <p>Welcome to Vuemerang, add your data to enter</p>
 
 
         <vm-input
@@ -485,7 +485,7 @@ You can customize the component or element that initialize the dropdown in this 
 :::
 
 :::tip
-Vuesax uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 ```html

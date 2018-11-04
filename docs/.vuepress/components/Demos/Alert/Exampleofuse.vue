@@ -1,10 +1,10 @@
 <template lang="html">
   <div class="centerx">
-    <vs-input vs-label="Enter only numbers" placeholder="0123456789" v-model="value"/>
+    <vm-input vm-label="Enter only numbers" placeholder="0123456789" v-model="value"/>
 
-    <vs-alert :active="inputValid" color="danger" icon="new_releases">
+    <vm-alert :active="inputValid" color="danger" icon="new_releases">
       <span>the value is <b>invalid</b> you can only enter numbers</span>
-    </vs-alert>
+    </vm-alert>
   </div>
 </template>
 

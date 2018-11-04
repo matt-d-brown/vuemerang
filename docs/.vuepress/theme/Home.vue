@@ -129,7 +129,7 @@
 </template>
 
 <script>
-// <!-- Hotjar Tracking Code for https://lusaxweb.github.io/vuesax/ -->
+// <!-- Hotjar Tracking Code for https://controlla.github.io/Vuemerang/ -->
 
 
 
@@ -161,7 +161,7 @@ export default {
     }
   },
   mounted(){
-     fetch('https://api.github.com/repos/lusaxweb/vuesax')
+     fetch('https://api.github.com/repos/controlla/Vuemerang')
     .then(response => response.json())
     .then(json => {
       this.star = json.stargazers_count

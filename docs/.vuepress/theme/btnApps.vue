@@ -8,28 +8,28 @@
     <div class="con-ul">
       <ul>
         <li>
-          <a title="Vuesax" target="_blank" href="https://lusaxweb.github.io/vuesax/">
-            <img :src="$withBase('/apps/vuesax.png')" alt="">
+          <a title="Vuemerang" target="_blank" href="https://controlla.github.io/Vuemerang/">
+            <img :src="$withBase('/apps/Vuemerang.png')" alt="">
           </a>
         </li>
         <li>
-          <a title="DevAwesome" target="_blank" href="https://lusaxweb.github.io/devAwesome/#/">
+          <a title="DevAwesome" target="_blank" href="https://controlla.github.io/devAwesome/#/">
             <img :src="$withBase('/apps/devawesome.png')" alt="">
           </a>
         </li>
         <li>
-          <a title="Vue-share" target="_blank" href="https://lusaxweb.github.io/vue-share/">
+          <a title="Vue-share" target="_blank" href="https://controlla.github.io/vue-share/">
             <img :src="$withBase('/apps/vueshare.png')" alt="">
           </a>
         </li>
         <li>
-          <a title="Vuenut" target="_blank" href="https://lusaxweb.github.io/vuenut.org/">
+          <a title="Vuenut" target="_blank" href="https://controlla.github.io/vuenut.org/">
             <img :src="$withBase('/apps/vuenut.png')" alt="">
           </a>
         </li>
         <li>
-          <a title="Lusaxweb" target="_blank" href="https://lusaxweb.com">
-            <img :src="$withBase('/apps/lusaxweb.png')" alt="">
+          <a title="Lusaxweb" target="_blank" href="https://controlla.com">
+            <img :src="$withBase('/apps/controlla.png')" alt="">
           </a>
         </li>
       </ul>
