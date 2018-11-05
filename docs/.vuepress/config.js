@@ -4,16 +4,13 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: `/favicon-Vuemerang.png` }],
     ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/icon?family=Material+Icons` }],
-    ['script',{},`(function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:816179,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`]
+    ['script',{},`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MQKGCLJ');`]
   ],
-  ga:'UA-122319353-1',
+  ga:'UA-128631128-1',
   docsDir: 'docs',
   host:'localhost',
   port: 7070,
@@ -33,10 +30,6 @@ module.exports = {
             link:'https://github.com/controlla/Vuemerang'
           },
           {
-            text:'Discord',
-            link:'https://discord.gg/9dsKtvB'
-          },
-          {
             text:'Twitter',
             link:'https://twitter.com/Vuemerang'
           },
@@ -46,15 +39,11 @@ module.exports = {
           },
           {
             text:'Behance',
-            link:'https://www.behance.net/ManuelRovira'
+            link:'https://www.behance.net/IvanSotelo'
           },
           {
             text:'Dribbble',
-            link:'https://dribbble.com/ManuelRovira'
-          },
-          {
-            text:'Codepen',
-            link:'https://codepen.io/controlla/'
+            link:'https://dribbble.com/IvanSotelo'
           },
         ]
       },
@@ -87,24 +76,16 @@ module.exports = {
         title:'Más',
         items:[
           {
-            text:'Lusaxweb',
-            link:'http://www.controlla.com.ve/'
+            text:'Controlla',
+            link:'http://www.controlla.com.mx/'
           },
           {
             text:'Email',
-            link:'mailto:Vuemerang@gmail.com'
-          },
-          {
-            text:'Chat',
-            link:'https://gitter.im/Vuemerang/Lobby'
+            link:'mailto:vuemerang@controlla.com.mx'
           },
           {
             text:'Pull request',
             link:'https://github.com/controlla/Vuemerang/pulls'
-          },
-          {
-            text:'Codepen Template',
-            link:'https://codepen.io/controlla/pen/mxMKYr'
           },
         ]
       }
@@ -112,13 +93,13 @@ module.exports = {
   },
   themeConfig: {
     // Assumes GitHub. Can also be a full GitLab url.
-    repo: 'controlla/Vuemerang',
+    repo: 'controlla/vuemerang',
     // Customising the header label
     // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
     repoLabel: 'Contribute!',
     // Optional options for generating "Edit this page" link
     // if your docs are in a different repo from your main project:
-    docsRepo: 'controlla/Vuemerang',
+    docsRepo: 'controlla/vuemerang',
     // if your docs are not at the root of the repo:
     docsDir: 'docs',
     // if your docs are in a specific branch (defaults to 'master'):
@@ -138,13 +119,13 @@ module.exports = {
             text: 'Social',
             items: [
               { text: 'GitHub', link: 'https://github.com/controlla/Vuemerang' },
-              { text: 'Discord', link: 'https://discord.gg/9dsKtvB' },
+              // { text: 'Discord', link: 'https://discord.gg/9dsKtvB' },
               { text: 'Twitter', link: 'https://twitter.com/Vuemerang' },
               { text: 'Facebook', link: 'https://www.facebook.com/Vuemerang/' },
-              { text: 'Behance', link: 'https://www.behance.net/ManuelRovira' },
-              { text: 'Dribbble', link: 'https://dribbble.com/ManuelRovira' },
-              { text: 'Codepen', link: 'https://codepen.io/controlla/' },
-              { text: 'Medium', link: 'https://medium.com/@luisdanielrovira8' }
+              { text: 'Behance', link: 'https://www.behance.net/IvanSotelo' },
+              { text: 'Dribbble', link: 'https://dribbble.com/IvanSotelo' },
+              // { text: 'Codepen', link: 'https://codepen.io/controlla/' },
+              { text: 'Medium', link: 'https://medium.com/@ivansotelo' }
             ]
           },
           {
@@ -159,11 +140,11 @@ module.exports = {
           {
             text: 'Contact',
             items: [
-              { text: 'Lusaxweb', link: 'http://www.controlla.com' },
-              { text: 'Email', link: 'mailto:Vuemerang@gmail.com' },
-              { text: 'Chat', link: 'https://gitter.im/Vuemerang/Lobby' },
-              { text: 'Pull Request', link: 'https://github.com/controlla/Vuemerang/pulls' },
-              { text: 'Codepen Template', link: 'https://codepen.io/controlla/pen/mxMKYr' }
+              { text: 'Controlla', link: 'http://www.controlla.com.mx' },
+              { text: 'Email', link: 'mailto:vuemerang@controlla.com.mx' },
+              // { text: 'Chat', link: 'https://gitter.im/Vuemerang/Lobby' },
+              { text: 'Pull Request', link: 'https://github.com/controlla/vuemerang/pulls' },
+              // { text: 'Codepen Template', link: 'https://codepen.io/controlla/pen/mxMKYr' }
             ]
           }
         ]

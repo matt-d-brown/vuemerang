@@ -161,7 +161,7 @@ export default {
     }
   },
   mounted(){
-     fetch('https://api.github.com/repos/controlla/Vuemerang')
+     fetch('https://api.github.com/repos/controlla/vuemerang')
     .then(response => response.json())
     .then(json => {
       this.star = json.stargazers_count
