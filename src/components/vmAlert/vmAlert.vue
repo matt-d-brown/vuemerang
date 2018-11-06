@@ -74,7 +74,7 @@ export default {
     },
     iconPack:{
       type:String,
-      default:'material-icons'
+      default:'eva'
     }
   },
   computed:{

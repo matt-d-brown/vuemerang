@@ -1,0 +1,85 @@
+{
+  "_args": [
+    [
+      "eva-icons",
+      "/home/ivan/Documentos/Controlla/Vuemerang"
+    ]
+  ],
+  "_from": "eva-icons@latest",
+  "_hasShrinkwrap": false,
+  "_id": "eva-icons@1.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/eva-icons",
+  "_nodeVersion": "8.11.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/eva-icons_1.0.2_1541167083499_0.4776080300019352"
+  },
+  "_npmUser": {
+    "email": "contact@akveo.com",
+    "name": "nebular"
+  },
+  "_npmVersion": "6.1.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "eva-icons",
+    "raw": "eva-icons",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/eva-icons/-/eva-icons-1.0.2.tgz",
+  "_shasum": "af2ff4cb5910b3a12df10cde253e667fcd6f1825",
+  "_shrinkwrap": null,
+  "_spec": "eva-icons",
+  "_where": "/home/ivan/Documentos/Controlla/Vuemerang",
+  "author": {
+    "name": "akveo"
+  },
+  "bugs": {
+    "url": "https://github.com/akveo/eva-icons/issues"
+  },
+  "dependencies": {},
+  "description": "Eva Icons - beautifully crafted Open Source UI icons for common actions and items.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "fileCount": 1000,
+    "integrity": "sha512-cUaSLNhF17SmQi/lDKbpcGGnYQaDgum2YsIF5CHrU12M2q8aoosdQinYEXNLtbjEfKfFI1As12PJfw9ck6MnFA==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb3FfsCRA9TVsSAnZWagAAakYP+wbkCf/HI2DPA4HuFrZs\nFbToui3n/tPj3tFjIm2JUL/0BFrREYLjtrGxITsIsCmDTCDrscp3z8psK6P2\nS0J4AEDUWVHXs8f7CTW6/HuOFaXQkelQiBgNSKrDxW2d8i6d+p84rgwMGDkv\n363/vysMuX/P0saPFeG3aOypYDGg/5M++g+0kv3QY7rn0IVJ/tKDcm7wApi0\nw+z55fTI2cFmhKZu7/iWCcntgGY1M7Ks+ngIG6zOxXmMT070w29dUIKd3Pot\nK6IA31JMsABfaxeiYxFNxZ0cDRFV5zaIVOu9mw/GfZR/QN9mevZ9Ctqnp6bP\nfLhY4Vr5ANLbniIOlEmcVtDNiYkHhxZ/ulYIQtpsPoS2OjaHPfH8UZwvxgzM\nKHgrEOfKu5WNoBf8rKm+t0KGJnNSUmInwwEoml+UPOyqR435jQMpeQcTrvqk\nsxRq9+Cz70tVuKtImaAq1ruF/M3wtIhsa1ihfgrfbEDDhuZHFuyUGQwr4nff\nvhzE1JhJZoK4Cz1XEkzcVPiKUsJLYXjBHkwjvs/apEI+IkyZFJ1mesMwUA9Y\nkYDc8cDA2fpC2PN9oh6q5JJQ1BDvAHyodP7/XKMxfUQyQ2MbVw+Na0+oN+Aw\nY9wH33QMQH6CwcC8xi0M76zSnS+65awMnfXg6t9crgkTyCDFQDF3Onc0JIiS\nx3rv\r\n=h/9E\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "af2ff4cb5910b3a12df10cde253e667fcd6f1825",
+    "tarball": "https://registry.npmjs.org/eva-icons/-/eva-icons-1.0.2.tgz",
+    "unpackedSize": 5306084
+  },
+  "homepage": "https://github.com/akveo/eva-icons#readme",
+  "keywords": [
+    "akveo",
+    "fonts",
+    "icon font",
+    "icons",
+    "nebular",
+    "web font"
+  ],
+  "license": "MIT",
+  "main": "eva.js",
+  "maintainers": [
+    {
+      "name": "nebular",
+      "email": "contact@akveo.com"
+    }
+  ],
+  "name": "eva-icons",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akveo/eva-icons.git"
+  },
+  "unpkg": "eva.min.js",
+  "version": "1.0.2"
+}

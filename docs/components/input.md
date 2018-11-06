@@ -43,8 +43,8 @@ API:
  - name: icon-pack
    type: String
    parameters: Icon Pack Class Name
-   description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-   default: material-icons
+   description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: eva
  - name: icon-after
    type: Boolean,String
    parameters: null
@@ -249,10 +249,7 @@ export default {
 The input can have icons. Use the property `icon`. You can also also manipulate the icon's position with the property `icon-after`.
 
 ::: tip
-Vuemerang uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
-
-FontAwesome and other fonts library are supported. Simply use the `icon-pack` with `fa` or `fas`. You still need to include the Font Awesome icons in your project.
-
+Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 <vuecode md>
@@ -265,7 +262,7 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 <template lang="html">
   <div class="centerx icons-example">
     <vm-input icon="search" placeholder="Search" v-model="value1"/>
-    <vm-input icon-after="true" label-placeholder="icon-after" icon="mode_edit" placeholder="Nombre" v-model="value2"/>
+    <vm-input icon-after="true" label-placeholder="icon-after" icon="edit-outline" placeholder="Nombre" v-model="value2"/>
     <vm-input icon="add" label-placeholder="Label-placeholder" v-model="value3"/>
     <vm-input icon-after="true"  icon="shopping_cart" label-placeholder="Label-placeholder" v-model="value4"/>
     <vm-input disabled="true" icon="error_outline" label-placeholder="icon-disabled" v-model="value5"/>

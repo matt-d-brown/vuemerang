@@ -5,8 +5,7 @@
       <li :class="{'patreonx':patreon.name}" :title="patreon.name?`Proudly patronized by ${patreon.name}`:'Become a Patron - Add your logo here'" v-for="patreon,index in patreons">
         <a target="_blank" :href="patreon.link?patreon.link:'https://www.patreon.com/luisdanielroviracontreras'" rel="noopener noreferrer">
           <img v-if="patreon.img" :src="$withBase(patreon.img)" alt="Vuemerang-patreon">
-          <i v-if="!patreon.img" class="material-icons">
-          add
+          <i v-if="!patreon.img" class="eva eva-plus">
           </i>
 
         </a>
@@ -17,8 +16,7 @@
       <li class="patreon2" :class="{'patreonx':patreon.name}" :title="patreon.name?`Proudly patronized by ${patreon.name}`:'Become a Patron - Add your logo here'" v-for="patreon,index in patreons2">
         <a target="_blank" :href="patreon.link?patreon.link:'https://www.patreon.com/luisdanielroviracontreras'" rel="noopener noreferrer">
           <img v-if="patreon.img" :src="$withBase(patreon.img)" alt="Vuemerang-patreon">
-          <i v-if="!patreon.img" class="material-icons">
-          add
+          <i v-if="!patreon.img" class="eva eva-plus">
           </i>
 
         </a>

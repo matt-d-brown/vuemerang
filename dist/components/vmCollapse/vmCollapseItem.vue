@@ -42,11 +42,11 @@ export default {
       type: Boolean
     },
     iconArrow:{
-      default: 'keyboard_arrow_down',
+      default: 'chevron-down',
       type: String
     },
     iconPack:{
-      default: 'material-icons',
+      default: 'eva',
       type: String
     },
   },

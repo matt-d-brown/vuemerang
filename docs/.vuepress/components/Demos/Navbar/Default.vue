@@ -1,7 +1,7 @@
 <template>
   <div>
     <vm-navbar v-model="activeItem" class="nabarx">
-      <vm-button type="flat" icon="menu" icon-pack='material-icons'></vm-button>
+      <vm-button type="flat" icon="menu" icon-pack='eva'></vm-button>
 
       <vm-navbar-title>
         Hello world

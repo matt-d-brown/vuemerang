@@ -8,14 +8,12 @@
         v-if="sortKey" 
         class="sort-th">
         <i 
-          class="material-icons up-sort" 
+          class="eva eva-chevron-up" 
           @click="sortValue(false)">
-          expand_less
         </i>
         <i 
-          class="material-icons down-sort" 
+          class="eva eva-chevron-down" 
           @click="sortValue(true)">
-          expand_more
         </i>
       </span>
       <slot></slot>

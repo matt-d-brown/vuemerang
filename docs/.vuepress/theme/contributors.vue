@@ -12,7 +12,7 @@
         <router-link
           to="/contribuitors/"
         >
-          <i class="material-icons">
+          <i class="eva">
             add
           </i>
         </router-link>

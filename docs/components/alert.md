@@ -33,8 +33,8 @@ API:
  - name: icon-pack
    type: String
    parameters: null
-   description: Determines the icon pack. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-   default: material-icons
+   description: Determines the icon pack. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: eva
 ---
 
 # Alert
@@ -207,8 +207,8 @@ export default {
 
 You can also change the icon used for the close buton on the alerts.
 
-::: tip
-Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+:::tip
+Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 <vuecode md>
@@ -251,10 +251,10 @@ export default {
 
 ## Icons
 
-You can add to the alert a descriptive icon with the property `icon` and as a value the icon name of the icon in the currently selected icon pack. (The default is [Material Icons](https://material.io/icons/))
+You can add to the alert a descriptive icon with the property `icon` and as a value the icon name of the icon in the currently selected icon pack. (The default is [Eva Icons](https://akveo.github.io/eva-icons/))
 
-::: tip
-Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+:::tip
+Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 <vuecode md>
@@ -308,7 +308,7 @@ An example would be to have an input and when a condition is met show the **vm-a
 <template lang="html">
   <div class="centerx">
     <input vm-label="Enter only numbers" vm-placeholder="0123456789" v-model="value1"/>
-    <vm-alert :active="inputValid" color="danger" icon="new_releases" >
+    <vm-alert :active="inputValid" color="danger" icon="alert-circle-outline" >
       <span>the value is <b>invalid</b> you can only enter numbers</span>
     </vm-alert>
   </div>

@@ -26,7 +26,7 @@
       class="selectExample"
       label="Figuras"
       v-model="select4"
-      icon="arrow_downward"
+      icon="arrow-down-outline"
       >
       <vm-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options4" />
     </vm-select>

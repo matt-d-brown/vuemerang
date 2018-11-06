@@ -33,7 +33,7 @@
         </template>
         <span
           v-if="!item.active"
-          :class="separator.length > 1 ? 'material-icons' : null"
+          :class="separator.length > 1 ? 'eva' : null"
           class="separator notranslate vm-breadcrum--separator"
           translate="no"
           aria-hidden="true">{{ separator }}</span>

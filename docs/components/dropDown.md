@@ -34,12 +34,12 @@ API:
    type: String
    parameters: null
    description: Define the icon show when have a (vm-dropdown-group).
-   default: keyboard_arrow_right
+   default: chevron-down
  - name: icon-pack
    type: String
    parameters: Icon Pack Class Name
-   description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-   default: material-icons
+   description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: eva
 ---
 
 # DropDown
@@ -87,8 +87,7 @@ To add the Dropdown we have three types of components the main `vm-dropdown` tha
     <vm-dropdown >
       <a class="a-icon" href="#">
         Dropdown hover
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
@@ -108,8 +107,7 @@ To add the Dropdown we have three types of components the main `vm-dropdown` tha
     <vm-dropdown >
       <a class="a-icon" href.prevent>
         Dropdown Option Disabled
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
@@ -179,8 +177,7 @@ You can change the color of the component with the property `color`
     <vm-dropdown :color="colorx">
       <a class="a-icon" href="#">
         Dropdown hover
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
@@ -256,8 +253,7 @@ If you need to group the options you can use the subcomponent `vm-dropdown-group
     <vm-dropdown>
       <a class="a-icon" href.prevent>
         Dropdown Option Group
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
@@ -295,8 +291,7 @@ If you need to group the options you can use the subcomponent `vm-dropdown-group
     <vm-dropdown  >
       <a class="a-icon" href.prevent>
         Dropdown Group Collapse
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
@@ -393,8 +388,7 @@ Sometimes when we need something more personalized and not necessarily a menu fo
     <vm-dropdown vm-custom-content vm-trigger-click >
       <a class="a-icon" href.prevent>
         Click me open login
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
@@ -485,7 +479,7 @@ You can customize the component or element that initialize the dropdown in this 
 :::
 
 :::tip
-Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 ```html
@@ -497,7 +491,6 @@ Vuemerang uses the **Google Material Icons** font library by default. For a list
   </vm-dropdown-menu>
 </vm-dropdown>
 ```
-:::
 
 <vuecode md>
 <div slot="demo">
@@ -510,7 +503,7 @@ Vuemerang uses the **Google Material Icons** font library by default. For a list
   <div class="examplex">
     <vm-button class="btnx" type="filled">Dropdown</vm-button>
     <vm-dropdown>
-      <vm-button class="btn-drop" type="filled" icon="expand_more"></vm-button>
+      <vm-button class="btn-drop" type="filled" icon="chevron-down"></vm-button>
       <!-- <a href="#">Hola mundo</a> -->
 
       <vm-dropdown-menu>
@@ -538,7 +531,7 @@ Vuemerang uses the **Google Material Icons** font library by default. For a list
 
     <vm-button class="btnx" type="success-gradient">Dropdown</vm-button>
     <vm-dropdown>
-      <vm-button class="btn-drop" type="success-gradient" icon="more_horiz"></vm-button>
+      <vm-button class="btn-drop" type="success-gradient" icon="more-horizotnal"></vm-button>
       <!-- <a href="#">Hola mundo</a> -->
 
       <vm-dropdown-menu>
@@ -557,37 +550,37 @@ Vuemerang uses the **Google Material Icons** font library by default. For a list
 
     <vm-button class="btnx" type="danger-line-down">Icons</vm-button>
     <vm-dropdown>
-      <vm-button class="btn-drop" type="danger-line-down" icon="mood"></vm-button>
+      <vm-button class="btn-drop" type="danger-line-down" icon="options-outline"></vm-button>
       <!-- <a href="#">Hola mundo</a> -->
 
       <vm-dropdown-menu>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             mood
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             mood_bad
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             sentiment_dissatisfied
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             sentiment_satisfied
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             sentiment_very_dissatisfied
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             sentiment_very_satisfied
           </i>
         </vm-dropdown-item>

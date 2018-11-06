@@ -17,14 +17,14 @@ API:
    default: null
  - name: icon
    type: String
-   parameters: Material Icons
+   parameters: Eva Icons
    description: Change the checkBox icon.
    default: checked
  - name: icon-pack
    type: String
    parameters: Icon Pack Class Name
-   description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-   default: material-icons
+   description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: eva
 ---
 
 # CheckBox
@@ -344,7 +344,7 @@ export default {
 Sometimes we want to change the internal icon inside the checkbox. To do so, we have the property `icon`
 
 ::: tip
-Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 
 :::
 
@@ -362,22 +362,13 @@ Vuemerang uses the **Google Material Icons** font library by default. For a list
         <vm-checkbox v-model="checkBox1">Primary</vm-checkbox>
       </li>
       <li>
-        <vm-checkbox icon="sms" color="success" v-model="checkBox2">SMS</vm-checkbox>
+        <vm-checkbox icon="message-square-outline" color="success" v-model="checkBox2">SMS</vm-checkbox>
       </li>
       <li>
         <vm-checkbox icon="close" color="danger" v-model="checkBox3">Cancel</vm-checkbox>
       </li>
       <li>
-        <vm-checkbox icon="attach_file" color="warning" v-model="checkBox4">File</vm-checkbox>
-      </li>
-      <li>
-        <vm-checkbox icon="format_bold" color="dark" v-model="checkBox5">Bold</vm-checkbox>
-      </li>
-      <li>
-        <vm-checkbox icon="location_searching" color="rgb(38, 187, 174)" v-model="checkBox6">Location</vm-checkbox>
-      </li>
-      <li>
-        <vm-checkbox icon="camera_alt" color="#720ea8" v-model="checkBox7">Camera</vm-checkbox>
+        <vm-checkbox icon="attach-2-outline" color="warning" v-model="checkBox4">File</vm-checkbox>
       </li>
     </ul>
   </div>

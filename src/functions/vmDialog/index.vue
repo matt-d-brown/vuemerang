@@ -100,7 +100,7 @@ export default {
       type:String
     },
     vmIconPack:{
-      default:'material-icons',
+      default:'eva',
       type:String
     },
     vmCloseIcon:{
@@ -120,7 +120,7 @@ export default {
     acceptText:'Accept',
     cancelText:'Cancel',
     closeIcon:'close',
-    iconPack:'material-icons'
+    iconPack:'eva'
   }),
   computed:{
     styleHeader(){

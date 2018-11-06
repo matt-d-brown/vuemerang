@@ -15,7 +15,7 @@
           :checked="isSelected"
           size="small"/>
 
-        <vm-icon v-if="$slots.expand">keyboard_arrow_down</vm-icon>
+        <vm-icon v-if="$slots.expand" :icon-pack="iconPack" :icon="icon"></vm-icon>
       </td>
       <slot></slot>
     </tr>
@@ -44,6 +44,14 @@ export default {
     },
     data: {
       default: null
+    },
+    icon:{
+      type:String,
+      default:'arrow-ios-forward'
+    },
+    iconPack:{
+      type:String,
+      default:'eva'
     },
   },
   data:()=>({

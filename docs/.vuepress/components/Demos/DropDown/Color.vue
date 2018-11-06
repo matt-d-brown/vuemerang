@@ -6,8 +6,7 @@
     <vm-dropdown :color="colorx">
       <a class="a-icon" href="#">
         Dropdown hover
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 

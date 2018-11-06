@@ -2,7 +2,7 @@
   <div class="centerx">
     <vm-input vm-label="Enter only numbers" placeholder="0123456789" v-model="value"/>
 
-    <vm-alert :active="inputValid" color="danger" icon="new_releases">
+    <vm-alert :active="inputValid" color="danger" icon="alert-circle-outline">
       <span>the value is <b>invalid</b> you can only enter numbers</span>
     </vm-alert>
   </div>

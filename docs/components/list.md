@@ -7,14 +7,14 @@ API:
     default: primary
   - name: icon
     type: String
-    parameters: Material icons
+    parameters: Eva Icons
     description: An icon to show
     default: null
   - name: icon-pack
     type: String
     parameters: Icon Pack Class Name
-    description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-    default: material-icons
+    description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+    default: eva
   - name: title
     type: String
     parameters:
@@ -113,30 +113,30 @@ A `vm-list-header` separator with custom `color`.
 The list items and the headers can have a `icon` as well.
 
 ::: tip
-Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 <vuecode md>
 <div slot="demo">
   <vm-list>
-    <vm-list-header icon="supervisor_account" title="Group 1"></vm-list-header>
-    <vm-list-item icon="check" title="Snickerdoodle" subtitle="An excellent companion"></vm-list-item>
-    <vm-list-item icon="check" title="Sapporo Haru" subtitle="An excellent polish restaurant, quick delivery and hearty, filling meals"></vm-list-item>
+    <vm-list-header icon="people" title="Group 1"></vm-list-header>
+    <vm-list-item icon="checkmark" title="Snickerdoodle" subtitle="An excellent companion"></vm-list-item>
+    <vm-list-item icon="checkmark" title="Sapporo Haru" subtitle="An excellent polish restaurant, quick delivery and hearty, filling meals"></vm-list-item>
     <vm-list-header icon="how_to_reg" title="Group 2" color="success"></vm-list-header>
-    <vm-list-item icon="verified_user" title="Enid's" subtitle="At night a bar, during the day a delicious brunch spot."></vm-list-item>
-    <vm-list-item icon="verified_user" title="Veronika Ossi" subtitle="Has not watched anything recently"></vm-list-item>
+    <vm-list-item icon="shield" title="Enid's" subtitle="At night a bar, during the day a delicious brunch spot."></vm-list-item>
+    <vm-list-item icon="shield" title="Veronika Ossi" subtitle="Has not watched anything recently"></vm-list-item>
   </vm-list>
 </div>
 <div slot="code">
 
 ```html
   <vm-list>
-    <vm-list-header icon="supervisor_account" title="Group 1"></vm-list-header>
-    <vm-list-item icon="check" title="Snickerdoodle" subtitle="An excellent companion"></vm-list-item>
-    <vm-list-item icon="check" title="Sapporo Haru" subtitle="An excellent polish restaurant, quick delivery and hearty, filling meals"></vm-list-item>
+    <vm-list-header icon="people" title="Group 1"></vm-list-header>
+    <vm-list-item icon="checkmark" title="Snickerdoodle" subtitle="An excellent companion"></vm-list-item>
+    <vm-list-item icon="checkmark" title="Sapporo Haru" subtitle="An excellent polish restaurant, quick delivery and hearty, filling meals"></vm-list-item>
     <vm-list-header icon="how_to_reg" title="Group 2" color="success"></vm-list-header>
-    <vm-list-item icon="verified_user" title="Enid's" subtitle="At night a bar, during the day a delicious brunch spot."></vm-list-item>
-    <vm-list-item icon="verified_user" title="Veronika Ossi" subtitle="Has not watched anything recently"></vm-list-item>
+    <vm-list-item icon="shield" title="Enid's" subtitle="At night a bar, during the day a delicious brunch spot."></vm-list-item>
+    <vm-list-item icon="shield" title="Veronika Ossi" subtitle="Has not watched anything recently"></vm-list-item>
   </vm-list>
 ```
 

@@ -2,6 +2,7 @@ import './main.styl'
 import Vuemerang from '../../src'
 import Vuecode from 'viewcode/dist/vuecode.common.js'
 import 'viewcode/dist/vuecode.css'
+// import 'eva-icons/style/eva-icons.css'
 import demo from './theme/demo.vue'
 import Box from './theme/box.vue'
 export default ({

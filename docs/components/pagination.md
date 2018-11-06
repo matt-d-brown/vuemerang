@@ -19,17 +19,17 @@ API:
    type: String
    parameters:
    description: Customize the previous button icon
-   default: chevron_left
+   default: chevron-left
  - name: next-icon
    type: String
    parameters:
    description: Customize the next button icon
-   default: chevron_right
+   default: chevron-right
  - name: icon-pack
    type: String
    parameters: Icon Pack Class Name
-   description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-   default: material-icons
+   description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: eva
  - name: color
    type: String
    parameters:
@@ -84,10 +84,10 @@ export default {
 ## Icons
 
 To customize the previous and next page icons change the value of the `prev-icon` and `prev-icon` directives.
-By default, their values are respectively **arrow_back** and **arrow_forward**.
+By default, their values are respectively **arrow-back** and **arrow-forward**.
 
 ::: tip
-Vuemerang uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
+Vuemerang uses the **Eva Icons** font library. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/).
 
 FontAwesome and other fonts library are supported. Simply use the `icon-pack` with `fa` or `fas`. You still need to include the Font Awesome icons in your project.
 
@@ -102,7 +102,7 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 ```html
 <template>
   <div>
-    <vm-pagination :total="100" v-model="currentx" prev-icon="arrow_back" next-icon="arrow_forward"></vm-pagination>
+    <vm-pagination :total="100" v-model="currentx" prev-icon="arrow-back" next-icon="arrow-forward"></vm-pagination>
   </div>
 </template>
 <script>

@@ -1,9 +1,9 @@
 <template>
   <i
     :style="iconStyle"
-    :class="[iconPack, iconPack !='material-icons' ? icon : '',iconClass,getBg,getBgSize,{'round':round}]"
-    class="vm-icon notranslate icon-scale">
-    <slot>{{iconPack == 'material-icons' ? icon : ''}}</slot>
+    :class="[iconPack, iconPack != 'eva' ? icon : iconEva,iconClass,getBg,getBgSize,{'round':round}]"
+    class="vm-icon notranslate icon-scale"
+    data-eva="github">
   </i>
 </template>
 <script>
@@ -17,7 +17,7 @@ export default {
       type: String
     },
     iconPack: {
-      default: 'material-icons',
+      default: 'eva',
       type: String
     },
     color: {
@@ -45,6 +45,13 @@ export default {
         classes[`vm-icon-${this.color}`] = true
       }
       return classes
+    },
+    iconEva() {
+      let evaicon = null
+      if (this.iconPack == 'eva') {
+        evaicon = `eva-${this.icon}`
+      }
+      return evaicon
     },
     iconStyle() {
       const style = {

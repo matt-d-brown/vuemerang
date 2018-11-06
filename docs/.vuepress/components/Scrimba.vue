@@ -1,6 +1,6 @@
 <template>
   <a target="_blank" :href="href" class="con-scrimba">
-    <i class="material-icons con-btn-play">
+    <i class="eva con-btn-play">
       play_arrow
     </i>
     <span class="text">{{ text }}</span>

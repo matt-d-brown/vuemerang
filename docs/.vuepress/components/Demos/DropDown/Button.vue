@@ -2,7 +2,7 @@
   <div class="examplex">
     <vm-button class="btnx" type="filled">Dropdown</vm-button>
     <vm-dropdown>
-      <vm-button class="btn-drop" type="filled" icon="expand_more"></vm-button>
+      <vm-button class="btn-drop" type="filled" icon="chevron-down"></vm-button>
       <!-- <a href="#">Hola mundo</a> -->
 
       <vm-dropdown-menu>
@@ -30,7 +30,7 @@
 
     <vm-button class="btnx" color="success" type="gradient">Dropdown</vm-button>
     <vm-dropdown>
-      <vm-button class="btn-drop" color="success" type="gradient" icon="more_horiz"></vm-button>
+      <vm-button class="btn-drop" color="success" type="gradient" icon="more-horizotnal"></vm-button>
       <!-- <a href="#">Hola mundo</a> -->
 
       <vm-dropdown-menu>
@@ -49,37 +49,37 @@
 
     <vm-button class="btnx" color="danger" type="line">Icons</vm-button>
     <vm-dropdown>
-      <vm-button class="btn-drop" color="danger" type="line" icon="mood"></vm-button>
+      <vm-button class="btn-drop" color="danger" type="line" icon="options-outline"></vm-button>
       <!-- <a href="#">Hola mundo</a> -->
 
       <vm-dropdown-menu>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             mood
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             mood_bad
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             sentiment_dissatisfied
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             sentiment_satisfied
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             sentiment_very_dissatisfied
           </i>
         </vm-dropdown-item>
         <vm-dropdown-item>
-          <i class="material-icons">
+          <i class="eva">
             sentiment_very_satisfied
           </i>
         </vm-dropdown-item>

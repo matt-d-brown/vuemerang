@@ -63,8 +63,8 @@ API:
  - name: vm-icon-pack
    type: String
    parameters: Icon Pack Class Name
-   description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-   default: material-icons
+   description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: eva
 #  - name: vm-close-icon
 #    type: String
 #    parameters: null

@@ -4,8 +4,7 @@
     <vm-dropdown vm-custom-content vm-trigger-click >
       <a class="a-icon" href.prevent>
         Click me open login
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 

@@ -67,7 +67,7 @@ import * as eva from 'eva-icons';
 ```
 
 Also, please check the available icons from the following.
-[https://material.io/tools/icons/](https://material.io/tools/icons/)
+[https://akveo.github.io/eva-icons/](https://akveo.github.io/eva-icons/)
 
 </box>
 

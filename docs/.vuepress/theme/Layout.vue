@@ -47,6 +47,7 @@ import Sidebar from './Sidebar.vue'
 import sidebarMap from './SidebarMap.vue'
 import { resolveSidebarItems, pathToComponentName } from './util'
 import './icons/font/flaticon.css'
+import './eva-icons/style/eva-icons.css'
 import CodeFund from "./CodeFund";
 import Carbon from "./Carbon";
 export default {

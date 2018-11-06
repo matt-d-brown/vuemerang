@@ -7,14 +7,14 @@ API:
    default: primary
  - name: icon
    type: String
-   parameters: Material Icons
+   parameters: Eva Icons
    description: Determines the icon displayed when displaying the value.
    default: null
  - name: icon-pack
    type: String
    parameters: Icon Pack Class Name
-   description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-   default: material-icons
+   description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: eva
  - name: step
    type: Number
    parameters: 1-100
@@ -205,7 +205,7 @@ export default {
 You can add an icon with the `icon` property to better representation the sliders to the user.
 
 ::: tip
-Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 <vuecode md>

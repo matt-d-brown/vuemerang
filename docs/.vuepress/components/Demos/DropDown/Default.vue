@@ -4,8 +4,7 @@
     <vm-dropdown >
       <a class="a-icon" href="#">
         Dropdown hover
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
@@ -25,9 +24,8 @@
     <vm-dropdown >
       <a class="a-icon" href.prevent>
         Dropdown Option Disabled
-        <i class="material-icons">
-        expand_more
-        </i>
+        <i class="eva eva-chevron-down">
+        </i>>
       </a>
 
       <vm-dropdown-menu>

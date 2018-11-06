@@ -86,7 +86,7 @@
         <i
           v-if="icon"
           translate="no"
-          class="material-icons notranslate">
+          class="eva notranslate">
           {{ icon }}
         </i>
       </span>
@@ -130,7 +130,7 @@ export default {
       type:String
     },
     iconPack:{
-      default:'material-icons',
+      default:'eva',
       type:String
     },
     textFixed:{

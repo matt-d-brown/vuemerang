@@ -15,7 +15,7 @@ export default {
   },
   data(){
     return {
-      icon1: 'sms',
+      icon1: 'alert-circle-outline',
     }
   }
 }

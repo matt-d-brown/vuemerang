@@ -39,11 +39,11 @@ export default {
     },
     value:{},
     icon:{
-      default:'check',
+      default:'checkmark',
       type:String
     },
     iconPack:{
-      default:'material-icons',
+      default:'eva',
       type:String
     },
     vmValue:{

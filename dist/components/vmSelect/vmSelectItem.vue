@@ -23,7 +23,7 @@
       @keydown.enter.prevent="clickOption()">
       <i
         v-if="$parent.parent.multiple"
-        class="material-icons icon-item vm-select--item-icon">
+        class="eva icon-item vm-select--item-icon">
         check_circle
       </i>
       <span

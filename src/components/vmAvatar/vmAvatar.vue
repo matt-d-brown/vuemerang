@@ -27,7 +27,7 @@
       translate="no"
       class="vm-avatar--text notranslate"
     >
-      {{ text ? returnText : iconPack == 'material-icons' ? icon : '' }}
+      {{ text ? returnText : iconPack == 'eva' ? icon : '' }}
     </span>
 
   </div>
@@ -61,7 +61,7 @@ export default {
     },
     iconPack:{
       type:String,
-      default:'material-icons'
+      default:'eva'
     },
     textColor:{
       type:String,
@@ -113,7 +113,7 @@ export default {
     },
     textClass() {
       const classes = {
-        'material-icons': !this.text
+        'eva': !this.text
       }
       if (_color.isColor(this.textColor)) {
         classes[`vm-avatar-text-${this.textColor}`] = true

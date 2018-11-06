@@ -157,11 +157,11 @@ export default {
       type:String
     },
     iconPack:{
-      default: 'material-icons',
+      default: 'eva',
       type:String
     },
     icon:{
-      default: 'keyboard_arrow_down',
+      default: 'arrow-ios-downward-outline',
       type:String
     },
   },

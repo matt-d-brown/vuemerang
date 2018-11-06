@@ -160,7 +160,7 @@ export default {
 
 ## Separator
 
-You can change the separator dividing the links by either passing a string to the `separator` directive like so "**•**", "**-**", "**|**" etc..., or by passing in one of the material icons text "**chevron_right**".
+You can change the separator dividing the links by either passing a string to the `separator` directive like so "**•**", "**-**", "**|**" etc..., or by passing in one of the Eva Icons text "**chevron_right**".
 
 :::warning
   In order to differeciate a custom separator "**•**" from an icon "**chevron_right**", we verify the string length. If the length is **greater than 1** it will be considered a material icon.

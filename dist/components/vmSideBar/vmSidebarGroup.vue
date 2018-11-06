@@ -4,7 +4,7 @@
     class="vm-sidebar-group"
     @mouseover="mouseover"
     @mouseout="mouseout">
-    <h4 @click="clickGroup">{{ title }} <vm-icon>keyboard_arrow_down</vm-icon></h4>
+    <h4 @click="clickGroup">{{ title }} <vm-icon></vm-icon></h4>
     <span class="vm-sidebar--tooltip">{{ title }}</span>
     <ul
       ref="items"

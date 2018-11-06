@@ -81,15 +81,15 @@ export default {
     },
     prevIcon:{
       type:String,
-      default:'chevron_left'
+      default:'chevron-left'
     },
     nextIcon:{
       type:String,
-      default:'chevron_right'
+      default:'chevron-right'
     },
     iconPack:{
       type:String,
-      default:'material-icons'
+      default:'eva'
     },
   },
   data: () => ({

@@ -77,12 +77,12 @@ API:
    type: String
    parameters: icon name
    description: Element icon.
-   default: keyboard_arrow_down
+   default: chevron-down
  - name: icon-pack
    type: String
    parameters: Icon Pack Class Name
-   description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-   default: material-icons
+   description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: eva
 ---
 
 # Select
@@ -100,7 +100,7 @@ Selects with a clean and smooth animation, that are very easy to implement.
 To add a select to the application we have the component `vm-select`. You can customize the arrow icon by passing an icon name to `icon`.
 
 ::: tip
-Vuemerang uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
+Vuemerang uses the **Eva Icons** font library. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/).
 
 FontAwesome and other fonts library are supported. Simply use the `icon-pack` with `fa` or `fas`. You still need to include the Font Awesome icons in your project.
 
@@ -144,7 +144,7 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
       class="selectExample"
       label="Figuras"
       v-model="select4"
-      icon="arrow_downward"
+      icon="arrow-down"
       >
       <vm-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options4" />
     </vm-select>

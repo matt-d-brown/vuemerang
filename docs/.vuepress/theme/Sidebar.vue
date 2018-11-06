@@ -4,16 +4,6 @@
 
     <slot name="top"/>
     <div class="sponsor-sidebar">
-      <h4>Sponsors</h4>
-      <ul>
-        <li title="Become a Sponsor" v-for="sponsor in 3">
-          <a target="_blank" href="https://www.patreon.com/bePatron?c=1567892">
-            <i v-if="!sponsor.img" class="material-icons">
-              add
-            </i>
-          </a>
-        </li>
-      </ul>
     </div>
 
     <SearchBox v-if="$site.themeConfig.search !== false"/>

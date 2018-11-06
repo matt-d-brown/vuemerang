@@ -15,8 +15,7 @@
           v-model="searchx"
           class="input-search vm-table--search-input"
           type="text">
-        <i class="material-icons">
-          search
+        <i class="eva eva-search">
         </i>
       </div>
     </header>
@@ -41,7 +40,7 @@
                   v-if="multiple"
                   class="con-td-check">
                   <vm-checkbox
-                    :icon="isCheckedLine ? 'remove' : 'check'"
+                    :icon="isCheckedLine ? 'minus' : 'checkmark'"
                     :checked="isCheckedMultiple"
                     size="small"
                     @click="changeCheckedMultiple"/>

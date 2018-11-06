@@ -17,14 +17,14 @@ API:
     default: null
   - name: icon
     type: String
-    parameters: Material Icons
+    parameters: Eva Icons
     description: Determine the button icon
     default: null
   - name: icon-pack
     type: String
     parameters: Icon Pack Class Name
-    description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
-    default: material-icons
+    description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+    default: eva
   - name: icon-after
     type: Boolean
     parameters: null
@@ -384,7 +384,7 @@ You can change the font color of buttons, need only set the prop `text-color` wi
 You can add an icon to the button with the property `icon`
 
 ::: tip
-Vuemerang uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 
 :::tip
@@ -393,12 +393,12 @@ Vuemerang uses the **Google Material Icons** font library by default. For a list
 
 <vuecode md center>
 <div slot="demo">
-<vm-button color="primary" type="border" icon="home">Home</vm-button>
+<vm-button color="primary" type="border" icon="home-outline">Home</vm-button>
 <vm-button color="warning" type="filled" icon="star">Star</vm-button>
-<vm-button color="success" type="flat" icon="done">Done</vm-button>
+<vm-button color="success" type="flat" icon="checkmark">Done</vm-button>
 <vm-button icon-after color="dark" type="line" icon="menu">menu</vm-button>
-<vm-button icon-after color="danger" type="gradient" icon="favorite">favorite</vm-button>
-<vm-button disabled color="primary" type="border" icon="home">Disabled</vm-button>
+<vm-button icon-after color="danger" type="gradient" icon="heart-outline">favorite</vm-button>
+<vm-button disabled color="primary" type="border" icon="home-outline">Disabled</vm-button>
 </div>
 
 <div slot="code">
@@ -429,36 +429,36 @@ You can have a button with only the icon you want with the property `icon` and n
 <vuecode md center>
 <div slot="demo">
 <vm-button color="primary" type="border" icon="search"></vm-button>
-<vm-button color="warning" type="filled" icon="public"></vm-button>
-<vm-button color="success" type="flat" icon="photo_camera"></vm-button>
-<vm-button color="dark" type="line" icon="event_note"></vm-button>
-<vm-button color="danger" type="gradient" icon="person_add"></vm-button>
+<vm-button color="warning" type="filled" icon="globe-2-outline"></vm-button>
+<vm-button color="success" type="flat" icon="video-outline"></vm-button>
+<vm-button color="dark" type="line" icon="calendar-outline"></vm-button>
+<vm-button color="danger" type="gradient" icon="person-add-outline"></vm-button>
 <vm-button disabled color="primary" type="border" icon="search"></vm-button>
 <br>
 <br>
 <vm-button radius color="primary" type="border" icon="search"></vm-button>
-<vm-button radius color="warning" type="filled" icon="public"></vm-button>
-<vm-button radius color="success" type="flat" icon="photo_camera"></vm-button>
-<vm-button radius color="dark" type="line" icon="event_note"></vm-button>
-<vm-button radius color="danger" type="gradient" icon="person_add"></vm-button>
+<vm-button radius color="warning" type="filled" icon="globe-2-outline"></vm-button>
+<vm-button radius color="success" type="flat" icon="video-outline"></vm-button>
+<vm-button radius color="dark" type="line" icon="calendar-outline"></vm-button>
+<vm-button radius color="danger" type="gradient" icon="person-add-outline"></vm-button>
 <vm-button disabled radius color="primary" type="border" icon="search"></vm-button>
 </div>
 <div slot="code">
 
 ```html
 <vm-button color="primary" type="border" icon="search"></vm-button>
-<vm-button color="warning" type="filled" icon="public"></vm-button>
-<vm-button color="success" type="flat" icon="photo_camera"></vm-button>
-<vm-button color="dark" type="line" icon="event_note"></vm-button>
-<vm-button color="danger" type="gradient" icon="person_add"></vm-button>
+<vm-button color="warning" type="filled" icon="globe-2-outline"></vm-button>
+<vm-button color="success" type="flat" icon="video-outline"></vm-button>
+<vm-button color="dark" type="line" icon="calendar-outline"></vm-button>
+<vm-button color="danger" type="gradient" icon="person-add-outline"></vm-button>
 <vm-button disabled color="primary" type="border" icon="search"></vm-button>
 <br>
 <br>
 <vm-button radius color="primary" type="border" icon="search"></vm-button>
-<vm-button radius color="warning" type="filled" icon="public"></vm-button>
-<vm-button radius color="success" type="flat" icon="photo_camera"></vm-button>
-<vm-button radius color="dark" type="line" icon="event_note"></vm-button>
-<vm-button radius color="danger" type="gradient" icon="person_add"></vm-button>
+<vm-button radius color="warning" type="filled" icon="globe-2-outline"></vm-button>
+<vm-button radius color="success" type="flat" icon="video-outline"></vm-button>
+<vm-button radius color="dark" type="line" icon="calendar-outline"></vm-button>
+<vm-button radius color="danger" type="gradient" icon="person-add-outline"></vm-button>
 <vm-button disabled radius color="primary" type="border" icon="search"></vm-button>
 ```
 

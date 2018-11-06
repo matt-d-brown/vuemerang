@@ -5,22 +5,13 @@
         <vm-checkbox v-model="checkBox1">Primary</vm-checkbox>
       </li>
       <li>
-        <vm-checkbox icon="sms" color="success" v-model="checkBox2">sms</vm-checkbox>
+        <vm-checkbox icon="message-square-outline" color="success" v-model="checkBox2">sms</vm-checkbox>
       </li>
       <li>
         <vm-checkbox icon="close" color="danger" v-model="checkBox3">Cancel</vm-checkbox>
       </li>
       <li>
-        <vm-checkbox icon="attach_file" color="warning" v-model="checkBox4">File</vm-checkbox>
-      </li>
-      <li>
-        <vm-checkbox icon="format_bold" color="dark" v-model="checkBox5">Bold</vm-checkbox>
-      </li>
-      <li>
-        <vm-checkbox icon="location_searching" color="rgb(38, 187, 174)" v-model="checkBox6">location</vm-checkbox>
-      </li>
-      <li>
-        <vm-checkbox icon="camera_alt" color="#720ea8" v-model="checkBox7">Camera</vm-checkbox>
+        <vm-checkbox icon="attach-2-outline" color="warning" v-model="checkBox4">File</vm-checkbox>
       </li>
     </ul>
   </div>

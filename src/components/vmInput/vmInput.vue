@@ -146,7 +146,7 @@ export default {
       type:[Boolean,String]
     },
     iconPack:{
-      default:'material-icons',
+      default:'eva',
       type:String
     },
     color:{

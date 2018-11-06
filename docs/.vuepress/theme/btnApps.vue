@@ -1,8 +1,7 @@
 <template>
   <div ref="btnapps" :class="{'active': active}" class="con-btn-apps">
     <button @click="active = !active" title="Lusaxweb Apps" class="btn-apps">
-      <i class="material-icons">
-        {{ active? 'chevron_left' : 'apps' }}
+      <i class="eva" :class="active ?' eva-chevron-left' : 'eva-grid'">
       </i>
     </button>
     <div class="con-ul">
@@ -10,26 +9,6 @@
         <li>
           <a title="Vuemerang" target="_blank" href="https://controlla.github.io/Vuemerang/">
             <img :src="$withBase('/apps/Vuemerang.png')" alt="">
-          </a>
-        </li>
-        <li>
-          <a title="DevAwesome" target="_blank" href="https://controlla.github.io/devAwesome/#/">
-            <img :src="$withBase('/apps/devawesome.png')" alt="">
-          </a>
-        </li>
-        <li>
-          <a title="Vue-share" target="_blank" href="https://controlla.github.io/vue-share/">
-            <img :src="$withBase('/apps/vueshare.png')" alt="">
-          </a>
-        </li>
-        <li>
-          <a title="Vuenut" target="_blank" href="https://controlla.github.io/vuenut.org/">
-            <img :src="$withBase('/apps/vuenut.png')" alt="">
-          </a>
-        </li>
-        <li>
-          <a title="Lusaxweb" target="_blank" href="https://controlla.com">
-            <img :src="$withBase('/apps/controlla.png')" alt="">
           </a>
         </li>
       </ul>

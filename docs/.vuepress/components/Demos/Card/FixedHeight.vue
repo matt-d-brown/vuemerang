@@ -16,8 +16,8 @@
         </div>
         <div slot="footer">
           <vm-row vm-justify="flex-end">
-            <vm-button type="gradient" color="danger" icon="favorite"></vm-button>
-            <vm-button color="primary" icon="turned_in_not"></vm-button>
+            <vm-button type="gradient" color="danger" icon="heart-outline"></vm-button>
+            <vm-button color="primary" icon="bookmark-outline"></vm-button>
             <vm-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vm-button>
           </vm-row>
         </div>
@@ -38,8 +38,8 @@
         </div>
         <div slot="footer">
           <vm-row vm-justify="flex-end">
-            <vm-button type="gradient" color="danger" icon="favorite"></vm-button>
-            <vm-button color="primary" icon="turned_in_not"></vm-button>
+            <vm-button type="gradient" color="danger" icon="heart-outline"></vm-button>
+            <vm-button color="primary" icon="bookmark-outline"></vm-button>
             <vm-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vm-button>
           </vm-row>
         </div>

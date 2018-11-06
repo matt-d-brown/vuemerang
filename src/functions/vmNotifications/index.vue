@@ -37,7 +37,7 @@ export default {
   data:()=>({
     fullWidth:false,
     icon:null,
-    iconPack:'material-icons',
+    iconPack:'eva',
     color:'primary',
     colorText:'rgb(255, 255, 255)',
     active:true,

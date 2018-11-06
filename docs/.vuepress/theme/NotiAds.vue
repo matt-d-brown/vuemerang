@@ -1,10 +1,10 @@
 <template>
   <div class="notiads">
     <div class="sponsor-special">
-      <h4>Sponsorship</h4>
+      <h4>Development</h4>
       <div :title="'Beacome a Sponsor ' + titlex" class="sponsor-s">
         <a target="_blank" href="https://www.patreon.com/bePatron?c=1567892">
-          <!-- <i class="material-icons">
+          <!-- <i class="eva">
             add
           </i> -->
           <img v-if="ramdom == 1" :src="$withBase('/patreon/Coffe-Vuemerang.png')" alt="">
@@ -16,10 +16,6 @@
           <img v-if="ramdom == 7" :src="$withBase('/patreon/07-Vuemerang-Special-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vue.png')" alt="">
         </a>
       </div>
-      <a target="_blank" href="https://www.patreon.com/bePatron?c=1567892" class="btn-patreon" rel="noopener noreferrer">
-        <img :src="$withBase('/patreon.webp')" alt="Vuemerang-patreon">
-        Become a patron
-      </a>
     </div>
     <div class="noti">
 

@@ -34,8 +34,7 @@
         @click="upload('all')">
         <i
           translate="no"
-          class="material-icons notranslate">
-          cloud_upload
+          class="eva notranslate eva-cloud-upload-outline">
         </i>
       </button>
     </div>
@@ -56,8 +55,7 @@
             @click="removeFile(index)">
             <i
               translate="no"
-              class="material-icons notranslate">
-              clear
+              class="eva notranslate eva-close">
             </i>
           </button>
           <button
@@ -73,8 +71,8 @@
             @click="upload(index)">
             <i
               translate="no"
-              class="material-icons notranslate">
-              {{ img.percent >= 100?img.error?'report_problem':'cloud_done':'cloud_upload' }}
+              class="eva notranslate"
+              :class="img.percent >= 100?img.error?'eva-alert-circle-outline':'eva-checkmark-circle-outline':'eva-cloud-upload-outline'">
             </i>
             <span>{{ img.percent }} %</span>
           </button>
@@ -93,7 +91,7 @@
             class="text-archive">
             <i
               translate="no"
-              class="material-icons notranslate">
+              class="eva notranslate">
               description
             </i>
             <span>

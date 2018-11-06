@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <vm-collapse>
-     <vm-collapse-item icon-arrow="label">
+     <vm-collapse-item icon-arrow="backspace">
        <div slot="header">
          Collapse item
        </div>
@@ -9,7 +9,7 @@
         <br><br>
         Etiam nec nunc nec nisl luctus tincidunt efficitur vitae elit. Vestibulum iaculis nibh commodo neque ultrices lobortis. Cras magna massa, pretium vitae mattis varius, pharetra nec massa. Aliquam ac ex enim. Quisque consequat dui libero, vel blandit lorem porttitor sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam sed lobortis nisl, quis eleifend metus.
      </vm-collapse-item>
-     <vm-collapse-item icon-arrow="grade">
+     <vm-collapse-item icon-arrow="star">
        <div slot="header">
          Collapse item 2
        </div>
@@ -19,13 +19,13 @@
        <br><br>
        efficitur. Mauris quis faucibus nulla. Pellentesque egestas non ipsum vel maximus.
      </vm-collapse-item>
-     <vm-collapse-item disabled  icon-arrow="arrow_downward">
+     <vm-collapse-item disabled  icon-arrow="arrow-downward">
        <div slot="header">
          Collapse item 3 - Disabled
        </div>
        Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu
      </vm-collapse-item>
-     <vm-collapse-item icon-arrow="arrow_drop_down">
+     <vm-collapse-item icon-arrow="arrow-down">
        <div slot="header">
          Collapse item 4
        </div>

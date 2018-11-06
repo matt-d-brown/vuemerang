@@ -3,8 +3,7 @@
     <vm-dropdown>
       <a class="a-icon" href.prevent>
         Dropdown Option Group
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
@@ -42,8 +41,7 @@
     <vm-dropdown  >
       <a class="a-icon" href.prevent>
         Dropdown Group Collapse
-        <i class="material-icons">
-        expand_more
+        <i class="eva eva-chevron-down">
         </i>
       </a>
 
