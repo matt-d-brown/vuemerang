@@ -216,7 +216,7 @@ export default {
     font-size 1rem
 
   .home-link
-    margin-left 2.5rem
+    margin-left 1rem
     margin-right 3.5rem
   .con-btns-header
     display flex

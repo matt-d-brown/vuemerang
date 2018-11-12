@@ -2,8 +2,9 @@
   <i
     :style="iconStyle"
     :class="[iconPack, iconPack != 'eva' ? icon : iconEva,iconClass,getBg,getBgSize,{'round':round}]"
-    class="vm-icon notranslate icon-scale"
-    data-eva="github">
+    class="vm-icon notranslate icon-scale">
+    <span>
+    </span>
   </i>
 </template>
 <script>

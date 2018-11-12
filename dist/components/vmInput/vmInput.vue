@@ -204,7 +204,7 @@ export default {
   computed:{
     style(){
       return {
-        border: `1px solid ${this.isFocus?_color.getColor(this.color,1):'rgba(0, 0, 0,.2)'}`,
+        border: `1px solid ${this.isFocus?_color.getColor(this.color,1):'rgba(0, 0, 0,0)'}`,
       }
     },
     styleLabel(){

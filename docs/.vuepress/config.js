@@ -106,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     // defaults to true, set to false to disable
     editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
-    logo:'/Vuemerang-logo-vertical.png',
+    logo:'/vuemerang-logo-vertical.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentation', link: '/development/' },

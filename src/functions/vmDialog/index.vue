@@ -15,18 +15,18 @@
         <!-- //header -->
         <header :style="styleHeader">
           <div class="con-title-after">
-            <span
-              :style="styleAfter"
-              class="after"/>
-            <h3>{{ title || vmTitle }}</h3>
+            <h4>{{ title || vmTitle }}</h4>
           </div>
-          <vm-icon
+          <vm-button
             v-if="type=='alert'"
-            :icon="vmCloseIcon"
-            :click="close"
+            radius 
+            :color="vmCloseColor" 
+            type="flat"
             :icon-pack="vmIconPack"
+            :icon="vmCloseIcon"
             class="vm-dialog-cancel vm-dialog-cancel--icon notranslate"
-          />
+            @click="cancelClose">
+          </vm-button>
         </header>
 
         <!-- // slots  -->
@@ -42,7 +42,7 @@
             :type="isPrompt?vmButtonAccept:buttonAccept"
             @click="acceptDialog">{{ isPrompt?vmAcceptText:acceptText }}</vm-button>
           <vm-button
-            :color="'rgb(0,0,0,.5)'"
+            :color="isPrompt?vmColor:color"
             :type="isPrompt?vmButtonCancel:buttonCancel"
             @click="cancelClose">{{ isPrompt?vmCancelText:cancelText }}</vm-button>
         </footer>
@@ -80,7 +80,7 @@ export default {
       type:String,
     },
     vmButtonCancel:{
-      default:'flat',
+      default:'default',
       type:String,
     },
     vmIsValid:{
@@ -106,6 +106,10 @@ export default {
     vmCloseIcon:{
       default:'close',
       type:String
+    },
+    vmCloseColor:{
+      default: 'gray',
+      type:String
     }
   },
   data:()=>({
@@ -116,7 +120,7 @@ export default {
     text:null,
     title:null,
     buttonAccept:'filled',
-    buttonCancel:'flat',
+    buttonCancel:'default',
     acceptText:'Accept',
     cancelText:'Cancel',
     closeIcon:'close',
@@ -126,11 +130,6 @@ export default {
     styleHeader(){
       return {
         color: _color.getColor(this.color,1),
-      }
-    },
-    styleAfter(){
-      return {
-        background: _color.getColor(this.color,1)
       }
     }
   },

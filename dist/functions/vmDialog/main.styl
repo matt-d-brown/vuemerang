@@ -21,20 +21,12 @@
 
 
 // cancel / text
-.dialog-t-enter .vm-dialog-cancel, .dialog-t-leave-to .vm-dialog-cancel {
-  border-radius: 50% !important;
-  transform: translate(8px,-8px) scale(.5) !important;
-}
 .dialog-t-enter .vm-dialog-text, .dialog-t-leave-to .vm-dialog-text {
   opacity: 0;
   transform: translate(-15px) !important;
 }
 
-// line after
-.dialog-t-enter .after, .dialog-t-leave-to .after {
-  height: 0% !important
-}
-.dialog-t-enter header h3, .dialog-t-leave-to header h3 {
+.dialog-t-enter header h4, .dialog-t-leave-to header h4 {
   transform: translate(-50px);
   opacity: 0;
 }
@@ -70,14 +62,14 @@
     height: 100%;
     z-index: 10;
     transition: all .250s ease;
-    opacity: 1;
+    opacity: 0.3;
   .vm-dialog
     transition: all .2s;
     z-index: 100;
     width: calc(100% - 20px);
     margin: 10px;
     max-width: 400px;
-    border-radius: 6px;
+    border-radius: 10px;
     box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1)
     background: rgb(255, 255, 255);
     animation: rebound .3s;
@@ -85,7 +77,7 @@
       // background: rgb(3, 41, 203) !important;
       transform: scale(1.02);
     .vm-dialog-text
-      padding: 10px;
+      padding: 10px 20px;
       font-size: 0.875em;
       transition: all .23s ease .1s;
     header
@@ -93,7 +85,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgb(248, 248, 248)
       border-radius: 5px 5px;
       position: relative;
       .con-title-after
@@ -101,40 +92,21 @@
         position: relative;
         overflow: hidden;
         border-radius: 5px 5px 0px 0px;
-      span.after
+      h4
         transition: all .23s ease .1s;
-        position: absolute;
-        left: 0px;
-        top: 50%;
-        transform: translate(0,-50%);
-        width: 3px;
-        height: 100%;
-        display: block;
-      h3
-        transition: all .23s ease .1s;
-        padding: 8px;
-        padding-left: 12px;
-        font-size: 1.2rem;
-      .vm-dialog-cancel
-        transition: all .23s ease .1s;
-        position: relative;
-        padding: 8px;
-        cursor: pointer;
-        box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1)
-        border-radius: 5px;
-        transform: translate(8px,-8px);
-        background: rgb(255, 255, 255);
-        font-size: 1.25em;
-        &:hover
-          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1)
-          transform: translate(5px,-5px);
+        padding-top: 20px;
+        padding-left: 20px;
+        font-size: 1rem;
+      button
+        margin-top: 5px;
+        margin-right: 5px;
     footer
       display: flex;
       align-items: center;
       justify-content: flex-end;
       position: relative;
       button
-        margin-left: 0px;
+        margin: 11px 15px;
 
       &:before
         content: '';
@@ -150,5 +122,3 @@ for colorx, i in $vm-colors
   .vm-dialog-{colorx}
     header
         color: var(colorx, 1)
-      .after
-        background: var(colorx, 1)

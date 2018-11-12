@@ -5,13 +5,14 @@ colors
 
 // Number Colors
 
-$vm-primary = 31, 116, 255
+$vm-primary = 81, 221, 211
 $vm-secondary = 121, 49, 177
 $vm-danger = 255, 71, 87
 $vm-success = 70, 201, 58
 $vm-warning = 255,186,0
 $vm-dark = 30, 30, 30
 $vm-light = 245, 245, 245
+$vm-gray = 172, 177, 182
 
 // Brand colors
 
@@ -26,6 +27,7 @@ $vm-success-color = rgb($vm-success)
 $vm-warning-color = rgb($vm-warning)
 $vm-dark-color = rgb($vm-dark)
 $vm-light-color = rgb($vm-light)
+$vm-gray-color = rgb($vm-gray)
 
 $vm-colors := {
   primary: $vm-primary-color,
@@ -34,7 +36,8 @@ $vm-colors := {
   success: $vm-success-color,
   warning: $vm-warning-color,
   dark: $vm-dark-color,
-  light: $vm-light-color
+  light: $vm-light-color,
+  gray: $vm-gray-color
 }
 
 :root {
@@ -43,6 +46,7 @@ $vm-colors := {
   --success: $vm-success
   --dark: $vm-dark
   --warning: $vm-warning
+  --gray: $vm-gray
 }
 
 var(colorx, alpha = 1)
@@ -57,7 +61,7 @@ varx(colorx)
 
 // global vars
 
-$vm-radio := 6px
+$vm-radio := 4px
 $vm-disabled-opacity := .5
 $vm-transition := all .25s ease
 $vm-border := 1px solid rgba(0, 0, 0, 0)

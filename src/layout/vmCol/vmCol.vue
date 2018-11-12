@@ -118,6 +118,10 @@
   .vm-lg-0 {
     display: none !important;
   }
+  
+  .vm-lg-hidden {
+    display: none !important;
+  }
 
   @media only screen and (max-width: 900px) {
     .vm-sm-12 {
@@ -171,6 +175,10 @@
     .vm-sm-0 {
       display: none !important;
     }
+    
+    .vm-sm-hidden {
+      display: none !important;
+    }
   }
 
   @media only screen and (max-width: 600px) {
@@ -195,7 +203,7 @@
     }
 
     .vm-xs-7 {
-      width: 58.33333333333333% !important;
+      width: 58.33333333333333% !ixsmportant;
     }
 
     .vm-xs-6 {
@@ -223,6 +231,10 @@
     }
 
     .vm-xs-0 {
+      display: none !important;
+    }
+    
+    .vm-xs-hidden {
       display: none !important;
     }
   }

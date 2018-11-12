@@ -140,7 +140,13 @@ export default {
         return {
           color: _color.getColor(this.textColor,1),
           background: _color.getColor(this.color,1),
-          boxShadow: this.hoverx?`0px 8px 25px -8px ${_color.getColor(this.color,1)}`:null
+          boxShadow: this.hoverx?`0px 2px 6px ${_color.getColor(this.color,.3)}, 0px 8px 25px -8px ${_color.getColor(this.color,1)}`:null
+        }
+      } else if (this.is('default')) {
+        return {
+          color: _color.getColor(this.color,1),
+          background: _color.getColor('#fff',1),
+          boxShadow: this.hoverx?`0px 2px 6px ${_color.getColor(this.color,.2)}, 0px 8px 25px -8px ${_color.getColor(this.color,.5)}`:null
         }
       } else if (this.is('border') || this.is('flat')){
         return {
@@ -245,7 +251,7 @@ export default {
       let yEvent = event.offsetY
       let radio = btn.clientWidth * 3
       this.time  = btn.clientWidth / (btn.clientWidth + (this.is('border') || this.is('flat')?70:20))
-      if(this.is('filled')){
+      if(this.is('filled') || this.is('default')){
         this.timeOpacity = this.time
       }
 
@@ -256,13 +262,13 @@ export default {
       this.leftBackgorund = xEvent
       this.topBackgorund = yEvent
       this.radio = radio
-      if(this.is('filled')){
+      if(this.is('filled') || this.is('default')){
         this.opacity = 0
       } else {
         this.opacity = 1
       }
 
-      if(this.is('filled')){
+      if(this.is('filled') || this.is('default')){
         setTimeout( () => {
           this.time = this.timeOpacity = this.radio = 0
           this.opacity = 1

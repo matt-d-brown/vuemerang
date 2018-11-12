@@ -89,6 +89,7 @@ To define the type of button the directive is used `type` with the value of some
 <vuecode md center>
 <div slot="demo">
 <vm-button type="filled">Primary</vm-button>
+<vm-button type="default">Default</vm-button>
 <vm-button color="success" type="filled">Success</vm-button>
 <vm-button color="danger" type="filled">Danger</vm-button>
 <vm-button color="warning" type="filled">Warning</vm-button>

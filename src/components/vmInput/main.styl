@@ -11,7 +11,6 @@
 .vm-con-input-label
   position relative
   transition: all .3s ease
-  width: 200px
   &.is-label-placeholder
     margin-top: 17px
   .vm-con-input
@@ -20,6 +19,7 @@
     flex-direction column
     position relative
     justify-content: center
+
 
 
 .vm-input--icon
@@ -112,9 +112,10 @@
   position relative
   padding: 0.4 rem
   border-radius 5px
-  border 1px solid rgba(0, 0, 0,.2)
+  border 1px solid rgba(0, 0, 0,0)
   box-sizing: border-box
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.150);
+  -webkit-box-shadow: 0 2px 8px 0 rgba(59,65,94,0.1), 0 1px 1px 0 rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px 0 rgba(59,65,94,0.1), 0 1px 1px 0 rgba(0,0,0,0.07);
   transition: all .3s ease
   width: 100%
   &.small
@@ -129,7 +130,8 @@
     + .vm-placeholder-label-large
       padding: 0.6rem
   &:focus
-    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.150);
+    -webkit-box-shadow: 0 5px 15px 0 rgba(59,65,94,0.1), 0 1px 4px 0 rgba(0,0,0,0.07);
+    box-shadow: 0 5px 15px 0 rgba(59,65,94,0.1), 0 1px 4px 0 rgba(0,0,0,0.07);
   &:focus,&.hasValue
     + .vm-placeholder-label
       transform: translate(-3px,-90%) !important

@@ -2,18 +2,9 @@
   <div class="notiads">
     <div class="sponsor-special">
       <h4>Development</h4>
-      <div :title="'Beacome a Sponsor ' + titlex" class="sponsor-s">
-        <a target="_blank" href="https://www.patreon.com/bePatron?c=1567892">
-          <!-- <i class="eva">
-            add
-          </i> -->
-          <img v-if="ramdom == 1" :src="$withBase('/patreon/Coffe-Vuemerang.png')" alt="">
-          <img v-if="ramdom == 2" :src="$withBase('/patreon/02-Vuemerang-Pizza-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuepr.png')" alt="">
-          <img v-if="ramdom == 3" :src="$withBase('/patreon/03-Vuemerang-Bronze-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuep.png')" alt="">
-          <img v-if="ramdom == 4" :src="$withBase('/patreon/02-Vuemerang-Silver-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuep.png')" alt="">
-          <img v-if="ramdom == 5" :src="$withBase('/patreon/01-Vuemerang-Gold-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vuepre.png')" alt="">
-          <img v-if="ramdom == 6" :src="$withBase('/patreon/06-Vuemerang-Diamond-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vue.png')" alt="">
-          <img v-if="ramdom == 7" :src="$withBase('/patreon/07-Vuemerang-Special-Manuel-Rovira-Luis-Daniel-Rovira-Lusax-Web-Framework-ui-components-Vue-js-nuxt-vue.png')" alt="">
+      <div title="Development" class="sponsor-s">
+        <a target="_blank" href="http://www.controlla.com.mx">
+          <img :src="$withBase('/development/controlla.svg')" alt="">
         </a>
       </div>
     </div>
@@ -28,39 +19,6 @@ import Carbon from "./Carbon";
 export default {
   components: {
     Carbon
-  },
-  data: () => ({
-    ramdom: 1
-  }),
-  computed: {
-    titlex () {
-      let titlex = 'Coffe'
-      if (this.ramdom == 2) {
-        titlex = 'Pizza'
-      } else if (this.ramdom == 3) {
-        titlex = 'Bronze'
-      } else if (this.ramdom == 4) {
-        titlex = 'Silver'
-      } else if (this.ramdom == 5) {
-        titlex = 'Gold'
-      } else if (this.ramdom == 6) {
-        titlex = 'Diamond'
-      } else if (this.ramdom == 7) {
-        titlex = 'Special'
-      }
-      return titlex
-    }
-  },
-  mounted () {
-    this.ramdom = this.numeroAleatorio(1, 7)
-  },
-  updated () {
-    this.ramdom = this.numeroAleatorio(1, 7)
-  },
-  methods: {
-    numeroAleatorio (min, max) {
-      return Math.round(Math.random() * (max - min) + min)
-    }
   }
 }
 </script>
@@ -122,10 +80,10 @@ export default {
         justify-content center
         transition all .3s ease
         &:hover
-          color #f96854 !important
-          border 1px dashed #f96854
-          // background alpha(#f96854, .1)
-          box-shadow 0px 5px 10px 0px alpha(#f96854, .13)
+          color #FA9201 !important
+          border 1px dashed #FA9201
+          // background alpha(#FA9201, .1)
+          box-shadow 0px 5px 10px 0px alpha(#FA9201, .13)
           transform translate(0, -4px)
         img
           width 100%

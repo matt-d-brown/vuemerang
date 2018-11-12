@@ -1,5 +1,5 @@
 .vm-button
-  transition: all .2s ease;
+  transition: all .3s ease;
   padding: 10px;
   border: 0px;
   border-radius: $vm-radio
@@ -49,6 +49,12 @@
       color: rgb(255, 255, 255) !important
 
 .vm-button-filled
+  &:hover
+    box-shadow: 0px 9px 28px -9px
+
+.vm-button-default
+  .vm-button--background
+    box-shadow:inset 0px 0px 60px 0px var(primary, 0.1);
   &:hover
     box-shadow: 0px 9px 28px -9px
 
@@ -107,9 +113,20 @@ for colorx, i in $vm-colors
   .vm-button-{colorx}
     &.vm-button-filled //type filled
       // background: $vm-colors[colorx]
+      -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+      box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+      background: #fff;
       background: var(colorx)
       &:hover
-        box-shadow: 0px 8px 25px -8px var(colorx)
+        box-shadow: 0px 2px 6px var(colorx, 0.3), 0px 8px 25px -8px var(colorx)
+    &.vm-button-default //type default
+      // background: $vm-colors[colorx]
+      color: var(colorx)
+      -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+      box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+      background: #fff;
+      &:hover
+        box-shadow: 0px 2px 6px var(colorx, 0.2), 0px 8px 25px -8px var(colorx, 0.5)
     &.vm-button-border,&.vm-button-flat //type border
      border: 1px solid var(colorx)
      background: transparent !important
