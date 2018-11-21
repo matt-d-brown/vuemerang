@@ -10,6 +10,7 @@
         @click="close($event,true)"/>
       <div
         ref="dialogx"
+        :class="vmSize"
         class="vm-dialog">
 
         <!-- //header -->
@@ -110,6 +111,10 @@ export default {
     vmCloseColor:{
       default: 'gray',
       type:String
+    },
+    vmSize:{
+      default:'small',
+      type:String
     }
   },
   data:()=>({
@@ -124,7 +129,6 @@ export default {
     acceptText:'Accept',
     cancelText:'Cancel',
     closeIcon:'close',
-    iconPack:'eva'
   }),
   computed:{
     styleHeader(){

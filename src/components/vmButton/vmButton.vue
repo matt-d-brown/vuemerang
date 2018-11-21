@@ -146,7 +146,7 @@ export default {
         return {
           color: _color.getColor(this.color,1),
           background: _color.getColor('#fff',1),
-          boxShadow: this.hoverx?`0px 2px 6px ${_color.getColor(this.color,.2)}, 0px 8px 25px -8px ${_color.getColor(this.color,.5)}`:null
+          boxShadow: this.hoverx?`0px 2px 6px ${_color.getColor(this.color,.2)}, 0px 8px 25px -8px ${_color.getColor(this.color,.5)}`:`0px 4px 6px rgba(50,50,93,.11), 0px 1px 3px rgba(0,0,0,.08)`
         }
       } else if (this.is('border') || this.is('flat')){
         return {
