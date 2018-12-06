@@ -196,7 +196,7 @@ export default {
     valIconWarning:{
       default: null,
       type:String
-    },
+    }
   },
   data:()=>({
     isFocus:false

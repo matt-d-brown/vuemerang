@@ -1,8 +1,7 @@
 <template>
   <tbody
     :class="[`tr-table-state-${state}`, {'is-selected':isSelected, 'selected': data, 'is-expand': maxHeight != '0px', 'activeEdit': activeEdit, 'hoverFlat': $parent.hoverFlat}]"
-    class="tr-table"
-    @click="clicktr">
+    class="tr-table">
     <tr
       v-if="!$parent.notSpacer"
       class="tr-spacer"></tr>
@@ -12,6 +11,7 @@
         @click="clicktd()">
         <vm-checkbox
           v-if="$parent.multiple"
+          @click="clicktr"
           :checked="isSelected"
           size="small"/>
 

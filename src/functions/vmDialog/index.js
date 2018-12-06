@@ -19,6 +19,7 @@ export default { name:'dialog', vmfunction(parameters){
 
   parameters.accept?instance.vm.$on('accept',parameters.accept):null
   parameters.cancel?instance.vm.$on('cancel',parameters.cancel):null
+  parameters.action?instance.vm.$on('action',parameters.action):null
   utils.insertBody(instance.vm.$el);
 
   Vue.nextTick(() => {

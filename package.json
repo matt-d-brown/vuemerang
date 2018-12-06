@@ -45,7 +45,8 @@
     "new:component": "sh scripts/newComponent.sh"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vuelidate": "^0.7.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",

@@ -3,7 +3,7 @@
     <div
       v-if="active || vmActive"
       ref="con"
-      :class="[`vm-dialog-${isPrompt?vmColor:color}`]"
+      :class="[`vm-dialog-${isPrompt?vmColor:color}`, !isPrompt?vm-alert:'none']"
       class="vm-component con-vm-dialog">
       <div
         class="vm-dialog-dark"

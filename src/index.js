@@ -3,9 +3,11 @@ import './styles/index.styl'
 import vmFunctions from './functions'
 import easing from './utils/easing.js'
 import vmTheme from './utils/theme.js'
+import Vuelidate from 'vuelidate'
 
 const Vuemerang = {
   install(Vue, options) {
+    Vue.use(Vuelidate)
     //change defaults colors, Not Soport SSR, else = Stylus vars
     if(options){
       if(options.hasOwnProperty('theme')){

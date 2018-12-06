@@ -3,7 +3,7 @@
     <div
       v-if="active || vmActive"
       ref="con"
-      :class="[`vm-dialog-${isPrompt?vmColor:color}`]"
+      :class="[`vm-dialog-${isPrompt?vmColor:color}`, !isPrompt?'vm-alert':'']"
       class="vm-component con-vm-dialog">
       <div
         class="vm-dialog-dark"
@@ -54,6 +54,22 @@
             :type="buttonAccept"
             @click="acceptDialog">{{ isPrompt?vmAcceptText:acceptText }}</vm-button>
         </footer>
+        
+        <footer v-if="vmButtonsHidden?isPrompt&&vmAction:false">
+          <vm-button
+            :color="isPrompt?vmColor:color"
+            :type="isPrompt?vmButtonAction:buttonAction"
+            @click="actionDialog">{{ isPrompt?vmActionText:actionText }}</vm-button>
+          <vm-button
+            :disabled="vmIsValid=='none'?false:!vmIsValid"
+            :color="isPrompt?vmColor:color"
+            :type="isPrompt?vmButtonAccept:buttonAccept"
+            @click="acceptDialog">{{ isPrompt?vmAcceptText:acceptText }}</vm-button>
+          <vm-button
+            :color="isPrompt?vmColor:color"
+            :type="isPrompt?vmButtonCancel:buttonCancel"
+            @click="cancelClose">{{ isPrompt?vmCancelText:cancelText }}</vm-button>
+        </footer>
       </div>
     </div>
   </transition>
@@ -72,6 +88,10 @@ export default {
       default:false,
       type: Boolean
     },
+    vmAction:{
+      default:false,
+      type: Boolean
+    },
     vmTitle:{
       default:'Dialog',
       type:String
@@ -81,6 +101,10 @@ export default {
       type:String,
     },
     vmButtonCancel:{
+      default:'default',
+      type:String,
+    },
+    vmButtonAction:{
       default:'default',
       type:String,
     },
@@ -98,6 +122,10 @@ export default {
     },
     vmCancelText:{
       default:'Cancel',
+      type:String
+    },
+    vmActionText:{
+      default:'Action',
       type:String
     },
     vmIconPack:{
@@ -126,8 +154,10 @@ export default {
     title:null,
     buttonAccept:'filled',
     buttonCancel:'default',
+    buttonAction:'default',
     acceptText:'Accept',
     cancelText:'Cancel',
+    actionText:'Action',
     closeIcon:'close',
   }),
   computed:{
@@ -171,7 +201,6 @@ export default {
           this.rebound()
         }
       }
-
     },
     rebound(){
       this.$refs.dialogx.classList.add('locked')
@@ -200,6 +229,12 @@ export default {
       this.$emit('update:vmActive',false)
       this.$emit('vm-cancel')
       this.cancel?this.cancel():null
+    },
+    actionDialog(){
+      this.action?this.action():null
+      this.active = false
+      this.$emit('update:vmActive',false)
+      this.$emit('vm-action')
     },
     insertBody(){
       let elx = this.$refs.con

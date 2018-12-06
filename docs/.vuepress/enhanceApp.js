@@ -1,5 +1,6 @@
 import './main.styl'
 import Vuemerang from '../../src'
+import Vuelidate from 'vuelidate'
 import Vuecode from 'viewcode/dist/vuecode.common.js'
 import 'viewcode/dist/vuecode.css'
 // import 'eva-icons/style/eva-icons.css'
@@ -13,6 +14,7 @@ export default ({
 }) => {
   // ...apply enhancements to the app
   Vue.use(Vuemerang)
+  Vue.use(Vuelidate)
   Vue.use(Vuecode,{
     theme:'flat'
   })

@@ -10,7 +10,12 @@
        {{valMultipe.value2}}
      </div>
      <vm-button @click="activePrompt2 = true" color="primary" type="border">Run prompt inputs</vm-button>
-
+     <div class="modelx">
+       {{valMultipe.value1}}
+       {{valMultipe.value2}}
+     </div>
+     <vm-button @click="activePrompt3 = true" color="primary" type="border">Run prompt inputs with actions</vm-button>
+     
      <vm-prompt
       @vm-cancel="val=''"
       @vm-accept="acceptAlert"
@@ -38,6 +43,27 @@
          </vm-alert>
        </div>
      </vm-prompt>
+     
+     <vm-prompt
+      @vm-cancel="valMultipe.value1='',valMultipe.value2=''"
+      @vm-accept="acceptAlert"
+      @vm-close="close"
+      @vm-action="action"
+      :vm-action="true"
+      vm-action-text="Eliminar"
+      :vm-buttons-hidden="true"
+      :vm-is-valid="validName"
+      :vm-active.sync="activePrompt3">
+       <div class="con-exemple-prompt">
+       Enter your first and last name to <b>continue</b>.
+         <vm-input placeholder="Name" v-model="valMultipe.value1"/>
+         <vm-input placeholder="Last Name" v-model="valMultipe.value2"/>
+
+         <vm-alert :vm-active="!validName" color="danger" vm-icon="new_releases" >
+           Fields can not be empty please enter the data
+         </vm-alert>
+       </div>
+     </vm-prompt>
   </div>
 </template>
 
@@ -49,6 +75,7 @@ export default {
     return {
       activePrompt:false,
       activePrompt2:false,
+      activePrompt3:false,
       val:'',
       valMultipe:{
         value1:'',
@@ -76,6 +103,13 @@ export default {
         text:'You close a dialog!'
       })
     },
+    action(){
+      this.$vm.notify({
+        color:'primary',
+        title:'Action',
+        text:'Lorem ipsum dolor sit amet, consectetur'
+      })
+    }
   }
 }
 </script>
