@@ -123,7 +123,6 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
 import _color from '../../utils/color.js'
 export default {
   name:'VmInput',
@@ -197,10 +196,6 @@ export default {
     valIconWarning:{
       default: null,
       type:String
-    },
-    validations:{
-      default: null,
-      type:Object
     }
   },
   data:()=>({

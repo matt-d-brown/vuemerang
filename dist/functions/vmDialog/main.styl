@@ -108,11 +108,12 @@
     footer
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-start;
       position: relative;
       button
         margin: 11px 15px;
-
+        &:nth-last-child(2)
+          margin-left: auto !important;
       &:before
         content: '';
         top: 0px;
@@ -122,6 +123,10 @@
         margin-left: 5%;
         height: 1px;
         background: rgba(0, 0, 0, 0.05);
+
+.vm-alert {
+  z-index: 200001 !important;
+}
 
 for colorx, i in $vm-colors
   .vm-dialog-{colorx}
