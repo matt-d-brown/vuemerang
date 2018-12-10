@@ -1,0 +1,199 @@
+// transition
+
+.fadecalendar-enter-active
+  transition: transform .2s, opacity .2s;
+
+.fadecalendar-leave-active
+  transition: transform .150s, opacity .150s;
+
+.fadecalendar-enter, .fadecalendar-leave-to /* .fade-leave-active below version 2.1.8 */
+  opacity: 0;
+  transform: translate(0,0px) scale(0.950)
+  box-shadow: 0px 10px 0px -5px rgba(0, 0, 0, 0);
+
+.vm-datepicker
+  display: inline-block;
+  line-height: normal;
+  &-rel
+    position: relative
+    min-width: 220px;
+  &--calendar
+    width: auto;
+    overflow: visible;
+    font-size: small;
+    max-height: none;
+    padding: 4px;
+    padding-top: 6px;
+    padding-left: 5px;
+    padding-bottom: 6px;
+    box-shadow: $vm-box-shadow;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 40000;
+    background: $vm-background;
+    .vm-datepicker-with-range
+      .vm-datepicker-panel-content
+        .vm-datepicker-cells
+          .vm-datepicker-cells-cell-range:nth-child(1):before
+            border-radius: 50%;
+            color: red;
+  &-panel-content
+    float: left;
+  &-cells-year
+    .vm-datepicker-cells-cell
+      width: 40px !important;
+      height: 28px !important;
+      line-height: 28px !important;
+      margin: 10px 12px !important;
+      border-radius: 3px !important;
+      &:hover em
+        background: #e1f0fe;
+        border-radius: 3px !important;
+      em
+        width: 40px !important;
+        height: 28px !important;
+        line-height: 28px !important;
+        margin: 0 !important;
+  &-cells-month
+    .vm-datepicker-cells-cell
+      width: 40px !important;
+      height: 28px !important;
+      line-height: 28px !important;
+      margin: 10px 12px !important;
+      border-radius: 3px !important;
+      &:hover em
+        background: #e1f0fe;
+        border-radius: 3px !important;
+      em
+        width: 40px !important;
+        height: 28px !important;
+        line-height: 28px !important;
+        margin: 0 !important;
+  &-cells
+    width: 196px;
+    margin: 10px;
+    white-space: normal;
+    .vm-datepicker-cells-header span
+      line-height: 24px;
+      text-align: center;
+      margin: 2px;
+      color: #c5c8ce;
+    .vm-datepicker-cells-cell
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 3px;
+    .vm-datepicker-cells-cell-selected
+      background: $vm-primary-color;
+      border-radius: 50%;
+      color: #fff;
+      &:hover em
+        background: $vm-primary-color;
+        border-radius: 50%;
+        color: #fff;
+    .vm-datepicker-cells-cell-prev-month
+      em
+        color: #c5c8ce;
+    .vm-datepicker-cells-cell-next-month
+      em
+        color: #c5c8ce;
+    .vm-datepicker-cells-cell-range
+      &:before
+        content: "";
+        display: block;
+        background: $vm-primary-color;
+        border-radius: 0;
+        border: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -2px;
+        right: -2px;
+      em
+        color: #fff;
+        position: relative;
+        z-index: 1;
+    .vm-datepicker-cells-cell-today em
+      position: relative;
+      &:after
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $vm-primary-color
+        position: absolute;
+        top: 1px;
+        right: 1px;
+    span
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      em
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        margin: 2px;
+        font-style: normal;
+        border-radius: 50%;
+        text-align: center;
+        transition: all .2s ease-in-out;
+    &-cell:hover
+      em
+        background: #e1f0fe;
+    &-focused
+      em
+        box-shadow: 0 0 0 1px $vm-primary-color inset;
+  &-header
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    span
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 5px;
+      &:hover
+        background: #e9ecef;
+      .vm-datepicker-header-label span
+        width: 110px;
+    .vm-datepicker-panel-icon-btn
+      display: inline-block;
+      width: 20px;
+      height: 24px;
+      line-height: 26px;
+      margin-top: 4px;
+      text-align: center;
+      color: #c5c8ce;
+      transition: color .2s ease-in-out;
+      border-radius: 5px;
+  &--icon
+    position: absolute;
+    right: 5px;
+    font-size: 1.0625em;
+    top: 50%;
+    cursor: pointer;
+    transform: translate(0,-50%);
+    transition: all .2s ease;
+.vm-datepicker--label
+  padding-left 5px;
+  font-size: .85rem
+  color $vm-label-color
+
+
+for colorx, i in $vm-colors
+  .vm-datepicker-{colorx}
+    .vm-datepicker--item
+      &.activex
+        background: var(colorx, .1)
+        color: var(colorx);
+        font-weight: bold;
+  .input-datepicker-label-{colorx}--active
+    color: var(colorx)
+  .datepicker-validate-{colorx}
+    .vm-datepicker-rel
+      .vm-editor-editor
+        border-color: var(colorx)
+      .vm-datepicker--icon
+        color var(colorx)

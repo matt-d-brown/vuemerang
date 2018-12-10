@@ -53,7 +53,7 @@
         :class="{'icon-after':iconAfter}"
         :iconPack="iconPack"
         :icon="icon"
-        @click="focusInput">
+        @click="handleIconClick">
       </vm-icon>
 
       <transition name="icon-validate" >
@@ -222,6 +222,9 @@ export default {
           this.$emit('focus',evt)
           this.changeFocus(true)
         },
+        change: (evt) => {
+          this.$emit('input-change', evt);
+        },
         blur: (evt) => {
           this.$emit('blur',evt)
           this.changeFocus(false)
@@ -256,7 +259,10 @@ export default {
     },
     focusInput(){
       this.$refs.vminput.focus()
-    }
+    },
+    handleIconClick (event) {
+      this.$emit('on-icon-click', event);
+    },
   },
 }
 </script>

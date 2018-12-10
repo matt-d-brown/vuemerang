@@ -1,7 +1,8 @@
 <template>
   <tbody
     :class="[`tr-table-state-${state}`, {'is-selected':isSelected, 'selected': data, 'is-expand': maxHeight != '0px', 'activeEdit': activeEdit, 'hoverFlat': $parent.hoverFlat}]"
-    class="tr-table">
+    class="tr-table"
+    v-on:dblclick="clicktr">
     <tr
       v-if="!$parent.notSpacer"
       class="tr-spacer"></tr>

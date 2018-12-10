@@ -42,9 +42,12 @@
     "docs:deploy": "push-dir --dir=docs/.vuepress/dist --branch=gh-pages --cleanup",
     "deployx": "npm run docs:deploy && npm run deploy",
     "deployx2": "npm run docs:deploy && npm run deploy2",
-    "new:component": "sh scripts/newComponent.sh"
+    "new:component": "./scripts/newComponent.sh"
   },
   "dependencies": {
+    "js-calendar": "^1.2.3",
+    "simple-jscalendar": "^1.4.3",
+    "v-click-outside-x": "^3.5.6",
     "vue": "^2.5.17",
     "vuelidate": "^0.7.4"
   },

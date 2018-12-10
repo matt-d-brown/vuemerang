@@ -1,8 +1,8 @@
 NAME="$1"
 
 MAYUS="$1"
-MAYUS=($MAYUS)
-MAYUS="${MAYUS[@]^}"
+# MAYUS=($MAYUS)
+# MAYUS="${MAYUS[@]^}"
 
 if [ -e "src/components/vm$MAYUS" ]
 then
@@ -60,7 +60,7 @@ cd -
 
 echo '<template lang="html">
   <div
-    class="vm-component vm-'${NAME,,}'"
+    class="vm-component vm-'${NAME}'"
     v-bind="$attrs"
     v-on="$listeners">
     Component vm'$MAYUS'
@@ -87,7 +87,7 @@ export default Vue => {
 
 # add Stylus archive
 
-echo ".vm-${NAME,,}
+echo ".vm-${NAME}
   background: rgb(14, 142, 25)" > src/components/vm$MAYUS/main.styl
 
 

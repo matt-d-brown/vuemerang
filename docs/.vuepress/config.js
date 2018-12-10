@@ -210,6 +210,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           '/components/collapse',
           '/components/images',
           '/components/timePicker',
+          '/components/datePicker',
           /*New Component*/
         ]
       },
