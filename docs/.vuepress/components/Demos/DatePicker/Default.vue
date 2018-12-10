@@ -1,6 +1,5 @@
 <template lang="html">
   <div>
-  {{date[0]}}
     <vm-date-picker type="date" placeholder="Select a date"/>
     <vm-date-picker type="daterange" placeholder="Select a date" v-model="date"/>
   </div>
