@@ -135,3 +135,101 @@ Setting the attribute placement changes the direction in which the selector appe
 </div>
 </vuecode>
 </box>
+
+<box>
+
+## Shorcut
+
+Set shortcuts in the properties options object to set shortcut options, as shown in the sample code.
+
+Where value is a function and must return a date. If it is a daterange type, it needs to return an array.
+
+<vuecode md>
+<div slot="demo">
+  <Demos-DatePicker-Options />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div>
+    <vm-date-picker />
+  </div>
+</template>
+```
+
+</div>
+</vuecode>
+</box>
+
+<box>
+
+## Split Panels
+
+When the attribute split-panels is turned on, the left and right panels are not linked when switching the year and month.
+
+<vuecode md>
+<div slot="demo">
+  <Demos-DatePicker-SplitPanels />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div>
+    <vm-date-picker />
+  </div>
+</template>
+```
+
+</div>
+</vuecode>
+</box>
+
+<box>
+
+## Multiple
+
+After opening the attribute multiple, you can select multiple.
+
+<vuecode md>
+<div slot="demo">
+  <Demos-DatePicker-Multiple />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div>
+    <vm-date-picker />
+  </div>
+</template>
+```
+
+</div>
+</vuecode>
+</box>
+
+<box>
+
+## Show the number of weeks
+
+When the attribute show-week-numbers is turned on, the number of weeks can be displayed.
+
+<vuecode md>
+<div slot="demo">
+  <Demos-DatePicker-NumberWeeks />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div>
+    <vm-date-picker />
+  </div>
+</template>
+```
+
+</div>
+</vuecode>
+</box>

@@ -3,7 +3,7 @@
         <vm-button :class="timeClasses" type="flat" size="small" :disabled="timeDisabled" v-if="showTime" @click="handleToggleTime">
           {{labels.time}}
         </vm-button>
-        <vm-button size="small" color="default" @click.native="handleClear" @keydown.enter.native="handleClear">
+        <vm-button size="small" type="default" @click.native="handleClear" @keydown.enter.native="handleClear">
           {{labels.clear}}
         </vm-button>
         <vm-button size="small"  @click.native="handleSuccess" @keydown.enter.native="handleSuccess">

@@ -20,6 +20,18 @@
     </vm-select>
     <vm-select
       autocomplete
+      createObject
+      create-text="A"
+      @create-object="action"
+      @input-change="autoCompleteFunc"
+      class="selectExample"
+      label="Figuras"
+      v-model="select2"
+      >
+      <vm-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options2" />
+    </vm-select>
+    <vm-select
+      autocomplete
       @input-change="autoCompleteFunc"
       disabled="true"
       class="selectExample"
@@ -73,6 +85,9 @@ export default {
     },
     autoCompleteFunc(event) {
       console.log(event)
+    },
+    action (event) {
+      console.log(event);
     }
   }
 }

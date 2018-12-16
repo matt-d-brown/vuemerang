@@ -23,8 +23,7 @@
       @keydown.enter.prevent="clickOption()">
       <i
         v-if="$parent.parent.multiple"
-        class="eva icon-item vm-select--item-icon">
-        check_circle
+        class="eva eva-checkmark-outline icon-item vm-select--item-icon">
       </i>
       <span
         v-html="getText"></span>
@@ -208,7 +207,7 @@ export default {
         nextElement.querySelector('.vm-select--item').focus()
       } else {
         if (lengthx === children.length) lengthx--
-        getNextLi(children[lengthx].$el,orientationObject).querySelector('.vm-select--item').focus()
+        // getNextLi(children[lengthx].$el,orientationObject).querySelector('.vm-select--item').focus()
       }
     },
     focusValue(index){

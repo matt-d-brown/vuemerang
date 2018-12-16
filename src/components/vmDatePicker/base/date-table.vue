@@ -90,6 +90,8 @@
                     `${prefixCls}-cell`,
                     {
                         [`${prefixCls}-cell-selected`]: cell.selected || cell.start || cell.end,
+                        [`${prefixCls}-cell-start`]: cell.start,
+                        [`${prefixCls}-cell-end`]: cell.end,                        
                         [`${prefixCls}-cell-disabled`]: cell.disabled,
                         [`${prefixCls}-cell-today`]: cell.type === 'today',
                         [`${prefixCls}-cell-prev-month`]: cell.type === 'prevMonth',

@@ -41,7 +41,8 @@
             <slot/>
           </ul>
           <ul v-show="clear">
-            <li @click="filterItems(''),changeValue()" >
+            <vm-select-data :text="createText" :value="inputText" @click="createAction" v-if="createObject"></vm-select-data>
+            <li v-if="!createObject" @click="filterItems(''),changeValue()" >
               {{ noData }}
             </li>
           </ul>
@@ -116,6 +117,14 @@ export default {
       default:false,
       type:Boolean
     },
+    createObject:{
+      default:false,
+      type:Boolean
+    },
+    createText:{
+      default:'Add',
+      type:String
+    },
     color:{
       default:'primary',
       type:String
@@ -166,6 +175,7 @@ export default {
     },
   },
   data:()=>({
+    inputText: '',
     valueFilter:'',
     active:false,
     valuex:'',
@@ -226,7 +236,7 @@ export default {
         if(this.active){
           utils.insertBody(this.$refs.vmSelectOptions)
           setTimeout( () => {
-            this.$children[0].focusValue(0)
+            // this.$children[0].focusValue(0)
             this.$children.forEach((item)=>{
               if (item.focusValue) {
                 item.focusValue()
@@ -285,6 +295,7 @@ export default {
 
     },
     filterItems(value){
+      this.inputText = value
       if(value){
         this.filterx = true
       } else {
@@ -388,7 +399,7 @@ export default {
       if (!this.autocomplete) {
         if(this.multiple?this.value.length == 0:!this.value || this.multiple){
           setTimeout( () => {
-            this.$children[0].$el.querySelector('.vm-select--item').focus()
+            // this.$children[0].$el.querySelector('.vm-select--item').focus()
           }, 50);
         }
       }
@@ -463,6 +474,9 @@ export default {
       }
 
       label.classList.remove('input-select-label-' + this.color + '--active')
+    },
+    createAction: function(event) {
+      this.$emit('create-object', event);
     }
   }
 }

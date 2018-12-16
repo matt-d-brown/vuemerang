@@ -15,6 +15,11 @@ API:
    parameters:
    description: Enables the use of autocomplete in the select.
    default: false
+ - name: createObject
+   type: Boolean
+   parameters:
+   description: Enables the use of creating options in the selection.
+   default: false
  - name: multiple
    type: Boolean
    parameters:
@@ -64,6 +69,11 @@ API:
    parameters: null
    description: Text that is displayed in the warning state.
    default: null
+ - name: create-text
+   type: String
+   parameters: null
+   description: Add a text to the cret button.
+   default: Add
  - name: is-selected.sync
    type: Boolean sync
    parameters: null
@@ -73,6 +83,10 @@ API:
    type: Event
    parameters: event (optional)
    description:  Triggers method when input of select is changed (requires autocomplete prop)
+ - name: create-object
+   type: Event
+   parameters: event (optional)
+   description:  Triggers method when you click on the option to create (requires autocomplete prop)
  - name: icon
    type: String
    parameters: icon name
@@ -316,7 +330,7 @@ export default {
 
 ## Autocomplete
 
-You can add the autocomplete functionality in the desired selected with the property `autocomplete`.
+You can add the autocomplete functionality in the desired selected with the property `autocomplete`. If you need the user to create a new option, you can use the property `createObject`.
 
 <vuecode md>
 <div slot="demo">
@@ -347,6 +361,17 @@ You can add the autocomplete functionality in the desired selected with the prop
       v-model="select2"
       >
       <vm-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2" />
+    </vm-select>
+    <vm-select
+      autocomplete
+      createObject
+      @create-object="action"
+      @input-change="autoCompleteFunc"
+      class="selectExample"
+      label="Figuras"
+      v-model="select2"
+      >
+      <vm-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options2" />
     </vm-select>
     <vm-select
       autocomplete

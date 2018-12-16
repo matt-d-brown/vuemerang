@@ -43,11 +43,11 @@
             <div
                 @click.native="handleTransferClick"
                 v-show="active"
-                :class="{ [prefixCls + '-transfer']: transfer }"
+                :class="['vm-datepicker-' + color]"
                 :placement="placement"
                 :style="cords"
                 class="vm-datepicker--calendar"
-                ref="drop"
+                ref="calendarModal"
                 :data-transfer="transfer"
                 :transfer="transfer"
                 v-transfer-dom>
@@ -128,6 +128,10 @@ export default {
             return oneOf(value, ['year', 'month', 'date', 'daterange', 'datetime', 'datetimerange']);
         },
         default: 'date'
+    },
+    color:{
+      default:'primary',
+      type:String
     },
     format: {
         type: String
@@ -406,7 +410,7 @@ export default {
                     e.preventDefault();
                     if (this.isConfirm){
                         const selector = `.${pickerPrefixCls}-confirm > *`;
-                        const tabbable = this.$refs.drop.$el.querySelectorAll(selector);
+                        const tabbable = this.$refs.calendarModal.$el.querySelectorAll(selector);
                         this.internalFocus = true;
                         const element = [...tabbable][e.shiftKey ? 'pop' : 'shift']();
                         element.focus();
@@ -532,7 +536,7 @@ export default {
                 const position = direction.match(/left|down/) ? 'prev' : 'next';
                 const double = direction.match(/up|down/) ? '-double' : '';
                 // pulse button
-                const button = this.$refs.drop.$el.querySelector(`.vm-datepicker-${position}-btn-arrow${double}`);
+                const button = this.$refs.calendarModal.$el.querySelector(`.vm-datepicker-${position}-btn-arrow${double}`);
                 if (button) pulseElement(button);
                 return;
             }
@@ -613,7 +617,7 @@ export default {
             this.reset();
             setTimeout(
                 () => this.onSelectionModeChange(this.type),
-                500 // delay to improve dropdown close visual effect
+                500 // delay to improve calendarModaldown close visual effect
             );
         },
         emitChange (type) {
@@ -715,19 +719,25 @@ export default {
         },
         changePosition(){
           let elx = this.$refs.input.$el
-          let content = this.$refs.drop
+          let content = this.$refs.calendarModal
           let topx = 0
           let leftx = 0
           let widthx = 0
           let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
           if(elx.getBoundingClientRect().top + content.scrollHeight + 20 >= window.innerHeight) {
-            topx = (elx.getBoundingClientRect().bottom + elx.clientHeight) + scrollTopx + 5
-
+            topx = (elx.getBoundingClientRect().top - 283) + scrollTopx
           } else {
-            topx = elx.getBoundingClientRect().bottom + scrollTopx + 5
+            topx = elx.getBoundingClientRect().top + scrollTopx + elx.clientHeight + 5
+          }
+          
+          if ((elx.getBoundingClientRect().left + 461) > document.documentElement.clientWidth) {
+            leftx = elx.getBoundingClientRect().left - elx.clientWidth + 25
+          } else {
+            leftx = elx.getBoundingClientRect().left
+            console.log('entro');
           }
 
-          leftx = elx.getBoundingClientRect().left
+          console.log();
           widthx = elx.offsetWidth
 
           let cords = {
@@ -741,9 +751,9 @@ export default {
     watch: {
         visible (state) {
             if (state === false){
-                // this.$refs.drop.destroy();
+                // this.$refs.calendarModal.destroy();
             }
-            // this.$refs.drop.update();
+            // this.$refs.calendarModal.update();
             this.$emit('on-open-change', state);
         },
         value(val) {
@@ -764,10 +774,10 @@ export default {
         active(){
           this.$nextTick(() => {
             if(this.active){
-              utils.insertBody(this.$refs.drop)
+              utils.insertBody(this.$refs.calendarModal)
             } else {
               let [parent] = document.getElementsByTagName('body')
-              parent.removeChild(this.$refs.drop)
+              parent.removeChild(this.$refs.calendarModal)
             }
           })
         },
@@ -779,7 +789,7 @@ export default {
             this.$emit('input', this.publicVModelValue); // to update v-model
         }
         if (this.open !== null) this.visible = this.open;
-        if (this.active) utils.insertBody(this.$refs.drop)
+        if (this.active) utils.insertBody(this.$refs.calendarModal)
         // to handle focus from confirm buttons
         this.$on('focus-input', () => this.focus());
     }

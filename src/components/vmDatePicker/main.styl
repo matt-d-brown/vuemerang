@@ -14,6 +14,11 @@
 .vm-datepicker
   display: inline-block;
   line-height: normal;
+  &-confirm
+    border-top: 1px solid #e8eaec;
+    text-align: right;
+    padding: 8px;
+    clear: both;
   &-rel
     position: relative
     min-width: 220px;
@@ -37,6 +42,26 @@
           .vm-datepicker-cells-cell-range:nth-child(1):before
             border-radius: 50%;
             color: red;
+  &-panel-sidebar
+    width: 92px;
+    float: left;
+    margin-left: -92px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    border-right: 1px solid #e8eaec;
+    border-radius: 4px 0 0 4px;
+    overflow: auto;
+    -webkit-box-shadow: -5px 5px 20px 0px rgba(0,0,0,0.04);
+    box-shadow: -5px 5px 20px 0px rgba(0,0,0,0.04);
+    .vm-datepicker-panel-shortcut
+      padding: 6px 15px;
+      transition: all .2s ease-in-out;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
   &-panel-content
     float: left;
   &-cells-year
@@ -69,6 +94,8 @@
         height: 28px !important;
         line-height: 28px !important;
         margin: 0 !important;
+  &-cells-show-week-numbers
+    width: 224px !important
   &-cells
     width: 196px;
     margin: 10px;
@@ -84,12 +111,16 @@
       cursor: pointer;
       position: relative;
       margin-bottom: 3px;
+    .vm-datepicker-cells-cell-start
+      border-bottom-right-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    .vm-datepicker-cells-cell-end
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
     .vm-datepicker-cells-cell-selected
-      background: $vm-primary-color;
       border-radius: 50%;
       color: #fff;
       &:hover em
-        background: $vm-primary-color;
         border-radius: 50%;
         color: #fff;
     .vm-datepicker-cells-cell-prev-month
@@ -98,11 +129,13 @@
     .vm-datepicker-cells-cell-next-month
       em
         color: #c5c8ce;
+    .vm-datepicker-cells-cell-week-label
+      em
+        color: #c5c8ce;
     .vm-datepicker-cells-cell-range
       &:before
         content: "";
         display: block;
-        background: $vm-primary-color;
         border-radius: 0;
         border: 0;
         position: absolute;
@@ -122,7 +155,6 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: $vm-primary-color
         position: absolute;
         top: 1px;
         right: 1px;
@@ -140,12 +172,6 @@
         border-radius: 50%;
         text-align: center;
         transition: all .2s ease-in-out;
-    &-cell:hover
-      em
-        background: #e1f0fe;
-    &-focused
-      em
-        box-shadow: 0 0 0 1px $vm-primary-color inset;
   &-header
     height: 32px;
     line-height: 32px;
@@ -154,8 +180,6 @@
       display: inline-block;
       cursor: pointer;
       border-radius: 5px;
-      &:hover
-        background: #e9ecef;
       .vm-datepicker-header-label span
         width: 110px;
     .vm-datepicker-panel-icon-btn
@@ -189,6 +213,27 @@ for colorx, i in $vm-colors
         background: var(colorx, .1)
         color: var(colorx);
         font-weight: bold;
+    .vm-datepicker-header span:hover
+      background: var(colorx, .02)
+      color: var(colorx);
+    .vm-datepicker-panel-shortcut:hover
+      color: var(colorx)
+      background: var(colorx, .02)
+    .vm-datepicker-cells-cell:hover em
+      background: var(colorx, .1)
+    .vm-datepicker-cells-cell-selected
+      background: var(colorx)
+      &:hover em
+        background: var(colorx)
+    .vm-datepicker-cells-cell-range
+      &:before
+        background: var(colorx)
+    .vm-datepicker-cells-focused
+      em
+        box-shadow: 0 0 0 1px var(colorx) inset;
+    .vm-datepicker-cells-cell-today em
+      &:after
+        background: var(colorx)
   .input-datepicker-label-{colorx}--active
     color: var(colorx)
   .datepicker-validate-{colorx}
