@@ -33,7 +33,24 @@
               :name="`col-${index}`"
               class="colx">
           </colgroup>
-          <thead ref="thead">
+
+        </table>
+      </div>
+
+      <div
+        class="vm-con-tbody vm-table--tbody">
+        <table
+          ref="table"
+          class="vm-table vm-table--tbody-table">
+          <colgroup ref="colgrouptable">
+            <col width="20"/>
+            <col
+              v-for="(col,index) in 3"
+              :key="index"
+              :name="`col-${index}`" >
+          </colgroup>
+          <thead ref="thead" :style="tableHeaderStyle"
+          class="vm-table--thead-table">
             <tr>
               <th class="td-check">
                 <span
@@ -49,24 +66,8 @@
               <slot name="thead"></slot>
             </tr>
           </thead>
-        </table>
-      </div>
-
-      <div
-        :style="styleConTbody"
-        class="vm-con-tbody vm-table--tbody">
-        <table
-          ref="table"
-          class="vm-table vm-table--tbody-table">
-          <colgroup ref="colgrouptable">
-            <col width="20"/>
-            <col
-              v-for="(col,index) in 3"
-              :key="index"
-              :name="`col-${index}`" >
-          </colgroup>
           <!-- <tbody ref="tbody"> -->
-          <slot :data="datax"></slot>
+          <slot :data="datax" ></slot>
           <!-- </tbody> -->
         </table>
       </div>
