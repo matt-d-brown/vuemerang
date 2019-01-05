@@ -48,7 +48,6 @@
             'fileError':img.error,
             'removeItem':itemRemove.includes(index)
           }"
-          :key="index"
           class="img-upload">
           <button
             class="btn-x-file"
