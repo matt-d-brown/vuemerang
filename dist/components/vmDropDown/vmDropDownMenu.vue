@@ -6,8 +6,10 @@
       :class="{'rightx':rightx,'notHeight':notHeight}"
       :style="{
         'left':leftx+'px',
-        'top':topx+'px'
+        'top':topx+'px' 
       }"
+      v-click-outside:mousedown.capture="handleClose"
+      v-click-outside.capture="handleClose"
       class="con-vm-dropdown--menu vm-dropdown-menu"
       @mouseover="toggleMenu($event)"
       @mouseout="toggleMenu($event)">
@@ -26,8 +28,10 @@
 </template>
 
 <script>
+import {directive as clickOutside} from 'v-click-outside-x'
 export default {
   name: "VmDropdownMenu",
+  directives: { clickOutside },
   data:()=>({
     dropdownVisible:false,
     leftAfter:20,
@@ -60,6 +64,12 @@ export default {
       if(event.type == 'mouseover' && !this.vmTriggerClick){
         this.dropdownVisible = true
       } else if (!this.vmTriggerClick) {
+        this.dropdownVisible = false
+      }
+      this.widthx = this.$el.clientWidth
+    },
+    handleClose(event){
+      if(event.type == 'mousedown' && this.vmTriggerClick){
         this.dropdownVisible = false
       }
       this.widthx = this.$el.clientWidth

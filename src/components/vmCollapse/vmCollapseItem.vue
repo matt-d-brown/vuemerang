@@ -12,7 +12,9 @@
       <span
         v-if="!notArrow"
         class="icon-header vm-collapse-item--icon-header">
-        <vm-icon :icon-pack="iconPack"  :icon="iconArrow" >
+        <vm-icon 
+          :icon-pack="iconPack" 
+          :icon="iconArrow" >
         </vm-icon>
       </span>
     </header>
@@ -32,6 +34,9 @@ import vmicon from '../vmIcon';
 
 export default {
   name:'VmCollapseItem',
+  components:{
+    vmicon
+  },
   props:{
     disabled:{
       default:false,
@@ -53,9 +58,6 @@ export default {
   data:() => ({
     maxHeight: '0px'
   }),
-  components:{
-    vmicon
-  },
   computed:{
     accordion() {
       return this.$parent.accordion

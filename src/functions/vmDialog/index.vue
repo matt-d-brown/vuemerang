@@ -20,11 +20,11 @@
           </div>
           <vm-button
             v-if="type=='alert'"
-            radius 
             :color="vmCloseColor" 
-            type="flat"
-            :icon-pack="vmIconPack"
+            :icon-pack="vmIconPack" 
             :icon="vmCloseIcon"
+            radius
+            type="flat"
             class="vm-dialog-cancel vm-dialog-cancel--icon notranslate"
             @click="cancelClose">
           </vm-button>

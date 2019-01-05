@@ -1,6 +1,8 @@
 <template lang="html">
   <transition name="dropdownx">
     <div
+      v-click-outside:mousedown.capture="handleClose"
+      v-click-outside.capture="handleClose"
       v-if="dropdownVisible"
       ref="options"
       :class="{'rightx':rightx,'notHeight':notHeight}"
@@ -8,8 +10,6 @@
         'left':leftx+'px',
         'top':topx+'px' 
       }"
-      v-click-outside:mousedown.capture="handleClose"
-      v-click-outside.capture="handleClose"
       class="con-vm-dropdown--menu vm-dropdown-menu"
       @mouseover="toggleMenu($event)"
       @mouseout="toggleMenu($event)">

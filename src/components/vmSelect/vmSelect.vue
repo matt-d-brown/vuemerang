@@ -41,8 +41,14 @@
             <slot/>
           </ul>
           <ul v-show="clear">
-            <vm-select-data :text="createText" :value="inputText" @click="createAction" v-if="createObject"></vm-select-data>
-            <li v-if="!createObject" @click="filterItems(''),changeValue()" >
+            <vm-select-data 
+              v-if="createObject" 
+              :text="createText" 
+              :value="inputText" 
+              @click="createAction"></vm-select-data>
+            <li 
+              v-if="!createObject" 
+              @click="filterItems(''),changeValue()" >
               {{ noData }}
             </li>
           </ul>

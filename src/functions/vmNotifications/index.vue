@@ -21,9 +21,9 @@
         </div>
         <vm-icon
           v-if="icon"
-          class="vm-icon-noti"
           :icon-pack="iconPack"
-          :icon="icon"></vm-icon>
+          :icon="icon"
+          class="vm-icon-noti"></vm-icon>
       </div>
       <span
         :style="fillingStyle"

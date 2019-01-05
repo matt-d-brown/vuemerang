@@ -37,10 +37,8 @@
 
 <script>
 import _color from '../../utils/color.js'
-import vmButton from '../vmButton/vmButton.vue'
 export default {
   name:'VmTabs',
-  components:{vmButton},
   props:{
     value: {
       default: 0,

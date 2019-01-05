@@ -18,9 +18,9 @@
 
       <vm-icon
         v-else
-        class="icon-divider notranslate vm-divider--icon"
         :icon-pack="iconPack"
         :icon="icon"
+        class="icon-divider notranslate vm-divider--icon"
       ></vm-icon>
     </span>
     <span
