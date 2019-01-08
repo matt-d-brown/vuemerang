@@ -20,7 +20,9 @@
           }
         ]"
         class="vm-sidebar">
-        <header class="vm-sidebar--header" v-if="$slots.header">
+        <header 
+          v-if="$slots.header" 
+          class="vm-sidebar--header">
           <slot name="header"></slot>
         </header>
 
@@ -30,7 +32,9 @@
 
         <vm-spacer v-if="spacer"></vm-spacer>
 
-        <footer class="vm-sidebar--footer" v-if="$slots.footer">
+        <footer 
+          v-if="$slots.footer" 
+          class="vm-sidebar--footer">
           <slot name="footer"></slot>
         </footer>
       </div>

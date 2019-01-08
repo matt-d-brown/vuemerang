@@ -49,8 +49,10 @@
               :key="index"
               :name="`col-${index}`" >
           </colgroup>
-          <thead ref="thead" :style="tableHeaderStyle"
-          class="vm-table--thead-table">
+          <thead 
+            ref="thead" 
+            :style="tableHeaderStyle"
+            class="vm-table--thead-table">
             <tr>
               <th class="td-check">
                 <span

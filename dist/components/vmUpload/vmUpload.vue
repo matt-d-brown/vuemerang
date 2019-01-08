@@ -69,9 +69,9 @@
             class="btn-upload-file"
             @click="upload(index)">
             <i
+              :class="img.percent >= 100?img.error?'eva-alert-circle-outline':'eva-checkmark-circle-outline':'eva-cloud-upload-outline'"
               translate="no"
-              class="eva notranslate"
-              :class="img.percent >= 100?img.error?'eva-alert-circle-outline':'eva-checkmark-circle-outline':'eva-cloud-upload-outline'">
+              class="eva notranslate">
             </i>
             <span>{{ img.percent }} %</span>
           </button>

@@ -2,7 +2,7 @@
   <tbody
     :class="[`tr-table-state-${state}`, {'is-selected':isSelected, 'selected': data, 'is-expand': maxHeight != '0px', 'activeEdit': activeEdit, 'hoverFlat': $parent.hoverFlat}]"
     class="tr-table"
-    v-on:dblclick="clicktr">
+    @dblclick="clicktr">
     <tr
       v-if="!$parent.notSpacer"
       class="tr-spacer"></tr>
@@ -12,11 +12,14 @@
         @click="clicktd()">
         <vm-checkbox
           v-if="$parent.multiple"
-          @click="clicktr"
           :checked="isSelected"
-          size="small"/>
+          size="small"
+          @click="clicktr"/>
 
-        <vm-icon v-if="$slots.expand" :icon-pack="iconPack" :icon="icon"></vm-icon>
+        <vm-icon 
+          v-if="$slots.expand" 
+          :icon-pack="iconPack" 
+          :icon="icon"></vm-icon>
       </td>
       <slot></slot>
     </tr>

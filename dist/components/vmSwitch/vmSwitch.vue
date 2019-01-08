@@ -29,9 +29,9 @@
       <slot name="on"/>
 
       <vm-icon
-        class="icons-switch vm-switch--icon"
         :icon-pack="iconPack"
         :icon="vmIconOn || vmIcon"
+        class="icons-switch vm-switch--icon"
       ></vm-icon>
     </span>
     <span
@@ -41,9 +41,9 @@
       <!-- gato con botas -->
       <slot name="off"/>
       <vm-icon
-        class="icons-switch vm-switch--icon"
         :icon-pack="iconPack"
         :icon="vmIconOff || vmIcon"
+        class="icons-switch vm-switch--icon"
       ></vm-icon>
     </span>
     <span class="vm-circle-switch vm-switch--circle"/>

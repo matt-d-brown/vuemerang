@@ -17,7 +17,9 @@
         v-if="closable"
         class="con-x vm-alert--close"
         @click="$emit('update:active',false)">
-        <vm-icon :icon-pack="iconPack" :icon="closeIcon"></vm-icon>
+        <vm-icon 
+          :icon-pack="iconPack" 
+          :icon="closeIcon"></vm-icon>
       </div>
 
       <h4

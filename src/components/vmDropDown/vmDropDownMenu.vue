@@ -70,7 +70,8 @@ export default {
     },
     handleClose(event){
       if(event.type == 'mousedown' && this.vmTriggerClick){
-        this.dropdownVisible = false
+        // Checar
+        // this.dropdownVisible = false
       }
       this.widthx = this.$el.clientWidth
     },
