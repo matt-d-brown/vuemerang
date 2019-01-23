@@ -20,7 +20,7 @@
         ref="vminput"
         :style="style"
         :class="[size,{
-          'hasValue':value != '',
+          'hasValue':value !== '',
           'hasIcon':icon,
           'icon-after-input':iconAfter
         }]"
@@ -128,7 +128,10 @@ export default {
   name:'VmInput',
   inheritAttrs: false,
   props:{
-    value:{},
+    value:{
+      default:'',
+      type:[String,Number]
+    },
     labelPlaceholder:{
       default:null,
       type:[String,Number]
