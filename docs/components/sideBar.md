@@ -156,7 +156,7 @@ One of the most common features is to have the hidden sidebar to show it when th
         Configurations
       </vm-sidebar-item>
       <vm-sidebar-item index="4" icon="account_box">
-        Perfile
+        Profile
       </vm-sidebar-item>
       <vm-sidebar-item index="5" >
         Card
@@ -262,7 +262,7 @@ You can change the parent of the sidebar with the property `parent` that as a va
         Configurations
       </vm-sidebar-item>
       <vm-sidebar-item index="4" icon="account_box">
-        Perfile
+        Profile
       </vm-sidebar-item>
       <vm-sidebar-item index="5" >
         Card
@@ -371,7 +371,7 @@ You can also use the sidebar in static mode with the property `static`
         Configurations
       </vm-sidebar-item>
       <vm-sidebar-item index="4" icon="account_box">
-        Perfile
+        Profile
       </vm-sidebar-item>
       <vm-sidebar-item index="5" >
         Card
@@ -499,7 +499,7 @@ You can have groups of sub menus with the component `vm-slider-group` that as a 
         Configurations
       </vm-sidebar-item>
       <vm-sidebar-item index="6" icon="account_box">
-        Perfile
+        Profile
       </vm-sidebar-item>
 
       <div class="footer-sidebar" slot="footer">
@@ -601,7 +601,7 @@ A `static` sidebar will not appear on the right.
         Configurations
       </vm-sidebar-item>
       <vm-sidebar-item index="4" icon="account_box">
-        Perfile
+        Profile
       </vm-sidebar-item>
       <vm-sidebar-item index="5" >
         Card
