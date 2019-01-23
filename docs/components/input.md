@@ -438,6 +438,32 @@ export default {
 <div slot="code">
 
 ```html
+<template lang="html">
+  <div class="size-example">
+    <vm-input size="large" placeholder="Size large" v-model="value1" />
+    <vm-input size="default" placeholder="Size default" v-model="value2" />
+    <vm-input size="small" placeholder="Size small" v-model="value3" />
+  </div>
+</template>
+
+ <script>
+export default {
+  data(){
+    return {
+      value1:'',
+      value2:'',
+      value3:''
+    }
+  }
+}
+</script>
+
+
+ <style lang="stylus">
+.size-example
+  .vm-input
+    margin 6px;
+</style>
 
 ```
 
