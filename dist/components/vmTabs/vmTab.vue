@@ -16,6 +16,10 @@ export default {
     vmLabel:{
       default:'Label',
       type:String
+    },
+    vmIcon:{
+      default:'',
+      type:String
     }
   },
   data:()=>({
@@ -28,6 +32,7 @@ export default {
     this.id = this.$parent.children.length
     this.$parent.children.push({
       label: this.vmLabel,
+      icon: this.vmIcon,
       id: this.$parent.children.length,
       listeners: this.$listeners,
       attrs: this.$attrs

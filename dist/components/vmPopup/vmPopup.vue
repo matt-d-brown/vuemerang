@@ -26,6 +26,7 @@
             ref="btnclose"
             :icon-pack="iconPack"
             :icon="iconClose"
+            :style="stylePopup"
             class="vm-popup--close vm-popup--close--icon"
             @click="close"
           />

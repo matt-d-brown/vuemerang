@@ -1,6 +1,7 @@
 <template lang="html">
   <div
     :class="{'textarea-danger': counter ? value.length > counter : false, 'focusx': focusx}"
+    :style="getStyle"
     class="vm-component vm-con-textarea">
 
     <h4 v-if="label">
@@ -10,6 +11,7 @@
     <textarea
       :value="value"
       v-bind="$attrs"
+      :style="getStyle"
       class="vm-textarea"
       v-on="listeners">
     </textarea>
@@ -40,12 +42,30 @@ export default {
     counterDanger:{
       default: false,
       type: Boolean
+    },
+    height:{
+      default:null,
+      type: String
+    },
+    width:{
+      default:null,
+      type: String
     }
   },
   data:()=>({
     focusx: false
   }),
   computed:{
+    getStyle() {
+      let style = ''
+      if (this.height) {
+        style = `height:${this.height};`
+      }
+       if (this.width) {
+        style += `width:${this.width};`
+      }
+       return style
+    },
     listeners() {
       return {
         ...this.$listeners,

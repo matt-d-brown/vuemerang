@@ -26,7 +26,7 @@
             radius
             type="flat"
             class="vm-dialog-cancel vm-dialog-cancel--icon notranslate"
-            @click="cancelClose">
+            @click.native="cancelClose">
           </vm-button>
         </header>
 
