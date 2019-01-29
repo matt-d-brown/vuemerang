@@ -20,7 +20,6 @@ export default {
     vmIcon:{
       default:'',
       type:String
-    }	    
     }
   },
   data:()=>({
