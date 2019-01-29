@@ -6,7 +6,8 @@
       'input-select-validate-success':success,
       'input-select-validate-danger':danger,
       'input-select-validate-warning':warning}"
-    class="con-select">
+    class="con-select"
+    :style="getWidth">
     <label
       v-if="label"
       ref="inputSelectLabel"
@@ -179,6 +180,10 @@ export default {
       default: 'arrow-ios-downward-outline',
       type:String
     },
+    width:{
+      default: null,
+      type: String,
+    }
   },
   data:()=>({
     inputText: '',
@@ -193,6 +198,9 @@ export default {
   computed:{
     parent() {
       return this
+    },
+    getWidth() {
+      return this.width ? `width:${this.width};` : null
     },
     listeners(){
       return {
