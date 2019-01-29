@@ -795,7 +795,7 @@ You can group elements with the sub component `vm-select-group`
   <div class="con-select-example">
     <vm-select
         class="selectExample"
-        label="Defautl"
+        label="Default"
         v-model="select1"
         >
         <div :key="index" v-for="item,index in options1">
