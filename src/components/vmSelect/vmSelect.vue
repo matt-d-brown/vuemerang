@@ -266,7 +266,9 @@ export default {
   },
   beforeDestroy() {
     let [parent] = document.getElementsByTagName('body')
-    parent.removeChild(this.$refs.vmSelectOptions)
+    if (parent && this.$refs.vsSelectOptions && this.$refs.vsSelectOptions.parentNode === parent) {
+      parent.removeChild(this.$refs.vsSelectOptions)
+    }
   },
   updated(){
     if(!this.active){
