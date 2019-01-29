@@ -290,7 +290,7 @@ export default {
 <style lang="stylus">
 .icons-example
   .vm-input
-    margin 6px;
+    margin 15px;
 </style>
 ```
 
