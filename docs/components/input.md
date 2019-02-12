@@ -45,6 +45,11 @@ API:
    parameters: Icon Pack Class Name
    description: Icon Pack to be used. If not set, icon will default to Eva Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
    default: eva
+ - name: icon-no-border
+   type: Boolean
+   parameters: boolean bind
+   description: If true, remove the border-right of the icon (separator between the icon and the input)
+   default: false
  - name: icon-after
    type: Boolean,String
    parameters: null
@@ -104,7 +109,7 @@ contributors:
  - cristijora
 ---
 
-# Input
+# Input **- update**
 
 <box header>
 
@@ -267,6 +272,7 @@ Vuemerang uses the **Eva Icons** font library by default. For a list of all avai
     <vm-input icon-after="true"  icon="shopping_cart" label-placeholder="Label-placeholder" v-model="value4"/>
     <vm-input disabled="true" icon="error_outline" label-placeholder="icon-disabled" v-model="value5"/>
     <vm-input icon-after="true" disabled="true" icon="email" label-placeholder="icon-disabled" v-model="value6"/>
+    <vm-input icon-no-border icon="alert-circle-outline" label-placeholder="icon-no-border" v-model="value7"/>
   </div>
 </template>
 

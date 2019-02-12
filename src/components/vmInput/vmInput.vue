@@ -49,7 +49,7 @@
 
       <vm-icon
         v-if="icon"
-        :class="{'icon-after':iconAfter}"
+        :class="{'icon-after':iconAfter, 'icon-no-border':iconNoBorder}"
         :icon-pack="iconPack"
         :icon="icon"
         class="icon-inputx notranslate vm-input--icon"
@@ -147,6 +147,10 @@ export default {
     iconAfter:{
       default:false,
       type:[Boolean,String]
+    },
+    iconNoBorder:{
+      default:false,
+      type:Boolean
     },
     iconPack:{
       default:'eva',
