@@ -2,7 +2,6 @@
   <transition name="dropdownx">
     <div
       v-click-outside:mousedown.capture="handleClose"
-      v-click-outside.capture="handleClose"
       v-if="dropdownVisible"
       ref="options"
       :class="{'rightx':rightx,'notHeight':notHeight}"
@@ -40,6 +39,7 @@ export default {
     topx:0,
     rightx:true,
     vmTriggerClick:false,
+    vmTriggerOutsideClick: false,
     widthx:0,
     notHeight:false,
     vsCustomContent:false,
@@ -86,9 +86,9 @@ export default {
       this.widthx = this.$el.clientWidth
     },
     handleClose(event){
-      if(event.type == 'mousedown' && this.vmTriggerClick){
+      if(event.type == 'mousedown' && this.vmTriggerOutsideClick){
         // Checar
-        // this.dropdownVisible = false
+        this.dropdownVisible = false
       }
       this.widthx = this.$el.clientWidth
     },

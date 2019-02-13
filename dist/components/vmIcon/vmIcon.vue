@@ -2,7 +2,8 @@
   <i
     :style="iconStyle"
     :class="[iconPack, iconPack != 'eva' ? icon : iconEva,iconClass,getBg,getBgSize,{'round':round}]"
-    class="vm-icon notranslate icon-scale">
+    class="vm-icon notranslate icon-scale"
+    @click="handleIconClick">
     <span>
     </span>
   </i>
@@ -89,5 +90,10 @@ export default {
       return _color.isColor(this.bg) ? this.bg : this.bg;
     },
   },
+  methods: {
+    handleIconClick (event) {
+      this.$emit('on-icon-click', event);
+    },
+  }
 }
 </script>
