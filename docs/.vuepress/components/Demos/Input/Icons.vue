@@ -7,7 +7,7 @@
     <vm-input disabled="true" icon="alert-circle-outline" label-placeholder="icon-disabled" v-model="value5"/>
     <vm-input icon-after="true" disabled="true" icon="email-outline" label-placeholder="icon-disabled" v-model="value6"/>
     <vm-input icon-no-border icon="alert-circle-outline" label-placeholder="icon-no-border" v-model="value7"/>
-    <vm-input icon-no-border pass icon="alert-circle-outline" label-placeholder="icon-no-border" v-model="value8" type="password"/>
+    <vm-input icon-after pass label-placeholder="icon-password" v-model="value8" type="password"/>
   </div>
 </template>
 

@@ -50,7 +50,7 @@
       </transition>
 
       <vm-icon
-        v-if="icon"
+        v-if="icon || pass"
         :class="{'icon-after':iconAfter, 'icon-no-border':iconNoBorder}"
         :icon-pack="iconPack"
         :icon="pass ? getIconPass : icon"
@@ -217,8 +217,11 @@ export default {
   },
   data:()=>({
     isFocus:false,
-    type: 'text'
+    type: ''
   }),
+  mounted () {
+    this.type = this.$attrs.type ? this.$attrs.type : 'text'
+  },
   computed:{
     style(){
       return {

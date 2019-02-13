@@ -70,6 +70,11 @@ API:
    parameters: email, number, url, password, custom
    description: The type of element input.
    default: text
+ - name: pass
+   type: Boolean
+   parameters: null
+   description: The effect for password, type password is required.
+   default: false
  - name: success
    type: Boolean
    parameters: boolean bind
@@ -251,7 +256,7 @@ export default {
 
 ## Icons
 
-The input can have icons. Use the property `icon`. You can also also manipulate the icon's position with the property `icon-after`.
+The input can have icons. Use the property `icon`. You can also also manipulate the icon's position with the property `icon-after`. You can change type input for password the property `pass`.
 
 ::: tip
 Vuemerang uses the **Eva Icons** font library by default. For a list of all available icons, visit the official [Eva Icons page](https://akveo.github.io/eva-icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
@@ -273,6 +278,7 @@ Vuemerang uses the **Eva Icons** font library by default. For a list of all avai
     <vm-input disabled="true" icon="error_outline" label-placeholder="icon-disabled" v-model="value5"/>
     <vm-input icon-after="true" disabled="true" icon="email" label-placeholder="icon-disabled" v-model="value6"/>
     <vm-input icon-no-border icon="alert-circle-outline" label-placeholder="icon-no-border" v-model="value7"/>
+    <vm-input icon-after pass label-placeholder="icon-password" v-model="value8" type="password"/>
   </div>
 </template>
 
