@@ -19,6 +19,7 @@
       <input
         ref="vminput"
         :style="style"
+        :autofocus="autofocus"
         :class="[size,{
           'hasValue':value !== '',
           'hasIcon':icon,
@@ -27,8 +28,9 @@
         :placeholder="null"
         :value="value"
         v-bind="$attrs"
-        :type="$attrs.type?$attrs.type:'text'"
+        :type="type"
         class="vm-inputx vm-input--input"
+        @change="onInput"
         v-on="listeners">
       <transition name="placeholderx">
         <span
@@ -51,9 +53,9 @@
         v-if="icon"
         :class="{'icon-after':iconAfter, 'icon-no-border':iconNoBorder}"
         :icon-pack="iconPack"
-        :icon="icon"
+        :icon="pass ? getIconPass : icon"
         class="icon-inputx notranslate vm-input--icon"
-        @click="handleIconClick">
+        @on-icon-click="handleIconClick">
       </vm-icon>
 
       <transition name="icon-validate" >
@@ -132,6 +134,10 @@ export default {
       default:'',
       type:[String,Number]
     },
+    pass: {
+      default:false,
+      type:Boolean
+    },
     labelPlaceholder:{
       default:null,
       type:[String,Number]
@@ -139,6 +145,10 @@ export default {
     label:{
       default:null,
       type:[String,Number]
+    },
+    autofocus:{
+      default:false,
+      type:[Boolean,String]
     },
     icon:{
       default:null,
@@ -206,7 +216,8 @@ export default {
     }
   },
   data:()=>({
-    isFocus:false
+    isFocus:false,
+    type: 'text'
   }),
   computed:{
     style(){
@@ -247,6 +258,9 @@ export default {
            : this.success ? this.valIconSuccess
            : ''
     },
+    getIconPass(){
+      return this.type !== 'password' ? 'eye-outline' : 'eye-off-outline'
+    }
   },
   methods:{
     // animation
@@ -268,8 +282,17 @@ export default {
       this.$refs.vminput.focus()
     },
     handleIconClick (event) {
+      this.pass && (this.type == 'password' ? this.type = 'text' : this.type = 'password')
       this.$emit('on-icon-click', event);
     },
+    onInput() {
+      this.$emit('update:val', this.value)
+    }
+  },
+  watch: {
+    val (val) {
+      this.value = val
+    }
   },
 }
 </script>

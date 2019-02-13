@@ -18,6 +18,14 @@ export default {
       default:false,
       type:Boolean
     },
+    vmTriggerOutsideClick:{
+      default:false,
+      type:Boolean
+    },
+    vmTriggerHiddenClick:{
+      default:false,
+      type:Boolean
+    },
     vmTriggerContextmenu:{
       default:false,
       type:Boolean
@@ -62,7 +70,19 @@ export default {
     })
     dropdownMenu.vmCustomContent = this.vmCustomContent
     dropdownMenu.vmTriggerClick = this.vmTriggerClick
+    dropdownMenu.vmTriggerOutsideClick = this.vmTriggerOutsideClick
     this.changeColor()
+    document.addEventListener('click',(el)=>{
+      if ((this.vsTriggerClick || this.vsCustomContent) && this.vsDropdownVisible) {
+        if ((el.target !== this.$refs.dropdown &&
+          el.target.parentNode !== this.$refs.dropdown &&
+          el.target.parentNode.parentNode !== this.$refs.dropdown))
+          dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+      }
+    })
+  },
+  beforeDestroy(){
+    document.removeEventListener('click')
   },
   methods:{
     changeColor(){

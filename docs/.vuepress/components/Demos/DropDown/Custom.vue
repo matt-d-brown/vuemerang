@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="examplex">
 
-    <vm-dropdown vm-custom-content vm-trigger-click >
+    <vm-dropdown ref="dropdown" vm-custom-content vm-trigger-click vm-trigger-outside-click >
       <a class="a-icon" href.prevent>
         Click me open login
         <i class="eva eva-chevron-down">
@@ -26,7 +26,7 @@
         type="password"
         label-placeholder="Password" v-model="value2"/>
 
-        <vm-button width="100%" color="success" type="gradient">Login</vm-button>
+        <vm-button width="100%" color="success" type="gradient" @click="hiddeDrop">Login</vm-button>
       </vm-dropdown-menu>
     </vm-dropdown>
   </div>
@@ -41,7 +41,15 @@ export default {
       email:false,
       password:false,
     }
-  })
+  }),
+  methods: {
+    hiddeDrop () {
+      let [dropdownMenu] = this.$refs.dropdown.$children.filter((item)=>{
+        return item.hasOwnProperty('dropdownVisible')
+      })
+      dropdownMenu.dropdownVisible = false
+    }
+  }
 }
 </script>
 
