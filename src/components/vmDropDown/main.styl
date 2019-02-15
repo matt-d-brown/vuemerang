@@ -136,8 +136,10 @@
   padding-top: 10px
   position: absolute;
   height: auto;
-  width: auto;
-  z-index: 40000
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  z-index: 50000
   transform: translate(-100%);
   transition: opacity .25s, transform .25s, width .3s ease;
   &::after
