@@ -60,7 +60,11 @@ export default {
     this.insertBody()
   },
   beforeDestroy() {
-    this.$el.parentNode.removeChild(this.$el)
+    // this.$el.parentNode.removeChild(this.$el)
+    let [parent] = document.getElementsByTagName('body')
+    if (parent && this.$el && this.$el.parentNode.parentNode === parent) {
+      parent.removeChild(this.$el)
+    }
   },
   methods:{
     setDirection() {
@@ -78,9 +82,9 @@ export default {
       }, 100)
     },
     toggleMenu(event){
-      if(event.type == 'mouseover' && !this.vmTriggerClick){
+      if(event.type == 'mouseover' && !this.vmTriggerClick && !this.vmTriggerOutsideClick){
         this.dropdownVisible = true
-      } else if (!this.vmTriggerClick) {
+      } else if (!this.vmTriggerClick && !this.vmTriggerOutsideClick) {
         this.dropdownVisible = false
       }
       this.widthx = this.$el.clientWidth
@@ -89,6 +93,7 @@ export default {
       if(event.type == 'mousedown' && this.vmTriggerOutsideClick){
         // Checar
         this.dropdownVisible = false
+        this.vmTriggerOutsideClick = false
       }
       this.widthx = this.$el.clientWidth
     },

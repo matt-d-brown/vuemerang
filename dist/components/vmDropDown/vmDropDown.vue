@@ -82,7 +82,7 @@ export default {
     })
   },
   beforeDestroy(){
-    document.removeEventListener('click')
+    document.removeEventListener('click', this)
   },
   methods:{
     changeColor(){
