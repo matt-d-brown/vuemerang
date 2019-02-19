@@ -2,6 +2,9 @@ export default {
   insertBody(elx){
     document.body.insertBefore(elx, document.body.firstChild)
   },
+  insertParent(elx, parentEl){
+    parentEl.insertBefore(elx, parentEl.firstChild)
+  },
   changePosition(elx,content,conditional){
     let topx = 0
     let leftx = 0
