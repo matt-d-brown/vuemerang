@@ -211,6 +211,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           '/components/images',
           '/components/timePicker',
           '/components/datePicker',
+          '/components/TextEditor',
           /*New Component*/
         ]
       },

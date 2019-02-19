@@ -31,6 +31,7 @@ export { default as vmCollapse } from './vmCollapse'
 export { default as vmImages } from './vmImages'
 // export { default as vmTimePicker } from './vmTimePicker'
 export { default as vmDatePicker } from './vmDatePicker'
+export { default as vmTextEditor } from './vmTextEditor'
 //New Component import
 
 //layout

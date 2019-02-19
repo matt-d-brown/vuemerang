@@ -1,0 +1,99 @@
+$offwhite = #f7f7f7
+$buttonWidth = 8vw
+$buttonHeight = 41px
+$svgSize = 16px
+.editr
+  border 1px solid darken($offwhite, 7.5%)
+  width 100%
+  border-radius 5px
+  box-shadow 0 2px 8px 0 rgba(59,65,94,0.02), 0 1px 1px 0 rgba(0,0,0,0.005)
+  &:focus-within
+    border 1px solid var(primary)
+.editr--toolbar
+  // background $offwhite
+  // border-bottom 1px solid darken($offwhite, 7.5%)
+  position relative
+  display flex
+  height $buttonHeight
+  padding 0 0 0 5px
+  overflow-x: scroll;
+  overflow-y: hidden;
+  a
+    display inline-block
+    width $buttonWidth
+    max-width 32px
+    height $buttonHeight
+    color #333
+    fill grey
+    cursor pointer
+    text-align center
+    line-height 1
+    transition all ease 0.2s
+    &:hover
+      // background alpha(black, 0.1)
+    &:active
+      // background alpha(black, 0.2)
+    &:hover
+      fill #51ddd3
+    svg
+      width $svgSize
+      height $svgSize
+      margin (($buttonHeight - $svgSize)/2) auto
+      path
+        // fill grey
+    &.vw-btn-separator
+      width 1px
+      margin 0 8px
+      cursor default
+      &:hover
+        background initial
+      i.vw-separator
+        border-left: 1px solid rgba(0,0,0,0.1);
+        height: 60%;
+        position: absolute;
+        top: 9px;
+        width: 1px;
+  .dashboard
+    width 100%
+    position absolute
+    top 32px
+    left 0
+    text-align left
+    padding 8px 16px
+    background alpha(white, 0.95)
+    border 1px solid $offwhite
+.editr--content
+  min-height 150px
+  padding 16px
+  line-height 1.33
+  font-family inherit
+  color inherit
+  overflow-y auto
+  transition border-width 0.2s ease
+  border-radius 0 0 5px 5px
+  &[contenteditable=true]:empty:before
+    content: attr(placeholder);
+    color alpha(black, 0.3)
+    display: block; /* For Firefox */
+  img
+    max-width 100%
+  table
+    width 100%
+    border-collapse collapse
+      th
+        text-align left
+      th, td
+        border 1px solid #dddddd
+        padding 2px
+  &:focus
+    // border 1px solid var(primary)
+  ul, ol
+    li
+      list-style-position: inside;
+      list-style: decimal !important;
+@media screen and (max-width 320px)
+  .editr--toolbar
+    a
+      margin 0 2px
+    a.vw-btn-separator
+      display none
