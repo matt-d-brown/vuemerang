@@ -248,7 +248,7 @@ export default {
     active(){
       this.$nextTick(() => {
         if(this.active){
-          utils.insertBody(this.$refs.vmSelectOptions)
+          this.$parent.$el.className  === 'con-vm-dialog' ? utils.insertParent(this.$refs.vmSelectOptions, this.$parent.$el) : utils.insertBody(this.$refs.vmSelectOptions)            
           setTimeout( () => {
             this.$children.forEach((item)=>{
               if (item.focusValue) {
@@ -265,11 +265,9 @@ export default {
     },
   },
   mounted(){
-    // this.$refs.inputselect.value = this.value
-    // console.log(this.$refs.inputselect.value ,'==========', this.value)
     this.changeValue()
     if (this.active) {
-      utils.insertBody(this.$refs.vmSelectOptions)
+      this.$parent.$el.className  === 'con-vm-dialog' ? utils.insertParent(this.$refs.vmSelectOptions, this.$parent.$el) : utils.insertBody(this.$refs.vmSelectOptions)            
     }
   },
   beforeDestroy() {
