@@ -22,6 +22,7 @@
         :icon="iconDec"
       ></vm-icon>
     </button>
+    <span v-if="label">{{ label }}</span>
     <input
       ref="input"
       :style="{
@@ -93,6 +94,10 @@ export default {
     color:{
       default:'primary',
       type:String
+    },
+    label: {
+      default: null,
+      type: String
     },
     max:{
       default:null,
