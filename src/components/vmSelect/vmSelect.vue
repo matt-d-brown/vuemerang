@@ -273,8 +273,12 @@ export default {
     }
   },
   beforeDestroy() {
+    console.log(this.$parent.$el.className)
     let [parent] = document.getElementsByTagName('body')
     if (parent && this.$refs.vsSelectOptions && this.$refs.vsSelectOptions.parentNode === parent) {
+      parent.removeChild(this.$refs.vsSelectOptions)
+    } else {
+      let [parent] = this.$parent.$el
       parent.removeChild(this.$refs.vsSelectOptions)
     }
   },
