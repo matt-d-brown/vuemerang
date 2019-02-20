@@ -248,6 +248,7 @@ export default {
     active(){
       this.$nextTick(() => {
         if(this.active){
+          console.log(this.$parent.$el.className)
           this.$parent.$el.className  === 'con-vm-dialog' ? utils.insertParent(this.$refs.vmSelectOptions, this.$parent.$el) : utils.insertBody(this.$refs.vmSelectOptions)            
           setTimeout( () => {
             this.$children.forEach((item)=>{
@@ -267,12 +268,17 @@ export default {
   mounted(){
     this.changeValue()
     if (this.active) {
+      console.log(this.$parent.$el.className)
       this.$parent.$el.className  === 'con-vm-dialog' ? utils.insertParent(this.$refs.vmSelectOptions, this.$parent.$el) : utils.insertBody(this.$refs.vmSelectOptions)            
     }
   },
   beforeDestroy() {
+    console.log(this.$parent.$el.className)
     let [parent] = document.getElementsByTagName('body')
     if (parent && this.$refs.vsSelectOptions && this.$refs.vsSelectOptions.parentNode === parent) {
+      parent.removeChild(this.$refs.vsSelectOptions)
+    } else {
+      let [parent] = this.$parent.$el
       parent.removeChild(this.$refs.vsSelectOptions)
     }
   },

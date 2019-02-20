@@ -180,6 +180,10 @@ export default {
     if (this.active && this.isPrompt) {
       this.insertBody()
     }
+    document.addEventListener("keyup", this.escape)
+  },
+  beforeDestroy() {
+    document.removeEventListener("keyup", this.escape)
   },
   methods:{
     giveColor(color){
@@ -240,6 +244,9 @@ export default {
       let elx = this.$refs.con
       document.body.insertBefore(elx, document.body.firstChild)
     },
+    escape(e){
+      if (e.keyCode === 27) this.cancelClose()
+    }
   }
 }
 </script>

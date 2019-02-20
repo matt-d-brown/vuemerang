@@ -3,12 +3,20 @@ $buttonWidth = 8vw
 $buttonHeight = 41px
 $svgSize = 16px
 .editr
-  border 1px solid darken($offwhite, 7.5%)
+  border 1px solid rgba(0,0,0,0)
   width 100%
   border-radius 5px
-  box-shadow 0 2px 8px 0 rgba(59,65,94,0.02), 0 1px 1px 0 rgba(0,0,0,0.005)
+  -webkit-box-shadow 0 2px 8px 0 rgba(59,65,94,.1), 0 1px 1px 0 rgba(0,0,0,.07)
+  box-shadow 0 2px 8px 0 rgba(59,65,94,.1), 0 1px 1px 0 rgba(0,0,0,.07)
+  transition boxShadow .25s ease, border .25s ease, transform .25s ease
+  // overflow hidden
+  transform: translate(0, 0px)
   &:focus-within
     border 1px solid var(primary)
+    // border: 1px solid rgba(0,0,0,.02)
+    // transform: translate(0, -3px)
+    -webkit-box-shadow 0 5px 15px 0 rgba(59,65,94,0.1), 0 1px 4px 0 rgba(0,0,0,0.07)
+    box-shadow 0 5px 15px 0 rgba(59,65,94,0.1), 0 1px 4px 0 rgba(0,0,0,0.07)
 .editr--toolbar
   // background $offwhite
   // border-bottom 1px solid darken($offwhite, 7.5%)
