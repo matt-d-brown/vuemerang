@@ -781,10 +781,7 @@ export default {
         leftx = elx.getBoundingClientRect().left - elx.clientWidth + 25
       } else {
         leftx = elx.getBoundingClientRect().left
-        console.log('entro');
       }
-
-      console.log();
       widthx = elx.offsetWidth
 
       let cords = {

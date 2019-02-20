@@ -248,6 +248,7 @@ export default {
     active(){
       this.$nextTick(() => {
         if(this.active){
+          console.log(this.$parent.$el.className)
           this.$parent.$el.className  === 'con-vm-dialog' ? utils.insertParent(this.$refs.vmSelectOptions, this.$parent.$el) : utils.insertBody(this.$refs.vmSelectOptions)            
           setTimeout( () => {
             this.$children.forEach((item)=>{
@@ -267,6 +268,7 @@ export default {
   mounted(){
     this.changeValue()
     if (this.active) {
+      console.log(this.$parent.$el.className)
       this.$parent.$el.className  === 'con-vm-dialog' ? utils.insertParent(this.$refs.vmSelectOptions, this.$parent.$el) : utils.insertBody(this.$refs.vmSelectOptions)            
     }
   },
