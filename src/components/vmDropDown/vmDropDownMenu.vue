@@ -7,7 +7,7 @@
       :class="{'rightx':rightx,'notHeight':notHeight}"
       :style="{
         'left':leftx+'px',
-        'top':topx+'px' 
+        'top':topx+'px'
       }"
       class="con-vm-dropdown--menu vm-dropdown-menu"
       @mouseover="toggleMenu($event)"
@@ -22,7 +22,7 @@
         class="vm-dropdown--custom vm-dropdown--menu">
         <slot/>
       </div>
-      <div class="vs-dropdown--menu--after" ref="menuAfter"></div>
+      <div class="vm-dropdown--menu--after" ref="menuAfter"></div>
     </div>
   </transition>
 </template>
@@ -42,7 +42,7 @@ export default {
     vmTriggerOutsideClick: false,
     widthx:0,
     notHeight:false,
-    vsCustomContent:false,
+    vmCustomContent:false,
     parentNode:null
   }),
   watch:{
@@ -60,11 +60,7 @@ export default {
     this.insertBody()
   },
   beforeDestroy() {
-    // this.$el.parentNode.removeChild(this.$el)
-    let [parent] = document.getElementsByTagName('body')
-    if (parent && this.$el && this.$el.parentNode.parentNode === parent) {
-      parent.removeChild(this.$el)
-    }
+    this.$el.parentNode.removeChild(this.$el)
   },
   methods:{
     setDirection() {
@@ -74,7 +70,7 @@ export default {
         if (!menuAfter) return
         if(dropdown && menuAfter && dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
           const hasGroup = this.$children.find(it=>it.hasOwnProperty('activeGroup'))
-          menuAfter.style.top = hasGroup?'97.58%':'96%'
+          menuAfter.style.bottom = '-5px'
           menuAfter.style.transform = 'rotate(225deg)'
           return
         }
@@ -103,6 +99,5 @@ export default {
       document.body.insertBefore(elp, document.body.firstChild)
     },
   }
-
 }
 </script>
