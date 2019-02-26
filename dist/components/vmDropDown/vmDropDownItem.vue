@@ -78,7 +78,6 @@ export default {
             return item.hasOwnProperty('dropdownVisible')
           })
           dropdownMenu.dropdownVisible = parent.vmDropdownVisible = false
-
         }
       }
     },
@@ -101,6 +100,5 @@ export default {
       return _color.rColor(this.color,opacity)
     },
   },
-
 }
 </script>

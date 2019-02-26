@@ -21,13 +21,13 @@ div(@mousedown="onBtnClick")
 import bus from './bus.js';
 
 export default {
-	props: ["module", "options"],
+  props: ["module", "options"],
 
-	data () {
-		return {
-			showDashboard: false,
-		}
-	},
+  data () {
+    return {
+      showDashboard: false,
+    }
+  },
 
   computed: {
     uid () {
@@ -35,37 +35,37 @@ export default {
     }
   },
 
-	methods: {
-		closeDashboard () {
-			this.showDashboard = false;
-		},
+  methods: {
+    closeDashboard () {
+      this.showDashboard = false;
+    },
 
-		openDashboard () {
-			this.showDashboard = true;
-		},
+    openDashboard () {
+      this.showDashboard = true;
+    },
 
     exec () {
       this.$parent.exec.apply(null, arguments)
     },
 
-		onBtnClick ($event) {
-			$event.preventDefault();
-			if (this.module.action !== undefined)
-				this.exec.apply(null, this.module.action);
+    onBtnClick ($event) {
+      $event.preventDefault();
+      if (this.module.action !== undefined)
+        this.exec.apply(null, this.module.action);
 
-			else if (this.module.customAction !== undefined) {
-				this.module.customAction(bus.utils).forEach(a => this.exec.apply(null, a));
-			}
+      else if (this.module.customAction !== undefined) {
+        this.module.customAction(bus.utils).forEach(a => this.exec.apply(null, a));
+      }
 
-			else if (
+      else if (
 				this.module.render !== undefined &&
 				(!this.$refs.dashboard || !this.$refs.dashboard.contains($event.target))
 			) {
-				this.showDashboard = !this.showDashboard;
-				bus.emit(`${this.uid}_${this.showDashboard ? "show" : "hide"}_dashboard_${this.module.title}`);
-				return;
-			}
-		}
-	}
+        this.showDashboard = !this.showDashboard;
+        bus.emit(`${this.uid}_${this.showDashboard ? "show" : "hide"}_dashboard_${this.module.title}`);
+        return;
+      }
+    }
+  }
 }
 </script>

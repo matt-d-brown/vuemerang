@@ -59,32 +59,36 @@ export default {
       this.changePositionMenu()
       if(this.vmDropdownVisible){
         this.$emit('focus')
+        document.addEventListener('click', this.clickx)
       } else {
         this.$emit('blur')
       }
     }
   },
   mounted(){
-    let [dropdownMenu] = this.$children.filter((item)=>{
-      return item.hasOwnProperty('dropdownVisible')
-    })
-    dropdownMenu.vmCustomContent = this.vmCustomContent
-    dropdownMenu.vmTriggerClick = this.vmTriggerClick
-    dropdownMenu.vmTriggerOutsideClick = this.vmTriggerOutsideClick
     this.changeColor()
-    document.addEventListener('click',(el)=>{
-      if ((this.vsTriggerClick || this.vsCustomContent) && this.vsDropdownVisible) {
-        if ((el.target !== this.$refs.dropdown &&
-          el.target.parentNode !== this.$refs.dropdown &&
-          el.target.parentNode.parentNode !== this.$refs.dropdown))
-          dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
-      }
-    })
+    document.addEventListener('click', this.clickx)
   },
   beforeDestroy(){
-    document.removeEventListener('click', this)
+    document.removeEventListener('click', this.clickx)
   },
   methods:{
+    clickx(el) {
+      let [dropdownMenu] = this.$children.filter((item)=>{
+        return item.hasOwnProperty('dropdownVisible')
+      })
+      dropdownMenu.vmTriggerOutsideClick = this.vmTriggerOutsideClick
+      dropdownMenu.vmCustomContent = this.vmCustomContent
+      dropdownMenu.vmTriggerClick = this.vmTriggerClick
+      if ((this.vmTriggerClick || this.vmCustomContent) && this.vmDropdownVisible) {
+        if ((el.target !== this.$refs.dropdown &&
+        el.target.parentNode !== this.$refs.dropdown &&
+        el.target.parentNode.parentNode !== this.$refs.dropdown)) {
+          dropdownMenu.dropdownVisible = this.vmDropdownVisible = false
+          document.removeEventListener('click', this.clickx)
+        }
+      }
+    },
     changeColor(){
       let child = this.$children
       child.forEach((item)=>{
@@ -103,17 +107,14 @@ export default {
           dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top - dropdownMenu.$el.clientHeight - 10) + scrollTopx
           dropdownMenu.notHeight = true
         });
-
       } else {
         dropdownMenu.notHeight = false
         dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top + this.$refs.dropdown.clientHeight) + scrollTopx
       }
-
       this.$nextTick(() => {
         var w = window.innerWidth
         || document.documentElement.clientWidth
         || document.body.clientWidth;
-
         if(this.$refs.dropdown.getBoundingClientRect().left + dropdownMenu.$el.offsetWidth >= w - 20){
           this.rightx = true
         }

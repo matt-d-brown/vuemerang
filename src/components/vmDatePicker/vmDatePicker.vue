@@ -16,10 +16,10 @@
       :class="[prefixCls + '-rel']">
       <slot>
         <vm-input
+          ref="input"
           :key="forceInputRerender"
           :element-id="elementId"
           :class="[prefixCls + '-editor']"
-          ref="input"
           :readonly="!editable || readonly"
           :disabled="disabled"
           :size="size"
@@ -43,15 +43,15 @@
     </div>
     <transition name="fadecalendar">
       <div
+        v-transfer-dom
         v-show="active"
-        :class="['vm-datepicker-' + color]"
         ref="calendarModal"
+        :class="['vm-datepicker-' + color]"
         :placement="placement"
         :style="cords"
         :data-transfer="transfer"
         :transfer="transfer"
         class="vm-datepicker--calendar"
-        v-transfer-dom
         @click.native="handleTransferClick">
         <div>
           <component
@@ -693,17 +693,17 @@ export default {
           if (typeof val === 'string') {
             val = parser(val, format);
           } else if (type === 'timerange') {
-              val = parser(val, format).map(v => v || '');
-            } else {
-              const [start, end] = val;
-              if (start instanceof Date && end instanceof Date){
-                  val = val.map(date => new Date(date));
-                } else if (typeof start === 'string' && typeof end === 'string'){
-                    val = parser(val.join(RANGE_SEPARATOR), format);
-                  } else if (!start || !end){
-                    val = [null, null];
-                  }
+            val = parser(val, format).map(v => v || '');
+          } else {
+            const [start, end] = val;
+            if (start instanceof Date && end instanceof Date){
+              val = val.map(date => new Date(date));
+            } else if (typeof start === 'string' && typeof end === 'string'){
+              val = parser(val.join(RANGE_SEPARATOR), format);
+            } else if (!start || !end){
+              val = [null, null];
             }
+          }
         }
       } else if (typeof val === 'string' && type.indexOf('time') !== 0){
         val = parser(val, format) || null;

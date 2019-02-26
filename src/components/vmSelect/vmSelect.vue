@@ -6,8 +6,8 @@
       'input-select-validate-success':success,
       'input-select-validate-danger':danger,
       'input-select-validate-warning':warning}"
-    class="con-select"
-    :style="getWidth">
+    :style="getWidth"
+    class="con-select">
     <label
       v-if="label"
       ref="inputSelectLabel"

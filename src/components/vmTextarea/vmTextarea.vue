@@ -61,10 +61,10 @@ export default {
       if (this.height) {
         style = `height:${this.height};`
       }
-       if (this.width) {
+      if (this.width) {
         style += `width:${this.width};`
       }
-       return style
+      return style
     },
     listeners() {
       return {

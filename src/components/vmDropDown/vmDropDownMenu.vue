@@ -22,7 +22,9 @@
         class="vm-dropdown--custom vm-dropdown--menu">
         <slot/>
       </div>
-      <div class="vm-dropdown--menu--after" ref="menuAfter"></div>
+      <div 
+        ref="menuAfter" 
+        class="vm-dropdown--menu--after"></div>
     </div>
   </transition>
 </template>
