@@ -14,7 +14,6 @@
     @click="toggleCheckbox($event)">
     <input
       ref="inputCheckbox"
-      :checked="value"
       :disabled="$attrs.disabled"
       class="input-switch vm-switch--input"
       type="checkbox"
@@ -29,9 +28,9 @@
       <slot name="on"/>
 
       <vm-icon
+        class="icons-switch vm-switch--icon"
         :icon-pack="iconPack"
         :icon="vmIconOn || vmIcon"
-        class="icons-switch vm-switch--icon"
       ></vm-icon>
     </span>
     <span
@@ -41,9 +40,9 @@
       <!-- gato con botas -->
       <slot name="off"/>
       <vm-icon
+        class="icons-switch vm-switch--icon"
         :icon-pack="iconPack"
         :icon="vmIconOff || vmIcon"
-        class="icons-switch vm-switch--icon"
       ></vm-icon>
     </span>
     <span class="vm-circle-switch vm-switch--circle"/>
@@ -77,7 +76,10 @@ export default {
       default:'eva',
       type:String
     },
-    vmValue:{}
+    vmValue:{
+      type:[Boolean,Array,String,Number,Object],
+      default:false
+    },
   },
   data:()=>({
     widthx:42,
@@ -93,7 +95,7 @@ export default {
     listeners(){
       return {
         ...this.$listeners,
-        change: (evt) => {
+        input: (evt) => {
           this.toggleValue(evt)
         }
       }
@@ -103,11 +105,6 @@ export default {
     },
   },
   mounted(){
-    this.$nextTick(()=>{
-      let w = this.$refs.on.clientWidth>this.$refs.off.clientWidth?this.$refs.on.clientWidth:this.$refs.off.clientWidth
-      this.widthx = w + 24
-    })
-
   },
   methods:{
     toggleCheckbox() {
@@ -118,23 +115,34 @@ export default {
     },
     toggleValue(evt){
       if(this.isArrayx()){
-        this.setArray(evt)
+        this.setArray()
+      } else if (typeof(this.vmValue) == 'string' ) {
+        this.setValueString()
       }
       else {
-        this.$emit('input',evt.target.checked)
+        this.$emit('input',!this.value)
         this.$emit('change',evt)
       }
     },
-    setArray(evt){
+    setArray(){
       const value = this.value.slice(0) // Copy Array.
       if(this.isArrayIncludes()){
         value.splice(value.indexOf(this.vmValue),1) // delete value
         this.$emit('input', value)
-        this.$emit('change', evt)
+        this.$emit('change', value)
       } else {
         value.push(this.vmValue) // add value new
         this.$emit('input', value)
-        this.$emit('change', evt)
+        this.$emit('change', value)
+      }
+    },
+    setValueString(){
+      if(this.value == this.vmValue){
+        this.$emit('input', null)
+        this.$emit('change', null)
+      } else {
+        this.$emit('input', this.vmValue)
+        this.$emit('change', this.vmValue)
       }
     },
     isArrayIncludes(){

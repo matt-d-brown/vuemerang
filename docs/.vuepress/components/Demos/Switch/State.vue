@@ -10,11 +10,11 @@
     </li>
     <li>
       <label for="">disabled / active</label>
-      <vm-switch disabled="true" v-model="switch3"/>
+      <vm-switch disabled v-model="switch3"/>
     </li>
     <li>
       <label for="">disabled / inactive</label>
-      <vm-switch disabled="true" v-model="switch4"/>
+      <vm-switch disabled v-model="switch4"/>
     </li>
   </ul>
 </template>

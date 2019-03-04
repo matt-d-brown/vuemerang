@@ -25,7 +25,7 @@
       </vm-switch>
     </li>
     <li>
-      <vm-switch vm-icon-on="check" color="success" v-model="switchArray" vm-value="lyon">
+      <vm-switch vm-icon-on="check-outline" color="success" v-model="switchArray" vm-value="lyon">
         <span slot="off">
           Lyon
         </span>
@@ -38,7 +38,7 @@
 export default {
   data(){
     return {
-      switchArray:['luis'],
+      switchArray: ['luis'],
     }
   }
 }
