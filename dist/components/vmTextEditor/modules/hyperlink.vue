@@ -1,9 +1,14 @@
 <template lang="html">
   <form @submit.prevent="insertLink">
     <label>URL</label>
-    <input ref="url" v-model="url" type="text">
+    <input 
+      ref="url" 
+      v-model="url" 
+      type="text">
     <label>Title</label>
-    <input v-model="title" type="text">
+    <input 
+      v-model="title" 
+      type="text">
     <button type="submit">Insert</button>
   </form>
 </template>

@@ -6,8 +6,8 @@
       'input-select-validate-success':success,
       'input-select-validate-danger':danger,
       'input-select-validate-warning':warning}"
-    class="con-select"
-    :style="getWidth">
+    :style="getWidth"
+    class="con-select">
     <label
       v-if="label"
       ref="inputSelectLabel"
@@ -200,7 +200,7 @@ export default {
       return this
     },
     getWidth() {
-      return this.width ? `width:${this.width};` : null
+      return this.width ? `width:${this.width};` : 'width:100%'
     },
     listeners(){
       return {
@@ -248,8 +248,8 @@ export default {
     active(){
       this.$nextTick(() => {
         if(this.active){
-          console.log(this.$parent.$el.className)
-          this.$parent.$el.className  === 'con-vm-dialog' ? utils.insertParent(this.$refs.vmSelectOptions, this.$parent.$el) : utils.insertBody(this.$refs.vmSelectOptions)            
+          let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+          parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)            
           setTimeout( () => {
             this.$children.forEach((item)=>{
               if (item.focusValue) {
@@ -260,7 +260,12 @@ export default {
           }, 100);
         } else {
           let [parent] = document.getElementsByTagName('body')
-          parent.removeChild(this.$refs.vmSelectOptions)
+          let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+          if (parent && this.$refs.vsSelectOptions && this.$refs.vsSelectOptions.parentNode === parent) {
+            parent.removeChild(this.$refs.vsSelectOptions)
+          } else if(parentNode && this.$refs.vsSelectOptions){
+            parentNode.removeChild(this.$refs.vsSelectOptions)
+          }
         }
       })
     },
@@ -268,18 +273,17 @@ export default {
   mounted(){
     this.changeValue()
     if (this.active) {
-      console.log(this.$parent.$el.className)
-      this.$parent.$el.className  === 'con-vm-dialog' ? utils.insertParent(this.$refs.vmSelectOptions, this.$parent.$el) : utils.insertBody(this.$refs.vmSelectOptions)            
+      let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+      parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)            
     }
   },
   beforeDestroy() {
-    console.log(this.$parent.$el.className)
     let [parent] = document.getElementsByTagName('body')
+    let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
     if (parent && this.$refs.vsSelectOptions && this.$refs.vsSelectOptions.parentNode === parent) {
       parent.removeChild(this.$refs.vsSelectOptions)
-    } else {
-      let [parent] = this.$parent.$el
-      parent.removeChild(this.$refs.vsSelectOptions)
+    } else if(parentNode && this.$refs.vsSelectOptions){
+      parentNode.removeChild(this.$refs.vsSelectOptions)
     }
   },
   updated(){
@@ -445,13 +449,15 @@ export default {
       document.removeEventListener('click',this.clickBlur)
     },
     changePosition(){
+      let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
       let elx = this.$refs.inputselect
       let content = this.$refs.vmSelectOptions
       let conditional = this.autocomplete
       let topx = 0
       let leftx = 0
       let widthx = 0
-      let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
+      let scrollTopx = parentNode ? 0 : window.pageYOffset || document.documentElement.scrollTop
+      if (!elx) return
       if(elx.getBoundingClientRect().top + content.scrollHeight + 20 >= window.innerHeight) {
         topx = (elx.getBoundingClientRect().top + elx.clientHeight) + scrollTopx - content.scrollHeight
         if(conditional){

@@ -10,9 +10,9 @@
     <h3 v-else>{{ vmLabel }}</h3>
     <vm-icon
       v-if="vmCollapse"
-      class="icon-group notranslate vm-dropdown--group-icon"
       :icon-pack="iconPack"
       :icon="vmIcon"
+      class="icon-group notranslate vm-dropdown--group-icon"
     ></vm-icon>
     <transition
       @before-enter="beforeEnter"

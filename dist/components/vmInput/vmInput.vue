@@ -219,9 +219,6 @@ export default {
     isFocus:false,
     type: ''
   }),
-  mounted () {
-    this.type = this.$attrs.type ? this.$attrs.type : 'text'
-  },
   computed:{
     style(){
       return {
@@ -265,6 +262,14 @@ export default {
       return this.type !== 'password' ? 'eye-outline' : 'eye-off-outline'
     }
   },
+  watch: {
+    val (val) {
+      this.value = val
+    }
+  },
+  mounted () {
+    this.type = this.$attrs.type ? this.$attrs.type : 'text'
+  },
   methods:{
     // animation
     changeFocus(booleanx) {
@@ -290,11 +295,6 @@ export default {
     },
     onInput() {
       this.$emit('update:val', this.value)
-    }
-  },
-  watch: {
-    val (val) {
-      this.value = val
     }
   },
 }
