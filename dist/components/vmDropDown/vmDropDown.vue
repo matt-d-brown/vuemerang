@@ -84,8 +84,9 @@ export default {
         if ((el.target !== this.$refs.dropdown &&
         el.target.parentNode !== this.$refs.dropdown &&
         el.target.parentNode.parentNode !== this.$refs.dropdown)) {
-          dropdownMenu.dropdownVisible = this.vmDropdownVisible = false
-          document.removeEventListener('click', this.clickx)
+          // console.log('entre');
+          // dropdownMenu.dropdownVisible = this.vmDropdownVisible = false
+          // document.removeEventListener('click', this.clickx)
         }
       }
     },
