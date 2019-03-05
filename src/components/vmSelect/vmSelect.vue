@@ -449,7 +449,7 @@ export default {
       document.removeEventListener('click',this.clickBlur)
     },
     changePosition(){
-      let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+      let parentNode = this.$el.closest('.con-vm-dialog')
       let elx = this.$refs.inputselect
       let content = this.$refs.vmSelectOptions
       let conditional = this.autocomplete
@@ -459,15 +459,18 @@ export default {
       let scrollTopx = parentNode ? 0 : window.pageYOffset || document.documentElement.scrollTop
       if (!elx) return
       if(elx.getBoundingClientRect().top + content.scrollHeight + 20 >= window.innerHeight) {
-        topx = (elx.getBoundingClientRect().top + elx.clientHeight) + scrollTopx - content.scrollHeight
+        topx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().top - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().top : (elx.getBoundingClientRect().top + elx.clientHeight) + scrollTopx - content.scrollHeight
         if(conditional){
-          topx = topx - elx.clientHeight - 5
+          topx = topx - elx.clientHeight - 2
         }
       } else {
-        topx = conditional?(elx.getBoundingClientRect().top + elx.clientHeight) + scrollTopx + 5:elx.getBoundingClientRect().top + scrollTopx
+        topx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().top - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().top :  (elx.getBoundingClientRect().top) + scrollTopx
+        if(conditional){
+          topx = topx + elx.clientHeight + 5
+        }
       }
 
-      leftx = elx.getBoundingClientRect().left
+      leftx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().left - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().left : elx.getBoundingClientRect().left
       widthx = elx.offsetWidth
 
       let cords = {

@@ -25,7 +25,13 @@
         danger-text="The password must have at least 8 characters, 1 number, 1 special character"
         type="password"
         label-placeholder="Password" v-model="value2"/>
-
+    <vm-select
+      class="selectExample"
+      label="Figuras"
+      v-model="select1"
+      >
+      <vm-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+    </vm-select>
         <vm-button width="100%" color="success" type="gradient" @click="hiddeDrop">Login</vm-button>
       </vm-dropdown-menu>
     </vm-dropdown>
@@ -35,6 +41,12 @@
 <script>
 export default {
   data:()=>({
+    select1:2,
+    options1:[
+      {text:'IT',value:0},
+      {text:'Blade Runner',value:2},
+      {text:'Thor Ragnarok',value:3},
+    ],
     value1:'',
     value2:'',
     valid:{
