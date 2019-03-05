@@ -32,6 +32,7 @@ export { default as vmImages } from './vmImages'
 // export { default as vmTimePicker } from './vmTimePicker'
 export { default as vmDatePicker } from './vmDatePicker'
 export { default as vmTextEditor } from './vmTextEditor'
+export { default as vmTypeahead } from './vmTypeahead'
 //New Component import
 
 //layout
