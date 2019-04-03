@@ -122,8 +122,8 @@ export default {
         if(this.text.toUpperCase().indexOf(valuex.toUpperCase()) == 0){
           valuex = this.MaysPrimera(valuex)
         }
-        // let text = this.text.replace(re,`<span class="searchx">${valuex}</span>`)
-        this.getText = this.text
+        let text = this.text.replace(re,`<span class="searchx">${valuex}</span>`)
+        this.getText = text
       } else {
         this.getText = this.text
       }
