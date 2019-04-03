@@ -7,14 +7,14 @@
       'input-select-validate-warning':warning}"
     :style="getWidth"
     class="vm-component vm-typeahead"
-    > 
+    >
     <label
       v-if="label"
       ref="inputSelectLabel"
       class="vm-typeahead--label"
       :class="[`vm-typeahead--label-${color}`]"
       for="">{{ label }}
-      <span class="vm-typeahead--label-span" v-if="required">*</span>  
+      <span class="vm-typeahead--label-span" v-if="required">*</span>
     </label>
     <div class="input-select-con">
       <!-- v-model="valueFilter" -->
@@ -25,6 +25,7 @@
         type="text"
         @click.stop
         @keydown.esc.stop.prevent="closeOptions"
+        autocomplete="off"
         v-on="listeners">
 
       <vm-typeahead-loading :active="activeLoading" :color="color" :type="loadingType"></vm-typeahead-loading>
@@ -36,17 +37,17 @@
           :class="[`vm-typeahead-${color}`,{'scrollx':scrollx}]"
           class="vm-typeahead--options">
           <ul v-show="data.length > 0" ref="ulx">
-            <vm-typeahead-item :key="index" :value="item.id" :text="item.text" v-for="item,index in formattedData">
+            <vm-typeahead-item  is="vm-typeahead-item" v-bind:key="index" v-bind:value="item.id" v-bind:text="item.text" v-for="item,index in matchedItems">
               <template slot="html">
                 <slot :data="item.data" ></slot>
               </template>
             </vm-typeahead-item>
           </ul>
           <ul v-show="!activeLoading && inputText.length > 0 && data.length === 0">
-            <vm-typeahead-data 
-              v-if="createObject" 
-              :text="createText" 
-              :value="inputText" 
+            <vm-typeahead-data
+              v-if="createObject"
+              :text="createText"
+              :value="inputText"
               @click="createAction"></vm-typeahead-data>
           </ul>
         </div>
@@ -103,31 +104,33 @@
 </template>
 
 <script>
-import axios from 'axios'
 import utils from '../../utils'
+function sanitize(text) {
+  return text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
 export default {
   name: "VmTypeahead",
   inheritAttrs:false,
   props:{
     value:{},
-    url:{
-      default:null,
-      type:String
+    data: {
+      type: Array,
+      required: true,
+      validator: d => d instanceof Array
     },
     filter: {
       type: Function,
       default: (f) => f,
-      validator: f => f instanceof Function      
+      validator: f => f instanceof Function
     },
     serializer: {
       type: Function,
       default: (d) => d.name,
       validator: d => d instanceof Function
-    },
-    serializerResponse: {
-      type: Function,
-      default: (r) => r.data,
-      validator: r => r instanceof Function      
     },
     createObject:{
       default:false,
@@ -188,10 +191,17 @@ export default {
     loadingType:{
       default: 'default',
       type: String
+    },
+    minMatchingChars: {
+      type: Number,
+      default: 2
+    },
+    maxMatches: {
+      type: Number,
+      default: 10
     }
   },
   data:()=>({
-    data: [],
     inputText: '',
     valueFilter:'',
     active:false,
@@ -203,18 +213,18 @@ export default {
   mounted(){
     this.changeValue()
     if (this.active) {
-      let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
-      parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)            
+      // let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+      // parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)
     }
   },
   beforeDestroy() {
-    let [parent] = document.getElementsByTagName('body')
-    let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
-    if (parent && this.$refs.vmSelectOptions && this.$refs.vmSelectOptions.parentNode === parent) {
-      parent.removeChild(this.$refs.vmSelectOptions)
-    } else if(parentNode && this.$refs.vmSelectOptions){
-      parentNode.removeChild(this.$refs.vmSelectOptions)
-    }
+    // let [parent] = document.getElementsByTagName('body')
+    // let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+    // if (parent && this.$refs.vmSelectOptions && this.$refs.vmSelectOptions.parentNode === parent) {
+    //   parent.removeChild(this.$refs.vmSelectOptions)
+    // } else if(parentNode && this.$refs.vmSelectOptions){
+    //   parentNode.removeChild(this.$refs.vmSelectOptions)
+    // }
   },
   updated(){
     if(!this.active){
@@ -227,6 +237,9 @@ export default {
     },
     getWidth() {
       return this.width ? `width:${this.width};` : 'width:100%'
+    },
+    escapedQuery() {
+      return escapeRegExp(sanitize(this.inputText))
     },
     listeners(){
       return {
@@ -243,10 +256,11 @@ export default {
           this.focus(event)
         },
         input: (event) => {
-          this.activeLoading = true
-          this.inputText = event.target.value
-          this.getData(event.target.value)
-          this.$emit('input-change', event.target.value)
+          if (event.target.value.length > 1) {
+            this.activeLoading = true
+            this.inputText = event.target.value
+            this.$emit('input-change', this.filter(event.target.value))
+          }
         },
         keyup: (event) => {
           if(event.key == 'ArrowDown' || event.key == 'ArrowUp'){
@@ -269,6 +283,11 @@ export default {
       if (!(this.data instanceof Array)) {
         return []
       }
+
+      if (this.inputText.length === 0 || this.inputText.length < this.minMatchingChars) {
+        return []
+      }
+
       return this.data.map((d, i) => {
         return {
           id: i,
@@ -276,6 +295,22 @@ export default {
           text: this.serializer(d)
         }
       })
+    },
+    matchedItems () {
+      if (this.inputText.length === 0 || this.inputText.length < this.minMatchingChars) {
+        return []
+      }
+      const re = new RegExp(this.escapedQuery, 'gi')
+      // Filter, sort, and concat
+      return this.formattedData
+        .filter(i => i.text.match(re) !== null)
+        .sort((a, b) => {
+          const aIndex = a.text.indexOf(a.text.match(re)[0])
+          const bIndex = b.text.indexOf(b.text.match(re)[0])
+          if (aIndex < bIndex) { return -1 }
+          if (aIndex > bIndex) { return 1 }
+          return 0
+        }).slice(0, this.maxMatches)
     }
   },
   watch: {
@@ -289,7 +324,7 @@ export default {
       this.$nextTick(() => {
         if(this.active){
           let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
-          parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)            
+          // parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)
           setTimeout( () => {
             // this.$children.forEach((item)=>{
             //   if (item.focusValue) {
@@ -301,11 +336,11 @@ export default {
         } else {
           let [parent] = document.getElementsByTagName('body')
           let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
-          if (parent && this.$refs.vmSelectOptions && this.$refs.vmSelectOptions.parentNode === parent) {
-            parent.removeChild(this.$refs.vmSelectOptions)
-          } else if(parentNode && this.$refs.vmSelectOptions){
-            parentNode.removeChild(this.$refs.vmSelectOptions)
-          }
+          // if (parent && this.$refs.vmSelectOptions && this.$refs.vmSelectOptions.parentNode === parent) {
+          //   parent.removeChild(this.$refs.vmSelectOptions)
+          // } else if(parentNode && this.$refs.vmSelectOptions){
+          //   parentNode.removeChild(this.$refs.vmSelectOptions)
+          // }
         }
       })
     },
@@ -352,21 +387,18 @@ export default {
       let content = this.$refs.vmSelectOptions
       let conditional = this.autocomplete
       let topx = 0
-      let leftx = 0
       let widthx = 0
       let scrollTopx = parentNode ? 0 : window.pageYOffset || document.documentElement.scrollTop
       if (!elx) return
-      if(elx.getBoundingClientRect().top + content.scrollHeight + 20 >= window.innerHeight) {
-        topx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().top - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().top - elx.clientHeight - 2 : (elx.getBoundingClientRect().top + elx.clientHeight) + scrollTopx - content.scrollHeight - elx.clientHeight - 2
+      if((elx.getBoundingClientRect().top + content.scrollHeight + 20) >= ((window.innerHeight/2)+scrollTopx)) {
+        topx = -275
       } else {
-        topx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().top - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().top + elx.clientHeight + 5 :  (elx.getBoundingClientRect().top) + scrollTopx + elx.clientHeight + 5
+        topx = 38
       }
 
-      leftx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().left - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().left : elx.getBoundingClientRect().left
       widthx = elx.offsetWidth
 
       let cords = {
-        left: `${leftx}px`,
         top: `${topx}px`,
         width: `${widthx}px`
       }
@@ -398,15 +430,6 @@ export default {
     },
     createAction: function(event) {
       this.$emit('create-object', event);
-    },
-    getData (newQuery) {
-      axios.get(`${this.url}?${this.filter(newQuery)}`)
-      .then(response => {
-        this.data = this.serializerResponse(response.data)
-      })
-      .catch(error => {
-        this.data = []
-      })      
     }
   }
 }

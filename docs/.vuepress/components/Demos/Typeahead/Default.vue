@@ -5,21 +5,21 @@
       label="Github Users"
       placeholder="Select a User"
       required
-      url="https://api.github.com/search/users"
+      :data.sync="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
-      :serializerResponse="data => data.items"
+      @input-change="query"
       v-model="selectedUser"
       >
     </vm-typeahead>
-    <vm-typeahead 
+    <vm-typeahead
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
-      url="https://api.github.com/search/users"
+      :data="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
-      :serializerResponse="data => data.items"
+      @input-change="query"
       v-model="selectedUser"
       loadingType="point"
       >
@@ -28,22 +28,22 @@
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
-      url="https://api.github.com/search/users"
+      :data="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
-      :serializerResponse="data => data.items"
+      @input-change="query"
       v-model="selectedUser"
       loadingType="radius"
       >
     </vm-typeahead>
-    <vm-typeahead 
+    <vm-typeahead
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
-      url="https://api.github.com/search/users"
+      :data="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
-      :serializerResponse="data => data.items"
+      @input-change="query"
       v-model="selectedUser"
       loadingType="sound"
       >
@@ -52,10 +52,10 @@
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
-      url="https://api.github.com/search/users"
+      :data="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
-      :serializerResponse="data => data.items"
+      @input-change="query"
       v-model="selectedUser"
       loadingType="material"
       >
@@ -64,16 +64,32 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data(){
     return {
-      selectedUser: {}
+      selectedUser: {},
+      users: []
+    }
+  },
+  methods: {
+    query (newQuery) {
+      axios.get(`https://api.github.com/search/users?${newQuery}`)
+        .then((res) => {
+          this.users = res.data.items
+        })
+        .catch(error => {
+          this.users = []
+        })
     }
   }
 }
 </script>
 
 <style lang="css">
+.box {
+  overflow: inherit !important;
+}
 .typeaheadExample {
   margin-bottom: 10px;
 }
