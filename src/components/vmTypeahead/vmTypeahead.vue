@@ -394,11 +394,11 @@ export default {
       let widthx = 0
       let scrollTopx = parentNode ? 0 : window.pageYOffset || document.documentElement.scrollTop
       if (!elx) return
-      if((elx.getBoundingClientRect().top + content.scrollHeight + 20) >= ((window.innerHeight/2)+scrollTopx)) {
-        topx = -275
-      } else {
-        topx = 38
-      }
+      // if((elx.getBoundingClientRect().top + content.scrollHeight + 20) >= ((window.innerHeight/2)+scrollTopx)) {
+        // topx = -275
+      // } else {
+        // topx = 38
+      // }
 
       widthx = elx.offsetWidth
 
