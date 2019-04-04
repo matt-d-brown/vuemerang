@@ -37,11 +37,13 @@
           :class="[`vm-typeahead-${color}`,{'scrollx':scrollx}]"
           class="vm-typeahead--options">
           <ul v-show="data.length > minMatchingChars" ref="ulx">
-            <vm-typeahead-item  is="vm-typeahead-item" v-bind:key="index" v-bind:value="item.id" v-bind:text="item.text" v-for="item,index in matchedItems">
-              <template slot="html">
-                <slot :data="item.data" :text="item.text" ></slot>
-              </template>
-            </vm-typeahead-item>
+            <slot :data="matchedItems">
+              <vm-typeahead-item  is="vm-typeahead-item" v-bind:key="index" v-bind:value="item.id" v-bind:text="item.text" v-for="item,index in matchedItems">
+                <template slot="html">
+                  <slot :data="item.data" :text="item.text" name="html"></slot>
+                </template>
+              </vm-typeahead-item>
+            </slot>
           </ul>
           <ul v-show="!activeLoading && inputText.length > 0 && data.length === 0">
             <vm-typeahead-data

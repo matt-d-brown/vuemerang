@@ -12,6 +12,11 @@
       @input-change="query"
       v-model="selectedUser"
       >
+      <template slot-scope="{data}">
+        <span>{{data}}</span>
+        <vm-typeahead-item  is="vm-typeahead-item" v-bind:key="index" v-bind:value="item.id" v-bind:text="item.text" v-for="item,index in data">
+        </vm-typeahead-item>
+      </template>
     </vm-typeahead>
     <vm-typeahead
       class="typeaheadExample"
