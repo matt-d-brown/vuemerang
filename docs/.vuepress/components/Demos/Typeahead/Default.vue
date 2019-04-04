@@ -5,6 +5,7 @@
       label="Github Users"
       placeholder="Select a User"
       required
+      url="https://api.github.com/search/users?"
       :data.sync="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
@@ -16,6 +17,7 @@
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
+      url="https://api.github.com/search/users?"
       :data="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
@@ -28,6 +30,7 @@
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
+      url="https://api.github.com/search/users?"
       :data="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
@@ -40,6 +43,7 @@
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
+      url="https://api.github.com/search/users?"
       :data="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
@@ -52,6 +56,7 @@
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
+      url="https://api.github.com/search/users?"
       :data="users"
       :serializer="item => item.login"
       :filter="query => `q=${query}`"
@@ -73,8 +78,8 @@ export default {
     }
   },
   methods: {
-    query (newQuery) {
-      axios.get(`https://api.github.com/search/users?${newQuery}`)
+    query (newQuery, url) {
+      axios.get(`${url}${newQuery}`)
         .then((res) => {
           this.users = res.data.items
         })
