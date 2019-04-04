@@ -31,12 +31,12 @@
       <vm-typeahead-loading :active="activeLoading" :color="color" :type="loadingType"></vm-typeahead-loading>
       <transition name="fadeselect">
         <div
-          v-show="(!createObject && active && data.length > 0) || (createObject && !activeLoading && inputText.length > 0 && data.length === 0)"
+          v-show="(!createObject && active && data.length > minMatchingChars) || (createObject && !activeLoading && inputText.length > 0 && data.length === 0)"
           ref="vmSelectOptions"
           :style="cords"
           :class="[`vm-typeahead-${color}`,{'scrollx':scrollx}]"
           class="vm-typeahead--options">
-          <ul v-show="data.length > 0" ref="ulx">
+          <ul v-show="data.length > minMatchingChars" ref="ulx">
             <vm-typeahead-item  is="vm-typeahead-item" v-bind:key="index" v-bind:value="item.id" v-bind:text="item.text" v-for="item,index in matchedItems">
               <template slot="html">
                 <slot :data="item.data" ></slot>
@@ -397,8 +397,8 @@ export default {
       // if((elx.getBoundingClientRect().top + content.scrollHeight + 20) >= ((window.innerHeight/2)+scrollTopx)) {
         // topx = -275
       // } else {
-        // topx = 38
       // }
+      topx = 38
 
       widthx = elx.offsetWidth
 

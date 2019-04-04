@@ -123,7 +123,7 @@ export default {
           valuex = this.MaysPrimera(valuex)
         }
         let text = this.text.replace(re,`<span class="searchx">${valuex}</span>`)
-        this.getText = text
+        this.getText = this.text
       } else {
         this.getText = this.text
       }
