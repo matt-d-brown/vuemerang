@@ -107,6 +107,7 @@
 
 <script>
 import utils from '../../utils'
+import debounce from '../../utils/debounce'
 function sanitize(text) {
   return text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
