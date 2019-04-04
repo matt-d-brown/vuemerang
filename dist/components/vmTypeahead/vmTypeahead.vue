@@ -132,6 +132,10 @@ export default {
       default: (d) => d.name,
       validator: d => d instanceof Function
     },
+    url:{
+      default: null,
+      type:String
+    },
     createObject:{
       default:false,
       type:Boolean
@@ -194,7 +198,7 @@ export default {
     },
     minMatchingChars: {
       type: Number,
-      default: 2
+      default: 3
     },
     maxMatches: {
       type: Number,
@@ -259,7 +263,7 @@ export default {
           if (event.target.value.length > 1) {
             this.activeLoading = true
             this.inputText = event.target.value
-            this.$emit('input-change', this.filter(event.target.value))
+            this.$emit('input-change', this.filter(event.target.value), this.url)
           }
         },
         keyup: (event) => {
