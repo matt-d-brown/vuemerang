@@ -39,7 +39,7 @@
           <ul v-show="data.length > minMatchingChars" ref="ulx">
             <vm-typeahead-item  is="vm-typeahead-item" v-bind:key="index" v-bind:value="item.id" v-bind:text="item.text" v-for="item,index in matchedItems">
               <template slot="html">
-                <slot :data="item.data" ></slot>
+                <slot :data="item.data" :text="item.text" ></slot>
               </template>
             </vm-typeahead-item>
           </ul>
@@ -202,7 +202,7 @@ export default {
     },
     maxMatches: {
       type: Number,
-      default: 10
+      default: 20
     }
   },
   data:()=>({
