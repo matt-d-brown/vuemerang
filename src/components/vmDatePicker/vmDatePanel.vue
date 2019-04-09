@@ -1,9 +1,9 @@
 <template>
-  <div 
-    :class="classes" 
+  <div
+    :class="classes"
     @mousedown.prevent>
-    <div 
-      v-if="shortcuts.length" 
+    <div
+      v-if="shortcuts.length"
       :class="[prefixCls + '-sidebar']">
       <div
         v-for="shortcut in shortcuts"
@@ -11,22 +11,22 @@
         @click="handleShortcutClick(shortcut)">{{ shortcut.text }}</div>
     </div>
     <div :class="[prefixCls + '-body']">
-      <div 
-        v-show="currentView !== 'time'" 
+      <div
+        v-show="currentView !== 'time'"
         :class="[datePrefixCls + '-header']">
         <span
           :class="iconBtnCls('prev', '-double')"
           @click="changeYear(-1)">
-          <vm-icon 
-            :icon-pack="iconPack" 
-            :icon="prevIcon"></vm-icon>
+          <vm-icon
+            :icon-pack="iconPack"
+            :icon="prevIconYear"></vm-icon>
         </span>
         <span
           v-if="pickerTable === 'date-table'"
           v-show="currentView === 'date'"
           :class="iconBtnCls('prev')"
-          @click="changeMonth(-1)"><vm-icon 
-            :icon-pack="iconPack" 
+          @click="changeMonth(-1)"><vm-icon
+            :icon-pack="iconPack"
             :icon="prevIcon"></vm-icon></span>
         <date-panel-label
           :date-panel-label="datePanelLabel"
@@ -34,16 +34,16 @@
           :date-prefix-cls="datePrefixCls"></date-panel-label>
         <span
           :class="iconBtnCls('next', '-double')"
-          @click="changeYear(+1)"><vm-icon 
-            :icon-pack="iconPack" 
+          @click="changeMonth(+1)"><vm-icon
+            :icon-pack="iconPack"
             :icon="nextIcon"></vm-icon></span>
         <span
           v-if="pickerTable === 'date-table'"
           v-show="currentView === 'date'"
           :class="iconBtnCls('next')"
-          @click="changeMonth(+1)"><vm-icon 
-            :icon-pack="iconPack" 
-            :icon="nextIcon"></vm-icon></span>
+          @click="changeYear(+1)"><vm-icon
+            :icon-pack="iconPack"
+            :icon="nextIconYear"></vm-icon></span>
       </div>
       <div :class="[prefixCls + '-content']">
         <component
@@ -61,8 +61,8 @@
           @on-pick-click="handlePickClick"
         ></component>
       </div>
-      <div 
-        v-show="isTime" 
+      <div
+        v-show="isTime"
         :class="[prefixCls + '-content']">
         <vm-time-panel
           v-if="currentView === 'time'"
@@ -118,13 +118,21 @@
           type: Boolean,
           default: false
         },
+        prevIconYear:{
+          type:String,
+          default:'arrowhead-left-outline'
+        },
         prevIcon:{
           type:String,
-          default:'chevron-left'
+          default:'arrow-ios-back-outline'
         },
         nextIcon:{
           type:String,
-          default:'chevron-right'
+          default:'arrow-ios-forward-outline'
+        },
+        nextIconYear:{
+          type:String,
+          default:'arrowhead-right-outline'
         },
         iconPack:{
           type:String,

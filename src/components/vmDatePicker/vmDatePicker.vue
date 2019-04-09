@@ -11,8 +11,8 @@
       ref="datePickerLabel"
       class="vm-datepicker--label"
       for="">{{ label }}</label>
-    <div 
-      ref="reference" 
+    <div
+      ref="reference"
       :class="[prefixCls + '-rel']">
       <slot>
         <vm-input
@@ -36,7 +36,7 @@
           @click.native="handleFocus"
           @keydown.native="handleKeydown"
           @mouseenter.native="handleInputMouseenter"
-          @mouseleave.native="handleInputMouseleave">                  
+          @mouseleave.native="handleInputMouseleave">
         </vm-input>
 
       </slot>
@@ -620,6 +620,7 @@ export default {
       this.focusedDate = focusedDate;
     },
     handleInputChange (event) {
+      console.log(event)
       const isArrayValue = this.type.includes('range') || this.multiple;
       const oldValue = this.visualValue;
       const newValue = event.target.value;
@@ -776,7 +777,7 @@ export default {
       } else {
         topx = elx.getBoundingClientRect().top + scrollTopx + elx.clientHeight + 5
       }
-          
+
       if ((elx.getBoundingClientRect().left + 461) > document.documentElement.clientWidth) {
         leftx = elx.getBoundingClientRect().left - elx.clientWidth + 25
       } else {

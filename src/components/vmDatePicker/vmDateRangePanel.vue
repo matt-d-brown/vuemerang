@@ -1,9 +1,9 @@
 <template>
-  <div 
-    :class="classes" 
+  <div
+    :class="classes"
     @mousedown.prevent>
-    <div 
-      v-if="shortcuts.length" 
+    <div
+      v-if="shortcuts.length"
       :class="[prefixCls + '-sidebar']">
       <div
         v-for="shortcut in shortcuts"
@@ -11,23 +11,23 @@
         @click="handleShortcutClick(shortcut)">{{ shortcut.text }}</div>
     </div>
     <div :class="panelBodyClasses">
-      <div 
-        v-show="!isTime" 
+      <div
+        v-show="!isTime"
         :class="[prefixCls + '-content', prefixCls + '-content-left']">
-        <div 
-          v-show="currentView !== 'time'" 
+        <div
+          v-show="currentView !== 'time'"
           :class="[datePrefixCls + '-header']">
           <span
             :class="iconBtnCls('prev', '-double')"
-            @click="prevYear('left')"><vm-icon 
-              :icon-pack="iconPack" 
-              :icon="prevIcon"></vm-icon></span>
+            @click="prevYear('left')"><vm-icon
+              :icon-pack="iconPack"
+              :icon="prevIconYear"></vm-icon></span>
           <span
             v-if="leftPickerTable === 'date-table'"
             v-show="currentView === 'date'"
             :class="iconBtnCls('prev')"
-            @click="prevMonth('left')"><vm-icon 
-              :icon-pack="iconPack" 
+            @click="prevMonth('left')"><vm-icon
+              :icon-pack="iconPack"
               :icon="prevIcon"></vm-icon></span>
           <date-panel-label
             :date-panel-label="leftDatePanelLabel"
@@ -36,16 +36,16 @@
           <span
             v-if="splitPanels || leftPickerTable !== 'date-table'"
             :class="iconBtnCls('next', '-double')"
-            @click="nextYear('left')"><vm-icon 
-              :icon-pack="iconPack" 
-              :icon="nextIcon"></vm-icon></span>
+            @click="nextYear('left')"><vm-icon
+              :icon-pack="iconPack"
+              :icon="nextIconYear"></vm-icon></span>
           <span
             v-if="splitPanels && leftPickerTable === 'date-table'"
             v-show="currentView === 'date'"
             :class="iconBtnCls('next')"
-            @click="nextMonth('left')"><vm-icon 
-              :icon-pack="iconPack" 
-              :icon="nextIcon"></vm-icon></span>
+            @click="nextYear('left')"><vm-icon
+              :icon-pack="iconPack"
+              :icon="nextIconYear"></vm-icon></span>
         </div>
         <component
           v-if="currentView !== 'time'"
@@ -64,41 +64,42 @@
           @on-pick-click="handlePickClick"
         ></component>
       </div>
-      <div 
-        v-show="!isTime" 
+      <div
+        v-show="!isTime"
         :class="[prefixCls + '-content', prefixCls + '-content-right']">
-        <div 
-          v-show="currentView !== 'time'" 
+        <div
+          v-show="currentView !== 'time'"
           :class="[datePrefixCls + '-header']">
           <span
             v-if="splitPanels || rightPickerTable !== 'date-table'"
             :class="iconBtnCls('prev', '-double')"
-            @click="prevYear('right')"><vm-icon 
-              :icon-pack="iconPack" 
-              :icon="prevIcon"></vm-icon></span>
+            @click="prevYear('right')"><vm-icon
+              :icon-pack="iconPack"
+              :icon="prevIconYear"></vm-icon></span>
           <span
             v-if="splitPanels && rightPickerTable === 'date-table'"
             v-show="currentView === 'date'"
             :class="iconBtnCls('prev')"
-            @click="prevMonth('right')"><vm-icon 
-              :icon-pack="iconPack" 
+            @click="prevMonth('right')"><vm-icon
+              :icon-pack="iconPack"
               :icon="prevIcon"></vm-icon></span>
           <date-panel-label
             :date-panel-label="rightDatePanelLabel"
             :current-view="rightDatePanelView"
             :date-prefix-cls="datePrefixCls"></date-panel-label>
-          <span
-            :class="iconBtnCls('next', '-double')"
-            @click="nextYear('right')"><vm-icon 
-              :icon-pack="iconPack" 
-              :icon="nextIcon"></vm-icon></span>
+
           <span
             v-if="rightPickerTable === 'date-table'"
             v-show="currentView === 'date'"
             :class="iconBtnCls('next')"
-            @click="nextMonth('right')"><vm-icon 
-              :icon-pack="iconPack" 
+            @click="nextMonth('right')"><vm-icon
+              :icon-pack="iconPack"
               :icon="nextIcon"></vm-icon></span>
+          <span
+            :class="iconBtnCls('next', '-double')"
+            @click="nextYear('right')"><vm-icon
+              :icon-pack="iconPack"
+              :icon="nextIconYear"></vm-icon></span>
         </div>
         <component
           v-if="currentView !== 'time'"
@@ -116,8 +117,8 @@
           @on-pick="panelPickerHandlers.right"
           @on-pick-click="handlePickClick"></component>
       </div>
-      <div 
-        v-show="isTime" 
+      <div
+        v-show="isTime"
         :class="[prefixCls + '-content']">
         <vm-time-range-panel
           v-if="currentView === 'time'"
@@ -175,13 +176,21 @@
           type: Boolean,
           default: false
         },
+        prevIconYear:{
+          type:String,
+          default:'arrowhead-left-outline'
+        },
         prevIcon:{
           type:String,
-          default:'chevron-left'
+          default:'arrow-ios-back-outline'
         },
         nextIcon:{
           type:String,
-          default:'chevron-right'
+          default:'arrow-ios-forward-outline'
+        },
+        nextIconYear:{
+          type:String,
+          default:'arrowhead-right-outline'
         },
         iconPack:{
           type:String,
