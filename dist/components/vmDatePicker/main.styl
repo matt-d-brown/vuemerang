@@ -111,6 +111,13 @@
       cursor: pointer;
       position: relative;
       margin-bottom: 3px;
+      &-disabled
+        background: #f7f7f7;
+        cursor: not-allowed;
+        color: #c5c8ce;
+      &-disabled:hover em
+        color: inherit !important;
+        background: inherit !important;
     .vm-datepicker-cells-cell-start
       border-bottom-right-radius: 0 !important;
       border-top-right-radius: 0 !important;
