@@ -183,6 +183,11 @@ export default {
     width:{
       default: null,
       type: String,
+    },
+    serializer: {
+      type: Function,
+      default: (d) => d.id,
+      validator: d => d instanceof Function
     }
   },
   data:()=>({
@@ -385,13 +390,24 @@ export default {
 
         let optionsValues = []
         values.forEach((item)=>{
-          options.forEach((item_option)=>{
-            if(item_option.value == item) {
-              let text = item_option.text
-              text = text.replace('check_circle','')
-              optionsValues.push(text.trim())
-            }
-          })
+          if (typeof item === 'object' && item !== null) {
+            options.forEach((item_option)=>{
+              if(this.serializer(item_option.value) === this.serializer(item)) {
+                let text = item_option.text
+                text = text.replace('check_circle','')
+                optionsValues.push(text.trim())
+              }
+            })
+          } else {
+            options.forEach((item_option)=>{
+              if(item_option.value == item) {
+                let text = item_option.text
+                text = text.replace('check_circle','')
+                optionsValues.push(text.trim())
+              }
+            })
+          }
+
         })
         this.$refs.inputselect.value = optionsValues.toString()
       } else {
