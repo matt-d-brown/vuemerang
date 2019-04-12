@@ -33,14 +33,14 @@
           :current-view="pickerTable.split('-').shift()"
           :date-prefix-cls="datePrefixCls"></date-panel-label>
         <span
-          :class="iconBtnCls('next', '-double')"
+          v-if="pickerTable === 'date-table'"
+          v-show="currentView === 'date'"
+          :class="iconBtnCls('next')"
           @click="changeMonth(+1)"><vm-icon
             :icon-pack="iconPack"
             :icon="nextIcon"></vm-icon></span>
         <span
-          v-if="pickerTable === 'date-table'"
-          v-show="currentView === 'date'"
-          :class="iconBtnCls('next')"
+          :class="iconBtnCls('next', '-double')"
           @click="changeYear(+1)"><vm-icon
             :icon-pack="iconPack"
             :icon="nextIconYear"></vm-icon></span>
