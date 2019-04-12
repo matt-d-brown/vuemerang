@@ -34,15 +34,15 @@
             :current-view="leftDatePanelView"
             :date-prefix-cls="datePrefixCls"></date-panel-label>
           <span
-            v-if="splitPanels || leftPickerTable !== 'date-table'"
-            :class="iconBtnCls('next', '-double')"
-            @click="nextYear('left')"><vm-icon
-              :icon-pack="iconPack"
-              :icon="nextIconYear"></vm-icon></span>
-          <span
             v-if="splitPanels && leftPickerTable === 'date-table'"
             v-show="currentView === 'date'"
             :class="iconBtnCls('next')"
+            @click="nextMonth('left')"><vm-icon
+            :icon-pack="iconPack"
+            :icon="nextIcon"></vm-icon></span>
+          <span
+            v-if="splitPanels || leftPickerTable !== 'date-table'"
+            :class="iconBtnCls('next', '-double')"
             @click="nextYear('left')"><vm-icon
               :icon-pack="iconPack"
               :icon="nextIconYear"></vm-icon></span>
