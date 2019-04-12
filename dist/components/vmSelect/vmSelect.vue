@@ -42,13 +42,13 @@
             <slot/>
           </ul>
           <ul v-show="clear">
-            <vm-select-data 
-              v-if="createObject" 
-              :text="createText" 
-              :value="inputText" 
+            <vm-select-data
+              v-if="createObject"
+              :text="createText"
+              :value="inputText"
               @click="createAction"></vm-select-data>
-            <li 
-              v-if="!createObject" 
+            <li
+              v-if="!createObject"
               @click="filterItems(''),changeValue()" >
               {{ noData }}
             </li>
@@ -254,7 +254,7 @@ export default {
       this.$nextTick(() => {
         if(this.active){
           let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
-          parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)            
+          parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)
           setTimeout( () => {
             this.$children.forEach((item)=>{
               if (item.focusValue) {
@@ -279,7 +279,7 @@ export default {
     this.changeValue()
     if (this.active) {
       let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
-      parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)            
+      parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)
     }
   },
   beforeDestroy() {
@@ -305,7 +305,7 @@ export default {
         this.changeValue()
         if(this.autocomplete) {
           this.$refs.inputselect.focus()
-        }
+        }serializer
       } else {
         if(this.autocomplete){
           currentValues.push(value)
@@ -370,7 +370,7 @@ export default {
       if(lengthx.length == 0){
         this.clear = true
       } else {
-        this.clear = false
+        this.clear = falseserializer
       }
 
       this.$nextTick(()=>{
@@ -390,7 +390,11 @@ export default {
 
         let optionsValues = []
         values.forEach((item)=>{
-          if (typeof item === 'object' && item !== null) {
+          console.log(typeof item)
+          console.log(item !== null)
+          console.log(this.serializer(item_option.value))
+          console.log(this.serializer(item))
+          if (false) {
             options.forEach((item_option)=>{
               if(this.serializer(item_option.value) === this.serializer(item)) {
                 let text = item_option.text
