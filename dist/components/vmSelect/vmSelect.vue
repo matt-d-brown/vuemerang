@@ -390,10 +390,6 @@ export default {
 
         let optionsValues = []
         values.forEach((item)=>{
-          console.log(typeof item)
-          console.log(item !== null)
-          console.log(this.serializer(item_option.value))
-          console.log(this.serializer(item))
           if (false) {
             options.forEach((item_option)=>{
               if(this.serializer(item_option.value) === this.serializer(item)) {
