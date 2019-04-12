@@ -390,7 +390,7 @@ export default {
 
         let optionsValues = []
         values.forEach((item)=>{
-          if (false) {
+          if (typeof item === 'object' && item !== null) {
             options.forEach((item_option)=>{
               if(this.serializer(item_option.value) === this.serializer(item)) {
                 let text = item_option.text
