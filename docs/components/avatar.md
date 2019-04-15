@@ -13,7 +13,7 @@ API:
  - name: src
    type: String
    parameters: null
-   description: Url of the image to show in the Avatar.
+   description: Size of the image to show in the Avatar.
    default: null
  - name: size
    type: String
