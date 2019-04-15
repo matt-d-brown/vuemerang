@@ -36,9 +36,9 @@ API:
    description: Icon used to indicate increment.
    default: add
  - name: label
-   type: String	   type: String
-   parameters:	   parameters:
-   description: Add a descriptive text in the input number.	   description: Add a descriptive text in the input number.
+   type: String
+   parameters: null
+   description: Add a descriptive text in the input number.
 ---
 
 
