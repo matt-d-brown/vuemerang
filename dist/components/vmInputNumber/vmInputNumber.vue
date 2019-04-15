@@ -129,7 +129,7 @@ export default {
   }),
   computed:{
     getLength(){
-      if(this.value != ''){
+      if(this.value){
         return this.value.length * 9.1
       } else {
         return 0
@@ -166,7 +166,7 @@ export default {
   methods:{
     plus(){
       let newValue
-      if(this.value == ''){
+      if(!this.value){
         newValue = 0
       }
       if(this.max?parseInt(this.value)<parseInt(this.max):true){
@@ -176,7 +176,7 @@ export default {
     },
     less(){
       let newValue
-      if(this.value == ''){
+      if(!this.value){
         newValue = 0
       }
       if(this.min?parseInt(this.value)>parseInt(this.min):true){

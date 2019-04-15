@@ -24,9 +24,9 @@
   &.stripe
     .tr-table
       &:nth-child(2n)
-        background: transparent !important
         .tr-values
-          background: transparent !important
+          background: rgb(243,243,243) !important
+
   table
     font-size: .8rem
     width: 100%
@@ -153,24 +153,32 @@
       .tr-expand
         .con-expand
           border-top: 1px solid rgba(0,0,0,.05) !important
-      .td-check
-        .vm-icon
-          transform translate(7px) rotate(0deg)
-  td
-    border: 0px
-    padding: 2px 8px
-    // border-left: 1px solid rgba(0,0,0,.04)
-    &:first-child
-      border-left: 1px solid rgba(0,0,0,.0)
-    &.td-check
-      cursor: pointer
-      padding: 5px !important
-      .con-vm-checkbox
-        margin-left: 0px !important
-        margin-right: 0px !important
-      .vm-icon
-        transition: all .25s ease
-        transform translate(7px) rotate(-90deg)
+.td-check
+  user-select: none
+  cursor: pointer
+  padding: 5px !important
+
+  &.active-expanded
+    .vm-icon
+      transform: translate(7px) rotate(90deg) !important
+  .vm-icon
+    user-select: none
+    transform translate(7px) rotate(0deg)
+
+  .con-vm-checkbox
+    margin-left: 0px !important
+    margin-right: 0px !important
+  .vm-icon
+    transition: all .25s ease
+    transform translate(7px) rotate(0deg)
+  i
+    display: block
+td
+  border: 0px
+  padding: 2px 8px
+  // border-left: 1px solid rgba(0,0,0,.04)
+  &:first-child
+    border-left: 1px solid rgba(0,0,0,.0)
 
 .vm-table--content
   width: 100%
@@ -310,3 +318,47 @@ for colorx, i in $vm-colors
   opacity: 0;
   transform: translate(0px, 15%) scale(.4) !important
 }
+
+.tr-expand-enter-active, .tr-expand-leave-active {
+  transition: all .3s ease;
+}
+.tr-expand-enter, .tr-expand-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  height 0px
+}
+
+.tr-expand
+  td
+    .content-tr-expand
+      padding: 10px
+      position relative
+      display: flex
+      align-items: center
+      justify-content: center
+      border-top: 1px solid rgba(0,0,0,.05)
+      border-bottom: 1px solid rgba(0,0,0,.05)
+      width: 100%
+      padding-right: 30px
+
+    .tr-expand--close
+      position absolute
+      width: 30px
+      height 30px
+      right 0px
+      background: inherit
+      color getColor('danger', 1)
+      border 0px
+      margin-left: 10px
+      background: rgb(245,245,245)
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 3px
+      cursor pointer
+      transition all .25s ease
+      &:hover
+        opacity .7
+        background: getColor('danger', 1)
+        color rgb(255,255,255)
+      i
+        font-size: 1.1rem
