@@ -1,6 +1,6 @@
 <template lang="html">
   <div
-    :class="{'textarea-danger': counter ? value.length > counter : false, 'focusx': focusx}"
+    :class="{'textarea-danger': counter ? (value && value.length > counter) : false, 'focusx': focusx}"
     :style="getStyle"
     class="vm-component vm-con-textarea">
 
@@ -19,7 +19,7 @@
     <div
       v-if="counter"
       class="count vm-textarea--count">
-      {{ value.length }} / {{ counter }}
+      {{ value ? value.length : 0 }} / {{ counter }}
     </div>
 
   </div>
@@ -83,7 +83,7 @@ export default {
   },
   watch:{
     value() {
-      if(this.value.length > this.counter) {
+      if(this.value && this.value.length > this.counter) {
         this.$emit('update:counterDanger', true)
       } else {
         this.$emit('update:counterDanger', false)

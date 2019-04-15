@@ -49,8 +49,8 @@
               :key="index"
               :name="`col-${index}`" >
           </colgroup>
-          <thead 
-            ref="thead" 
+          <thead
+            ref="thead"
             :style="tableHeaderStyle"
             class="vm-table--thead-table">
             <tr>
@@ -266,7 +266,7 @@ export default {
           obj.forEach((item) => {
             getStrings(item)
           })
-        } else if (typeof obj == 'object') {
+        } else if (obj && typeof obj == 'object') {
           let subObj = Object.values(obj)
           strings = [...strings,...subObj]
           getStrings(subObj)
@@ -282,7 +282,7 @@ export default {
     getStrings(obj, valuesx) {
       let stringsx = Object.values(obj)
       valuesx.forEach((item) => {
-        if (typeof item == 'object') {
+        if (item && typeof item == 'object') {
           valuesx = [...valuesx,...Object.values(item)]
         }
       })
