@@ -9,7 +9,7 @@
       :name="value"
       type="radio"
       class="vm-radio--input"
-      v-on:click="listeners">
+      v-on="listeners">
     <span
       class="vm-radio">
       <span
@@ -39,6 +39,12 @@ export default {
     }
   },
   computed:{
+    listeners(){
+        return {
+          ...this.$listeners,
+          click: () => this.$emit('input', this.vsValue)
+        }
+    },
     attrs(){
       let attrsx = JSON.parse(JSON.stringify(this.$attrs))
       return {
@@ -63,9 +69,6 @@ export default {
   methods:{
     giveColor(color,opacity){
       return _color.rColor(color,opacity)
-    },
-    listeners(){
-      this.$emit('input', this.vmValue)
     }
   }
 }
