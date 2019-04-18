@@ -31,12 +31,12 @@
       <vm-typeahead-loading :active="activeLoading" :color="color" :type="loadingType"></vm-typeahead-loading>
       <transition name="fadeselect">
         <div
-          v-show="(!createObject && active && data.length > 0) || (createObject && !activeLoading && inputText.length > 0 && data.length === 0)"
+          v-show="(!createObject && active && matchedItems.length > 0) || (createObject && !activeLoading && inputText.length > 0 && matchedItems.length === 0)"
           ref="vmSelectOptions"
           :style="cords"
           :class="[`vm-typeahead-${color}`,{'scrollx':scrollx}]"
           class="vm-typeahead--options">
-          <ul v-show="data.length > 0" ref="ulx">
+          <ul v-show="matchedItems.length > 0" ref="ulx">
             <slot :data="matchedItems">
               <vm-typeahead-item  is="vm-typeahead-item" v-bind:key="index" v-bind:value="item.id" v-bind:text="item.text" v-for="item,index in matchedItems">
                 <template slot="html">
@@ -296,9 +296,9 @@ export default {
         return []
       }
 
-      if (this.inputText.length === 0 || this.inputText.length < this.minMatchingChars) {
-        return []
-      }
+      // if (this.inputText.length === 0 || this.inputText.length < this.minMatchingChars) {
+      //   return []
+      // }
 
       return this.data.map((d, i) => {
         return {
@@ -309,9 +309,6 @@ export default {
       })
     },
     matchedItems () {
-      if (this.inputText.length === 0 || this.inputText.length < this.minMatchingChars) {
-        return []
-      }
       const re = new RegExp(this.escapedQuery, 'gi')
       // Filter, sort, and concat
       return this.formattedData
