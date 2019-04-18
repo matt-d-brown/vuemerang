@@ -306,7 +306,7 @@ export default {
         this.changeValue()
         if(this.autocomplete) {
           this.$refs.inputselect.focus()
-        }serializer
+        }
       } else {
         if(this.autocomplete){
           currentValues.push(value)
@@ -371,7 +371,7 @@ export default {
       if(lengthx.length == 0){
         this.clear = true
       } else {
-        this.clear = falseserializer
+        this.clear = false
       }
 
       this.$nextTick(()=>{
