@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "debounce": "^1.2.0",
     "js-calendar": "^1.2.3",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
