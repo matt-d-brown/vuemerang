@@ -223,10 +223,15 @@ export default {
       }
     },
     putValue(){
-      if(this.value == this.$parent.parent.value){
-        this.$parent.parent.valuex = this.text
+      if (typeof this.value === 'object' && this.value !== null) {
+        if(this.$parent.parent.serializer(this.value) == this.$parent.parent.serializer(this.$parent.parent.value)){
+          this.$parent.parent.valuex = this.text
+        }
+      } else {
+        if(this.value == this.$parent.parent.value){
+          this.$parent.parent.valuex = this.text
+        }
       }
-
     },
     clickOption(){
       if(this.disabledx){
