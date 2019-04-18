@@ -106,8 +106,8 @@
 </template>
 
 <script>
+import { debounce } from 'throttle-debounce'
 import utils from '../../utils'
-import debounce from '../../utils/debounce'
 function sanitize(text) {
   return text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
@@ -199,6 +199,10 @@ export default {
       default: 'default',
       type: String
     },
+    debounce: {
+      type: Number,
+      default: 300
+    },
     minMatchingChars: {
       type: Number,
       default: 3
@@ -218,6 +222,7 @@ export default {
     activeLoading: false
   }),
   mounted(){
+    this.debouncedGetData = debounce(this.debounce, this.inputChange)
     this.changeValue()
     if (this.active) {
       // let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
@@ -266,7 +271,7 @@ export default {
           if (event.target.value.length > 1) {
             this.activeLoading = true
             this.inputText = event.target.value
-            this.$emit('input-change', this.filter(event.target.value), this.url)
+            this.debouncedGetData(event.target.value)
           }
         },
         keyup: (event) => {
@@ -353,6 +358,9 @@ export default {
     },
   },
   methods: {
+    inputChange (value) {
+      this.$emit('input-change', this.filter(value), this.url)
+    },
     changeValue(){
       if(this.$refs.inputselect) {
         this.$refs.inputselect.value = this.valuex
