@@ -223,7 +223,9 @@ export default {
       }
     },
     putValue(){
-      if (typeof this.value === 'object' && this.value !== null) {
+      if (typeof this.value === 'object' && typeof this.value !== 'undefined') {
+        console.log(this.value)
+        console.log(this.$parent.parent.value)
         if(this.$parent.parent.serializer(this.value) == this.$parent.parent.serializer(this.$parent.parent.value)){
           this.$parent.parent.valuex = this.text
         }
