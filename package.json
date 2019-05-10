@@ -42,9 +42,15 @@
     "docs:deploy": "push-dir --dir=docs/.vuepress/dist --branch=gh-pages --cleanup",
     "deployx": "npm run docs:deploy && npm run deploy",
     "deployx2": "npm run docs:deploy && npm run deploy2",
-    "new:component": "./scripts/newComponent.sh"
+    "new:component": "./scripts/newComponent.sh",
+    "postinstall": "controlla-postinstall || exit 0"
+  },
+  "controlla": {
+    "url": "https://Controlla.github.io/vuemerang/#",
+    "logoUrl": "https://controlla.com.mx/logo.txt"
   },
   "dependencies": {
+    "@controlla/controlla-postinstall": "^1.0.21",
     "axios": "^0.18.0",
     "debounce": "^1.2.0",
     "js-calendar": "^1.2.3",
