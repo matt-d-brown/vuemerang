@@ -218,10 +218,6 @@ export default {
       type: Number,
       default: 300
     },
-    minMatchingChars: {
-      type: Number,
-      default: 3
-    },
     maxMatches: {
       type: Number,
       default: 20
