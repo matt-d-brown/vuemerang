@@ -11,7 +11,7 @@
       class="tr-values vs-table--tr"
       @click="clickExpand">
       <td
-        :class="{'active-expanded': this.expanded}"
+        :class="{'active-expanded': expanded}"
         class="td-check"
         @click="clicktd($event)">
         <vm-checkbox
@@ -112,7 +112,6 @@ export default {
     clicktr (evt) {
       this.$parent.clicktr(this.data, true)
       if (this.$slots.expand) {
-        console.log('entro');
         this.clicktd(evt)
       }
     },

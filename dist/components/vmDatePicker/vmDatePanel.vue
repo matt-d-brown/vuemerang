@@ -171,7 +171,8 @@
           const { labels, separator } = formatDateLabels(locale, datePanelLabel, date);
 
           const handler = type => {
-            return () => this.pickerTable = this.getTableType(type);
+            let t = this
+            return () => t.pickerTable = this.getTableType(type);
           };
 
           return {

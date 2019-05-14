@@ -24,11 +24,11 @@
         v-if="!$scopedSlots.html"
         class="eva eva-checkmark-outline icon-item vm-select--item-icon">
       </i>
-      <span 
-        v-if="!$scopedSlots.html" 
+      <span
+        v-if="!$scopedSlots.html"
         v-html="getText"></span>
-      <slot 
-        v-if="$scopedSlots.html" 
+      <slot
+        v-if="$scopedSlots.html"
         name="html">
         <span v-html="getText"></span>
       </slot>
@@ -126,6 +126,7 @@ export default {
         if(this.text.toUpperCase().indexOf(valuex.toUpperCase()) == 0){
           valuex = this.MaysPrimera(valuex)
         }
+        //eslint-disable-next-line
         let text = this.text.replace(re,`<span class="searchx">${valuex}</span>`)
         this.getText = this.text
       } else {

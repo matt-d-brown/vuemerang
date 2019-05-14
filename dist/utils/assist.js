@@ -56,7 +56,7 @@ export function getScrollBarSize (fresh) {
 
 // watch DOM change
 export const MutationObserver = isServer ? false : window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver || false;
-
+//eslint-disable-next-line
 const SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g;
 const MOZ_HACK_REGEXP = /^moz([A-Z])/;
 
@@ -359,6 +359,7 @@ var token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDm])\1?|[aA]|"[^"]*"|'[^
 var twoDigits = /\d\d?/;
 var threeDigits = /\d{3}/;
 var fourDigits = /\d{4}/;
+//eslint-disable-next-line
 var word = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i;
 var noop = function () {
 };
@@ -469,6 +470,7 @@ var parseFlags = {
     d.month = v - 1;
   }],
   yy: [twoDigits, function (d, v) {
+    // eslint-disable-next-line
     var da = new DatedateUtil(), cent = +('' + da.getFullYear()).substr(0, 2);
     d.year = '' + (v > 68 ? cent - 1 : cent) + v;
   }],
@@ -505,7 +507,9 @@ var parseFlags = {
       d.isPm = true;
     }
   }],
+  //eslint-disable-next-line
   ZZ: [/[\+\-]\d\d:?\d\d/, function (d, v) {
+    //eslint-disable-next-line
     var parts = (v + '').match(/([\+\-]|\d\d)/gi), minutes;
 
     if (parts) {
@@ -514,7 +518,7 @@ var parseFlags = {
     }
   }]
 };
-parseFlags.DD = parseFlags.DD;
+//parseFlags.DD = parseFlags.DD;
 parseFlags.dddd = parseFlags.ddd;
 parseFlags.Do = parseFlags.dd = parseFlags.d;
 parseFlags.mm = parseFlags.m;

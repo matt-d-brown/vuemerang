@@ -22,8 +22,8 @@
         class="vm-dropdown--custom vm-dropdown--menu">
         <slot/>
       </div>
-      <div 
-        ref="menuAfter" 
+      <div
+        ref="menuAfter"
         class="vm-dropdown--menu--after"></div>
     </div>
   </transition>
@@ -71,6 +71,7 @@ export default {
         const menuAfter = this.$refs.menuAfter
         if (!menuAfter) return
         if(dropdown && menuAfter && dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
+          //eslint-disable-next-line
           const hasGroup = this.$children.find(it=>it.hasOwnProperty('activeGroup'))
           menuAfter.style.bottom = '-5px'
           menuAfter.style.transform = 'rotate(225deg)'
