@@ -47,7 +47,7 @@
             <slot :data="matchedItems">
               <vm-typeahead-item
                 is="vm-typeahead-item"
-                :v-for="item,index in matchedItems"
+                v-for="(item,index) in matchedItems"
                 :key="index"
                 :value="item.id"
                 :text="item.text">
