@@ -1,3 +1,4 @@
+/* globals module: false */
 module.exports = {
   title: "justifyRight",
   action: ["justifyRight"],

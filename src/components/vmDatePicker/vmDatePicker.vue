@@ -307,7 +307,7 @@ export default {
     ownPickerProps(){
       return this.options;
     },
-    wrapperClasses(){
+    wrapperClasses(prefixCls){
       return [prefixCls, {
         [prefixCls + '-focused']: this.isFocused
       }];
@@ -448,7 +448,7 @@ export default {
       this.reset();
       this.$refs.pickerPanel.onToggleVisibility(false);
     },
-    handleKeydown(e){
+    handleKeydown(e, pickerPrefixCls){
       const keyCode = e.keyCode;
             // handle "tab" key
       if (keyCode === 9){
@@ -620,7 +620,6 @@ export default {
       this.focusedDate = focusedDate;
     },
     handleInputChange (event) {
-      console.log(event)
       const isArrayValue = this.type.includes('range') || this.multiple;
       const oldValue = this.visualValue;
       const newValue = event.target.value;
@@ -770,6 +769,7 @@ export default {
       let content = this.$refs.calendarModal
       let topx = 0
       let leftx = 0
+      //eslint-disable-next-line
       let widthx = 0
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if(elx.getBoundingClientRect().top + content.scrollHeight + 20 >= window.innerHeight) {

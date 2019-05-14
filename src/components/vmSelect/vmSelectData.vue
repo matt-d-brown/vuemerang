@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import _color from '../../utils/color.js'
 export default {
   name:'VmSelectData',
   inheritAttrs:false,
@@ -37,7 +36,7 @@ export default {
             this.$parent.parent.closeOptions()
           }
         },
-        click: (event) => {
+        click: () => {
           this.$emit('click', this.value);
         }
       }

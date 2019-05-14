@@ -116,6 +116,7 @@ export const formatDateLabels = (function() {
   const formatRegex = new RegExp(['yyyy', 'Mmmm', 'mmmm', 'Mmm', 'mmm', 'mm', 'm'].join('|'), 'g');
 
   return function(locale, format, date) {
+    // eslint-disable-next-line
     const componetsRegex = /(\[[^\]]+\])([^\[\]]+)(\[[^\]]+\])/;
     const components = format.match(componetsRegex).slice(1);
     const separator = components[1];

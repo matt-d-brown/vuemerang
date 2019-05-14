@@ -14,8 +14,8 @@
       :class="[`vm-typeahead--label-${color}`]"
       class="vm-typeahead--label"
       for="">{{ label }}
-      <span 
-        v-if="required" 
+      <span
+        v-if="required"
         class="vm-typeahead--label-span">*</span>
     </label>
     <div class="input-select-con">
@@ -30,9 +30,9 @@
         @keydown.esc.stop.prevent="closeOptions"
         v-on="listeners">
 
-      <vm-typeahead-loading 
-        :active="activeLoading" 
-        :color="color" 
+      <vm-typeahead-loading
+        :active="activeLoading"
+        :color="color"
         :type="loadingType"></vm-typeahead-loading>
       <transition name="fadeselect">
         <div
@@ -41,20 +41,20 @@
           :style="cords"
           :class="[`vm-typeahead-${color}`,{'scrollx':scrollx}]"
           class="vm-typeahead--options">
-          <ul 
-            v-show="matchedItems.length > 0" 
+          <ul
+            v-show="matchedItems.length > 0"
             ref="ulx">
             <slot :data="matchedItems">
-              <vm-typeahead-item 
-                is="vm-typeahead-item" 
-                v-for="item,index in matchedItems" 
-                :key="index" 
-                :value="item.id" 
+              <vm-typeahead-item
+                is="vm-typeahead-item"
+                :v-for="item,index in matchedItems"
+                :key="index"
+                :value="item.id"
                 :text="item.text">
                 <template slot="html">
-                  <slot 
-                    :data="item.data" 
-                    :text="item.text" 
+                  <slot
+                    :data="item.data"
+                    :text="item.text"
                     name="html"></slot>
                 </template>
               </vm-typeahead-item>
@@ -122,7 +122,7 @@
 
 <script>
 import { debounce } from 'throttle-debounce'
-import utils from '../../utils'
+//import utils from '../../utils'
 function sanitize(text) {
   return text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
@@ -262,9 +262,10 @@ export default {
         },
         input: (event) => {
           if (event.target.value.length > 1) {
-            this.activeLoading = true
-            this.inputText = event.target.value
-            this.debouncedGetData(event.target.value)
+            let t = this
+            t.activeLoading = true
+            t.inputText = event.target.value
+            t.debouncedGetData(event.target.value)
           }
         },
         keyup: (event) => {
@@ -320,12 +321,13 @@ export default {
       this.valuex = this.value
       this.$emit('change',event)
     },
-    data (data) {
+    data () {
       this.activeLoading = false
     },
     active(){
       this.$nextTick(() => {
         if(this.active){
+          //eslint-disable-next-line
           let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
           // parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)
           setTimeout( () => {
@@ -337,7 +339,9 @@ export default {
             if(this.$refs.ulx.scrollHeight >= 260) this.scrollx = true
           }, 100);
         } else {
+          //eslint-disable-next-line
           let [parent] = document.getElementsByTagName('body')
+          //eslint-disable-next-line
           let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
           // if (parent && this.$refs.vmSelectOptions && this.$refs.vmSelectOptions.parentNode === parent) {
           //   parent.removeChild(this.$refs.vmSelectOptions)
@@ -382,7 +386,7 @@ export default {
     focus(){
       this.active = true
       this.setLabelClass(this.$refs.inputSelectLabel, true)
-      let inputx = this.$refs.inputselect
+      //let inputx = this.$refs.inputselect
       setTimeout( ()=> {
         document.addEventListener('click',this.clickBlur)
       }, 100);
@@ -410,13 +414,13 @@ export default {
       document.removeEventListener('click',this.clickBlur)
     },
     changePosition(){
-      let parentNode = this.$el.closest('.con-vm-dialog')
+      //let parentNode = this.$el.closest('.con-vm-dialog')
       let elx = this.$refs.inputselect
-      let content = this.$refs.vmSelectOptions
-      let conditional = this.autocomplete
+      //let content = this.$refs.vmSelectOptions
+      //let conditional = this.autocomplete
       let topx = 0
       let widthx = 0
-      let scrollTopx = parentNode ? 0 : window.pageYOffset || document.documentElement.scrollTop
+      //let scrollTopx = parentNode ? 0 : window.pageYOffset || document.documentElement.scrollTop
       if (!elx) return
       // if((elx.getBoundingClientRect().top + content.scrollHeight + 20) >= ((window.innerHeight/2)+scrollTopx)) {
         // topx = -275
