@@ -38,8 +38,8 @@
             v-show="currentView === 'date'"
             :class="iconBtnCls('next')"
             @click="nextMonth('left')"><vm-icon
-            :icon-pack="iconPack"
-            :icon="nextIcon"></vm-icon></span>
+              :icon-pack="iconPack"
+              :icon="nextIcon"></vm-icon></span>
           <span
             v-if="splitPanels || leftPickerTable !== 'date-table'"
             :class="iconBtnCls('next', '-double')"

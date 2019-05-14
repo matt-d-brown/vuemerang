@@ -7,14 +7,16 @@
       'input-select-validate-warning':warning}"
     :style="getWidth"
     class="vm-component vm-typeahead"
-    >
+  >
     <label
       v-if="label"
       ref="inputSelectLabel"
-      class="vm-typeahead--label"
       :class="[`vm-typeahead--label-${color}`]"
+      class="vm-typeahead--label"
       for="">{{ label }}
-      <span class="vm-typeahead--label-span" v-if="required">*</span>
+      <span 
+        v-if="required" 
+        class="vm-typeahead--label-span">*</span>
     </label>
     <div class="input-select-con">
       <!-- v-model="valueFilter" -->
@@ -23,12 +25,15 @@
         v-bind="$attrs"
         class="input-select vm-typeahead--input"
         type="text"
+        autocomplete="off"
         @click.stop
         @keydown.esc.stop.prevent="closeOptions"
-        autocomplete="off"
         v-on="listeners">
 
-      <vm-typeahead-loading :active="activeLoading" :color="color" :type="loadingType"></vm-typeahead-loading>
+      <vm-typeahead-loading 
+        :active="activeLoading" 
+        :color="color" 
+        :type="loadingType"></vm-typeahead-loading>
       <transition name="fadeselect">
         <div
           v-show="(!createObject && active && matchedItems.length > 0) || (createObject && !activeLoading && inputText.length > 0 && matchedItems.length === 0)"
@@ -36,11 +41,21 @@
           :style="cords"
           :class="[`vm-typeahead-${color}`,{'scrollx':scrollx}]"
           class="vm-typeahead--options">
-          <ul v-show="matchedItems.length > 0" ref="ulx">
+          <ul 
+            v-show="matchedItems.length > 0" 
+            ref="ulx">
             <slot :data="matchedItems">
-              <vm-typeahead-item  is="vm-typeahead-item" v-bind:key="index" v-bind:value="item.id" v-bind:text="item.text" v-for="item,index in matchedItems">
+              <vm-typeahead-item 
+                is="vm-typeahead-item" 
+                v-for="item,index in matchedItems" 
+                :key="index" 
+                :value="item.id" 
+                :text="item.text">
                 <template slot="html">
-                  <slot :data="item.data" :text="item.text" name="html"></slot>
+                  <slot 
+                    :data="item.data" 
+                    :text="item.text" 
+                    name="html"></slot>
                 </template>
               </vm-typeahead-item>
             </slot>
@@ -221,28 +236,6 @@ export default {
     cords:{},
     activeLoading: false
   }),
-  mounted(){
-    this.debouncedGetData = debounce(this.debounce, this.inputChange)
-    this.changeValue()
-    if (this.active) {
-      // let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
-      // parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)
-    }
-  },
-  beforeDestroy() {
-    // let [parent] = document.getElementsByTagName('body')
-    // let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
-    // if (parent && this.$refs.vmSelectOptions && this.$refs.vmSelectOptions.parentNode === parent) {
-    //   parent.removeChild(this.$refs.vmSelectOptions)
-    // } else if(parentNode && this.$refs.vmSelectOptions){
-    //   parentNode.removeChild(this.$refs.vmSelectOptions)
-    // }
-  },
-  updated(){
-    if(!this.active){
-      this.changeValue()
-    }
-  },
   computed:{
     parent() {
       return this
@@ -354,6 +347,28 @@ export default {
         }
       })
     },
+  },
+  mounted(){
+    this.debouncedGetData = debounce(this.debounce, this.inputChange)
+    this.changeValue()
+    if (this.active) {
+      // let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+      // parentNode ? utils.insertParent(this.$refs.vmSelectOptions, parentNode) : utils.insertBody(this.$refs.vmSelectOptions)
+    }
+  },
+  beforeDestroy() {
+    // let [parent] = document.getElementsByTagName('body')
+    // let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+    // if (parent && this.$refs.vmSelectOptions && this.$refs.vmSelectOptions.parentNode === parent) {
+    //   parent.removeChild(this.$refs.vmSelectOptions)
+    // } else if(parentNode && this.$refs.vmSelectOptions){
+    //   parentNode.removeChild(this.$refs.vmSelectOptions)
+    // }
+  },
+  updated(){
+    if(!this.active){
+      this.changeValue()
+    }
   },
   methods: {
     inputChange (value) {

@@ -24,8 +24,12 @@
         v-if="!$scopedSlots.html"
         class="eva eva-checkmark-outline icon-item vm-select--item-icon">
       </i>
-      <span v-if="!$scopedSlots.html" v-html="getText"></span>
-      <slot  v-if="$scopedSlots.html" name="html">
+      <span 
+        v-if="!$scopedSlots.html" 
+        v-html="getText"></span>
+      <slot 
+        v-if="$scopedSlots.html" 
+        name="html">
         <span v-html="getText"></span>
       </slot>
 

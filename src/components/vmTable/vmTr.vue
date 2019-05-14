@@ -7,12 +7,12 @@
       v-if="!$parent.notSpacer"
       class="tr-spacer"></tr>
     <tr
-    @click="clickExpand"
-    :class="[`tr-table-state-${state}`, {'is-selected':isSelected, 'selected': data, 'is-expand': maxHeight != '0px', 'activeEdit': activeEdit, 'hoverFlat': $parent.hoverFlat}]"
-    class="tr-values vs-table--tr">
+      :class="[`tr-table-state-${state}`, {'is-selected':isSelected, 'selected': data, 'is-expand': maxHeight != '0px', 'activeEdit': activeEdit, 'hoverFlat': $parent.hoverFlat}]"
+      class="tr-values vs-table--tr"
+      @click="clickExpand">
       <td
-        class="td-check"
         :class="{'active-expanded': this.expanded}"
+        class="td-check"
         @click="clicktd($event)">
         <vm-checkbox
           v-if="$parent.multiple"
@@ -98,11 +98,11 @@ export default {
   },
   methods:{
     insertAfter(e,i){
-        if(e.nextSibling){
-            e.parentNode.insertBefore(i,e.nextSibling);
-        } else {
-            e.parentNode.appendChild(i);
-        }
+      if(e.nextSibling){
+        e.parentNode.insertBefore(i,e.nextSibling);
+      } else {
+        e.parentNode.appendChild(i);
+      }
     },
     clickExpand (evt) {
       if (this.$slots.expand) {
