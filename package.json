@@ -35,7 +35,8 @@
     "lint": "vue-cli-service lint",
     "deploy": "npm run build && npm run docs:build && git add . && git commit -m 'refactor: build docs'",
     "docs:build": "vuepress build docs",
-    "release": "npm run deploy && standard-version && git push --follow-tags && npm publish",
+    "docs:deploy": "push-dir --dir=docs/.vuepress/dist --branch=gh-pages --cleanup",
+    "release": "npm run deploy && standard-version && git push --follow-tags && npm publish && docs:deploy",
     "new:component": "./scripts/newComponent.sh",
     "postinstall": "controlla-postinstall || exit 0"
   },
@@ -104,6 +105,7 @@
   ],
   "husky": {
     "hooks": {
+      "pre-commit": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
