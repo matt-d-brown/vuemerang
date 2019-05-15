@@ -4,7 +4,7 @@
       class="typeaheadExample"
       label="Github Users"
       placeholder="Select a User"
-      required
+      optional
       url="https://api.github.com/search/users?"
       :data.sync="users"
       :serializer="item => item.login"
