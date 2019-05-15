@@ -10,8 +10,11 @@
         'top':topx+'px'
       }"
       class="con-vm-dropdown--menu vm-dropdown-menu"
-      @mouseover="toggleMenu($event)"
-      @mouseout="toggleMenu($event)">
+      @mouseleave="mouseleavex"
+      @mouseenter="mouseenterx"
+    >
+      <!-- @mouseout="toggleMenu($event)" -->
+      <!-- @mouseover="toggleMenu($event)" -->
       <ul
         v-if="!vmCustomContent"
         class="vm-component vm-dropdown--menu" >
@@ -22,8 +25,8 @@
         class="vm-dropdown--custom vm-dropdown--menu">
         <slot/>
       </div>
-      <div
-        ref="menuAfter"
+      <div 
+        ref="menuAfter" 
         class="vm-dropdown--menu--after"></div>
     </div>
   </transition>
@@ -65,6 +68,18 @@ export default {
     this.$el.parentNode.removeChild(this.$el)
   },
   methods:{
+    mouseenterx() {
+      if (!this.vmTriggerClick && !this.vmTriggerOutsideClick) {
+        this.dropdownVisible = true
+        this.widthx = this.$el.clientWidth
+      }
+    },
+    mouseleavex() {
+      if (!this.vmTriggerClick && !this.vmTriggerOutsideClick) {
+        this.dropdownVisible = false
+        this.widthx = this.$el.clientWidth
+      }
+    },
     setDirection() {
       setTimeout(() => {
         const dropdown = this.parentNode
@@ -73,7 +88,7 @@ export default {
         if(dropdown && menuAfter && dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
           //eslint-disable-next-line
           const hasGroup = this.$children.find(it=>it.hasOwnProperty('activeGroup'))
-          menuAfter.style.bottom = '-5px'
+          menuAfter.style.bottom = '5px'
           menuAfter.style.transform = 'rotate(225deg)'
           return
         }
@@ -98,7 +113,7 @@ export default {
     },
     insertBody(){
       let elp = this.$el
-      this.parentNode = this.$el.parentNode
+      // this.parentNode = this.$el.parentNode
       document.body.insertBefore(elp, document.body.firstChild)
     },
   }

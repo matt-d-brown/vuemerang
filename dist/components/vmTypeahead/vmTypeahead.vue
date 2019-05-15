@@ -15,8 +15,8 @@
       class="vm-typeahead--label"
       for="">{{ label }}
       <span
-        v-if="required"
-        class="vm-typeahead--label-span">*</span>
+        v-if="optional"
+        class="vm-typeahead--label-span"> - Optional</span>
     </label>
     <div class="input-select-con">
       <!-- v-model="valueFilter" -->
@@ -36,7 +36,7 @@
         :type="loadingType"></vm-typeahead-loading>
       <transition name="fadeselect">
         <div
-          v-show="(!createObject && active && matchedItems.length > 0) || (createObject && !activeLoading && inputText.length > 0 && matchedItems.length === 0)"
+          v-show="(!createObject && active && inputText.length > 0 && matchedItems.length > 0) || (createObject && !activeLoading && inputText.length > 0 && matchedItems.length === 0)"
           ref="vmSelectOptions"
           :style="cords"
           :class="[`vm-typeahead-${color}`,{'scrollx':scrollx}]"
@@ -158,7 +158,7 @@ export default {
       default:false,
       type:Boolean
     },
-    required:{
+    optional:{
       default:false,
       type:Boolean
     },
@@ -257,10 +257,10 @@ export default {
           this.focus(event)
         },
         input: (event) => {
-          if (event.target.value.length > 1) {
-            let t = this
+          let t = this
+          t.inputText = event.target.value
+          if (event.target.value.length > 0) {
             t.activeLoading = true
-            t.inputText = event.target.value
             t.debouncedGetData(event.target.value)
           }
         },
@@ -286,9 +286,9 @@ export default {
         return []
       }
 
-      // if (this.inputText.length === 0 || this.inputText.length < this.minMatchingChars) {
-      //   return []
-      // }
+      if (this.inputText.length === 0) {
+        return []
+      }
 
       return this.data.map((d, i) => {
         return {

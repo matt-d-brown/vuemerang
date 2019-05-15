@@ -1,9 +1,10 @@
 <template lang="html">
   <li
+    ref="group"
     :class="{'marginIcon':vmCollapse, 'no-cascading':!vmCollapse, 'group-rightx':rightx}"
     class="vm-component vm-dropdown--group"
-    @mouseout="toggleGroup($event)"
-    @mouseover="toggleGroup($event)">
+    @click="clickGroup">
+    <!-- @mouseout="toggleGroup($event)" -->
     <span
       v-if="vmCollapse"
       class="span vm-dropdown--group-label">{{ vmLabel }}</span>
@@ -14,21 +15,22 @@
       :icon="vmIcon"
       class="icon-group notranslate vm-dropdown--group-icon"
     ></vm-icon>
-    <transition
+    <!-- <transition
       @before-enter="beforeEnter"
       @enter="enter"
       @leave="leave"
-    >
-      <div
-        v-if="activeGroup||!vmCollapse"
-        ref="ulx"
-        :class="{'con-dropdown-group-no-cascading':!vmCollapse}"
-        class="con-dropdown--group-con-ul">
-        <ul class="con-dropdown--group-ul">
-          <slot/>
-        </ul>
-      </div>
-    </transition>
+    > -->
+    <!-- v-if="activeGroup||!vmCollapse" -->
+    <div
+      ref="ulx"
+      :style="styleItems"
+      :class="{'con-dropdown-group-no-cascading':!vmCollapse}"
+      class="con-dropdown--group-con-ul">
+      <ul class="con-dropdown--group-ul">
+        <slot/>
+      </ul>
+    </div>
+    <!-- </transition> -->
   </li>
 </template>
 
@@ -57,25 +59,50 @@ export default {
     activeGroup:false,
     rightx:false,
     widthx:0,
+    maxHeight: '0px',
   }),
+  computed:{
+    styleItems() {
+      return {
+        maxHeight: this.vmCollapse?this.maxHeight:'auto'
+      }
+    }
+  },
   methods:{
+    clickGroup(evt) {
+      if(evt.target != this.$refs.group) return
+      if(!this.openHover) {
+        let scrollHeight = this.$refs.ulx.scrollHeight
+        if(this.maxHeight == '0px') {
+          this.maxHeight = `${scrollHeight}px`
+          setTimeout(() => {
+            this.maxHeight = 'none'
+          },300)
+        } else {
+          this.maxHeight = `${scrollHeight}px`
+          setTimeout(() => {
+            this.maxHeight = `${0}px`
+          }, 50)
+        }
+      }
+    },
     beforeEnter(el) {
       el.style.height = 0
       el.style.opacity = 0
     },
     enter(el, done){
-      let h = this.$refs.ulx.scrollHeight
-      this.$refs.ulx.style.height = h + 'px'
-      el.style.opacity = 1
-      parents(this)
-      function parents(_this){
-        if(_this.$parent.$el.className.search('vm-dropdown--group')!=-1){
-          // this.$parent.$el
-          let hp = _this.$parent.$refs.ulx.scrollHeight
-          _this.$parent.$refs.ulx.style.height = hp + h + 'px'
-          parents(_this.$parent)
-        }
-      }
+      // let h = this.$refs.ulx.scrollHeight
+      // this.$refs.ulx.style.height = h + 'px'
+      // el.style.opacity = 1
+      // parents(this)
+      // function parents(_this){
+      //   if(_this.$parent.$el.className.search('vm-dropdown--group')!=-1){
+      //     // this.$parent.$el
+      //     let hp = _this.$parent.$refs.ulx.scrollHeight
+      //     _this.$parent.$refs.ulx.style.height = hp + h + 'px'
+      //     parents(_this.$parent)
+      //   }
+      // }
       done()
     },
     leave: function (el) {
@@ -94,8 +121,10 @@ export default {
       this.$refs.ulx.style.height = 0 + 'px'
       el.style.opacity = 0
     },
-    toggleGroup(){
-      this.activeGroup = !this.activeGroup
+    toggleGroup(evt){
+      if (evt.target == this.$refs.group) {
+        this.activeGroup = !this.activeGroup
+      }
     }
   },
 }
