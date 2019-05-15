@@ -11,6 +11,8 @@
   display: inline-block;
   border: 0px;
   background: transparent;
+  *
+    pointer-events: none
   a
     user-select: none !important;
   &:active
@@ -40,6 +42,7 @@
 .vm-dropdown--group-label
   font-size: 0.9375em;
   font-weight: normal;
+  pointer-events: none
 
 .vm-dropdown--group-icon
   position: absolute;
@@ -134,11 +137,10 @@
 }
 .con-vm-dropdown--menu
   padding-top: 10px
+  padding-bottom: 10px
   position: absolute;
   height: auto;
-  width: -moz-max-content;
-  width: -webkit-max-content;
-  width: max-content;
+  width: auto;
   z-index: 40000
   transform: translate(-100%);
   transition: opacity .25s, transform .25s, width .3s ease;

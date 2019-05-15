@@ -73,20 +73,21 @@ export default {
     document.removeEventListener('click', this.clickx)
   },
   methods:{
-    clickx(el) {
+    clickx(evt) {
       let [dropdownMenu] = this.$children.filter((item)=>{
         return item.hasOwnProperty('dropdownVisible')
       })
       dropdownMenu.vmTriggerOutsideClick = this.vmTriggerOutsideClick
       dropdownMenu.vmCustomContent = this.vmCustomContent
       dropdownMenu.vmTriggerClick = this.vmTriggerClick
-      if ((this.vmTriggerClick || this.vmCustomContent) && this.vmDropdownVisible) {
-        if ((el.target !== this.$refs.dropdown &&
-        el.target.parentNode !== this.$refs.dropdown &&
-        el.target.parentNode.parentNode !== this.$refs.dropdown)) {
-          // console.log('entre');
-          // dropdownMenu.dropdownVisible = this.vmDropdownVisible = false
-          // document.removeEventListener('click', this.clickx)
+      if ((this.vmTriggerClick || this.vmCustomContent) && this.vmDropdownVisible && !this.vmTriggerOutsideClick) {
+        if ((evt.target !== this.$refs.dropdown &&
+        evt.target.parentNode !== this.$refs.dropdown &&
+        evt.target.parentNode.parentNode !== this.$refs.dropdown)) {
+          if (!evt.target.closest('.vm-dropdown--menu')) {
+            dropdownMenu.dropdownVisible = this.vmDropdownVisible = false
+            document.removeEventListener('click', this.clickx)
+          }
         }
       }
     },
@@ -105,18 +106,18 @@ export default {
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if(this.$refs.dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
         this.$nextTick(() => {
-          dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top - dropdownMenu.$el.clientHeight - 10) + scrollTopx
+          dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top - dropdownMenu.$el.clientHeight) + scrollTopx
           dropdownMenu.notHeight = true
         });
       } else {
         dropdownMenu.notHeight = false
-        dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top + this.$refs.dropdown.clientHeight) + scrollTopx
+        dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top + this.$refs.dropdown.clientHeight) + scrollTopx - 5
       }
       this.$nextTick(() => {
         var w = window.innerWidth
         || document.documentElement.clientWidth
         || document.body.clientWidth;
-        if(this.$refs.dropdown.getBoundingClientRect().left + dropdownMenu.$el.offsetWidth >= w - 20){
+        if(this.$refs.dropdown.getBoundingClientRect().left + dropdownMenu.$el.offsetWidth >= w - 25){
           this.rightx = true
         }
         dropdownMenu.leftx = this.$refs.dropdown.getBoundingClientRect().left + this.$refs.dropdown.clientWidth
@@ -142,15 +143,18 @@ export default {
         }
       }
     },
-    toggleMenu(typex){
+    toggleMenu(typex, evt){
       let [dropdownMenu] = this.$children.filter((item)=>{
         return item.hasOwnProperty('dropdownVisible')
       })
+      dropdownMenu.parentNode = this.$el
       if(!this.vmTriggerClick && !this.vmTriggerContextmenu){
         if(typex == 'over'){
           dropdownMenu.dropdownVisible = this.vmDropdownVisible = true
         } else {
-          dropdownMenu.dropdownVisible = this.vmDropdownVisible = false
+          if (!evt.relatedTarget.classList.contains('vm-dropdown-menu')) {
+            dropdownMenu.dropdownVisible = this.vmDropdownVisible = false
+          }
         }
       }
     }
