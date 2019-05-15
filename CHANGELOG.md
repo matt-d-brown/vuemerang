@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.3](https://github.com/controlla/vuemerang/compare/v1.4.2...v1.4.3) (2019-05-15)
+
+
+### Bug Fixes
+
+* release ([97eb4c7](https://github.com/controlla/vuemerang/commit/97eb4c7))
+* **dropdown:** se arregla tembladera ([74c73aa](https://github.com/controlla/vuemerang/commit/74c73aa))
+* **typeahead:** search and label ([0135f24](https://github.com/controlla/vuemerang/commit/0135f24))
+
+
+
 ### [1.4.2](https://github.com/controlla/vuemerang/compare/v1.4.1...v1.4.2) (2019-05-14)
 
 
