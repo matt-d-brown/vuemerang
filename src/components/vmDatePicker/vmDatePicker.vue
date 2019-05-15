@@ -367,10 +367,16 @@ export default {
     active(){
       this.$nextTick(() => {
         if(this.active){
-          utils.insertBody(this.$refs.calendarModal)
+          let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+          parentNode ? utils.insertParent(this.$refs.calendarModal, parentNode) : utils.insertBody(this.$refs.calendarModal)
         } else {
           let [parent] = document.getElementsByTagName('body')
-          parent.removeChild(this.$refs.calendarModal)
+          let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+          if (parent && this.$refs.calendarModal && this.$refs.calendarModal.parentNode === parent) {
+            parent.removeChild(this.$refs.calendarModal)
+          } else if(parentNode && this.$refs.calendarModal){
+            parentNode.removeChild(this.$refs.calendarModal)
+          }
         }
       })
     },
@@ -382,7 +388,10 @@ export default {
       this.$emit('input', this.publicVModelValue); // to update v-model
     }
     if (this.open !== null) this.visible = this.open;
-    if (this.active) utils.insertBody(this.$refs.calendarModal)
+    if (this.active) {
+      let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
+      parentNode ? utils.insertParent(this.$refs.calendarModal, parentNode) : utils.insertBody(this.$refs.calendarModal)
+    }
         // to handle focus from confirm buttons
     this.$on('focus-input', () => this.focus());
   },
@@ -765,23 +774,24 @@ export default {
       label.classList.remove('datepicker-label-' + this.color + '--active')
     },
     changePosition(){
+      let parentNode = this.$el.closest('.con-vm-dialog')
       let elx = this.$refs.input.$el
       let content = this.$refs.calendarModal
       let topx = 0
       let leftx = 0
       //eslint-disable-next-line
       let widthx = 0
-      let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
+      let scrollTopx = parentNode ? 0 : window.pageYOffset || document.documentElement.scrollTop
       if(elx.getBoundingClientRect().top + content.scrollHeight + 20 >= window.innerHeight) {
-        topx = (elx.getBoundingClientRect().top - 283) + scrollTopx
+        topx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().top - 283 - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().top : (elx.getBoundingClientRect().top - 283) + scrollTopx
       } else {
-        topx = elx.getBoundingClientRect().top + scrollTopx + elx.clientHeight + 5
+        topx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().top + elx.clientHeight + 5 - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().top : elx.getBoundingClientRect().top + scrollTopx + elx.clientHeight + 5
       }
 
       if ((elx.getBoundingClientRect().left + 461) > document.documentElement.clientWidth) {
         leftx = elx.getBoundingClientRect().left - elx.clientWidth + 25
       } else {
-        leftx = elx.getBoundingClientRect().left
+        leftx = this.$el.closest('.con-vm-dropdown--menu') ? elx.getBoundingClientRect().left - this.$el.closest('.con-vm-dropdown--menu').getBoundingClientRect().left : elx.getBoundingClientRect().left
       }
       widthx = elx.offsetWidth
 
