@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.5](https://github.com/controlla/vuemerang/compare/v1.4.4...v1.4.5) (2019-05-16)
+
+
+### Bug Fixes
+
+* **datepicker:** style ([e5f1877](https://github.com/controlla/vuemerang/commit/e5f1877))
+* **switch:** force position ([da446f3](https://github.com/controlla/vuemerang/commit/da446f3))
+
+
+
 ### [1.4.4](https://github.com/controlla/vuemerang/compare/v1.4.3...v1.4.4) (2019-05-15)
 
 
