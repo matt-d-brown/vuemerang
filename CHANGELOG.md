@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.6](https://github.com/controlla/vuemerang/compare/v1.4.5...v1.4.6) (2019-05-21)
+
+
+### Bug Fixes
+
+* cdn iframe example ([9f10acf](https://github.com/controlla/vuemerang/commit/9f10acf))
+* fix ([618ab8e](https://github.com/controlla/vuemerang/commit/618ab8e))
+
+
+
 ### [1.4.5](https://github.com/controlla/vuemerang/compare/v1.4.4...v1.4.5) (2019-05-16)
 
 
