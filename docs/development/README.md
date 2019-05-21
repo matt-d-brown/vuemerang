@@ -14,7 +14,7 @@ Vuemerang is a library of Vuejs components that facilitates front-end developmen
 
 Start a project quickly using a CDN and let Vuemerang do the magic.
 
-<iframe width="100%" height="300" src="//jsfiddle.net/luisdanielroviracontreras/txzqp7ny/121/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/IvanSotelo/c6x4e82v/6/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 </box>
 
