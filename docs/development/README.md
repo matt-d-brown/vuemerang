@@ -49,8 +49,6 @@ Vue.use(Vuemerang)
 </box>
 
 
-
-
 <box>
 
 ## Eva Icons
