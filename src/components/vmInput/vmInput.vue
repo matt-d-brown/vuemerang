@@ -14,7 +14,11 @@
       v-if="labelPlaceholder?false:label"
       class="vm-input--label"
       for=""
-      @click="focusInput">{{ label }}</label>
+      @click="focusInput">{{ label }}
+      <span
+        v-if="optional"
+        class="vm-input--label-span"> - Optional</span>
+    </label>
     <div class="vm-con-input">
       <input
         ref="vminput"
@@ -145,6 +149,10 @@ export default {
     label:{
       default:null,
       type:[String,Number]
+    },
+    optional:{
+      default:false,
+      type:Boolean
     },
     autofocus:{
       default:false,

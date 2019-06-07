@@ -176,6 +176,10 @@ for colorx, i in $vm-colors
     &.isFocus
       .vm-input--label
         color: var(colorx)
+        .vm-typeahead--label-span
+          font-size: 0.8em
+          font-style: italic
+          color: var(colorx)
   &.span-text-validation-{colorx}
     color: var(colorx) !important
   &.input-icon-validate-{colorx}
