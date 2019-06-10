@@ -4,7 +4,9 @@
       v-if="isActive"
       class="vm-component vm-stepper__content"
       v-on="$listeners">
-      <div class="vm-stepper__wrapper" :style="styles">
+      <div 
+        :style="styles" 
+        class="vm-stepper__wrapper">
         <slot/>
       </div>
     </div>
@@ -27,6 +29,30 @@ export default {
     isActive: null,
     isReverse: false
   }),
+  computed: {
+    styles () {
+      if (!this.isVertical) return {}
+
+      return {
+        height: `${this.height}px`,
+      }
+    }
+  },
+  watch: {
+    isActive (current, previous) {
+      // If active and the previous state
+      // was null, is just booting up
+      if (current && previous == null) {
+        this.height = 'auto'
+        return
+      }
+
+      if (!this.isVertical) return
+
+      if (this.isActive) this.enter()
+      else this.leave()
+    }
+  },
   mounted () {this.isActive
     this.isVertical = this.$parent.$parent.vertical
     this.id = this.$parent.$parent.contents.length
@@ -36,15 +62,6 @@ export default {
       toggle: this.toggle,
       attrs: this.$attrs
     })
-  },
-  computed: {
-    styles () {
-      if (!this.isVertical) return {}
-
-      return {
-        height: `${this.height}px`,
-      }
-    }
   },
   methods: {
     enter () {
@@ -69,20 +86,5 @@ export default {
       this.isReverse = reverse
     }
   },
-  watch: {
-    isActive (current, previous) {
-      // If active and the previous state
-      // was null, is just booting up
-      if (current && previous == null) {
-        this.height = 'auto'
-        return
-      }
-
-      if (!this.isVertical) return
-
-      if (this.isActive) this.enter()
-      else this.leave()
-    }
-  }
 }
 </script>

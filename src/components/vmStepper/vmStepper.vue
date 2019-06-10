@@ -1,17 +1,27 @@
 <template lang="html">
-  <div class="vm-stepper" :class="[{'vm-stepper--is-booted': isBooted, 'vm-stepper--vertical': vertical, 'vm-stepper--alt-labels': altLabels, 'vm-stepper--non-linear': nonLinear}]">
+  <div 
+    :class="[{'vm-stepper--is-booted': isBooted, 'vm-stepper--vertical': vertical, 'vm-stepper--alt-labels': altLabels, 'vm-stepper--non-linear': nonLinear}]" 
+    class="vm-stepper">
     <slot/>
-  <div class="vm-stepper--footer">
-    <vm-button v-show="inputValue !== 1" color="primary" @click="inputValue--" type="default">
-      {{previusText}}
-    </vm-button>
-    <vm-button v-show="inputValue !== steps.length" @click="inputValue++">
-      {{saveNextText}}
-    </vm-button>
-    <vm-button v-show="inputValue === steps.length" @click="done()">
-      {{saveText}}
-    </vm-button>
-  </div>
+    <div class="vm-stepper--footer">
+      <vm-button 
+        v-show="inputValue !== 1" 
+        color="primary" 
+        type="default" 
+        @click="inputValue--">
+        {{ previusText }}
+      </vm-button>
+      <vm-button 
+        v-show="inputValue !== steps.length" 
+        @click="inputValue++">
+        {{ saveNextText }}
+      </vm-button>
+      <vm-button 
+        v-show="inputValue === steps.length" 
+        @click="done()">
+        {{ saveText }}
+      </vm-button>
+    </div>
   </div>
 </template>
 
@@ -43,18 +53,6 @@ export default {
     contents: [],
     isReverse: false
   }),
-  mounted () {
-    this.inputValue = this.value || this.steps[0].step || 1
-  },
-  methods: {
-    done () {
-      this.$emit('done')
-    },
-    stepClick (step) {
-      // this.inputValue = Number(step)
-      this.$nextTick(() => (this.inputValue = Number(step)))
-    }
-  },
   watch: {
     inputValue (val, prev) {
       this.isReverse = Number(val) < Number(prev)
@@ -71,6 +69,18 @@ export default {
     value () {
       this.$nextTick(() => (this.inputValue = this.value))
     }
-  }
+  },
+  mounted () {
+    this.inputValue = this.value || this.steps[0].step || 1
+  },
+  methods: {
+    done () {
+      this.$emit('done')
+    },
+    stepClick (step) {
+      // this.inputValue = Number(step)
+      this.$nextTick(() => (this.inputValue = Number(step)))
+    }
+  },
 }
 </script>
