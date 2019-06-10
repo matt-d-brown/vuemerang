@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/controlla/vuemerang/compare/v1.4.8...v1.5.0) (2019-06-10)
+
+
+### Bug Fixes
+
+* **vm-stepper:** fix slint ([e64286b](https://github.com/controlla/vuemerang/commit/e64286b))
+
+
+### Features
+
+* **vm-stepper:** add stepper component ([68019e2](https://github.com/controlla/vuemerang/commit/68019e2))
+
+
+
 ### [1.4.8](https://github.com/controlla/vuemerang/compare/v1.4.7...v1.4.8) (2019-06-07)
 
 
