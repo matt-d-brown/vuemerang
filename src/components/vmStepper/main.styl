@@ -1,0 +1,129 @@
+.fade-content-enter-active, .fade-content-leave-active {
+  transition all .3s
+}
+.fade-content-enter, .fade-content-leave-to /* .fade-content-leave-active below version 2.1.8 */ {
+  top 0px
+  opacity 0
+  position absolute !important
+  transform translate3d(-100%, 0, 0)
+}
+.fade-content-leave-to /* .fade-tab-leave-active below version 2.1.8 */ {
+  top 0px
+  opacity 0
+  position absolute !important
+  transform translate3d(100%, 0, 0)
+}
+
+// invert
+
+.fade-content-invert-enter-active, .fade-content-invert-leave-active {
+  transition all .3s
+}
+.fade-content-invert-enter, .fade-content-invert-leave-to /* .fade-content-invert-leave-active below version 2.1.8 */ {
+  top 0px
+  opacity 0
+  position absolute !important
+  transform translate3d(100%, 0, 0)
+}
+.fade-content-invert-leave-to /* .fade-content-invert-leave-active below version 2.1.8 */ {
+  top 0px
+  opacity 0
+  position absolute !important
+  transform translate3d(-100%, 0, 0)
+}
+
+.error--text
+  color $vm-colors[danger]
+.vm-stepper
+  overflow hidden
+  position relative
+  &__label
+    align-items flex-start
+    display flex
+    flex-direction column
+    text-align left
+    small
+      color var('gray')
+  &__header
+    overflow auto
+    height 72px
+    margin 5px
+    border-radius 20px
+    align-items stretch
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+    -webkit-box-shadow 0px 10px 50px 0px var('gray', 0.25)
+    box-shadow 0px 10px 50px 0px var('gray', 0.25)
+  &__items
+    position relative
+    overflow hidden
+  &__step
+    align-items center
+    display flex
+    flex-direction row
+    padding 24px
+    position relative
+    &:not(.vm-stepper__step--active):not(.vm-stepper__step--complete):not(.vm-stepper__step--error)
+      color var('gray', 0.25)
+      .vm-stepper__step__step
+        background var('gray') !important
+      .vm-stepper__label
+        color var('gray') !important
+    &__step
+      align-items center
+      color white
+      border-radius 50%
+      display inline-flex
+      font-size 12px
+      justify-content center
+      height 24px
+      margin-right 8px
+      min-width 24px
+      width 24px
+      transition 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)
+    &--active
+      .vm-stepper__label
+        transition .3s cubic-bezier(0.4, 0.0, 0.6, 1)
+    &--editable
+      cursor pointer
+      &:hover
+        background var('gray', 0.06)
+    &--error
+      .vm-stepper__step__step
+        background-color var('danger') !important
+      .vm-stepper__label
+        color var('danger') !important
+        small
+          color var('danger') !important
+  &__content
+    top 0
+    padding 24px 24px 16px 24px
+    flex 1 0 auto
+    width 100%
+  &__wrapper
+    overflow hidden
+    transition none
+  &--is-booted
+    .vm-stepper__content, .vm-stepper__wrapper
+      transition .3s cubic-bezier(.25,.8,.50,1)
+  &--footer
+    margin 10px
+    display flex
+    justify-content space-between
+
+@media only screen and (max-width: 959px)
+  .vm-stepper:not(.vm-stepper--vertical)
+    .vm-stepper__label
+      display none
+
+    .vm-stepper__step__step
+      margin-right 0
+for colorx, i in $vm-colors
+  .vm-stepper
+    &__step--{colorx}
+      .vm-stepper__step__step
+        background-color var(colorx, 1)
+        border-color var(colorx, 1)
+      .vm-stepper__label
+        color var(colorx, 1)

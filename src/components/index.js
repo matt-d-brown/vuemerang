@@ -33,6 +33,7 @@ export { default as vmImages } from './vmImages'
 export { default as vmDatePicker } from './vmDatePicker'
 export { default as vmTextEditor } from './vmTextEditor'
 export { default as vmTypeahead } from './vmTypeahead'
+export { default as vmStepper } from './vmStepper'
 //New Component import
 
 //layout
