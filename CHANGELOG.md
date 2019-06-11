@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/controlla/vuemerang/compare/v1.5.2...v1.6.0) (2019-06-11)
+
+
+### Bug Fixes
+
+* **dialogs:** fix button ([c8ff2d6](https://github.com/controlla/vuemerang/commit/c8ff2d6))
+
+
+### Features
+
+* **vm-stepper:** add stepper vertical ([84e8f9d](https://github.com/controlla/vuemerang/commit/84e8f9d))
+
+
+
 ### [1.5.2](https://github.com/controlla/vuemerang/compare/v1.5.0...v1.5.2) (2019-06-11)
 
 
