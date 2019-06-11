@@ -107,6 +107,17 @@
   &--is-booted
     .vm-stepper__content, .vm-stepper__wrapper
       transition .3s cubic-bezier(.25,.8,.50,1)
+  &--vertical
+    .vm-stepper__content:not(:last-child)
+      border-left 1px solid rgba(0, 0, 0,.1)
+    .vm-stepper__content
+      margin -8px -36px -16px 36px
+      padding 16px 60px 16px 23px
+      width auto
+    .vm-stepper__step
+      padding 24px 24px 16px
+    .vm-stepper__step__step
+      margin-right 12px
   &--footer
     margin 10px
     display flex

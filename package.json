@@ -79,7 +79,7 @@
     "viewcode": "0.0.27",
     "vue-template-compiler": "2.5.17",
     "vuepress": "^0.14.9",
-    "webpack": "4.29.5"
+    "webpack": "^4.29.5"
   },
   "babel": {
     "presets": [

@@ -1,11 +1,12 @@
 <template lang="html">
-  <transition :name="isReverse?'fade-content-invert':'fade-content'">
+  <transition :name="isReverse?isVertical?'fade-content-vertical-invert':'fade-content-invert':isVertical?'fade-content-vertical':'fade-content'">
     <div
-      v-if="isActive"
+      v-show="isActive||isVertical"
       class="vm-component vm-stepper__content"
       v-on="$listeners">
-      <div 
-        :style="styles" 
+      <div
+        :style="styles"
+        ref="wrapper"
         class="vm-stepper__wrapper">
         <slot/>
       </div>
@@ -53,11 +54,12 @@ export default {
       else this.leave()
     }
   },
-  mounted () {this.isActive
-    this.isVertical = this.$parent.$parent.vertical
-    this.id = this.$parent.$parent.contents.length
-    this.$parent.$parent.contents.push({
-      id: this.$parent.$parent.contents.length,
+  mounted () {
+    let parent = this.$parent.vertical ? this.$parent : this.$parent.$parent
+    this.isVertical = parent.vertical
+    this.id = parent.contents.length
+    parent.contents.push({
+      id: parent.contents.length,
       listeners: this.$listeners,
       toggle: this.toggle,
       attrs: this.$attrs
@@ -71,7 +73,6 @@ export default {
       requestAnimationFrame(() => {
         scrollHeight = this.$refs.wrapper.scrollHeight
       })
-
       this.height = 0
 
       // Give the collapsing element time to collapse

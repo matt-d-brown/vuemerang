@@ -35,6 +35,11 @@ API:
     parameters: boolean bind
     description:  Marks step as danger.
     default: false
+  - name: vertical
+    type: Boolean
+    parameters: null
+    description: Display steps vertically-
+    default: false
   - name: previus-text
     type: String
     parameters: null
@@ -207,6 +212,140 @@ export default {
   .card {
     background: #bdbdbd;
     height: 200px;
+  }
+</style>
+```
+
+</div>
+</vuecode>
+</box>
+
+<box>
+
+## Optional Steps
+An optional step can be called out with sub-text.
+
+<vuecode md>
+<div slot="demo">
+  <Demos-Stepper-Optional />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div>
+    <vm-stepper v-model="step">
+      <vm-stepper-header>
+        <vm-stepper-step step="1" :complete="step > 1" description-text="Optional">
+          Name of step 1
+        </vm-stepper-step>
+        <vm-divider/>
+        <vm-stepper-step step="2" :complete="step > 2" description-text="Optional">
+          Name of step 2
+        </vm-stepper-step>
+        <vm-divider/>
+        <vm-stepper-step step="3" description-text="Optional">
+          Name of step 3
+        </vm-stepper-step>
+      </vm-stepper-header>
+      <vm-stepper-items>
+        <vm-stepper-content step="1">
+          <div class="card" />
+        </vm-stepper-content>
+        <vm-stepper-content step="2">
+          <div class="card" />
+        </vm-stepper-content>
+        <vm-stepper-content step="3">
+          <div class="card" />
+        </vm-stepper-content>
+      </vm-stepper-items>
+    </vm-stepper>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      step: 1
+    }
+  }
+}
+</script>
+
+<style>
+  .card {
+    background: #bdbdbd;
+    height: 200px;
+  }
+</style>
+```
+
+</div>
+</vuecode>
+</box>
+
+<box>
+
+## Vertical Steppers
+Vertical steppers move users along the y-axis and otherwise work exactly the same as their horizontal counterpart.
+
+<vuecode md>
+<div slot="demo">
+  <Demos-Stepper-Vertical />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div>
+    <vm-stepper v-model="step" vertical>
+      <vm-stepper-step step="1" :complete="step > 1" description-text="Optional">
+        Name of step 1
+      </vm-stepper-step>
+      <vm-stepper-content step="1">
+        <div class="card" />
+        <vm-button @click="step = 2">
+          Next
+        </vm-button>
+      </vm-stepper-content>
+      <vm-stepper-step step="2" :complete="step > 2" description-text="Optional">
+        Name of step 2
+      </vm-stepper-step>
+      <vm-stepper-content step="2">
+        <div class="card" />
+        <vm-button @click="step = 3">
+          Next
+        </vm-button>
+      </vm-stepper-content>
+      <vm-stepper-step step="3" description-text="Optional">
+        Name of step 3
+      </vm-stepper-step>
+      <vm-stepper-content step="3">
+        <div class="card" />
+        <vm-button @click="step = 1">
+          Next
+        </vm-button>
+      </vm-stepper-content>
+    </vm-stepper>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      step: 1
+    }
+  }
+}
+</script>
+
+<style>
+  .card {
+    background: #bdbdbd;
+    height: 200px;
+    margin: 5px;
   }
 </style>
 ```

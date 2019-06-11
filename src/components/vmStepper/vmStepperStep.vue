@@ -67,9 +67,10 @@ export default {
     }
   },
   mounted () {
-    this.id = this.$parent.$parent.steps.length
-    this.$parent.$parent.steps.push({
-      id: this.$parent.$parent.steps.length,
+    let parent = this.$parent.vertical ? this.$parent : this.$parent.$parent
+    this.id = parent.steps.length
+    parent.steps.push({
+      id: parent.steps.length,
       listeners: this.$listeners,
       toggle: this.toggle,
       attrs: this.$attrs
