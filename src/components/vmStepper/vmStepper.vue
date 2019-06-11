@@ -3,7 +3,9 @@
     :class="[{'vm-stepper--is-booted': isBooted, 'vm-stepper--vertical': vertical, 'vm-stepper--alt-labels': altLabels, 'vm-stepper--non-linear': nonLinear}]"
     class="vm-stepper">
     <slot/>
-    <div v-if="!vertical" class="vm-stepper--footer">
+    <div 
+      v-if="!vertical" 
+      class="vm-stepper--footer">
       <vm-button
         v-show="inputValue !== 1"
         color="primary"

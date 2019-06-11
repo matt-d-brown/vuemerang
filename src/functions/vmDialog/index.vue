@@ -89,8 +89,12 @@
 
 <script>
 import _color from '../../utils/color.js'
+import vmButton from '../../components/vmButton/vmButton.vue'
 export default {
   name:'VmPrompt',
+  components: {
+    vmButton
+  },
   props:{
     vmColor:{
       default:'primary',

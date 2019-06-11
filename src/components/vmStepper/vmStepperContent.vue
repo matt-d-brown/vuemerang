@@ -5,8 +5,8 @@
       class="vm-component vm-stepper__content"
       v-on="$listeners">
       <div
-        :style="styles"
         ref="wrapper"
+        :style="styles"
         class="vm-stepper__wrapper">
         <slot/>
       </div>
