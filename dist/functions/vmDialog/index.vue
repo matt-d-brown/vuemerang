@@ -20,8 +20,8 @@
           </div>
           <vm-button
             v-if="type=='alert'"
-            :color="vmCloseColor" 
-            :icon-pack="vmIconPack" 
+            :color="vmCloseColor"
+            :icon-pack="vmIconPack"
             :icon="vmCloseIcon"
             radius
             type="flat"
@@ -41,34 +41,46 @@
             :disabled="vmIsValid=='none'?false:!vmIsValid"
             :color="isPrompt?vmColor:color"
             :type="isPrompt?vmButtonAccept:buttonAccept"
-            @click="acceptDialog">{{ isPrompt?vmAcceptText:acceptText }}</vm-button>
+            @click="acceptDialog">
+            {{ isPrompt?vmAcceptText:acceptText }}
+          </vm-button>
           <vm-button
             :color="isPrompt?vmColor:color"
             :type="isPrompt?vmButtonCancel:buttonCancel"
-            @click="cancelClose">{{ isPrompt?vmCancelText:cancelText }}</vm-button>
+            @click="cancelClose">
+            {{ isPrompt?vmCancelText:cancelText }}
+          </vm-button>
         </footer>
 
         <footer v-if="type=='alert'&&!isPrompt" >
           <vm-button
             :color="isPrompt?vmColor:color"
             :type="buttonAccept"
-            @click="acceptDialog">{{ isPrompt?vmAcceptText:acceptText }}</vm-button>
+            @click="acceptDialog">
+            {{ isPrompt?vmAcceptText:acceptText }}
+          </vm-button>
         </footer>
-        
+
         <footer v-if="vmButtonsHidden?isPrompt&&vmAction:false">
           <vm-button
             :color="isPrompt?vmColor:color"
             :type="isPrompt?vmButtonAction:buttonAction"
-            @click="actionDialog">{{ isPrompt?vmActionText:actionText }}</vm-button>
+            @click="actionDialog">
+            {{ isPrompt?vmActionText:actionText }}
+          </vm-button>
           <vm-button
             :disabled="vmIsValid=='none'?false:!vmIsValid"
             :color="isPrompt?vmColor:color"
             :type="isPrompt?vmButtonAccept:buttonAccept"
-            @click="acceptDialog">{{ isPrompt?vmAcceptText:acceptText }}</vm-button>
+            @click="acceptDialog">
+            {{ isPrompt?vmAcceptText:acceptText }}
+          </vm-button>
           <vm-button
             :color="isPrompt?vmColor:color"
             :type="isPrompt?vmButtonCancel:buttonCancel"
-            @click="cancelClose">{{ isPrompt?vmCancelText:cancelText }}</vm-button>
+            @click="cancelClose">
+            {{ isPrompt?vmCancelText:cancelText }}
+          </vm-button>
         </footer>
       </div>
     </div>
@@ -77,8 +89,12 @@
 
 <script>
 import _color from '../../utils/color.js'
+import vmButton from '../../components/vmButton/vmButton.vue'
 export default {
   name:'VmPrompt',
+  components: {
+    vmButton
+  },
   props:{
     vmColor:{
       default:'primary',
