@@ -70,7 +70,7 @@
             :picker-type="type"
             :multiple="multiple"
             :focused-date="focusedDate"
-
+            :week-start="weekStart"
             :time-picker-options="timePickerOptions"
 
             v-bind="ownPickerProps"
@@ -180,6 +180,10 @@ export default {
     },
     startDate: {
       type: Date
+    },
+    weekStart: {
+      type: String | Number,
+      default: null
     },
     size: {
       validator (value) {
