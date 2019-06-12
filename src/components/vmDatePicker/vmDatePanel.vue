@@ -52,6 +52,7 @@
           :is="pickerTable"
           :table-date="panelDate"
           :show-week-numbers="showWeekNumbers"
+          :week-start="weekStart"
           :value="dates"
           :selection-mode="selectionMode"
           :disabled-date="disabledDate"

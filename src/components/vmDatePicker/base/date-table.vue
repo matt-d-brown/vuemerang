@@ -1,8 +1,8 @@
 <template>
   <div :class="classes">
     <div :class="[prefixCls + '-header']">
-      <span 
-        v-for="day in headerDays" 
+      <span
+        v-for="day in headerDays"
         :key="day">
         {{ day }}
       </span>
@@ -32,6 +32,10 @@
           type: Boolean,
           default: false
         },
+        weekStart: {
+          type: String | Number,
+          default: null
+        }
       },
       data () {
         return {
@@ -48,11 +52,11 @@
           ];
         },
         calendar(){
-          const weekStartDay = Number(this.t('i.datepicker.weekStartDay'));
+          const weekStartDay = Number(this.weekStart ? this.weekStart : this.t('i.datepicker.weekStartDay'));
           return new jsCalendar.Generator({onlyDays: !this.showWeekNumbers, weekStart: weekStartDay});
         },
         headerDays () {
-          const weekStartDay = Number(this.t('i.datepicker.weekStartDay'));
+          const weekStartDay = Number(this.weekStart ? this.weekStart : this.t('i.datepicker.weekStartDay'));
           const translatedDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].map(item => {
             return this.t('i.datepicker.weeks.' + item);
           });
@@ -93,7 +97,7 @@
             {
               [`${prefixCls}-cell-selected`]: cell.selected || cell.start || cell.end,
               [`${prefixCls}-cell-start`]: cell.start,
-              [`${prefixCls}-cell-end`]: cell.end,                        
+              [`${prefixCls}-cell-end`]: cell.end,
               [`${prefixCls}-cell-disabled`]: cell.disabled,
               [`${prefixCls}-cell-today`]: cell.type === 'today',
               [`${prefixCls}-cell-prev-month`]: cell.type === 'prevMonth',

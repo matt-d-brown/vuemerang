@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
-    <vm-date-picker type="date" placeholder="Select a date"/>
-    <vm-date-picker type="daterange" placeholder="Select a date" v-model="date"/>
+    <vm-date-picker week-start="0" type="date" placeholder="Select a date"/>
+    <vm-date-picker week-start="0" type="daterange" placeholder="Select a date" v-model="date"/>
   </div>
 </template>
 

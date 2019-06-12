@@ -50,6 +50,11 @@ API:
    parameters: true, false
    description: When turned on, you can display the number of weeks.
    default: false
+ - name: week-start
+   type: Number, String
+   parameters:
+   description: Select the first day of the week.
+   default: Monday (based on the language).
  - name: confirm
    type: Boolean
    parameters: true, false

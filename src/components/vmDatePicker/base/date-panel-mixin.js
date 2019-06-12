@@ -39,6 +39,10 @@ export default {
       type: Boolean,
       default: false
     },
+    weekStart: {
+      type: String | Number,
+      default: null
+    },
     startDate: {
       type: Date
     },
