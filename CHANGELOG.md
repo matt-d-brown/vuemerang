@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.5](https://github.com/controlla/vuemerang/compare/v1.6.4...v1.6.5) (2019-06-12)
+
+
+### Bug Fixes
+
+* **vm-date-picker:** add start weef ([91d5d83](https://github.com/controlla/vuemerang/commit/91d5d83))
+
+
+
 ### [1.6.4](https://github.com/controlla/vuemerang/compare/v1.6.3...v1.6.4) (2019-06-12)
 
 
