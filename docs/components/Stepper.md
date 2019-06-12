@@ -38,7 +38,12 @@ API:
   - name: vertical
     type: Boolean
     parameters: null
-    description: Display steps vertically-
+    description: Display steps vertically.
+    default: false
+  - name: alt-labels
+    type: Boolean
+    parameters: null
+    description: Places the labels beneath the step.
     default: false
   - name: previus-text
     type: String
@@ -293,6 +298,75 @@ Vertical steppers move users along the y-axis and otherwise work exactly the sam
 <vuecode md>
 <div slot="demo">
   <Demos-Stepper-Vertical />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div>
+    <vm-stepper v-model="step" vertical>
+      <vm-stepper-step step="1" :complete="step > 1" description-text="Optional">
+        Name of step 1
+      </vm-stepper-step>
+      <vm-stepper-content step="1">
+        <div class="card" />
+        <vm-button @click="step = 2">
+          Next
+        </vm-button>
+      </vm-stepper-content>
+      <vm-stepper-step step="2" :complete="step > 2" description-text="Optional">
+        Name of step 2
+      </vm-stepper-step>
+      <vm-stepper-content step="2">
+        <div class="card" />
+        <vm-button @click="step = 3">
+          Next
+        </vm-button>
+      </vm-stepper-content>
+      <vm-stepper-step step="3" description-text="Optional">
+        Name of step 3
+      </vm-stepper-step>
+      <vm-stepper-content step="3">
+        <div class="card" />
+        <vm-button @click="step = 1">
+          Next
+        </vm-button>
+      </vm-stepper-content>
+    </vm-stepper>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      step: 1
+    }
+  }
+}
+</script>
+
+<style>
+  .card {
+    background: #bdbdbd;
+    height: 200px;
+    margin: 5px;
+  }
+</style>
+```
+
+</div>
+</vuecode>
+</box>
+
+<box>
+
+## Alternate labels
+Steppers also have an alternative label style which places the title under the step itself.
+
+<vuecode md>
+<div slot="demo">
+  <Demos-Stepper-AlterLabels />
 </div>
 <div slot="code">
 
