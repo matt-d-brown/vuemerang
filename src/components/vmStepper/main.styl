@@ -37,6 +37,7 @@
 .vm-stepper
   overflow hidden
   position relative
+  padding 40px
   &__label
     align-items flex-start
     display flex
@@ -53,16 +54,17 @@
     display flex
     flex-wrap wrap
     justify-content space-between
-    -webkit-box-shadow 0px 10px 50px 0px var('gray', 0.25)
-    box-shadow 0px 10px 50px 0px var('gray', 0.25)
+    -webkit-box-shadow 0px 10px 50px -10px var('gray', 0.25)
+    box-shadow 0px 10px 50px -10px var('gray', 0.25)
   &__items
     position relative
     overflow hidden
+    margin 0 -20px
   &__step
     align-items center
     display flex
     flex-direction row
-    padding 24px
+    padding 15px
     position relative
     &:not(.vm-stepper__step--active):not(.vm-stepper__step--complete):not(.vm-stepper__step--error)
       color var('gray', 0.25)
@@ -102,7 +104,6 @@
     flex 1 0 auto
     width 100%
   &__wrapper
-    overflow hidden
     transition none
   &--is-booted
     .vm-stepper__content, .vm-stepper__wrapper
@@ -118,6 +119,8 @@
       padding 24px 24px 16px
     .vm-stepper__step__step
       margin-right 12px
+    .vm-stepper__wrapper
+      overflow hidden
   &--alt-labels
     .vm-stepper__header
       height: auto

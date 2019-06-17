@@ -8,12 +8,12 @@
       class="vm-stepper--footer">
       <div class="">
         <vm-button
-        v-show="inputValue !== 1"
-        color="primary"
-        type="default"
-        @click="inputValue--">
-        {{ previusText }}
-      </vm-button>
+          v-show="inputValue !== 1"
+          color="primary"
+          type="default"
+          @click="inputValue--">
+          {{ previusText }}
+        </vm-button>
       </div>
       <vm-button
         v-show="inputValue !== steps.length"
