@@ -3,16 +3,18 @@
     :class="[{'vm-stepper--is-booted': isBooted, 'vm-stepper--vertical': vertical, 'vm-stepper--alt-labels': altLabels, 'vm-stepper--non-linear': nonLinear}]"
     class="vm-stepper">
     <slot/>
-    <div 
-      v-if="!vertical" 
+    <div
+      v-if="!vertical && showFooter"
       class="vm-stepper--footer">
-      <vm-button
+      <div class="">
+        <vm-button
         v-show="inputValue !== 1"
         color="primary"
         type="default"
         @click="inputValue--">
         {{ previusText }}
       </vm-button>
+      </div>
       <vm-button
         v-show="inputValue !== steps.length"
         @click="inputValue++">
@@ -34,6 +36,10 @@ export default {
     nonLinear: Boolean,
     altLabels: Boolean,
     vertical: Boolean,
+    showFooter: {
+      default: true,
+      type: Boolean
+    },
     value: [Number, String],
     previusText: {
       default: 'Previus',

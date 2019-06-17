@@ -45,6 +45,11 @@ API:
     parameters: null
     description: Places the labels beneath the step.
     default: false
+  - name: show-footer
+    type: Boolean
+    parameters: null
+    description: Show footer.
+    default: true
   - name: previus-text
     type: String
     parameters: null
