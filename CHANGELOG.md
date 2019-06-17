@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.6](https://github.com/controlla/vuemerang/compare/v1.6.5...v1.6.6) (2019-06-17)
+
+
+### Bug Fixes
+
+* **stepper:** add danger doc ([dd40f11](https://github.com/controlla/vuemerang/commit/dd40f11))
+* **stepper:** display option footer ([ff3e72f](https://github.com/controlla/vuemerang/commit/ff3e72f))
+* **stepper:** fix style ([af92ca1](https://github.com/controlla/vuemerang/commit/af92ca1))
+
+
+
 ### [1.6.5](https://github.com/controlla/vuemerang/compare/v1.6.4...v1.6.5) (2019-06-12)
 
 
