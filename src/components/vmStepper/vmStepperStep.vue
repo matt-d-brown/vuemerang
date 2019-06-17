@@ -61,7 +61,7 @@ export default {
   computed: {
     getIcon(){
       return this.editable && !this.danger ? this.editIcon
-           : this.complete ? this.completeIcon
+           : this.complete  && !this.danger ? this.completeIcon
            : this.danger ? this.errorIcon
            : ''
     }
