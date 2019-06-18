@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.7](https://github.com/controlla/vuemerang/compare/v1.6.6...v1.6.7) (2019-06-18)
+
+
+### Bug Fixes
+
+* **select:** debounce double click ([78b05e1](https://github.com/controlla/vuemerang/commit/78b05e1))
+* **stepper:** change text previous ([d1215b0](https://github.com/controlla/vuemerang/commit/d1215b0))
+* **typeahead:** disable match ([8d0e1a1](https://github.com/controlla/vuemerang/commit/8d0e1a1))
+
+
+
 ### [1.6.6](https://github.com/controlla/vuemerang/compare/v1.6.5...v1.6.6) (2019-06-17)
 
 
