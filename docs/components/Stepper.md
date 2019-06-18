@@ -50,11 +50,11 @@ API:
     parameters: null
     description: Show footer.
     default: true
-  - name: previus-text
+  - name: previous-text
     type: String
     parameters: null
-    description: Add a text button previus.
-    default: Previus
+    description: Add a text button previous.
+    default: Previous
   - name: save-next-text
     type: String
     parameters: null

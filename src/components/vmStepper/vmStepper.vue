@@ -12,7 +12,7 @@
           color="primary"
           type="default"
           @click="inputValue--">
-          {{ previusText }}
+          {{ previousText }}
         </vm-button>
       </div>
       <vm-button
@@ -41,8 +41,8 @@ export default {
       type: Boolean
     },
     value: [Number, String],
-    previusText: {
-      default: 'Previus',
+    previousText: {
+      default: 'Previous',
       type: String
     },
     saveNextText: {
