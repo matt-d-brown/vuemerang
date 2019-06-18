@@ -7295,17 +7295,17 @@ var component = normalizeComponent(
 /* harmony default export */ var components_vmButton = (function (Vue) {
   Vue.component(vmButton.name, vmButton);
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"627d84ce-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmSelect/vmSelect.vue?vue&type=template&id=7fd3047c&lang=html&
-var vmSelectvue_type_template_id_7fd3047c_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"con-select",class:{
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"627d84ce-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmSelect/vmSelect.vue?vue&type=template&id=c6771242&lang=html&
+var vmSelectvue_type_template_id_c6771242_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"con-select",class:{
     'autocompletex':_vm.autocomplete,
     'activeOptions':_vm.active,
     'input-select-validate-success':_vm.success,
     'input-select-validate-danger':_vm.danger,
     'input-select-validate-warning':_vm.warning},style:(_vm.getWidth)},[(_vm.label)?_c('label',{ref:"inputSelectLabel",staticClass:"vm-select--label",attrs:{"for":""}},[_vm._v(_vm._s(_vm.label))]):_vm._e(),_c('div',{staticClass:"input-select-con"},[_c('input',_vm._g(_vm._b({ref:"inputselect",staticClass:"input-select vm-select--input",attrs:{"readonly":!_vm.autocomplete,"type":"text"},on:{"click":function($event){$event.stopPropagation();},"keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }$event.stopPropagation();$event.preventDefault();return _vm.closeOptions($event)}}},'input',_vm.$attrs,false),_vm.listeners)),_c('vm-icon',{staticClass:"icon-select vm-select--icon",attrs:{"icon-pack":_vm.iconPack,"icon":_vm.icon}}),_c('transition',{attrs:{"name":"fadeselect"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.active),expression:"active"}],ref:"vmSelectOptions",staticClass:"vm-select--options",class:[("vm-select-" + _vm.color),{'scrollx':_vm.scrollx}],style:(_vm.cords)},[_c('ul',{ref:"ulx"},[_vm._t("default")],2),_c('ul',{directives:[{name:"show",rawName:"v-show",value:(_vm.clear),expression:"clear"}]},[(_vm.createObject)?_c('vm-select-data',{attrs:{"text":_vm.createText,"value":_vm.inputText},on:{"click":_vm.createAction}}):_vm._e(),(!_vm.createObject)?_c('li',{on:{"click":function($event){_vm.filterItems(''),_vm.changeValue()}}},[_vm._v("\n            "+_vm._s(_vm.noData)+"\n          ")]):_vm._e()],1)])])],1),_c('transition-group',{on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"leave":_vm.leave}},[(_vm.success)?_c('div',{key:"success",staticClass:"con-text-validation"},[_c('span',{staticClass:"span-text-validation span-text-validation-success"},[_vm._v("\n        "+_vm._s(_vm.successText)+"\n      ")])]):(_vm.danger)?_c('div',{key:"danger",staticClass:"con-text-validation span-text-validation-danger"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.dangerText)+"\n      ")])]):(_vm.warning)?_c('div',{key:"warning",staticClass:"con-text-validation span-text-validation-warning"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.warningText)+"\n      ")])]):_vm._e(),(_vm.descriptionText)?_c('div',{key:"description",staticClass:"con-text-validation span-text-validation"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.descriptionText)+"\n      ")])]):_vm._e()])],1)}
-var vmSelectvue_type_template_id_7fd3047c_lang_html_staticRenderFns = []
+var vmSelectvue_type_template_id_c6771242_lang_html_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vmSelect/vmSelect.vue?vue&type=template&id=7fd3047c&lang=html&
+// CONCATENATED MODULE: ./src/components/vmSelect/vmSelect.vue?vue&type=template&id=c6771242&lang=html&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js
 var iterator = __webpack_require__("5d58");
@@ -7426,6 +7426,144 @@ function _slicedToArray(arr, i) {
 }
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
+
+// CONCATENATED MODULE: ./node_modules/throttle-debounce/dist/index.esm.js
+/* eslint-disable no-undefined,no-param-reassign,no-shadow */
+
+/**
+ * Throttle execution of a function. Especially useful for rate limiting
+ * execution of handlers on events like resize and scroll.
+ *
+ * @param  {Number}    delay          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}   [noTrailing]   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
+ *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
+ *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
+ *                                    the internal counter is reset)
+ * @param  {Function}  callback       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                    to `callback` when the throttled-function is executed.
+ * @param  {Boolean}   [debounceMode] If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
+ *                                    schedule `callback` to execute after `delay` ms.
+ *
+ * @return {Function}  A new, throttled, function.
+ */
+function throttle (delay, noTrailing, callback, debounceMode) {
+  /*
+   * After wrapper has stopped being called, this timeout ensures that
+   * `callback` is executed at the proper times in `throttle` and `end`
+   * debounce modes.
+   */
+  var timeoutID;
+  var cancelled = false; // Keep track of the last time `callback` was executed.
+
+  var lastExec = 0; // Function to clear existing timeout
+
+  function clearExistingTimeout() {
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
+  } // Function to cancel next exec
+
+
+  function cancel() {
+    clearExistingTimeout();
+    cancelled = true;
+  } // `noTrailing` defaults to falsy.
+
+
+  if (typeof noTrailing !== 'boolean') {
+    debounceMode = callback;
+    callback = noTrailing;
+    noTrailing = undefined;
+  }
+  /*
+   * The `wrapper` function encapsulates all of the throttling / debouncing
+   * functionality and when executed will limit the rate at which `callback`
+   * is executed.
+   */
+
+
+  function wrapper() {
+    var self = this;
+    var elapsed = Date.now() - lastExec;
+    var args = arguments;
+
+    if (cancelled) {
+      return;
+    } // Execute `callback` and update the `lastExec` timestamp.
+
+
+    function exec() {
+      lastExec = Date.now();
+      callback.apply(self, args);
+    }
+    /*
+     * If `debounceMode` is true (at begin) this is used to clear the flag
+     * to allow future `callback` executions.
+     */
+
+
+    function clear() {
+      timeoutID = undefined;
+    }
+
+    if (debounceMode && !timeoutID) {
+      /*
+       * Since `wrapper` is being called for the first time and
+       * `debounceMode` is true (at begin), execute `callback`.
+       */
+      exec();
+    }
+
+    clearExistingTimeout();
+
+    if (debounceMode === undefined && elapsed > delay) {
+      /*
+       * In throttle mode, if `delay` time has been exceeded, execute
+       * `callback`.
+       */
+      exec();
+    } else if (noTrailing !== true) {
+      /*
+       * In trailing throttle mode, since `delay` time has not been
+       * exceeded, schedule `callback` to execute `delay` ms after most
+       * recent execution.
+       *
+       * If `debounceMode` is true (at begin), schedule `clear` to execute
+       * after `delay` ms.
+       *
+       * If `debounceMode` is false (at end), schedule `callback` to
+       * execute after `delay` ms.
+       */
+      timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
+    }
+  }
+
+  wrapper.cancel = cancel; // Return the wrapper function.
+
+  return wrapper;
+}
+
+/* eslint-disable no-undefined */
+/**
+ * Debounce execution of a function. Debouncing, unlike throttling,
+ * guarantees that a function is only executed a single time, either at the
+ * very beginning of a series of calls, or at the very end.
+ *
+ * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}  [atBegin]     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+ *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
+ *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
+ * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                  to `callback` when the debounced-function is executed.
+ *
+ * @return {Function} A new, debounced function.
+ */
+
+function debounce (delay, atBegin, callback) {
+  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
+}
+
+
 
 // CONCATENATED MODULE: ./src/utils/index.js
 /* harmony default export */ var utils = ({
@@ -7583,6 +7721,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
 //
 //
 
+
 /* harmony default export */ var vmSelectvue_type_script_lang_js_ = ({
   name: 'VmSelect',
   props: {
@@ -7703,7 +7842,8 @@ var es6_number_constructor = __webpack_require__("c5f6");
           _this.$emit('focus', event); // document.removeEventListener('click',this.clickBlur)
 
 
-          _this.focus(event);
+          _this.debouncedGetData(event); // this.focus(event)
+
         },
         input: function input(event) {
           if (_this.autocomplete) {
@@ -7770,6 +7910,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
     }
   },
   mounted: function mounted() {
+    this.debouncedGetData = debounce(100, this.focus);
     this.changeValue();
 
     if (this.active) {
@@ -8041,8 +8182,8 @@ var es6_number_constructor = __webpack_require__("c5f6");
 
 var vmSelect_component = normalizeComponent(
   vmSelect_vmSelectvue_type_script_lang_js_,
-  vmSelectvue_type_template_id_7fd3047c_lang_html_render,
-  vmSelectvue_type_template_id_7fd3047c_lang_html_staticRenderFns,
+  vmSelectvue_type_template_id_c6771242_lang_html_render,
+  vmSelectvue_type_template_id_c6771242_lang_html_staticRenderFns,
   false,
   null,
   null,
@@ -20803,8 +20944,8 @@ bus_emitter.utils = {
 };
 /* harmony default export */ var bus = (bus_emitter);
 // EXTERNAL MODULE: ./node_modules/debounce/index.js
-var debounce = __webpack_require__("b012");
-var debounce_default = /*#__PURE__*/__webpack_require__.n(debounce);
+var node_modules_debounce = __webpack_require__("b012");
+var debounce_default = /*#__PURE__*/__webpack_require__.n(node_modules_debounce);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"627d84ce-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmTextEditor/Button.vue?vue&type=template&id=ece3bca2&lang=pug&
 var Buttonvue_type_template_id_ece3bca2_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{on:{"mousedown":_vm.onBtnClick}},[_c('a',{class:'vw-btn-'+_vm.module.title,domProps:{"innerHTML":_vm._s(_vm.module.icon)}}),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.showDashboard),expression:"showDashboard"}],ref:"dashboard",staticClass:"dashboard"},[(_vm.module.render)?_vm._m(0):_vm._e()],1)])}
@@ -21155,154 +21296,16 @@ var vmTextEditor_component = normalizeComponent(
 /* harmony default export */ var components_vmTextEditor = (function (Vue) {
   Vue.component(vmTextEditor.name, vmTextEditor);
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"627d84ce-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmTypeahead/vmTypeahead.vue?vue&type=template&id=830f5b72&lang=html&
-var vmTypeaheadvue_type_template_id_830f5b72_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-component vm-typeahead",class:{
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"627d84ce-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmTypeahead/vmTypeahead.vue?vue&type=template&id=193af423&lang=html&
+var vmTypeaheadvue_type_template_id_193af423_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-component vm-typeahead",class:{
     'activeOptions':_vm.active,
     'input-select-validate-success':_vm.success,
     'input-select-validate-danger':_vm.danger,
     'input-select-validate-warning':_vm.warning},style:(_vm.getWidth)},[(_vm.label)?_c('label',{ref:"inputSelectLabel",staticClass:"vm-typeahead--label",class:[("vm-typeahead--label-" + _vm.color)],attrs:{"for":""}},[_vm._v(_vm._s(_vm.label)+"\n    "),(_vm.optional)?_c('span',{staticClass:"vm-typeahead--label-span"},[_vm._v(" - Optional")]):_vm._e()]):_vm._e(),_c('div',{staticClass:"input-select-con"},[_c('input',_vm._g(_vm._b({ref:"inputselect",staticClass:"input-select vm-typeahead--input",attrs:{"type":"text","autocomplete":"off"},on:{"click":function($event){$event.stopPropagation();},"keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }$event.stopPropagation();$event.preventDefault();return _vm.closeOptions($event)}}},'input',_vm.$attrs,false),_vm.listeners)),_c('vm-typeahead-loading',{attrs:{"active":_vm.activeLoading,"color":_vm.color,"type":_vm.loadingType}}),_c('transition',{attrs:{"name":"fadeselect"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:((!_vm.createObject && _vm.active && _vm.inputText.length > 0 && _vm.matchedItems.length > 0) || (_vm.createObject && !_vm.activeLoading && _vm.inputText.length > 0 && _vm.matchedItems.length === 0)),expression:"(!createObject && active && inputText.length > 0 && matchedItems.length > 0) || (createObject && !activeLoading && inputText.length > 0 && matchedItems.length === 0)"}],ref:"vmSelectOptions",staticClass:"vm-typeahead--options",class:[("vm-typeahead-" + _vm.color),{'scrollx':_vm.scrollx}],style:(_vm.cords)},[_c('ul',{directives:[{name:"show",rawName:"v-show",value:(_vm.matchedItems.length > 0),expression:"matchedItems.length > 0"}],ref:"ulx"},[_vm._t("default",_vm._l((_vm.matchedItems),function(item,index){return _c("vm-typeahead-item",{key:index,tag:"vm-typeahead-item",attrs:{"value":item.id,"text":item.text}},[_c('template',{slot:"html"},[_vm._t("html",null,{"data":item.data,"text":item.text})],2)],2)}),{"data":_vm.matchedItems})],2),_c('ul',{directives:[{name:"show",rawName:"v-show",value:(!_vm.activeLoading && _vm.inputText.length > 0 && _vm.data.length === 0),expression:"!activeLoading && inputText.length > 0 && data.length === 0"}]},[(_vm.createObject)?_c('vm-typeahead-data',{attrs:{"text":_vm.createText,"value":_vm.inputText},on:{"click":_vm.createAction}}):_vm._e()],1)])])],1),_c('transition-group',{on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"leave":_vm.leave}},[(_vm.success)?_c('div',{key:"success",staticClass:"con-text-validation"},[_c('span',{staticClass:"span-text-validation span-text-validation-success"},[_vm._v("\n        "+_vm._s(_vm.successText)+"\n      ")])]):(_vm.danger)?_c('div',{key:"danger",staticClass:"con-text-validation span-text-validation-danger"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.dangerText)+"\n      ")])]):(_vm.warning)?_c('div',{key:"warning",staticClass:"con-text-validation span-text-validation-warning"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.warningText)+"\n      ")])]):_vm._e(),(_vm.descriptionText)?_c('div',{key:"description",staticClass:"con-text-validation span-text-validation"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.descriptionText)+"\n      ")])]):_vm._e()])],1)}
-var vmTypeaheadvue_type_template_id_830f5b72_lang_html_staticRenderFns = []
+var vmTypeaheadvue_type_template_id_193af423_lang_html_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vmTypeahead/vmTypeahead.vue?vue&type=template&id=830f5b72&lang=html&
-
-// CONCATENATED MODULE: ./node_modules/throttle-debounce/dist/index.esm.js
-/* eslint-disable no-undefined,no-param-reassign,no-shadow */
-
-/**
- * Throttle execution of a function. Especially useful for rate limiting
- * execution of handlers on events like resize and scroll.
- *
- * @param  {Number}    delay          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {Boolean}   [noTrailing]   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
- *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
- *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
- *                                    the internal counter is reset)
- * @param  {Function}  callback       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
- *                                    to `callback` when the throttled-function is executed.
- * @param  {Boolean}   [debounceMode] If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
- *                                    schedule `callback` to execute after `delay` ms.
- *
- * @return {Function}  A new, throttled, function.
- */
-function throttle (delay, noTrailing, callback, debounceMode) {
-  /*
-   * After wrapper has stopped being called, this timeout ensures that
-   * `callback` is executed at the proper times in `throttle` and `end`
-   * debounce modes.
-   */
-  var timeoutID;
-  var cancelled = false; // Keep track of the last time `callback` was executed.
-
-  var lastExec = 0; // Function to clear existing timeout
-
-  function clearExistingTimeout() {
-    if (timeoutID) {
-      clearTimeout(timeoutID);
-    }
-  } // Function to cancel next exec
-
-
-  function cancel() {
-    clearExistingTimeout();
-    cancelled = true;
-  } // `noTrailing` defaults to falsy.
-
-
-  if (typeof noTrailing !== 'boolean') {
-    debounceMode = callback;
-    callback = noTrailing;
-    noTrailing = undefined;
-  }
-  /*
-   * The `wrapper` function encapsulates all of the throttling / debouncing
-   * functionality and when executed will limit the rate at which `callback`
-   * is executed.
-   */
-
-
-  function wrapper() {
-    var self = this;
-    var elapsed = Date.now() - lastExec;
-    var args = arguments;
-
-    if (cancelled) {
-      return;
-    } // Execute `callback` and update the `lastExec` timestamp.
-
-
-    function exec() {
-      lastExec = Date.now();
-      callback.apply(self, args);
-    }
-    /*
-     * If `debounceMode` is true (at begin) this is used to clear the flag
-     * to allow future `callback` executions.
-     */
-
-
-    function clear() {
-      timeoutID = undefined;
-    }
-
-    if (debounceMode && !timeoutID) {
-      /*
-       * Since `wrapper` is being called for the first time and
-       * `debounceMode` is true (at begin), execute `callback`.
-       */
-      exec();
-    }
-
-    clearExistingTimeout();
-
-    if (debounceMode === undefined && elapsed > delay) {
-      /*
-       * In throttle mode, if `delay` time has been exceeded, execute
-       * `callback`.
-       */
-      exec();
-    } else if (noTrailing !== true) {
-      /*
-       * In trailing throttle mode, since `delay` time has not been
-       * exceeded, schedule `callback` to execute `delay` ms after most
-       * recent execution.
-       *
-       * If `debounceMode` is true (at begin), schedule `clear` to execute
-       * after `delay` ms.
-       *
-       * If `debounceMode` is false (at end), schedule `callback` to
-       * execute after `delay` ms.
-       */
-      timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
-    }
-  }
-
-  wrapper.cancel = cancel; // Return the wrapper function.
-
-  return wrapper;
-}
-
-/* eslint-disable no-undefined */
-/**
- * Debounce execution of a function. Debouncing, unlike throttling,
- * guarantees that a function is only executed a single time, either at the
- * very beginning of a series of calls, or at the very end.
- *
- * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {Boolean}  [atBegin]     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
- *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
- *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
- * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
- *                                  to `callback` when the debounced-function is executed.
- *
- * @return {Function} A new, debounced function.
- */
-
-function index_esm_debounce (delay, atBegin, callback) {
-  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
-}
-
-
+// CONCATENATED MODULE: ./src/components/vmTypeahead/vmTypeahead.vue?vue&type=template&id=193af423&lang=html&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmTypeahead/vmTypeahead.vue?vue&type=script&lang=js&
 
@@ -21546,6 +21549,10 @@ function escapeRegExp(str) {
     maxMatches: {
       type: Number,
       default: 20
+    },
+    disableMatch: {
+      default: false,
+      type: Boolean
     }
   },
   data: function data() {
@@ -21632,24 +21639,46 @@ function escapeRegExp(str) {
       });
     },
     matchedItems: function matchedItems() {
-      var re = new RegExp(this.escapedQuery, 'gi'); // Filter, sort, and concat
+      var re = new RegExp(this.escapedQuery, 'gi');
+      var matchedItems = null;
+      var formattedData = this.formattedData;
 
-      return this.formattedData.filter(function (i) {
-        return i.text.match(re) !== null;
-      }).sort(function (a, b) {
-        var aIndex = a.text.indexOf(a.text.match(re)[0]);
-        var bIndex = b.text.indexOf(b.text.match(re)[0]);
+      if (this.disableMatch) {
+        matchedItems = formattedData.sort(function (a, b) {
+          var aIndex = a.text.indexOf(a.text.match(re)[0]);
+          var bIndex = b.text.indexOf(b.text.match(re)[0]);
 
-        if (aIndex < bIndex) {
-          return -1;
-        }
+          if (aIndex < bIndex) {
+            return -1;
+          }
 
-        if (aIndex > bIndex) {
-          return 1;
-        }
+          if (aIndex > bIndex) {
+            return 1;
+          }
 
-        return 0;
-      }).slice(0, this.maxMatches);
+          return 0;
+        }).slice(0, this.maxMatches);
+      } else {
+        matchedItems = formattedData.filter(function (i) {
+          return i.text.match(re) !== null;
+        }).sort(function (a, b) {
+          var aIndex = a.text.indexOf(a.text.match(re)[0]);
+          var bIndex = b.text.indexOf(b.text.match(re)[0]);
+
+          if (aIndex < bIndex) {
+            return -1;
+          }
+
+          if (aIndex > bIndex) {
+            return 1;
+          }
+
+          return 0;
+        }).slice(0, this.maxMatches);
+      } // Filter, sort, and concat
+
+
+      return matchedItems;
     }
   },
   watch: {
@@ -21694,7 +21723,7 @@ function escapeRegExp(str) {
     }
   },
   mounted: function mounted() {
-    this.debouncedGetData = index_esm_debounce(this.debounce, this.inputChange);
+    this.debouncedGetData = debounce(this.debounce, this.inputChange);
     this.changeValue();
 
     if (this.active) {// let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
@@ -21816,8 +21845,8 @@ function escapeRegExp(str) {
 
 var vmTypeahead_component = normalizeComponent(
   vmTypeahead_vmTypeaheadvue_type_script_lang_js_,
-  vmTypeaheadvue_type_template_id_830f5b72_lang_html_render,
-  vmTypeaheadvue_type_template_id_830f5b72_lang_html_staticRenderFns,
+  vmTypeaheadvue_type_template_id_193af423_lang_html_render,
+  vmTypeaheadvue_type_template_id_193af423_lang_html_staticRenderFns,
   false,
   null,
   null,
@@ -22452,12 +22481,12 @@ var vmTypeaheadloading_component = normalizeComponent(
   Vue.component(vmTypeaheadData.name, vmTypeaheadData);
   Vue.component(vmTypeaheadloading.name, vmTypeaheadloading);
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"627d84ce-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmStepper/vmStepper.vue?vue&type=template&id=2541b9f8&lang=html&
-var vmSteppervue_type_template_id_2541b9f8_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-stepper",class:[{'vm-stepper--is-booted': _vm.isBooted, 'vm-stepper--vertical': _vm.vertical, 'vm-stepper--alt-labels': _vm.altLabels, 'vm-stepper--non-linear': _vm.nonLinear}]},[_vm._t("default"),(!_vm.vertical && _vm.showFooter)?_c('div',{staticClass:"vm-stepper--footer"},[_c('div',{},[_c('vm-button',{directives:[{name:"show",rawName:"v-show",value:(_vm.inputValue !== 1),expression:"inputValue !== 1"}],attrs:{"color":"primary","type":"default"},on:{"click":function($event){_vm.inputValue--}}},[_vm._v("\n        "+_vm._s(_vm.previusText)+"\n      ")])],1),_c('vm-button',{directives:[{name:"show",rawName:"v-show",value:(_vm.inputValue !== _vm.steps.length),expression:"inputValue !== steps.length"}],on:{"click":function($event){_vm.inputValue++}}},[_vm._v("\n      "+_vm._s(_vm.saveNextText)+"\n    ")]),_c('vm-button',{directives:[{name:"show",rawName:"v-show",value:(_vm.inputValue === _vm.steps.length),expression:"inputValue === steps.length"}],on:{"click":function($event){return _vm.done()}}},[_vm._v("\n      "+_vm._s(_vm.saveText)+"\n    ")])],1):_vm._e()],2)}
-var vmSteppervue_type_template_id_2541b9f8_lang_html_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"627d84ce-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmStepper/vmStepper.vue?vue&type=template&id=6146057f&lang=html&
+var vmSteppervue_type_template_id_6146057f_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-stepper",class:[{'vm-stepper--is-booted': _vm.isBooted, 'vm-stepper--vertical': _vm.vertical, 'vm-stepper--alt-labels': _vm.altLabels, 'vm-stepper--non-linear': _vm.nonLinear}]},[_vm._t("default"),(!_vm.vertical && _vm.showFooter)?_c('div',{staticClass:"vm-stepper--footer"},[_c('div',{},[_c('vm-button',{directives:[{name:"show",rawName:"v-show",value:(_vm.inputValue !== 1),expression:"inputValue !== 1"}],attrs:{"color":"primary","type":"default"},on:{"click":function($event){_vm.inputValue--}}},[_vm._v("\n        "+_vm._s(_vm.previousText)+"\n      ")])],1),_c('vm-button',{directives:[{name:"show",rawName:"v-show",value:(_vm.inputValue !== _vm.steps.length),expression:"inputValue !== steps.length"}],on:{"click":function($event){_vm.inputValue++}}},[_vm._v("\n      "+_vm._s(_vm.saveNextText)+"\n    ")]),_c('vm-button',{directives:[{name:"show",rawName:"v-show",value:(_vm.inputValue === _vm.steps.length),expression:"inputValue === steps.length"}],on:{"click":function($event){return _vm.done()}}},[_vm._v("\n      "+_vm._s(_vm.saveText)+"\n    ")])],1):_vm._e()],2)}
+var vmSteppervue_type_template_id_6146057f_lang_html_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vmStepper/vmStepper.vue?vue&type=template&id=2541b9f8&lang=html&
+// CONCATENATED MODULE: ./src/components/vmStepper/vmStepper.vue?vue&type=template&id=6146057f&lang=html&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmStepper/vmStepper.vue?vue&type=script&lang=js&
 
@@ -22503,8 +22532,8 @@ var vmSteppervue_type_template_id_2541b9f8_lang_html_staticRenderFns = []
       type: Boolean
     },
     value: [Number, String],
-    previusText: {
-      default: 'Previus',
+    previousText: {
+      default: 'Previous',
       type: String
     },
     saveNextText: {
@@ -22577,8 +22606,8 @@ var vmSteppervue_type_template_id_2541b9f8_lang_html_staticRenderFns = []
 
 var vmStepper_component = normalizeComponent(
   vmStepper_vmSteppervue_type_script_lang_js_,
-  vmSteppervue_type_template_id_2541b9f8_lang_html_render,
-  vmSteppervue_type_template_id_2541b9f8_lang_html_staticRenderFns,
+  vmSteppervue_type_template_id_6146057f_lang_html_render,
+  vmSteppervue_type_template_id_6146057f_lang_html_staticRenderFns,
   false,
   null,
   null,

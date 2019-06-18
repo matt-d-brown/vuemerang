@@ -107,6 +107,7 @@
 </template>
 
 <script>
+import { debounce } from 'throttle-debounce'
 import utils from '../../utils'
 export default {
   name:'VmSelect',
@@ -219,7 +220,8 @@ export default {
         focus: (event) => {
           this.$emit('focus',event)
           // document.removeEventListener('click',this.clickBlur)
-          this.focus(event)
+          this.debouncedGetData(event)
+          // this.focus(event)
         },
         input: (event) => {
           if (this.autocomplete) {
@@ -277,6 +279,7 @@ export default {
     },
   },
   mounted(){
+    this.debouncedGetData = debounce(100, this.focus)
     this.changeValue()
     if (this.active) {
       let parentNode = this.$el.closest('.con-vm-dialog') ? this.$el.closest('.con-vm-dialog') : this.$el.closest('.con-vm-dropdown--menu')
