@@ -16,8 +16,7 @@
       :warning="true"
       warning-text="The entered data could not be verified"
       placeholder="Date Warning"
-      val-icon-warning="alert-triangle-outline
-"
+      val-icon-warning="alert-triangle-outline"
       v-model="value3"/>
       <vm-input
       description-text="Just enter the first 2 (two) numbers of your phone"
