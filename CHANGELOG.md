@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.11](https://github.com/controlla/vuemerang/compare/v1.6.10...v1.6.11) (2019-06-19)
+
+
+### Bug Fixes
+
+* **typeahead:** fix filters ([17ebfc6](https://github.com/controlla/vuemerang/commit/17ebfc6))
+* **vm-stepper:** add validate prop ([aaae59b](https://github.com/controlla/vuemerang/commit/aaae59b))
+
+
+
 ### [1.6.10](https://github.com/controlla/vuemerang/compare/v1.6.9...v1.6.10) (2019-06-19)
 
 
