@@ -211,15 +211,15 @@ export default {
       type:String
     },
     valIconSuccess:{
-      default: null,
+      default: 'checkmark-circle-outline',
       type:String
     },
     valIconDanger:{
-      default: null,
+      default: 'close',
       type:String
     },
     valIconWarning:{
-      default: null,
+      default: 'alert-triangle-outline',
       type:String
     }
   },
