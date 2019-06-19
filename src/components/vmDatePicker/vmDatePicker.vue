@@ -2,7 +2,7 @@
   <div
     v-click-outside:mousedown.capture="handleClose"
     v-click-outside.capture="handleClose"
-    :class="[prefixCls,{
+    :class="[`vm-datepicker-${color}`,prefixCls,{
       'datepicker-validate-success':success,
       'datepicker-validate-danger':danger,
       'datepicker-validate-warning':warning}]">
@@ -10,7 +10,11 @@
       v-if="label"
       ref="datePickerLabel"
       class="vm-datepicker--label"
-      for="">{{ label }}</label>
+      for="">{{ label }}
+      <span
+        v-if="optional"
+        class="vm-datepicker--label-span"> - Optional</span>
+    </label>
     <div
       ref="reference"
       :class="[prefixCls + '-rel']">
@@ -28,7 +32,13 @@
           :name="name"
           :icon-pack="iconPack"
           :icon="iconType"
-          icon-after="true"
+          :success="success"
+          :danger="danger"
+          :warning="warning"
+          :successText="successText"
+          :dangerText="dangerText"
+          :warningText="warningText"
+          :descriptionText="descriptionText"
           @input-change="handleInputChange"
           @focus="handleFocus"
           @blur="handleBlur"
@@ -145,6 +155,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    optional:{
+      default:false,
+      type:Boolean
     },
     editable: {
       type: Boolean,
@@ -274,6 +288,18 @@ export default {
       default: 'close-circle-outline',
       type:String
     },
+    valIconSuccess:{
+      default: 'checkmark-circle-outline',
+      type:String
+    },
+    valIconDanger:{
+      default: 'close',
+      type:String
+    },
+    valIconWarning:{
+      default: 'alert-triangle-outline',
+      type:String
+    }
   },
   data(){
     const isRange = this.type.includes('range');
