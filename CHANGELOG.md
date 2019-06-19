@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.8](https://github.com/controlla/vuemerang/compare/v1.6.7...v1.6.8) (2019-06-19)
+
+
+### Bug Fixes
+
+* **lint:** changes ([e324083](https://github.com/controlla/vuemerang/commit/e324083))
+* **vm-datepicker:** change statuses ([7e6ead2](https://github.com/controlla/vuemerang/commit/7e6ead2))
+* **vm-input:** icons ([987482b](https://github.com/controlla/vuemerang/commit/987482b))
+
+
+
 ### [1.6.7](https://github.com/controlla/vuemerang/compare/v1.6.6...v1.6.7) (2019-06-18)
 
 
