@@ -11,13 +11,13 @@
           v-show="inputValue !== 1"
           color="primary"
           type="default"
-          @click="inputValue--">
+          @click="stepClick(inputValue - 1)">
           {{ previousText }}
         </vm-button>
       </div>
       <vm-button
         v-show="inputValue !== steps.length"
-        @click="inputValue++">
+        @click="stepClick(inputValue + 1)">
         {{ saveNextText }}
       </vm-button>
       <vm-button
@@ -87,7 +87,7 @@ export default {
     },
     stepClick (step) {
       // this.inputValue = Number(step)
-      this.$nextTick(() => (this.inputValue = Number(step)))
+      this.$nextTick(() => (this.inputValue = Number(step), this.$emit('step', Number(step))))
     }
   },
 }
