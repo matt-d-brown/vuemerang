@@ -86,8 +86,10 @@ export default {
       this.$emit('done')
     },
     stepClick (step) {
+      this.$emit('step', this.inputValue)
+      let invalidate = this.steps.find(e => !e.validate && e.step === this.inputValue)
       // this.inputValue = Number(step)
-      this.$nextTick(() => (this.inputValue = Number(step), this.$emit('step', Number(step))))
+      !invalidate && this.$nextTick(() => (this.inputValue = Number(step)))
     }
   },
 }
