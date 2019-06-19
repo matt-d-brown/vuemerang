@@ -46,10 +46,10 @@
   },
   "dependencies": {
     "@controlla/controlla-postinstall": "^1.0.21",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "debounce": "^1.2.0",
     "js-calendar": "^1.2.3",
-    "pug": "^2.0.3",
+    "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "simple-jscalendar": "^1.4.4",
     "throttle-debounce": "^2.1.0",
@@ -65,12 +65,12 @@
     "@commitlint/config-conventional": "^7.6.0",
     "@vue/cli-plugin-babel": "3.0.3",
     "@vue/cli-plugin-eslint": "3.0.3",
-    "@vue/cli-service": "^3.0.3",
+    "@vue/cli-service": "^3.8.4",
     "copy-webpack-plugin": "^4.5.2",
     "eslint": "5.14.0",
     "eslint-plugin-vue": "^4.7.1",
     "file-loader": "^1.1.11",
-    "husky": "^2.2.0",
+    "husky": "^2.4.1",
     "prefixfree": "^1.0.0",
     "push-dir": "^0.4.1",
     "standard-version": "^6.0.1",
@@ -79,7 +79,7 @@
     "viewcode": "0.0.27",
     "vue-template-compiler": "2.6.10",
     "vuepress": "^0.14.9",
-    "webpack": "^4.29.5"
+    "webpack": "^4.34.0"
   },
   "babel": {
     "presets": [
