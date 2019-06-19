@@ -28,6 +28,10 @@ export default {
       type: String,
       default: 'primary'
     },
+    validate: {
+      default: true,
+      type: Boolean
+    },
     complete: Boolean,
     editable: Boolean,
     danger: Boolean,
@@ -73,6 +77,8 @@ export default {
       id: parent.steps.length,
       listeners: this.$listeners,
       toggle: this.toggle,
+      validate: this.validate,
+      step: Number(this.step),
       attrs: this.$attrs
     })
   },

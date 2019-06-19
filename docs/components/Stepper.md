@@ -20,6 +20,11 @@ API:
     parameters:
     description: Sets step to associate the content to.
     default: null
+  - name: validate
+    type: Boolean
+    parameters: null
+    description: Marks step as validate.
+    default: true
   - name: editable
     type: Boolean
     parameters: null
