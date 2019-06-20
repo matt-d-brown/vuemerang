@@ -70,6 +70,12 @@ export default {
            : ''
     }
   },
+  watch: {
+    validate (validate) {
+      let parent = this.$parent.vertical ? this.$parent : this.$parent.$parent
+      this.isActive && (parent.validate = validate)
+    }
+  },
   mounted () {
     let parent = this.$parent.vertical ? this.$parent : this.$parent.$parent
     this.id = parent.steps.length

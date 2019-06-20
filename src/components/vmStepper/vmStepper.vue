@@ -59,7 +59,8 @@ export default {
     isBooted: false,
     steps: [],
     contents: [],
-    isReverse: false
+    isReverse: false,
+    validate: true,
   }),
   watch: {
     inputValue (val, prev) {
@@ -87,9 +88,9 @@ export default {
     },
     stepClick (step) {
       this.$emit('step', this.inputValue)
-      let invalidate = this.steps.find(e => !e.validate && e.step === this.inputValue)
+      // let invalidate = this.steps.find(e => !e.validate && e.step === this.inputValue)
       // this.inputValue = Number(step)
-      !invalidate && this.$nextTick(() => (this.inputValue = Number(step)))
+      this.validate && this.$nextTick(() => (this.inputValue = Number(step)))
     }
   },
 }
