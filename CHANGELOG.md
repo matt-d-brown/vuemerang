@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.13](https://github.com/controlla/vuemerang/compare/v1.6.12...v1.6.13) (2019-06-28)
+
+
+### Bug Fixes
+
+* embedd ([588a833](https://github.com/controlla/vuemerang/commit/588a833))
+* **vm-select:** change on list ([971b032](https://github.com/controlla/vuemerang/commit/971b032))
+
+
+
 ### [1.6.12](https://github.com/controlla/vuemerang/compare/v1.6.11...v1.6.12) (2019-06-20)
 
 
