@@ -33,7 +33,7 @@
 
       <transition name="fadeselect">
         <div
-          v-show="active"
+          v-if="active"
           ref="vmSelectOptions"
           :style="cords"
           :class="[`vm-select-${color}`,{'scrollx':scrollx}]"
