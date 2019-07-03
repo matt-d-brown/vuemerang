@@ -21,7 +21,10 @@
     </label>
     <div class="vm-con-input">
       <input
+        v-format-with-comma
         ref="vminput"
+        :data-position="position"
+        :data-prev-value="prevValue"
         :style="style"
         :autofocus="autofocus"
         :class="[size,{
@@ -30,7 +33,7 @@
           'icon-after-input':iconAfter
         }]"
         :placeholder="null"
-        :value="value"
+        :value="formatedValue"
         v-bind="$attrs"
         :type="type"
         class="vm-inputx vm-input--input"
@@ -129,9 +132,28 @@
 </template>
 
 <script>
+import formatNumber from 'accounting-js/lib/formatNumber'
+import unformat from 'accounting-js/lib/unformat'
 import _color from '../../utils/color.js'
+
 export default {
   name:'VmInput',
+  directives: {
+    formatWithComma: {
+      update(e) {
+        let positionDiff = 0;
+        if (e.dataset.prevValue.length === (e.value.length - 1)) {
+          positionDiff = 1
+        }
+        if (e.dataset.prevValue.length === (e.value.length + 1)) {
+          positionDiff = -1
+        }
+        if (e.selectionEnd !== e.dataset.position) {
+          e.selectionEnd = Number(e.dataset.position) + positionDiff
+        }
+      }
+    }
+  },
   inheritAttrs: false,
   props:{
     value:{
@@ -224,6 +246,9 @@ export default {
     }
   },
   data:()=>({
+    formatedValue: '',
+    prevValue: '',
+    position: 0,
     isFocus:false,
     type: ''
   }),
@@ -242,7 +267,9 @@ export default {
       return {
         ...this.$listeners,
         input: (evt) => {
-          this.$emit('input',evt.target.value)
+          this.changeData(evt)
+          let newValue = this.type === 'currency' ? unformat(evt.target.value) : evt.target.value
+          this.$emit('input', newValue)
         },
         focus: (evt) => {
           this.$emit('focus',evt)
@@ -271,8 +298,8 @@ export default {
     }
   },
   watch: {
-    val (val) {
-      this.value = val
+    value() {
+      this.formatedValue = this.processFormatting(this.value)
     }
   },
   mounted () {
@@ -303,6 +330,24 @@ export default {
     },
     onInput() {
       this.$emit('update:val', this.value)
+    },
+    changeData(evt) {
+      this.prevValue = evt.target.value
+      this.position = evt.target.selectionStart
+      this.formatedValue = this.processFormatting(evt.target.value)
+    },
+    processFormatting(value) {
+      if (this.type !== 'currency') {
+        return value
+      }
+      let targetValue = unformat(value)
+      if (!targetValue) {
+        return 0
+      }
+      if (typeof targetValue === "string" && targetValue.indexOf(',') >= 0) {
+        return targetValue
+      }
+      return formatNumber(targetValue, {thousand: ',', precision: 2})
     }
   },
 }

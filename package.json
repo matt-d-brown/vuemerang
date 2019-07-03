@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@controlla/controlla-postinstall": "^1.0.21",
+    "accounting-js": "^1.1.1",
     "axios": "^0.18.1",
     "debounce": "^1.2.0",
     "js-calendar": "^1.2.3",
