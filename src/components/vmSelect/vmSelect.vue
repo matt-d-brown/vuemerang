@@ -1,18 +1,22 @@
 <template lang="html">
   <div
-    :class="{
+    :class="[`vm-select-${color}`,{
       'autocompletex':autocomplete,
       'activeOptions':active,
       'input-select-validate-success':success,
       'input-select-validate-danger':danger,
-      'input-select-validate-warning':warning}"
+      'input-select-validate-warning':warning}]"
     :style="getWidth"
     class="con-select">
     <label
       v-if="label"
       ref="inputSelectLabel"
       class="vm-select--label"
-      for="">{{ label }}</label>
+      for="">{{ label }}
+      <span
+        v-if="optional"
+        class="vm-select--label-span"> - Optional</span>
+    </label>
     <div class="input-select-con">
       <!-- v-model="valueFilter" -->
       <input
@@ -33,7 +37,7 @@
 
       <transition name="fadeselect">
         <div
-          v-if="active"
+          v-show="active"
           ref="vmSelectOptions"
           :style="cords"
           :class="[`vm-select-${color}`,{'scrollx':scrollx}]"
@@ -144,6 +148,10 @@ export default {
     label:{
       default:null,
       type:[String]
+    },
+    optional:{
+      default:false,
+      type:Boolean
     },
     success:{
       default:false,
