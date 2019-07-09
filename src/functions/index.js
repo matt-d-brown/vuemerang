@@ -3,6 +3,7 @@
 import vmNotifications from './vmNotifications/index.js'
 import vmLoading from './vmLoading/index.js'
 import vmDialog from './vmDialog/index.js'
+import vmViewer from './vmViewer/index.js'
 //theme
 import vmTheme from '../utils/theme.js'
 
@@ -11,7 +12,8 @@ const vmFunctions = {
   vmNotifications,
   vmLoading,
   vmTheme,
-  vmDialog
+  vmDialog,
+  vmViewer
 }
 
 export default Vue => {
