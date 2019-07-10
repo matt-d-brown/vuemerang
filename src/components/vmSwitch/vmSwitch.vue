@@ -10,8 +10,7 @@
     v-bind="$attrs"
     class="vm-component vm-switch"
     type="button"
-    name="button"
-    @click="toggleCheckbox($event)">
+    name="button">
     <input
       ref="inputCheckbox"
       :disabled="$attrs.disabled"

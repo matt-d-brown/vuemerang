@@ -2,8 +2,8 @@
 
   <div id="parentx">
 
-    <vm-button @click="active=!active" color="primary" type="filled">Open Sidebar</vm-button>
-    <vm-sidebar parent="body" default-index="1"  color="primary" class="sidebarx" spacer v-model="active">
+    <vm-button @click="toggleSidebar" color="primary" type="filled">Open Sidebar</vm-button>
+    <vm-sidebar @closeSide="toggleSidebar" parent="body" default-index="1"  color="primary" class="sidebarx" spacer :value=active>
 
       <div class="header-sidebar" slot="header">
         <vm-avatar  size="70px" src="https://randomuser.me/api/portraits/men/85.jpg"/>
@@ -66,7 +66,16 @@
 export default {
   data:()=>({
     active:false,
-  })
+  }),
+  methods: {
+    toggleSidebar (value) {
+      if (value) {
+        this.active = value
+      } else {
+        this.active = !this.active
+      }
+    }
+  }
 }
 </script>
 
