@@ -107,12 +107,12 @@ export default {
   mounted(){
   },
   methods:{
-    toggleCheckbox() {
-      if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
-        this.$refs.inputCheckbox.checked = !this.$refs.inputCheckbox.checked;
-        this.$emit('input', this.$refs.inputCheckbox.checked);
-      }
-    },
+    // toggleCheckbox() {
+    //   if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+    //     this.$refs.inputCheckbox.checked = !this.$refs.inputCheckbox.checked;
+    //     this.$emit('input', this.$refs.inputCheckbox.checked);
+    //   }
+    // },
     toggleValue(evt){
       if(this.isArrayx()){
         this.setArray()
