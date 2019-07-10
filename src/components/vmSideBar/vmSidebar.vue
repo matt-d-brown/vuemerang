@@ -114,13 +114,12 @@ export default {
   },
   created () {
     this.currentIndex = this.defaultIndex
-    console.log(this.staticPosition)
   },
   mounted () {
     this.insertBody()
   },
   methods:{
-    emitToParent (event) {
+    emitToParent () {
       this.$emit('closeSide', false)
     },
     getActive () {
