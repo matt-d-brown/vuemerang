@@ -1,6 +1,6 @@
 <template lang="html">
   <div
-    :class="{'textarea-danger': counter ? (value && value.length > counter) : false, 'focusx': focusx}"
+    :class="{'textarea-danger': counter ? (value && value.length > counter) : false, 'focusx': focusx, 'textarea-success': success, 'textarea-warning': warning, 'textarea-danger': danger}"
     :style="getStyle"
     class="vm-component vm-con-textarea">
 
@@ -21,6 +21,53 @@
       class="count vm-textarea--count">
       {{ value ? value.length : 0 }} / {{ counter }}
     </div>
+
+    <transition-group
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+    >
+      <div
+        v-if="success"
+        key="success"
+        class="con-text-validation vm-input--text-validation">
+        <span class="span-text-validation span-text-validation-success vm-input--text-validation-span">
+          {{
+            successText
+          }}
+        </span>
+      </div>
+      <div
+        v-else-if="danger"
+        key="danger"
+        class="con-text-validation span-text-validation-danger vm-input--text-validation-span">
+        <span class="span-text-validation">
+          {{
+            dangerText
+          }}
+        </span>
+      </div>
+      <div
+        v-else-if="warning"
+        key="warning"
+        class="con-text-validation span-text-validation-warning vm-input--text-validation-span">
+        <span class="span-text-validation">
+          {{
+            warningText
+          }}
+        </span>
+      </div>
+      <div
+        v-if="descriptionText"
+        key="description"
+        class="con-text-validation span-text-validation vm-input--text-validation-span">
+        <span class="span-text-validation">
+          {{
+            descriptionText
+          }}
+        </span>
+      </div>
+    </transition-group>
 
   </div>
 </template>
@@ -50,6 +97,70 @@ export default {
     width:{
       default:null,
       type: String
+    },
+    icon:{
+      default:null,
+      type:String
+    },
+    iconAfter:{
+      default:false,
+      type:[Boolean,String]
+    },
+    iconNoBorder:{
+      default:false,
+      type:Boolean
+    },
+    iconPack:{
+      default:'eva',
+      type:String
+    },
+    color:{
+      default:'primary',
+      type:String
+    },
+    success:{
+      default:false,
+      type:Boolean
+    },
+    danger:{
+      default:false,
+      type:Boolean
+    },
+    warning:{
+      default:false,
+      type:Boolean
+    },
+    successText:{
+      default: null,
+      type:String
+    },
+    dangerText:{
+      default: null,
+      type:String
+    },
+    warningText:{
+      default: null,
+      type:String
+    },
+    descriptionText:{
+      default: null,
+      type:String
+    },
+    size:{
+      default:'normal',
+      type:String
+    },
+    valIconSuccess:{
+      default: 'checkmark-circle-outline',
+      type:String
+    },
+    valIconDanger:{
+      default: 'close',
+      type:String
+    },
+    valIconWarning:{
+      default: 'alert-triangle-outline',
+      type:String
     }
   },
   data:()=>({
@@ -91,6 +202,17 @@ export default {
     }
   },
   methods:{
+    beforeEnter(el) {
+      el.style.height = 0
+    },
+    enter(el, done){
+      let h = el.scrollHeight
+      el.style.height = h + 'px'
+      done()
+    },
+    leave: function (el) {
+      el.style.height = 0 + 'px'
+    },
     focus() {
       this.focusx = true
       this.$emit('focus')
