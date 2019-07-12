@@ -456,3 +456,104 @@ export default {
 </vuecode>
 
 </box>
+
+<box>
+
+## Validations
+
+You can add a state for example of in affirmative response to a validation with `success` and if it is necessary to add a description or help to the user you can do it with the property `description`
+
+:::tip
+  Each of the states you can change the text, for example in the case of `danger-text` for the state of danger.
+:::
+
+<vuecode md>
+<div slot="demo">
+  <Demos-Chips-Validation />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div class="total">
+    <div class="modelx">
+      {{chips}}
+    </div>
+    <vm-chips
+      :success="true"
+      success-text="The email is valid"
+      placeholder="Email Success"
+      val-icon-success="checkmark-circle-outline"
+      color="rgb(145, 32, 159)" v-model="chips">
+      <vm-chip
+        :key="chip"
+        @click="remove(chip)"
+        v-for="chip in chips" closable>
+        {{ chip }}
+      </vm-chip>
+    </vm-chips>
+    <div class="modelx">
+      {{chips}}
+    </div>
+    <vm-chips
+      :danger="true"
+      danger-text="The password does not meet the standards"
+      placeholder="Password Danger"
+      val-icon-danger="close"
+      color="rgb(145, 32, 159)" v-model="chips">
+      <vm-chip
+        :key="chip"
+        @click="remove(chip)"
+        v-for="chip in chips" closable>
+        {{ chip }}
+      </vm-chip>
+    </vm-chips>
+    <div class="modelx">
+      {{chips}}
+    </div>
+    <vm-chips
+      :warning="true"
+      warning-text="The entered data could not be verified"
+      placeholder="Date Warning"
+      val-icon-warning="alert-triangle-outline"
+      color="rgb(145, 32, 159)" v-model="chips">
+      <vm-chip
+        :key="chip"
+        @click="remove(chip)"
+        v-for="chip in chips" closable>
+        {{ chip }}
+      </vm-chip>
+    </vm-chips>
+  </div>
+</template>
+
+<script>
+export default {
+  data(){
+    return {
+      chips:[
+        "Vuejs",
+        "Node",
+        "Vuemerang"
+      ]
+    }
+  },
+  methods: {
+    remove (item) {
+      this.chips.splice(this.chips.indexOf(item), 1)
+    }
+  }
+}
+</script>
+
+<style lang="css">
+.total {
+  width: 100%
+}
+</style>
+```
+
+</div>
+</vuecode>
+
+</box>
