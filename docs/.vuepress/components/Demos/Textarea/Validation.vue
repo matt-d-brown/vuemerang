@@ -2,20 +2,20 @@
   <div>
     <vm-textarea
     :success="true"
-    success-text="The email is valid"
-    placeholder="Email Success"
+    success-text="This field is valid"
+    placeholder="Success"
     val-icon-success="checkmark-circle-outline"
     v-model="value1"/>
     <vm-textarea
     :danger="true"
-    danger-text="The password does not meet the standards"
-    placeholder="Password Danger"
+    danger-text="This field does not meet the standards"
+    placeholder="Danger"
     val-icon-danger="close"
     v-model="value2"/>
     <vm-textarea
     :warning="true"
     warning-text="The entered data could not be verified"
-    placeholder="Date Warning"
+    placeholder="Warning"
     val-icon-warning="alert-triangle-outline"
     v-model="value3"/>
   </div>

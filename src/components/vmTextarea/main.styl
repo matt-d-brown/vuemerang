@@ -24,7 +24,6 @@
     transition: all .25s ease
     border-radius: 5px 5px 0px 0px
 
-
 .vm-textarea
   resize: none
   border-radius: 6px
@@ -42,6 +41,11 @@
     ~
       .count
         opacity 1
+
+  &:disabled
+    background #f5f7fb
+    cursor default
+    pointer-events none
 
 .textarea-danger
   border: 1px solid var('danger', .4)
