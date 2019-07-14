@@ -6,7 +6,8 @@
       class="vm-content-sidebar">
       <div
         v-if="!hiddenBackground"
-        class="vm-sidebar--background"></div>
+        class="vm-sidebar--background"
+        @click="emitToParent"></div>
       <div
         :class="[
           `vm-sidebar-${color}`,
@@ -20,6 +21,14 @@
           }
         ]"
         class="vm-sidebar">
+        <vm-button 
+          v-if="!staticPosition" 
+          id="closeButton" 
+          radius 
+          color="primary" 
+          type="border" 
+          icon="close" 
+          @click="emitToParent"></vm-button>
         <header 
           v-if="$slots.header" 
           class="vm-sidebar--header">
@@ -110,6 +119,9 @@ export default {
     this.insertBody()
   },
   methods:{
+    emitToParent () {
+      this.$emit('closeSide', false)
+    },
     getActive () {
       return this.currentIndex
     },
@@ -132,8 +144,7 @@ export default {
         let parentx = typeof this.parent == 'string' ? document.querySelector(this.parent) : this.parent
         parentx.insertBefore(elx, parentx.firstChild)
       }
-
-    },
+    }
   }
 }
 </script>

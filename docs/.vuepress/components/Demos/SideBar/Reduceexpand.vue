@@ -2,9 +2,9 @@
 
   <div id="parentx">
 
-    <vm-button @click="active=!active, notExpand = false" color="success" type="filled">Open Sidebar Reduce-expand</vm-button>
-    <vm-button @click="active=!active, notExpand = true" color="success" type="filled">Open Sidebar Reduce-only</vm-button>
-    <vm-sidebar :reduce="reduce" :reduce-not-hover-expand="notExpand" parent="body" default-index="1"  color="success" class="sidebarx" spacer v-model="active">
+    <vm-button @click="toggleSidebar, notExpand = false" color="success" type="filled">Open Sidebar Reduce-expand</vm-button>
+    <vm-button @click="toggleSidebar, notExpand = true" color="success" type="filled">Open Sidebar Reduce-only</vm-button>
+    <vm-sidebar @closeSide="toggleSidebar" :reduce="reduce" :reduce-not-hover-expand="notExpand" parent="body" default-index="1"  color="success" class="sidebarx" spacer :value=active>
 
       <div class="header-sidebar" slot="header">
         <vm-avatar  size="70px" src="https://randomuser.me/api/portraits/men/85.jpg"/>
@@ -63,7 +63,16 @@ export default {
     active:false,
     notExpand: false,
     reduce: true
-  })
+  }),
+  methods: {
+    toggleSidebar (value) {
+      if (value) {
+        this.active = value
+      } else {
+        this.active = !this.active
+      }
+    }
+  }
 }
 </script>
 
