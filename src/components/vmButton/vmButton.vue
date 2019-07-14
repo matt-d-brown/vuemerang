@@ -17,8 +17,11 @@
     v-on="listeners">
     <span
       v-if="!is('line')&&!is('gradient')&&!is('relief')"
-      ref="backgroundx"
-      :style="stylesBackGround"
+      class="vm-button-backgroundx vm-button--background">
+    </span>
+    <span
+      v-if="indicator"
+      :style="stylesIndicator"
       class="vm-button-backgroundx vm-button--background">
     </span>
 
@@ -102,6 +105,14 @@ export default {
       default:false,
       type:Boolean
     },
+    indicator:{
+      default:false,
+      type:Boolean
+    },
+    indicatorColor:{
+      default:'danger',
+      type:String
+    },
     to:{
       default:false,
       type:String | Object
@@ -183,6 +194,22 @@ export default {
         width: `${this.radio}px`,
         height: `${this.radio}px`,
         transition: `width ${this.time}s ease, height ${this.time}s ease, opacity ${this.timeOpacity}s ease`
+      }
+
+      return styles
+
+    },
+    stylesIndicator(){
+      let styles = {
+        background: _color.getColor(this.colorIndicator,1,false),
+        opacity:this.opacity,
+        left: '20px',
+        top: '10px',
+        width: '10px',
+        height: '10px',
+        transition: `width ${this.time}s ease, height ${this.time}s ease, opacity ${this.timeOpacity}s ease`,
+        'z-index': 101,
+        border: '1.6px solid white'
       }
 
       return styles
