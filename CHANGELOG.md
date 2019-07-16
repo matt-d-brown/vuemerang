@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/controlla/vuemerang/compare/v1.6.13...v1.7.0) (2019-07-16)
+
+
+### Bug Fixes
+
+* **chips:** status validation ([7597c16](https://github.com/controlla/vuemerang/commit/7597c16))
+* **disabled:** disabled background and labels ([8190392](https://github.com/controlla/vuemerang/commit/8190392))
+* **firefox:** switch en firefox ([79c4236](https://github.com/controlla/vuemerang/commit/79c4236))
+* **lint:** fix lint errors ([81a9634](https://github.com/controlla/vuemerang/commit/81a9634))
+* **sidebar:** no cambiaba el boolean para abrir ([8c02959](https://github.com/controlla/vuemerang/commit/8c02959))
+* **textarea:** fixed text area validation ([78ef567](https://github.com/controlla/vuemerang/commit/78ef567))
+* **vm-button:** add indicator ([d30518f](https://github.com/controlla/vuemerang/commit/d30518f))
+* **vm-chips:** add label y optional option ([2ef3e48](https://github.com/controlla/vuemerang/commit/2ef3e48))
+* **vm-input:** type currency ([9f61cad](https://github.com/controlla/vuemerang/commit/9f61cad))
+* **vm-select:** add optional label ([b970295](https://github.com/controlla/vuemerang/commit/b970295))
+* **vm-viewer:** changes for img ([4318127](https://github.com/controlla/vuemerang/commit/4318127))
+
+
+### Features
+
+* **vm-viewer:** init component ([518c53b](https://github.com/controlla/vuemerang/commit/518c53b))
+
+
+
 ### [1.6.13](https://github.com/controlla/vuemerang/compare/v1.6.12...v1.6.13) (2019-06-28)
 
 
