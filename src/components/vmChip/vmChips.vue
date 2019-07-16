@@ -1,5 +1,15 @@
 <template lang="html">
   <div class="">
+    <label
+      v-if="label"
+      ref="inputSelectLabel"
+      :class="[`vm-chips--label-${color}`]"
+      class="vm-chips--label"
+      for="">{{ label }}
+      <span
+        v-if="optional"
+        class="vm-chips--label-span"> - Optional</span>
+    </label>
     <div
       :class="{'no-items':value.length==0, 'input-success': success, 'input-warning': warning, 'input-danger': danger}"
       class="con-chips">
@@ -11,6 +21,8 @@
         v-model="newChip"
         type="text"
         class="con-chips--input"
+        @focus="focus"
+        @blur="blur"
         @keypress.enter="addItem">
       <div
         class="x-global con-chips--remove-all"
@@ -102,6 +114,14 @@ export default {
       default:'primary',
       type:String
     },
+    label:{
+      default:null,
+      type:[String]
+    },
+    optional:{
+      default:false,
+      type:Boolean
+    },
     success:{
       default:false,
       type:Boolean
@@ -179,12 +199,25 @@ export default {
       el.style.height = 0 + 'px'
     },
     focus() {
+      this.setLabelClass(this.$refs.inputSelectLabel, true)
       this.focusx = true
       this.$emit('focus')
     },
     blur() {
+      this.setLabelClass(this.$refs.inputSelectLabel, false)
       this.focusx = false
       this.$emit('blur')
+    },
+    setLabelClass (label, focusing) {
+      if (!label) {
+        return
+      }
+      if (focusing) {
+        label.classList.add('input-select-label-' + this.color + '--active')
+        return
+      }
+
+      label.classList.remove('input-select-label-' + this.color + '--active')
     }
   }
 }
