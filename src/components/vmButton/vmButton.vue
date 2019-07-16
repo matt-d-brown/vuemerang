@@ -17,12 +17,14 @@
     v-on="listeners">
     <span
       v-if="!is('line')&&!is('gradient')&&!is('relief')"
+      ref="backgroundx"
+      :style="stylesBackGround"
       class="vm-button-backgroundx vm-button--background">
     </span>
     <span
       v-if="indicator"
       :style="stylesIndicator"
-      class="vm-button-backgroundx vm-button--background">
+      class="vm-button--indicator">
     </span>
 
     <vm-icon
@@ -201,15 +203,14 @@ export default {
     },
     stylesIndicator(){
       let styles = {
-        background: _color.getColor(this.colorIndicator,1,false),
-        opacity:this.opacity,
-        left: '20px',
-        top: '10px',
+        background:  `rgba(var(--${this.indicatorColor}), 1)`,
+        left: '19px',
+        top: '8px',
         width: '10px',
         height: '10px',
         transition: `width ${this.time}s ease, height ${this.time}s ease, opacity ${this.timeOpacity}s ease`,
         'z-index': 101,
-        border: '1.6px solid white'
+        border:  this.is('filled') || this.is('gradient') || (this.isActive && !this.is('line')) ?`1.6px solid rgba(var(--${this.color}), 1)`: '1.6px solid white'
       }
 
       return styles
