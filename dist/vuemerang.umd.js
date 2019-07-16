@@ -6716,7 +6716,7 @@ var web_dom_iterable = __webpack_require__("ac6a");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2a1784ff-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmButton/vmButton.vue?vue&type=template&id=8beeb138&lang=html&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2a1784ff-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmButton/vmButton.vue?vue&type=template&id=568eb692&lang=html&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g(_vm._b({ref:"btn",staticClass:"vm-component vm-button",class:[("vm-button-" + (_vm.isColor()?_vm.color:null)),("vm-button-" + _vm.type),{
     'isActive':_vm.isActive,
     'includeIcon':_vm.icon,
@@ -6725,7 +6725,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, _vm.size],style:([_vm.styles,{
     'width':/[px]/.test(_vm.size)?("" + _vm.size):null,
     'height':/[px]/.test(_vm.size)?("" + _vm.size):null
-  }]),attrs:{"name":"button"}},'button',_vm.$attrs,false),_vm.listeners),[(!_vm.is('line')&&!_vm.is('gradient')&&!_vm.is('relief'))?_c('span',{staticClass:"vm-button-backgroundx vm-button--background"}):_vm._e(),(_vm.indicator)?_c('span',{staticClass:"vm-button-backgroundx vm-button--background",style:(_vm.stylesIndicator)}):_vm._e(),(_vm.icon)?_c('vm-icon',{staticClass:"vm-button--icon ",style:({
+  }]),attrs:{"name":"button"}},'button',_vm.$attrs,false),_vm.listeners),[(!_vm.is('line')&&!_vm.is('gradient')&&!_vm.is('relief'))?_c('span',{ref:"backgroundx",staticClass:"vm-button-backgroundx vm-button--background",style:(_vm.stylesBackGround)}):_vm._e(),(_vm.indicator)?_c('span',{staticClass:"vm-button--indicator",style:(_vm.stylesIndicator)}):_vm._e(),(_vm.icon)?_c('vm-icon',{staticClass:"vm-button--icon ",style:({
       'order':_vm.iconAfter?2:0,
       'margin-right':_vm.$slots.default&&!_vm.iconAfter?'5px':'0px',
       'margin-left':_vm.$slots.default&&_vm.iconAfter?'5px':'0px'
@@ -6733,7 +6733,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vmButton/vmButton.vue?vue&type=template&id=8beeb138&lang=html&
+// CONCATENATED MODULE: ./src/components/vmButton/vmButton.vue?vue&type=template&id=568eb692&lang=html&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.object.get-own-property-descriptors.js
 var es7_object_get_own_property_descriptors = __webpack_require__("8e6e");
@@ -6985,6 +6985,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 //
 //
 //
+//
+//
 
 /* harmony default export */ var vmButtonvue_type_script_lang_js_ = ({
   name: 'VmButton',
@@ -7144,15 +7146,14 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     },
     stylesIndicator: function stylesIndicator() {
       var styles = {
-        background: utils_color.getColor(this.colorIndicator, 1, false),
-        opacity: this.opacity,
-        left: '20px',
-        top: '10px',
+        background: "rgba(var(--".concat(this.indicatorColor, "), 1)"),
+        left: '19px',
+        top: '8px',
         width: '10px',
         height: '10px',
         transition: "width ".concat(this.time, "s ease, height ").concat(this.time, "s ease, opacity ").concat(this.timeOpacity, "s ease"),
         'z-index': 101,
-        border: '1.6px solid white'
+        border: this.is('filled') || this.is('gradient') || this.isActive && !this.is('line') ? "1.6px solid rgba(var(--".concat(this.color, "), 1)") : '1.6px solid white'
       };
       return styles;
     },
