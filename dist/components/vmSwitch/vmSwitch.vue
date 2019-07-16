@@ -10,8 +10,7 @@
     v-bind="$attrs"
     class="vm-component vm-switch"
     type="button"
-    name="button"
-    @click="toggleCheckbox($event)">
+    name="button">
     <input
       ref="inputCheckbox"
       :disabled="$attrs.disabled"
@@ -107,12 +106,12 @@ export default {
   mounted(){
   },
   methods:{
-    toggleCheckbox() {
-      if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
-        this.$refs.inputCheckbox.checked = !this.$refs.inputCheckbox.checked;
-        this.$emit('input', this.$refs.inputCheckbox.checked);
-      }
-    },
+    // toggleCheckbox() {
+    //   if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+    //     this.$refs.inputCheckbox.checked = !this.$refs.inputCheckbox.checked;
+    //     this.$emit('input', this.$refs.inputCheckbox.checked);
+    //   }
+    // },
     toggleValue(evt){
       if(this.isArrayx()){
         this.setArray()
