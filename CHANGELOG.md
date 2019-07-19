@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://github.com/controlla/vuemerang/compare/v1.7.1...v1.7.2) (2019-07-19)
+
+
+### Bug Fixes
+
+* **vm-button:** indicator style ([3bcb043](https://github.com/controlla/vuemerang/commit/3bcb043))
+* **vm-input:** currency ([0c3c324](https://github.com/controlla/vuemerang/commit/0c3c324))
+
+
+
 ### [1.7.1](https://github.com/controlla/vuemerang/compare/v1.7.0...v1.7.1) (2019-07-16)
 
 
