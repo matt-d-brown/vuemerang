@@ -141,15 +141,17 @@ export default {
   directives: {
     formatWithComma: {
       update(e) {
-        let positionDiff = 0;
-        if (e.dataset.prevValue.length === (e.value.length - 1)) {
-          positionDiff = 1
-        }
-        if (e.dataset.prevValue.length === (e.value.length + 1)) {
-          positionDiff = -1
-        }
-        if (e.selectionEnd !== e.dataset.position) {
-          e.selectionEnd = Number(e.dataset.position) + positionDiff
+        if (this.type === 'currency') {
+          let positionDiff = 0;
+          if (e.dataset.prevValue.length === (e.value.length - 1)) {
+            positionDiff = 1
+          }
+          if (e.dataset.prevValue.length === (e.value.length + 1)) {
+            positionDiff = -1
+          }
+          if (e.selectionEnd !== e.dataset.position) {
+            e.selectionEnd = Number(e.dataset.position) + positionDiff
+          }
         }
       }
     }

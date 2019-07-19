@@ -204,13 +204,13 @@ export default {
     stylesIndicator(){
       let styles = {
         background:  `rgba(var(--${this.indicatorColor}), 1)`,
-        left: '19px',
-        top: '8px',
+        left: '15px',
+        top: '4px',
         width: '10px',
         height: '10px',
-        transition: `width ${this.time}s ease, height ${this.time}s ease, opacity ${this.timeOpacity}s ease`,
+        transition: `width ${this.time}s easeOutElastic, height ${this.time}s easeOutElastic, opacity ${this.timeOpacity}s ease`,
         'z-index': 101,
-        border:  this.is('filled') || this.is('gradient') || (this.isActive && !this.is('line')) ?`1.6px solid rgba(var(--${this.color}), 1)`: '1.6px solid white'
+        border:  this.is('filled') || this.is('gradient') || (this.isActive && !this.is('line') && !this.is('default')) ?`1.6px solid rgba(var(--${this.color}), 1)`: '1.6px solid white'
       }
 
       return styles
