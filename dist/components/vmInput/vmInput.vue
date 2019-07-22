@@ -25,6 +25,7 @@
         ref="vminput"
         :data-position="position"
         :data-prev-value="prevValue"
+        :data-type="type"
         :style="style"
         :autofocus="autofocus"
         :class="[size,{
@@ -141,7 +142,7 @@ export default {
   directives: {
     formatWithComma: {
       update(e) {
-        if (this.type === 'currency') {
+        if (e.dataset.type === 'currency') {
           let positionDiff = 0;
           if (e.dataset.prevValue.length === (e.value.length - 1)) {
             positionDiff = 1

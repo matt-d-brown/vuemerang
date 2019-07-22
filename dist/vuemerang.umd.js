@@ -9319,8 +9319,8 @@ var vmRadio_component = normalizeComponent(
 /* harmony default export */ var components_vmRadio = (function (Vue) {
   Vue.component(vmRadio.name, vmRadio);
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4aebbe96-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmInput/vmInput.vue?vue&type=template&id=4eb97bd8&lang=html&
-var vmInputvue_type_template_id_4eb97bd8_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"coninput",staticClass:"vm-component vm-con-input-label vm-input",class:[("vm-input-" + _vm.color),{
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4aebbe96-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmInput/vmInput.vue?vue&type=template&id=533f9c1e&lang=html&
+var vmInputvue_type_template_id_533f9c1e_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"coninput",staticClass:"vm-component vm-con-input-label vm-input",class:[("vm-input-" + _vm.color),{
     'isFocus':_vm.isFocus,
     'input-icon-validate-success':_vm.success,
     'input-icon-validate-danger':_vm.danger,
@@ -9330,16 +9330,16 @@ var vmInputvue_type_template_id_4eb97bd8_lang_html_render = function () {var _vm
         'hasValue':_vm.value !== '',
         'hasIcon':_vm.icon,
         'icon-after-input':_vm.iconAfter
-      }],style:(_vm.style),attrs:{"data-position":_vm.position,"data-prev-value":_vm.prevValue,"autofocus":_vm.autofocus,"placeholder":null,"type":_vm.type},domProps:{"value":_vm.formatedValue},on:{"change":_vm.onInput}},'input',_vm.$attrs,false),_vm.listeners)),_c('transition',{attrs:{"name":"placeholderx"}},[(_vm.isValue&&(_vm.labelPlaceholder||_vm.$attrs.placeholder))?_c('span',{ref:"spanplaceholder",staticClass:"input-span-placeholder vm-input--placeholder",class:[
+      }],style:(_vm.style),attrs:{"data-position":_vm.position,"data-prev-value":_vm.prevValue,"data-type":_vm.type,"autofocus":_vm.autofocus,"placeholder":null,"type":_vm.type},domProps:{"value":_vm.formatedValue},on:{"change":_vm.onInput}},'input',_vm.$attrs,false),_vm.listeners)),_c('transition',{attrs:{"name":"placeholderx"}},[(_vm.isValue&&(_vm.labelPlaceholder||_vm.$attrs.placeholder))?_c('span',{ref:"spanplaceholder",staticClass:"input-span-placeholder vm-input--placeholder",class:[
           _vm.labelPlaceholder&&(_vm.size),
           _vm.size,
           {
             'vm-placeholder-label': _vm.labelPlaceholder,
         }],style:(_vm.styleLabel),on:{"click":_vm.focusInput}},[_vm._v("\n        "+_vm._s(_vm.$attrs.placeholder || _vm.labelPlaceholder)+"\n      ")]):_vm._e()]),(_vm.icon || _vm.pass)?_c('vm-icon',{staticClass:"icon-inputx notranslate vm-input--icon",class:{'icon-after':_vm.iconAfter, 'icon-no-border':_vm.iconNoBorder},attrs:{"icon-pack":_vm.iconPack,"icon":_vm.pass ? _vm.getIconPass : _vm.icon},on:{"on-icon-click":_vm.handleIconClick}}):_vm._e(),_c('transition',{attrs:{"name":"icon-validate"}},[(_vm.success || _vm.danger || _vm.warning)?_c('span',{staticClass:"input-icon-validate vm-input--icon-validate",class:{'icon-before':_vm.iconAfter}},[_c('vm-icon',{class:{'icon-before':_vm.iconAfter},attrs:{"icon-pack":_vm.iconPack,"icon":_vm.getIcon}})],1):_vm._e()])],1),_c('transition-group',{on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"leave":_vm.leave}},[(_vm.success)?_c('div',{key:"success",staticClass:"con-text-validation vm-input--text-validation"},[_c('span',{staticClass:"span-text-validation span-text-validation-success vm-input--text-validation-span"},[_vm._v("\n        "+_vm._s(_vm.successText)+"\n      ")])]):(_vm.danger)?_c('div',{key:"danger",staticClass:"con-text-validation span-text-validation-danger vm-input--text-validation-span"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.dangerText)+"\n      ")])]):(_vm.warning)?_c('div',{key:"warning",staticClass:"con-text-validation span-text-validation-warning vm-input--text-validation-span"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.warningText)+"\n      ")])]):_vm._e(),(_vm.descriptionText)?_c('div',{key:"description",staticClass:"con-text-validation span-text-validation vm-input--text-validation-span"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.descriptionText)+"\n      ")])]):_vm._e()])],1)}
-var vmInputvue_type_template_id_4eb97bd8_lang_html_staticRenderFns = []
+var vmInputvue_type_template_id_533f9c1e_lang_html_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vmInput/vmInput.vue?vue&type=template&id=4eb97bd8&lang=html&
+// CONCATENATED MODULE: ./src/components/vmInput/vmInput.vue?vue&type=template&id=533f9c1e&lang=html&
 
 // EXTERNAL MODULE: ./node_modules/object-assign/index.js
 var object_assign = __webpack_require__("320c");
@@ -9676,6 +9676,7 @@ function vmInputvue_type_script_lang_js_objectSpread(target) { for (var i = 1; i
 //
 //
 //
+//
 
 
 
@@ -9684,7 +9685,7 @@ function vmInputvue_type_script_lang_js_objectSpread(target) { for (var i = 1; i
   directives: {
     formatWithComma: {
       update: function update(e) {
-        if (this.type === 'currency') {
+        if (e.dataset.type === 'currency') {
           var positionDiff = 0;
 
           if (e.dataset.prevValue.length === e.value.length - 1) {
@@ -9922,8 +9923,8 @@ function vmInputvue_type_script_lang_js_objectSpread(target) { for (var i = 1; i
 
 var vmInput_component = normalizeComponent(
   vmInput_vmInputvue_type_script_lang_js_,
-  vmInputvue_type_template_id_4eb97bd8_lang_html_render,
-  vmInputvue_type_template_id_4eb97bd8_lang_html_staticRenderFns,
+  vmInputvue_type_template_id_533f9c1e_lang_html_render,
+  vmInputvue_type_template_id_533f9c1e_lang_html_staticRenderFns,
   false,
   null,
   null,
