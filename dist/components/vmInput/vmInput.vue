@@ -306,6 +306,7 @@ export default {
     }
   },
   mounted () {
+    this.formatedValue = this.processFormatting(this.value)
     this.type = this.$attrs.type ? this.$attrs.type : 'text'
   },
   methods:{
