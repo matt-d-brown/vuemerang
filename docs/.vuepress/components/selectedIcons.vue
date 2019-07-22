@@ -90,7 +90,6 @@ export default {
     this.visible = false
     let ulx = this.$refs.ulx
     ulx.remove();
-    console.log('visible',this.visible);
   },
   mounted(){
     let ulx = this.$refs.ulx
