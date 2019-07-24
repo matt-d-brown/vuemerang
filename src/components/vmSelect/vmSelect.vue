@@ -116,7 +116,10 @@ import utils from '../../utils'
 export default {
   name:'VmSelect',
   props:{
-    value:{},
+    value:{
+      default:'',
+      type:[String,Number]
+    },
     noData:{
       default:'data no available',
       type:String
