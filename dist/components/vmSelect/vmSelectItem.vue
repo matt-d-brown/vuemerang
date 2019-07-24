@@ -9,8 +9,8 @@
       v-bind="$attrs"
       :style="styles"
       :class="{
-        'activex':$parent.parent.multiple?getValue.indexOf(value) != -1:getValue == value,
-        'con-icon':$parent.parent.multiple,
+        'activex':getMultiple?getValue.indexOf(value) != -1:getValue == value,
+        'con-icon':getMultiple,
         'disabledx':disabledx
       }"
       class="vm-select--item"
@@ -22,7 +22,7 @@
       @keydown.up.prevent="navigateOptions('prev')"
       @keydown.enter.prevent="clickOption()">
       <i
-        v-if="$parent.parent.multiple"
+        v-if="getMultiple"
         class="eva eva-checkmark-outline icon-item vm-select--item-icon">
       </i>
       <span
@@ -56,7 +56,7 @@ export default {
   }),
   computed:{
     disabledx(){
-      if(this.$parent.parent.multiple){
+      if(this.getMultiple){
         if(this.isActive){
           return false
         } else {
@@ -67,7 +67,7 @@ export default {
       }
     },
     isActive(){
-      return this.$parent.parent.multiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value
+      return this.getMultiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value
     },
     listeners() {
       return {
@@ -96,13 +96,16 @@ export default {
       }
     },
     getValue(){
-      return this.$parent.parent.value
+      return typeof this.$parent.parent !== 'undefined' ? this.$parent.parent.value : null
+    },
+    getMultiple(){
+      return typeof this.$parent.parent !== 'undefined' ? this.$parent.parent.multiple : false
     }
   },
   watch:{
     '$parent.parent.active': function () {
       this.$nextTick(() => {
-        if( this.$parent.parent.multiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value ) {
+        if( this.getMultiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value ) {
           this.$emit('update:isSelected', true)
           this.getText = this.text
           this.putValue()
@@ -135,7 +138,7 @@ export default {
   created(){
     this.putValue()
     this.$nextTick(() => {
-      if( this.$parent.parent.multiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value ) {
+      if( this.getMultiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value ) {
         this.$emit('update:isSelected', true)
         this.getText = this.text
         this.putValue()
@@ -211,7 +214,7 @@ export default {
       }
     },
     focusValue(index){
-      if(this.$parent.parent.multiple?this.$parent.parent.value.indexOf(this.value) != -1:this.value == this.$parent.parent.value){
+      if(this.getMultiple?this.$parent.parent.value.indexOf(this.value) != -1:this.value == this.$parent.parent.value){
         if(!this.$parent.parent.autocomplete){
           setTimeout( () => {
             this.$refs.item.focus()
@@ -231,7 +234,7 @@ export default {
           this.$parent.parent.valuex = this.text
         }
       } else {
-        if(this.value == this.$parent.parent.value){
+        if(this.value == this.getValue){
           this.$parent.parent.valuex = this.text
         }
       }
@@ -241,13 +244,13 @@ export default {
         return
       }
       let text = this.text
-      if(!this.$parent.parent.multiple){
+      if(!this.getMultiple){
         this.$parent.parent.active = false
         document.removeEventListener('click',this.$parent.parent.clickBlur)
         this.$parent.parent.valuex = text
         this.$parent.parent.$emit('input',this.value)
         this.$parent.parent.changeValue()
-      } else if (this.$parent.parent.multiple) {
+      } else if (this.getMultiple) {
         this.$parent.parent.valuex = text
         this.$parent.parent.addMultiple(this.value)
       }
