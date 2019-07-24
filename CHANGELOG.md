@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.5](https://github.com/controlla/vuemerang/compare/v1.7.4...v1.7.5) (2019-07-24)
+
+
+### Bug Fixes
+
+* **vm-select:** test issue ([ff27c2d](https://github.com/controlla/vuemerang/commit/ff27c2d))
+
+
+
 ### [1.7.4](https://github.com/controlla/vuemerang/compare/v1.7.3...v1.7.4) (2019-07-22)
 
 
