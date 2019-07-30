@@ -25,8 +25,8 @@
         class="vm-dropdown--custom vm-dropdown--menu">
         <slot/>
       </div>
-      <div 
-        ref="menuAfter" 
+      <div
+        ref="menuAfter"
         class="vm-dropdown--menu--after"></div>
     </div>
   </transition>
@@ -40,9 +40,10 @@ export default {
   data:()=>({
     dropdownVisible:false,
     leftAfter:20,
-    leftx:0,
+    leftx:5,
     topx:0,
     rightx:true,
+    vmPosition:null,
     vmTriggerClick:false,
     vmTriggerOutsideClick: false,
     widthx:0,
@@ -86,11 +87,34 @@ export default {
         const menuAfter = this.$refs.menuAfter
         if (!menuAfter) return
         if(dropdown && menuAfter && dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
+          if (this.vmPosition === 'right') {
+            menuAfter.style.bottom = dropdown.clientHeight + 'px';
+            menuAfter.style.left = '5px';
+            menuAfter.style.transform = 'rotate(316deg)'
+            return
+          }else if (this.vmPosition === 'left') {
+            menuAfter.style.bottom = dropdown.clientHeight + 'px';
+            menuAfter.style.right = '5px';
+            menuAfter.style.transform = 'rotate(135deg)'
+            return
+          }
           //eslint-disable-next-line
           const hasGroup = this.$children.find(it=>it.hasOwnProperty('activeGroup'))
           menuAfter.style.bottom = '5px'
           menuAfter.style.transform = 'rotate(225deg)'
           return
+        }else {
+          if (this.vmPosition === 'right') {
+            menuAfter.style.top = (dropdown.clientHeight) + 'px';
+            menuAfter.style.left = '5px';
+            menuAfter.style.transform = 'rotate(316deg)'
+            return
+          }else if (this.vmPosition === 'left') {
+            menuAfter.style.top = dropdown.clientHeight + 'px';
+            menuAfter.style.right = '5px';
+            menuAfter.style.transform = 'rotate(135deg)'
+            return
+          }
         }
         menuAfter.style.top = '10px'
       }, 100)

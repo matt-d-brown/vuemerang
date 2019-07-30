@@ -37,6 +37,10 @@ export default {
     vmCustomContent:{
       default:false,
       type:Boolean
+    },
+    vmPosition:{
+      default:null,
+      type:String
     }
   },
   data:()=>({
@@ -80,6 +84,7 @@ export default {
       dropdownMenu.vmTriggerOutsideClick = this.vmTriggerOutsideClick
       dropdownMenu.vmCustomContent = this.vmCustomContent
       dropdownMenu.vmTriggerClick = this.vmTriggerClick
+      dropdownMenu.vmPosition = this.vmPosition
       if ((this.vmTriggerClick || this.vmCustomContent) && this.vmDropdownVisible && !this.vmTriggerOutsideClick) {
         if ((evt.target !== this.$refs.dropdown &&
         evt.target.parentNode !== this.$refs.dropdown &&
@@ -103,15 +108,17 @@ export default {
       let [dropdownMenu] = this.$children.filter((item)=>{
         return item.hasOwnProperty('dropdownVisible')
       })
+      dropdownMenu.vmPosition = this.vmPosition
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if(this.$refs.dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
         this.$nextTick(() => {
-          dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top - dropdownMenu.$el.clientHeight) + scrollTopx
+          dropdownMenu.topx = this.vmPosition ? (this.$refs.dropdown.getBoundingClientRect().bottom - dropdownMenu.$el.clientHeight + 25) + scrollTopx : (this.$refs.dropdown.getBoundingClientRect().top - dropdownMenu.$el.clientHeight) + scrollTopx
+          // dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top - (this.vmPosition ? (dropdownMenu.$el.clientHeight - this.$refs.dropdown.clientHeight):dropdownMenu.$el.clientHeight)) + scrollTopx
           dropdownMenu.notHeight = true
         });
       } else {
         dropdownMenu.notHeight = false
-        dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top + this.$refs.dropdown.clientHeight) + scrollTopx - 5
+        dropdownMenu.topx = this.vmPosition?(this.$refs.dropdown.getBoundingClientRect().top - 25) + scrollTopx:(this.$refs.dropdown.getBoundingClientRect().top + this.$refs.dropdown.clientHeight) + scrollTopx - 5
       }
       this.$nextTick(() => {
         var w = window.innerWidth
@@ -120,7 +127,7 @@ export default {
         if(this.$refs.dropdown.getBoundingClientRect().left + dropdownMenu.$el.offsetWidth >= w - 25){
           this.rightx = true
         }
-        dropdownMenu.leftx = this.$refs.dropdown.getBoundingClientRect().left + this.$refs.dropdown.clientWidth
+        dropdownMenu.leftx = this.vmPosition ? (this.vmPosition === 'left' ? this.$refs.dropdown.getBoundingClientRect().right - this.$refs.dropdown.clientWidth : this.$refs.dropdown.getBoundingClientRect().right + dropdownMenu.$el.clientWidth) : this.$refs.dropdown.getBoundingClientRect().left + this.$refs.dropdown.clientWidth
       });
     },
     clickToogleMenu(evt){
@@ -130,6 +137,7 @@ export default {
       let [dropdownMenu] = this.$children.filter((item)=>{
         return item.hasOwnProperty('dropdownVisible')
       })
+      dropdownMenu.vmPosition = this.vmPosition
       if(this.vmTriggerClick || this.vmTriggerContextmenu){
         if(this.vmDropdownVisible && !evt.target.closest('.vm-dropdown--menu')){
           dropdownMenu.dropdownVisible = this.vmDropdownVisible = false
@@ -147,6 +155,7 @@ export default {
       let [dropdownMenu] = this.$children.filter((item)=>{
         return item.hasOwnProperty('dropdownVisible')
       })
+      dropdownMenu.vmPosition = this.vmPosition
       dropdownMenu.parentNode = this.$el
       if(!this.vmTriggerClick && !this.vmTriggerContextmenu){
         if(typex == 'over'){
