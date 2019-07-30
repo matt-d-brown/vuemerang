@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.6](https://github.com/controlla/vuemerang/compare/v1.7.5...v1.7.6) (2019-07-30)
+
+
+### Bug Fixes
+
+* **vm-dropdown:** changes ([d5cf456](https://github.com/controlla/vuemerang/commit/d5cf456))
+* delete viewer ([7bd965a](https://github.com/controlla/vuemerang/commit/7bd965a))
+* viewer ([0944636](https://github.com/controlla/vuemerang/commit/0944636))
+
+
+
 ### [1.7.5](https://github.com/controlla/vuemerang/compare/v1.7.4...v1.7.5) (2019-07-24)
 
 
