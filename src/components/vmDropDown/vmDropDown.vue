@@ -127,7 +127,7 @@ export default {
         if(this.$refs.dropdown.getBoundingClientRect().left + dropdownMenu.$el.offsetWidth >= w - 25){
           this.rightx = true
         }
-        dropdownMenu.leftx = this.vmPosition ? (this.vmPosition === 'left' ? this.$refs.dropdown.getBoundingClientRect().right - this.$refs.dropdown.clientWidth : this.$refs.dropdown.getBoundingClientRect().right + dropdownMenu.$el.clientWidth) : this.$refs.dropdown.getBoundingClientRect().left + this.$refs.dropdown.clientWidth
+        dropdownMenu.leftx = this.vmPosition ? (this.vmPosition === 'left' ? this.$refs.dropdown.getBoundingClientRect().right - this.$refs.dropdown.clientWidth : this.$refs.dropdown.getBoundingClientRect().right + dropdownMenu.$el.clientWidth) : this.$refs.dropdown.getBoundingClientRect().left + this.$refs.dropdown.clientWidth + 10
       });
     },
     clickToogleMenu(evt){
