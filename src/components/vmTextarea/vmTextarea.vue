@@ -11,7 +11,7 @@
         class="vm-textarea--label-span"> - Optional</span>
     </label>
     <div
-      :class="{'textarea-danger': counter ? (value && value.length > counter) : false, 'focusx': focusx, 'textarea-success': success, 'textarea-warning': warning, 'textarea-danger': danger}"
+      :class="{'focusx': focusx, 'textarea-success': success, 'textarea-warning': warning, 'textarea-danger': counter ? (value && value.length > counter) : danger ? danger:false}"
       :style="getStyle"
       class="vm-component vm-con-textarea">
       <textarea
@@ -27,55 +27,53 @@
         class="count vm-textarea--count">
         {{ value ? value.length : 0 }} / {{ counter }}
       </div>
-
-      <transition-group
-        @before-enter="beforeEnter"
-        @enter="enter"
-        @leave="leave"
-      >
-        <div
-          v-if="success"
-          key="success"
-          class="con-text-validation vm-input--text-validation">
-          <span class="span-text-validation span-text-validation-success vm-input--text-validation-span">
-            {{
-              successText
-            }}
-          </span>
-        </div>
-        <div
-          v-else-if="danger"
-          key="danger"
-          class="con-text-validation span-text-validation-danger vm-input--text-validation-span">
-          <span class="span-text-validation">
-            {{
-              dangerText
-            }}
-          </span>
-        </div>
-        <div
-          v-else-if="warning"
-          key="warning"
-          class="con-text-validation span-text-validation-warning vm-input--text-validation-span">
-          <span class="span-text-validation">
-            {{
-              warningText
-            }}
-          </span>
-        </div>
-        <div
-          v-if="descriptionText"
-          key="description"
-          class="con-text-validation span-text-validation vm-input--text-validation-span">
-          <span class="span-text-validation">
-            {{
-              descriptionText
-            }}
-          </span>
-        </div>
-      </transition-group>
-
     </div>
+    <transition-group
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+    >
+      <div
+        v-if="success"
+        key="success"
+        class="con-text-validation vm-input--text-validation">
+        <span class="span-text-validation span-text-validation-success vm-input--text-validation-span">
+          {{
+            successText
+          }}
+        </span>
+      </div>
+      <div
+        v-else-if="danger"
+        key="danger"
+        class="con-text-validation span-text-validation-danger vm-input--text-validation-span">
+        <span class="span-text-validation">
+          {{
+            dangerText
+          }}
+        </span>
+      </div>
+      <div
+        v-else-if="warning"
+        key="warning"
+        class="con-text-validation span-text-validation-warning vm-input--text-validation-span">
+        <span class="span-text-validation">
+          {{
+            warningText
+          }}
+        </span>
+      </div>
+      <div
+        v-if="descriptionText"
+        key="description"
+        class="con-text-validation span-text-validation vm-input--text-validation-span">
+        <span class="span-text-validation">
+          {{
+            descriptionText
+          }}
+        </span>
+      </div>
+    </transition-group>
   </div>
 </template>
 
