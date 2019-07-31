@@ -1,27 +1,33 @@
 <template lang="html">
   <div
-    :class="{'textarea-danger': counter ? (value && value.length > counter) : false, 'focusx': focusx, 'textarea-success': success, 'textarea-warning': warning, 'textarea-danger': danger}"
-    :style="getStyle"
-    class="vm-component vm-con-textarea">
-
-    <h4 v-if="label">
-      {{ label }}
-    </h4>
-
-    <textarea
-      :value="value"
-      v-bind="$attrs"
-      :style="getStyle"
-      class="vm-textarea"
-      v-on="listeners">
-    </textarea>
-
+    :class="[`vm-textarea-${color}`,{'focusx': focusx}]">
+    <label
+      v-if="label"
+      class="vm-textarea--label"
+      for=""
+      @click="focus">{{ label }}
+      <span
+        v-if="optional"
+        class="vm-textarea--label-span"> - Optional</span>
+    </label>
     <div
-      v-if="counter"
-      class="count vm-textarea--count">
-      {{ value ? value.length : 0 }} / {{ counter }}
-    </div>
+      :class="{'focusx': focusx, 'textarea-success': success, 'textarea-warning': warning, 'textarea-danger': counter ? (value && value.length > counter) : danger ? danger:false}"
+      :style="getStyle"
+      class="vm-component vm-con-textarea">
+      <textarea
+        :value="value"
+        v-bind="$attrs"
+        :style="getStyle"
+        class="vm-textarea"
+        v-on="listeners">
+      </textarea>
 
+      <div
+        v-if="counter"
+        class="count vm-textarea--count">
+        {{ value ? value.length : 0 }} / {{ counter }}
+      </div>
+    </div>
     <transition-group
       @before-enter="beforeEnter"
       @enter="enter"
@@ -68,7 +74,6 @@
         </span>
       </div>
     </transition-group>
-
   </div>
 </template>
 
@@ -81,6 +86,10 @@ export default {
     label:{
       default:null,
       type: String
+    },
+    optional:{
+      default:false,
+      type:Boolean
     },
     counter:{
       default: null,
