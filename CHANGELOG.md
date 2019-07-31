@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.7](https://github.com/controlla/vuemerang/compare/v1.7.6...v1.7.7) (2019-07-31)
+
+
+### Bug Fixes
+
+* **vm-textarea:** changes ([7fdd310](https://github.com/controlla/vuemerang/commit/7fdd310))
+* **vm-textarea:** fix style ([e03ff85](https://github.com/controlla/vuemerang/commit/e03ff85))
+
+
+
 ### [1.7.6](https://github.com/controlla/vuemerang/compare/v1.7.5...v1.7.6) (2019-07-30)
 
 
