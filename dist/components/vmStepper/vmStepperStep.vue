@@ -78,6 +78,7 @@ export default {
   },
   mounted () {
     let parent = this.$parent.vertical ? this.$parent : this.$parent.$parent
+    this.step.toString() === '1' && (parent.validate = this.validate)
     this.id = parent.steps.length
     parent.steps.push({
       id: parent.steps.length,

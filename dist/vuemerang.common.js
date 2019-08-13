@@ -23658,12 +23658,12 @@ var vmStepperItems_component = normalizeComponent(
 )
 
 /* harmony default export */ var vmStepperItems = (vmStepperItems_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"28e4a4cd-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmStepper/vmStepperStep.vue?vue&type=template&id=b490ca08&lang=html&
-var vmStepperStepvue_type_template_id_b490ca08_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',_vm._g(_vm._b({staticClass:"vm-component vm-stepper__step",class:[("vm-stepper__step--" + _vm.color), {'vm-stepper__step--active': _vm.isActive, 'vm-stepper__step--editable': _vm.editable, 'vm-stepper__step--inactive': _vm.isInactive, 'vm-stepper__step--error': _vm.danger, 'vm-stepper__step--complete': _vm.complete, 'error--text': _vm.danger }],on:{"click":_vm.click}},'div',_vm.$attrs,false),_vm.$listeners),[_c('span',{staticClass:"vm-stepper__step__step"},[(_vm.danger || (_vm.editable && _vm.complete) || _vm.complete)?_c('vm-icon',{attrs:{"icon-pack":_vm.iconPack,"icon":_vm.getIcon}}):_c('span',[_vm._v(_vm._s(_vm.step))])],1),_c('div',{staticClass:"vm-stepper__label"},[_vm._t("default"),_c('small',[_vm._v(_vm._s(_vm.descriptionText))])],2)])}
-var vmStepperStepvue_type_template_id_b490ca08_lang_html_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"28e4a4cd-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmStepper/vmStepperStep.vue?vue&type=template&id=67f7a72b&lang=html&
+var vmStepperStepvue_type_template_id_67f7a72b_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',_vm._g(_vm._b({staticClass:"vm-component vm-stepper__step",class:[("vm-stepper__step--" + _vm.color), {'vm-stepper__step--active': _vm.isActive, 'vm-stepper__step--editable': _vm.editable, 'vm-stepper__step--inactive': _vm.isInactive, 'vm-stepper__step--error': _vm.danger, 'vm-stepper__step--complete': _vm.complete, 'error--text': _vm.danger }],on:{"click":_vm.click}},'div',_vm.$attrs,false),_vm.$listeners),[_c('span',{staticClass:"vm-stepper__step__step"},[(_vm.danger || (_vm.editable && _vm.complete) || _vm.complete)?_c('vm-icon',{attrs:{"icon-pack":_vm.iconPack,"icon":_vm.getIcon}}):_c('span',[_vm._v(_vm._s(_vm.step))])],1),_c('div',{staticClass:"vm-stepper__label"},[_vm._t("default"),_c('small',[_vm._v(_vm._s(_vm.descriptionText))])],2)])}
+var vmStepperStepvue_type_template_id_67f7a72b_lang_html_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vmStepper/vmStepperStep.vue?vue&type=template&id=b490ca08&lang=html&
+// CONCATENATED MODULE: ./src/components/vmStepper/vmStepperStep.vue?vue&type=template&id=67f7a72b&lang=html&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmStepper/vmStepperStep.vue?vue&type=script&lang=js&
 
@@ -23746,6 +23746,7 @@ var vmStepperStepvue_type_template_id_b490ca08_lang_html_staticRenderFns = []
   },
   mounted: function mounted() {
     var parent = this.$parent.vertical ? this.$parent : this.$parent.$parent;
+    this.step.toString() === '1' && (parent.validate = this.validate);
     this.id = parent.steps.length;
     parent.steps.push({
       id: parent.steps.length,
@@ -23783,8 +23784,8 @@ var vmStepperStepvue_type_template_id_b490ca08_lang_html_staticRenderFns = []
 
 var vmStepperStep_component = normalizeComponent(
   vmStepper_vmStepperStepvue_type_script_lang_js_,
-  vmStepperStepvue_type_template_id_b490ca08_lang_html_render,
-  vmStepperStepvue_type_template_id_b490ca08_lang_html_staticRenderFns,
+  vmStepperStepvue_type_template_id_67f7a72b_lang_html_render,
+  vmStepperStepvue_type_template_id_67f7a72b_lang_html_staticRenderFns,
   false,
   null,
   null,
