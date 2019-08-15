@@ -22108,16 +22108,16 @@ var vmTextEditor_component = normalizeComponent(
 /* harmony default export */ var components_vmTextEditor = (function (Vue) {
   Vue.component(vmTextEditor.name, vmTextEditor);
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"28e4a4cd-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmTypeahead/vmTypeahead.vue?vue&type=template&id=63fd33b2&lang=html&
-var vmTypeaheadvue_type_template_id_63fd33b2_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-component vm-typeahead",class:{
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"28e4a4cd-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmTypeahead/vmTypeahead.vue?vue&type=template&id=91674b6a&lang=html&
+var vmTypeaheadvue_type_template_id_91674b6a_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-component vm-typeahead",class:{
     'activeOptions':_vm.active,
     'input-select-validate-success':_vm.success,
     'input-select-validate-danger':_vm.danger,
     'input-select-validate-warning':_vm.warning},style:(_vm.getWidth)},[(_vm.label)?_c('label',{ref:"inputSelectLabel",staticClass:"vm-typeahead--label",class:[("vm-typeahead--label-" + _vm.color)],attrs:{"for":""}},[_vm._v(_vm._s(_vm.label)+"\n    "),(_vm.optional)?_c('span',{staticClass:"vm-typeahead--label-span"},[_vm._v(" - Optional")]):_vm._e()]):_vm._e(),_c('div',{staticClass:"input-select-con"},[_c('input',_vm._g(_vm._b({ref:"inputselect",staticClass:"input-select vm-typeahead--input",attrs:{"type":"text","autocomplete":"off"},on:{"click":function($event){$event.stopPropagation();},"keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }$event.stopPropagation();$event.preventDefault();return _vm.closeOptions($event)}}},'input',_vm.$attrs,false),_vm.listeners)),_c('vm-typeahead-loading',{attrs:{"active":_vm.activeLoading,"color":_vm.color,"type":_vm.loadingType}}),_c('transition',{attrs:{"name":"fadeselect"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:((!_vm.createObject && _vm.active && _vm.inputText.length > 0 && _vm.matchedItems.length > 0) || (_vm.createObject && !_vm.activeLoading && _vm.inputText.length > 0 && _vm.matchedItems.length === 0)),expression:"(!createObject && active && inputText.length > 0 && matchedItems.length > 0) || (createObject && !activeLoading && inputText.length > 0 && matchedItems.length === 0)"}],ref:"vmSelectOptions",staticClass:"vm-typeahead--options",class:[("vm-typeahead-" + _vm.color),{'scrollx':_vm.scrollx}],style:(_vm.cords)},[_c('ul',{directives:[{name:"show",rawName:"v-show",value:(_vm.matchedItems.length > 0),expression:"matchedItems.length > 0"}],ref:"ulx"},[_vm._t("default",_vm._l((_vm.matchedItems),function(item,index){return _c("vm-typeahead-item",{key:index,tag:"vm-typeahead-item",attrs:{"value":item.id,"text":item.text}},[_c('template',{slot:"html"},[_vm._t("html",null,{"data":item.data,"text":item.text})],2)],2)}),{"data":_vm.matchedItems})],2),_c('ul',{directives:[{name:"show",rawName:"v-show",value:(!_vm.activeLoading && _vm.inputText.length > 0 && _vm.data.length === 0),expression:"!activeLoading && inputText.length > 0 && data.length === 0"}]},[(_vm.createObject)?_c('vm-typeahead-data',{attrs:{"text":_vm.createText,"value":_vm.inputText},on:{"click":_vm.createAction}}):_vm._e()],1)])])],1),_c('transition-group',{on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"leave":_vm.leave}},[(_vm.success)?_c('div',{key:"success",staticClass:"con-text-validation"},[_c('span',{staticClass:"span-text-validation span-text-validation-success"},[_vm._v("\n        "+_vm._s(_vm.successText)+"\n      ")])]):(_vm.danger)?_c('div',{key:"danger",staticClass:"con-text-validation span-text-validation-danger"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.dangerText)+"\n      ")])]):(_vm.warning)?_c('div',{key:"warning",staticClass:"con-text-validation span-text-validation-warning"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.warningText)+"\n      ")])]):_vm._e(),(_vm.descriptionText)?_c('div',{key:"description",staticClass:"con-text-validation span-text-validation"},[_c('span',{staticClass:"span-text-validation"},[_vm._v("\n        "+_vm._s(_vm.descriptionText)+"\n      ")])]):_vm._e()])],1)}
-var vmTypeaheadvue_type_template_id_63fd33b2_lang_html_staticRenderFns = []
+var vmTypeaheadvue_type_template_id_91674b6a_lang_html_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vmTypeahead/vmTypeahead.vue?vue&type=template&id=63fd33b2&lang=html&
+// CONCATENATED MODULE: ./src/components/vmTypeahead/vmTypeahead.vue?vue&type=template&id=91674b6a&lang=html&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vmTypeahead/vmTypeahead.vue?vue&type=script&lang=js&
 
@@ -22495,6 +22495,7 @@ function escapeRegExp(str) {
   watch: {
     value: function value(event) {
       this.valuex = this.value;
+      this.changeValue();
       this.$emit('change', event);
     },
     data: function data() {
@@ -22656,8 +22657,8 @@ function escapeRegExp(str) {
 
 var vmTypeahead_component = normalizeComponent(
   vmTypeahead_vmTypeaheadvue_type_script_lang_js_,
-  vmTypeaheadvue_type_template_id_63fd33b2_lang_html_render,
-  vmTypeaheadvue_type_template_id_63fd33b2_lang_html_staticRenderFns,
+  vmTypeaheadvue_type_template_id_91674b6a_lang_html_render,
+  vmTypeaheadvue_type_template_id_91674b6a_lang_html_staticRenderFns,
   false,
   null,
   null,
