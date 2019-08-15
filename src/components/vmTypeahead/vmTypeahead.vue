@@ -329,6 +329,7 @@ export default {
   watch: {
     value (event) {
       this.valuex = this.value
+      this.changeValue()
       this.$emit('change',event)
     },
     data () {
