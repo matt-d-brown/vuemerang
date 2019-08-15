@@ -286,6 +286,8 @@ export default {
       }
     },
     formattedData () {
+      // eslint-disable-next-line no-console
+      console.log(this.data, this.inputText, this.inputText.length)
       if (!(this.data instanceof Array)) {
         return []
       }
