@@ -231,10 +231,12 @@ export default {
       if (typeof this.value === 'object' && typeof this.value !== 'undefined' && typeof this.$parent.parent.value !== 'undefined') {
         if(this.$parent.parent.serializer(this.value) == this.$parent.parent.serializer(this.$parent.parent.value)){
           this.$parent.parent.valuex = this.text
+          this.$parent.parent.$refs.inputselect.value = this.text
         }
       } else {
         if(this.value == this.$parent.parent.value){
           this.$parent.parent.valuex = this.text
+          this.$parent.parent.$refs.inputselect.value = this.text
         }
       }
     },
