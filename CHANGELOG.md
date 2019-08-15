@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.9](https://github.com/controlla/vuemerang/compare/v1.7.8...v1.7.9) (2019-08-15)
+
+
+### Bug Fixes
+
+* **vm-typeahead:** text ([b559751](https://github.com/controlla/vuemerang/commit/b559751))
+
+
+
 ### [1.7.8](https://github.com/controlla/vuemerang/compare/v1.7.7...v1.7.8) (2019-08-13)
 
 
