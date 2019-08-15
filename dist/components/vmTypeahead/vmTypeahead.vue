@@ -286,15 +286,13 @@ export default {
       }
     },
     formattedData () {
-      // eslint-disable-next-line no-console
-      console.log(this.data, this.inputText, this.inputText.length)
       if (!(this.data instanceof Array)) {
         return []
       }
 
-      if (this.inputText.length === 0) {
-        return []
-      }
+      // if (this.inputText.length === 0) {
+      //   return []
+      // }
 
       return this.data.map((d, i) => {
         return {
