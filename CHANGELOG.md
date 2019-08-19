@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.13](https://github.com/controlla/vuemerang/compare/v1.7.12...v1.7.13) (2019-08-19)
+
+
+### Bug Fixes
+
+* **vm-stepper:** update validation step ([42be7c9](https://github.com/controlla/vuemerang/commit/42be7c9))
+
+
+
 ### [1.7.12](https://github.com/controlla/vuemerang/compare/v1.7.11...v1.7.12) (2019-08-15)
 
 
