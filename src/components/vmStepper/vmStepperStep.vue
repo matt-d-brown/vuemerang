@@ -100,8 +100,10 @@ export default {
       }
     },
     toggle (step) {
+      let parent = this.$parent.vertical ? this.$parent : this.$parent.$parent
       this.isActive = step.toString() === this.step.toString()
       this.isInactive = Number(step) < Number(this.step)
+      this.isActive && (parent.validate = this.validate)
     }
   },
 }
