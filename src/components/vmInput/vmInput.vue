@@ -80,6 +80,11 @@
       </transition>
     </div>
 
+    <div v-if="showStrengthMeter" v-bind:class="[strengthMeterClass]">
+      <div v-bind:class="[strengthMeterFillClass]" :data-score="passwordStrength"></div>
+    </div>
+    <p v-if="showStrengthMeter && showPasswordLabel" class="Password__strength-meter--label">{{passwordLabels[passwordStrength]}}</p>
+
     <transition-group
       @before-enter="beforeEnter"
       @enter="enter"
@@ -133,6 +138,7 @@
 </template>
 
 <script>
+import zxcvbn from 'zxcvbn'
 import formatNumber from 'accounting-js/lib/formatNumber'
 import unformat from 'accounting-js/lib/unformat'
 import _color from '../../utils/color.js'
@@ -198,6 +204,32 @@ export default {
     iconPack:{
       default:'eva',
       type:String
+    },
+    showStrengthMeter: {
+      type: Boolean,
+      default: false
+    },
+    showPasswordLabel: {
+      type: Boolean,
+      default: false
+    },
+    passwordLabels: {
+      type: Array,
+      default: () => [
+        'Very weak',
+        'Weak',
+        'Good',
+        'Strong',
+        'Very strong'
+      ]
+    },
+    strengthMeterClass: {
+      type: String,
+      default: 'Password__strength-meter'
+    },
+    strengthMeterFillClass: {
+      type: String,
+      default: 'Password__strength-meter--fill'
     },
     color:{
       default:'primary',
@@ -298,6 +330,9 @@ export default {
     },
     getIconPass(){
       return this.type !== 'password' ? 'eye-outline' : 'eye-off-outline'
+    },
+    passwordStrength () {
+      return this.formatedValue ? zxcvbn(this.formatedValue).score : null
     }
   },
   watch: {
