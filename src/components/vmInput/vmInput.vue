@@ -80,10 +80,16 @@
       </transition>
     </div>
 
-    <div v-if="showStrengthMeter" v-bind:class="[strengthMeterClass]">
-      <div v-bind:class="[strengthMeterFillClass]" :data-score="passwordStrength"></div>
+    <div 
+      v-if="showStrengthMeter" 
+      :class="[strengthMeterClass]">
+      <div 
+        :class="[strengthMeterFillClass]" 
+        :data-score="passwordStrength"></div>
     </div>
-    <p v-if="showStrengthMeter && showPasswordLabel" class="Password__strength-meter--label">{{passwordLabels[passwordStrength]}}</p>
+    <p 
+      v-if="showStrengthMeter && showPasswordLabel" 
+      class="Password__strength-meter--label">{{ passwordLabels[passwordStrength] }}</p>
 
     <transition-group
       @before-enter="beforeEnter"
