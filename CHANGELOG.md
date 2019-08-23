@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/controlla/vuemerang/compare/v1.7.14...v1.8.0) (2019-08-23)
+
+
+### Bug Fixes
+
+* **lint:** lint ([97d398a](https://github.com/controlla/vuemerang/commit/97d398a))
+
+
+### Features
+
+* **vm-input:** add strength meter ([d6f8e48](https://github.com/controlla/vuemerang/commit/d6f8e48))
+
+
+
 ### [1.7.14](https://github.com/controlla/vuemerang/compare/v1.7.13...v1.7.14) (2019-08-21)
 
 
