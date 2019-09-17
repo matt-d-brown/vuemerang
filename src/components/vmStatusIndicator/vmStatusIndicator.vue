@@ -5,7 +5,10 @@
       `vm-status-indicator-${color}`
     ]"
     class="vm-component vm-status-indicator">
-    <span :style="styleIndicator" class="status-indicator" :class="{ 'status-indicator-pulse' : pulse}"></span>
+    <span 
+      :style="styleIndicator" 
+      :class="{ 'status-indicator-pulse' : pulse}" 
+      class="status-indicator"></span>
     <span class="text-status vm-status-indicator--text">
       <slot>
       </slot>
