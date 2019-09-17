@@ -32,6 +32,15 @@ export default {
     }
     return colorx
   },
+  getRGB(colorx){
+    // change color hex to RGB
+    if(/^[#]/.test(colorx)){
+      let c = this.hexToRgb(colorx)
+      colorx = `${c.r},${c.g},${c.b}`
+
+    }
+    return colorx
+  },
   isColor(colorx){
     let vmcolors = ['primary','secondary','success','danger','warning','dark', 'light','gray']
     return vmcolors.includes(colorx)

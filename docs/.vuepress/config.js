@@ -214,6 +214,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           '/components/textEditor',
           '/components/typeahead',
           '/components/Stepper',
+          '/components/StatusIndicator',
           /*New Component*/
         ]
       },

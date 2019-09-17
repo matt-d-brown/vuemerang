@@ -34,6 +34,7 @@ export { default as vmDatePicker } from './vmDatePicker'
 export { default as vmTextEditor } from './vmTextEditor'
 export { default as vmTypeahead } from './vmTypeahead'
 export { default as vmStepper } from './vmStepper'
+export { default as vmStatusIndicator } from './vmStatusIndicator'
 //New Component import
 
 //layout
