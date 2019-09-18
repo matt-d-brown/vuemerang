@@ -128,10 +128,10 @@ mv script_tmp src/components/index.js
 
 # agregar import Stylus
 
-# IMPORTSTYLUS="@import './vm$MAYUS/main'\n\/\/New Component import"
+IMPORTSTYLUS="@import './vm$MAYUS/main'\n\/\/New Component import"
 
-# sed -e "s/\/\/New Component import/$IMPORTSTYLUS/" src/components/components.styl > script_tmp
-# mv script_tmp src/components/components.styl
+sed -e "s/\/\/New Component import/$IMPORTSTYLUS/" src/components/components.styl > script_tmp
+mv script_tmp src/components/components.styl
 
 # # agregar Export
 # EXPORT="vm$MAYUS,\n  \/\/New Component export"
