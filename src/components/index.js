@@ -35,6 +35,7 @@ export { default as vmTextEditor } from './vmTextEditor'
 export { default as vmTypeahead } from './vmTypeahead'
 export { default as vmStepper } from './vmStepper'
 export { default as vmStatusIndicator } from './vmStatusIndicator'
+export { default as vmOrderBy } from './vmOrderBy'
 //New Component import
 
 //layout

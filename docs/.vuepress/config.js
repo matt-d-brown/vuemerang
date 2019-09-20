@@ -215,6 +215,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           '/components/typeahead',
           '/components/Stepper',
           '/components/StatusIndicator',
+          '/components/OrderBy',
           /*New Component*/
         ]
       },

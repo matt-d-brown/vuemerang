@@ -1,0 +1,202 @@
+
+// transition
+
+.fadeselect-enter-active
+  transition: transform .2s, opacity .2s;
+
+.fadeselect-leave-active
+  transition: transform .150s, opacity .150s;
+
+.fadeselect-enter, .fadeselect-leave-to /* .fade-leave-active below version 2.1.8 */
+  opacity: 0;
+  transform: translate(0,0px) scale(0.950)
+  box-shadow: 0px 10px 0px -5px rgba(0, 0, 0, 0);
+
+.input-select-con
+  position relative
+  span
+    font-size 12px
+    opacity 0.7
+    position absolute
+    top 9px
+    left 9px
+    z-index 5
+    user-select none
+
+.con-select
+  position: relative;
+  width: 200px
+  clear both
+  &.activeOptions:not(.autocompletex)
+    .input-select
+      opacity: 0;
+      transform: scale(1.1);
+  &.activeOptions
+    .vm-order-by--icon
+      transform: translate(0,-50%) rotate(-180deg)
+
+.vm-order-by--icon
+  position: absolute;
+  right: 5px;
+  font-size: 1.0625em;
+  top: 50%;
+  pointer-events none;
+  transition: all .2s ease;
+  transform: translate(0,-50%);
+
+.direction--down
+  transform: translate(0,-50%) rotate(90deg)
+.direction--up
+  transform: translate(0, -50%) scale(-1, 1) rotate(-90deg);
+
+.vm-order-by--order
+  position: absolute;
+  right: 25px;
+  font-size: 0.8em;
+  top: 50%;
+  pointer-events none;
+  transition: all .2s ease;
+
+.vm-order-by--input
+  color: inherit
+  width: 100%
+  position: relative;
+  padding: 7px;
+  border-radius: 5px;
+  border: $vm-border
+  transition: all .2s ease;
+  padding-right: 35px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 2;
+  background: transparent;
+  text-overflow: ellipsis;
+  box-shadow: $vm-box-shadow-input
+  &:hover
+    box-shadow: $vm-box-shadow-input-hover
+  &-con
+    position: relative;
+  &:disabled
+    background-color: rgb(235, 235, 228);
+    opacity $vm-disabled-opacity
+    cursor: default
+    pointer-events: none
+
+.vm-order-by--label
+  padding-left 5px;
+  font-size: .85rem
+  color $vm-label-color
+
+.con-text-validation
+  position: relative
+  font-size: .65rem
+  overflow: hidden
+  transition: $vm-transition;
+  .span-text-validation
+    padding: 2px 4px;
+    padding-bottom: 4px
+    display: block
+
+.scrollx
+  ul
+    padding-right: 4px;
+.vm-order-by--options
+  padding: 4px;
+  padding-top: 6px;
+  padding-left: 5px;
+  padding-bottom: 6px;
+  box-shadow: $vm-box-shadow;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 40001;
+  background: $vm-background;
+  ul
+    max-height: 260px;
+    overflow: auto;
+    padding-left: 0px
+    padding: 0px
+    li
+      margin: 0px;
+
+.vm-order-by--item
+  text-align: left;
+  color: rgba(0,0,0,.8)
+  padding: 7px;
+  border 0px;
+  position relative
+  border-top: 1px solid $border-color
+  border-bottom: 1px solid $border-color
+  transition: all .3s ease
+  margin: 0px !important
+  cursor pointer
+  &:hover
+    background: rgb(245, 245, 245)
+  &:focus
+    background: rgb(245, 245, 245)
+  &.con-icon.activex
+    padding-left: 25px;
+    .vm-order-by--item-icon
+      opacity: 1;
+      transform: translate(0,-50%);
+
+.vm-order-by--item-icon
+  position: absolute;
+  font-size: 1.0em;
+  left: 5px;
+  transform: translate(-100%,-50%);
+  opacity: 0;
+  transition: all .2s ease;
+  top: 50%;
+
+
+for colorx, i in $vm-colors
+  .vm-order-by-{colorx}
+    .vm-order-by--item
+      &.activex
+        background: var(colorx, .1)
+        color: var(colorx);
+        font-weight: bold;
+    .vm-order-by--label-span
+      font-size: 0.8em
+      font-style: italic
+      color: var(colorx)
+  .input-select-label-{colorx}--active
+    color: var(colorx)
+  .input-select-validate-{colorx}
+    .input-select-con
+      .input-select
+        border-color: var(colorx)
+      .vm-order-by--icon
+        color var(colorx)
+
+
+// item style //
+
+.vm-order-by--item
+  background: transparent
+  padding: 5px;
+  width: 100%;
+  margin: 0px
+  text-transform: capitalize;
+  &.disabledx
+    opacity: $vm-disabled-opacity;
+    cursor: default
+    pointer-events: none
+  span.searchx
+    background: rgba(0, 0, 0, 0.07);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    color: inherit;
+
+
+// vm-order-by-group
+
+.vm-order-by-group
+  h4
+    padding-left: 10px
+    cursor default
+    padding-bottom: 5px
+  li
+    border-left: 1px solid rgba(0,0,0,.1)
+    margin-left: 15px !important
+    list-style none
