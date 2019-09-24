@@ -9,9 +9,10 @@ export default {
   methods:{
     myFunction(){
       this.$vm.notify({
-        title:'Function click',
-        text:'Click on me',
+        title:'Info',
+        text:'Anyone with access can view your invited visitors.',
         color:'primary',
+        icon:'checkmark-circle-outline',
         fixed:true,
         click:()=>{
           // secondary function
@@ -19,7 +20,7 @@ export default {
             title:'Secondary function',
             text:'Executed the function when clicking',
             color:'success',
-            icon:'check_box'
+            icon:'checkmark-circle-outline'
           })
         },
       })

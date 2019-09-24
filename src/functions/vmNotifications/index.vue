@@ -13,17 +13,18 @@
       class="vm-component vm-notifications"
       @click="clickNoti">
       <div class="content-noti">
+        <vm-icon
+        v-if="icon"
+        :icon-pack="iconPack"
+        :icon="icon"
+        color="#fff"
+        class="vm-icon-noti"></vm-icon>
         <div class="con-text-noti">
           <h3 v-html="title"/>
           <p v-html="text"/>
 
           <slot/>
         </div>
-        <vm-icon
-          v-if="icon"
-          :icon-pack="iconPack"
-          :icon="icon"
-          class="vm-icon-noti"></vm-icon>
       </div>
       <span
         :style="fillingStyle"
@@ -60,7 +61,6 @@ export default {
       return {
         left: this.cords.left?'-100px':null,
         right: this.cords.right?'-100px':null,
-        background: this.color,
         height:`${this.widthx*2}px`,
         width:`${this.widthx*2}px`,
       }
@@ -68,9 +68,8 @@ export default {
     stylex(){
       return {
         ...this.cords,
-        color: this.colorText,
+        background: this.color,
         width: this.fullWidth?`calc(100% - 14px)`:``,
-        maxWidth: this.fullWidth?'none':`350px`
       }
     }
   },
