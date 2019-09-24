@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/controlla/vuemerang/compare/v1.8.0...v1.9.0) (2019-09-24)
+
+
+### Bug Fixes
+
+* **script:** remove comments ([3dc777e](https://github.com/controlla/vuemerang/commit/3dc777e))
+* **syle:** add seconary color ([0a1146f](https://github.com/controlla/vuemerang/commit/0a1146f))
+
+
+### Features
+
+* **vm-order:** add new component ([562c017](https://github.com/controlla/vuemerang/commit/562c017))
+* **vm-status:** add flat style ([4dec122](https://github.com/controlla/vuemerang/commit/4dec122))
+* **vm-status-indicator:** add new component ([f9f77e7](https://github.com/controlla/vuemerang/commit/f9f77e7))
+
+
+
 ## [1.8.0](https://github.com/controlla/vuemerang/compare/v1.7.14...v1.8.0) (2019-08-23)
 
 
