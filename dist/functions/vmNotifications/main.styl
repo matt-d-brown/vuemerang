@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i');
 
 // animations
 .vm-notifications
@@ -11,29 +11,48 @@
   overflow: hidden;
   transition: all .3s ease;
   cursor: default;
-  max-width: 350px;
-  min-width: 200px;
+  ext-align: left;
+  padding: 10px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.2);
+  &:before
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    z-index: 1
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: inherit;
   &:active
     opacity: .8
   .content-noti
+    background-color: inherit;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     .con-text-noti
+      padding-left: 30px;
+      padding-right: 10px;
       width: 100%;
     .vm-icon-noti
+      left: 20px;
       position: relative;
       display: flex;
       z-index: 100;
       display: block;
       padding: 5px;
-      background: rgba(255, 255, 255,.1)
       border-radius: 6px;
       font-size: 20px;
+      background-color: inherit;
       animation: openicon .4s ease;
   h3,p
+    font-family: 'Raleway', sans-serif;
     z-index: 100;
     position: relative;
     animation: open .4s ease;
@@ -49,18 +68,20 @@
     h3,p
       opacity: 1;
   .filling
+    background: rgb(255, 255, 255);
     display: block;
     position: absolute;
-    transition: all .45s ease;
-    z-index: 1;
     transform: translate(0,-50%);
 for colorx, i in $vm-colors
   .vm-noti-{colorx}
+    &:before
+      background-color: var(colorx, 1);
     .filling
-      background: var(colorx, 1);
       width: 10px;
       height: 10px;
       border-radius: 50%;
+    .vm-icon-noti
+      background-color: var(colorx, 1) !important;
 
 @keyframes open {
   0% {

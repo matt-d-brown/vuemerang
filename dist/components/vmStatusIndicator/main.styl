@@ -1,0 +1,63 @@
+.vm-status-indicator
+  background rgb(240,240,240)
+  border-radius 20px
+  float left
+  display flex
+  align-items center
+  font-size .7rem
+  justify-content center
+  margin-right 2px
+  margin-bottom 3px
+  min-height 28px
+  padding-right 10px
+  padding-left 10px
+  color rgba(0,0,0,.5)
+  position relative
+  .status-indicator
+    display inline-block
+    border-radius 50%
+    width 10px
+    height 10px
+    background-color rgb(216, 226, 233)
+
+.status-indicator-pulse
+  animation-name status-indicator-pulse-animation
+  animation-duration 2s
+  animation-timing-function ease-in-out
+  animation-iteration-count infinite
+  animation-direction normal
+  animation-delay 0
+  animation-fill-mode none
+
+.vm-status-indicator--text
+  margin-left 5px
+
+.vm-status-indicator-flat
+  background transparent !important
+
+for colorx, i in $vm-colors
+  .vm-status-indicator-{colorx}
+    background var(colorx, .15)
+    .status-indicator
+      background-color var(colorx, 1)
+    .vm-status-indicator--text
+      color var(colorx, 1)
+    .status-indicator-pulse
+      animation-name status-indicator-pulse-animation- + colorx
+
+for colorx, i in $vm-colors
+  @keyframes status-indicator-pulse-animation-{colorx}
+    0%
+      box-shadow 0 0 0 0 var(colorx, .5)
+    70%
+      box-shadow 0 0 0 10px var(colorx, 0)
+    100%
+      box-shadow 0 0 0 0 var(colorx, 0)
+
+@keyframes status-indicator-pulse-animation
+  0%
+    box-shadow 0 0 0 0 var(box-shadow-color, .5)
+  70%
+    box-shadow 0 0 0 10px var(box-shadow-color, 0)
+  100%
+    box-shadow 0 0 0 0 var(box-shadow-color, 0)
