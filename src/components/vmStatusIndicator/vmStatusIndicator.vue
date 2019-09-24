@@ -2,12 +2,13 @@
   <div
     :style="styleChip"
     :class="[
-      `vm-status-indicator-${color}`
+      `vm-status-indicator-${color}`,
+      `vm-status-indicator-${type}`
     ]"
     class="vm-component vm-status-indicator">
-    <span 
-      :style="styleIndicator" 
-      :class="{ 'status-indicator-pulse' : pulse}" 
+    <span
+      :style="styleIndicator"
+      :class="{ 'status-indicator-pulse' : pulse}"
       class="status-indicator"></span>
     <span class="text-status vm-status-indicator--text">
       <slot>
@@ -33,6 +34,10 @@ export default {
     pulse: {
       type: Boolean,
       default: false,
+    },
+    type: {
+      type:String,
+      default:'normal',
     }
   },
   computed: {

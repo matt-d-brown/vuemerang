@@ -10,6 +10,11 @@ API:
    parameters: null
    description: Enable or disable the pulse effect.
    default: false
+ - name: type
+   type: String
+   parameters: normal, flat
+   description: Change the style of the indicator.
+   default: normal
 ---
 
 # Status Indicator **- new**
@@ -94,6 +99,48 @@ API:
       Danger
     </vm-status-indicator>
     <vm-status-indicator pulse color="#00fb9c">
+      Hexadecimal
+    </vm-status-indicator>
+  </div>
+</template>
+```
+
+</div>
+</vuecode>
+</box>
+
+<box>
+
+## Flat
+
+<vuecode md>
+<div slot="demo">
+  <Demos-StatusIndicator-Flat />
+</div>
+<div slot="code">
+
+```html
+<template lang="html">
+  <div>
+    <vm-status-indicator type="flat">
+      Default
+    </vm-status-indicator>
+    <vm-status-indicator type="flat" color="primary">
+      Primary
+    </vm-status-indicator>
+    <vm-status-indicator type="flat" color="secondary">
+      Secondary
+    </vm-status-indicator>
+    <vm-status-indicator type="flat" color="success">
+      Success
+    </vm-status-indicator>
+    <vm-status-indicator type="flat" color="warning">
+      Warning
+    </vm-status-indicator>
+    <vm-status-indicator type="flat" color="danger">
+      Danger
+    </vm-status-indicator>
+    <vm-status-indicator type="flat" color="#00fb9c">
       Hexadecimal
     </vm-status-indicator>
   </div>

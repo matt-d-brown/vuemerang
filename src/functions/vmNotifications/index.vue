@@ -14,11 +14,11 @@
       @click="clickNoti">
       <div class="content-noti">
         <vm-icon
-        v-if="icon"
-        :icon-pack="iconPack"
-        :icon="icon"
-        color="#fff"
-        class="vm-icon-noti"></vm-icon>
+          v-if="icon"
+          :icon-pack="iconPack"
+          :icon="icon"
+          color="#fff"
+          class="vm-icon-noti"></vm-icon>
         <div class="con-text-noti">
           <h3 v-html="title"/>
           <p v-html="text"/>
