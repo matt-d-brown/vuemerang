@@ -8,7 +8,7 @@
       class="vm-stepper--footer">
       <div class="">
         <vm-button
-          v-show="inputValue !== 1"
+          v-show="inputValue !== 1 && allowedReverse"
           color="primary"
           type="default"
           @click="stepClick(inputValue - 1)">
@@ -53,6 +53,10 @@ export default {
       default: 'Save',
       type: String
     },
+    allowReverse: {
+      default: true,
+      type: Boolean
+    },
   },
   data:()=>({
     inputValue: null,
@@ -62,6 +66,11 @@ export default {
     isReverse: false,
     validate: true,
   }),
+  computed: {
+    allowedReverse () {
+      return this.steps[this.inputValue - 1].editable || this.allowReverse
+    }
+  },
   watch: {
     inputValue (val, prev) {
       this.isReverse = Number(val) < Number(prev)
