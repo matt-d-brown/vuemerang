@@ -536,6 +536,7 @@ export default {
       label.classList.remove('input-select-label-' + this.color + '--active')
     },
     createAction: function(event) {
+      this.closeOptions()
       this.$emit('create-object', event);
     }
   }

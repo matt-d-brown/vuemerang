@@ -18,7 +18,7 @@
         v-if="optional"
         class="vm-typeahead--label-span"> - Optional</span>
     </label>
-    <div class="input-select-con">
+    <div class="input-select-con-type">
       <!-- v-model="valueFilter" -->
       <input
         ref="inputselect"

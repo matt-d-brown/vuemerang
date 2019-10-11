@@ -68,7 +68,7 @@ export default {
   }),
   computed: {
     allowedReverse () {
-      return this.steps[this.inputValue - 1].editable || this.allowReverse
+      return this.steps.length > 0 ? this.steps[this.inputValue - 1].editable || this.allowReverse : true
     }
   },
   watch: {
