@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[102],{623:function(e,t,a){"use strict";a.r(t);var n={data:function(){return{date:[]}}},l=a(1),r=Object(l.a)(n,function(){var e=this.$createElement,t=this._self._c||e;return t("div",[t("vm-date-picker",{attrs:{type:"date",multiple:"",placeholder:"Select a date"}})],1)},[],!1,null,null,null);t.default=r.exports}}]);
