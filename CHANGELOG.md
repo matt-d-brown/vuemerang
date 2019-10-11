@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.1](https://github.com/controlla/vuemerang/compare/v1.9.0...v1.9.1) (2019-10-11)
+
+
+### Bug Fixes
+
+* **vm-select:** close select on create action ([accf82e](https://github.com/controlla/vuemerang/commit/accf82e))
+* **vm-stepper:** add reverse disable option ([6bb1e31](https://github.com/controlla/vuemerang/commit/6bb1e31))
+* **vm-typeahead:** style change ([ebc882b](https://github.com/controlla/vuemerang/commit/ebc882b))
+
+
+
 ## [1.9.0](https://github.com/controlla/vuemerang/compare/v1.8.0...v1.9.0) (2019-09-24)
 
 
